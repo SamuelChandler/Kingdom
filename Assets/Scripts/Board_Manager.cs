@@ -20,6 +20,30 @@ public class Board_Manager : MonoBehaviour
         }
     }
 
+    [Serializable]
+    public class Board
+    {
+        public int columns;
+        public int rows;
+
+        public GameObject[] floorTiles;
+
+        private List<Vector3> gridPositions = new List<Vector3>();
+
+        public Board(int col,int row)
+        {
+            columns = col; rows = row;
+
+            for (int i = 0; i < columns; i++)
+            {
+                for (int j = 0; j < rows; j++)
+                {
+                    gridPositions.Add(new Vector3(i, j, 0f));
+                }
+            }
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {

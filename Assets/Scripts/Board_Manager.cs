@@ -5,54 +5,31 @@ using System;
 
 public class Board_Manager : MonoBehaviour
 {
+    [SerializeField] private int _width, _height;
 
-    //serialized fields
-    [Serializable]
-    public class Count 
+    [SerializeField] private Tile _tile_Prefab;
+
+    [SerializeField] private Transform _camera;
+
+    private void Start()
     {
-        public int minimum;
-        public int maximum;
-
-        public Count (int min, int max)
-        {
-            minimum = min;
-            maximum = max;
-        }
+        generateGrid();
     }
 
-    [Serializable]
-    public class Board
+    void generateGrid()
     {
-        public int columns;
-        public int rows;
+        for(int i = 0; i < _width; i++){
+            for(int j = 0; j < _height; j++){
+                var spawnedTile = Instantiate(_tile_Prefab, new Vector3(i, j), Quaternion.identity);
+                spawnedTile.name = $"Tile {i} {j}";
 
-        public GameObject[] floorTiles;
-
-        private List<Vector3> gridPositions = new List<Vector3>();
-
-        public Board(int col,int row)
-        {
-            columns = col; rows = row;
-
-            for (int i = 0; i < columns; i++)
-            {
-                for (int j = 0; j < rows; j++)
-                {
-                    gridPositions.Add(new Vector3(i, j, 0f));
-                }
+                var isOffset = (i % 2 == 0 && j % 2 != 0) || (i % 2 != 0 && j % 2 == 0);
+                spawnedTile.Init(isOffset);
             }
         }
+
+        _camera.transform.position = new Vector3((float)_width/2- 0.5f,(float)_height/2 - 0.5f,-1);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Board_Manager : MonoBehaviour
 {
+    public static Board_Manager instance;
+
     [SerializeField] private int _width, _height;
 
     [SerializeField] private Tile _grassTile,_mountainTile;
@@ -13,12 +15,12 @@ public class Board_Manager : MonoBehaviour
 
     private Dictionary<Vector2, Tile> _tiles;
 
-    private void Start()
+    private void Awake()
     {
-        generateGrid();
+        instance = this;
     }
 
-    void generateGrid()
+    public void generateGrid()
     {
         _tiles = new Dictionary<Vector2, Tile>();
         for(int i = 0; i < _width; i++){
@@ -35,6 +37,8 @@ public class Board_Manager : MonoBehaviour
         }
 
         _camera.transform.position = new Vector3((float)_width/2- 0.5f,(float)_height/2 - 0.5f,-1);
+
+        Game_Manager.instance.ChangeState(GameState.SpawnHero);
     }
 
     public Tile GetTileAtPosition(Vector2 position)

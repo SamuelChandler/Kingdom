@@ -27,8 +27,8 @@ public class Board_Manager : MonoBehaviour
                 var spawnedTile = Instantiate(randTile, new Vector3(i, j), Quaternion.identity);
                 spawnedTile.name = $"Tile {i} {j}";
 
-                var isOffset = (i % 2 == 0 && j % 2 != 0) || (i % 2 != 0 && j % 2 == 0);
-                spawnedTile.Init(isOffset);
+                
+                spawnedTile.Init(i,j);
 
                 _tiles[new Vector2(i, j)] = spawnedTile;
             }

@@ -68,6 +68,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8137682353039871671, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_Color.b
+      value: 0.28969383
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137682353039871671, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5077876
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137682353039871671, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6603774
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -103,7 +115,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b519eb70f1828d845a6fcd245298a5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _baseColor: {r: 0.9339623, g: 0.46257564, b: 0.46257564, a: 1}
-  _offsetColor: {r: 0.9433962, g: 0.3693485, b: 0.3693485, a: 1}
   _renderer: {fileID: 4266912305498247311}
   _highlight: {fileID: 6129224773843295516}

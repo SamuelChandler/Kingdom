@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 //using System;
 
@@ -21,6 +22,7 @@ public class Board_Manager : MonoBehaviour
         instance = this;
     }
 
+    //generates grid for the game , creates tiles 
     public void generateGrid()
     {
         _tiles = new Dictionary<Vector2, Tile>();
@@ -42,16 +44,19 @@ public class Board_Manager : MonoBehaviour
         Game_Manager.instance.ChangeState(GameState.SpawnHero);
     }
 
+    //spawns a random hero to the left of the screen on a walkable tile 
     public Tile GetHeroSpawnTile()
     {
         return _tiles.Where(t => t.Key.x < _width/2 && t.Value.Walkable).OrderBy(t=>Random.value).First().Value;
     }
 
+    //spawns a random eneny to the right on a walkable tile 
     public Tile GetEnemySpawnTile()
     {
         return _tiles.Where(t => t.Key.x > _width / 2 && t.Value.Walkable).OrderBy(t => Random.value).First().Value;
     }
 
+    //returns a tile for a givem v2 positon
     public Tile GetTileAtPosition(Vector2 position)
     {
         if(_tiles.TryGetValue(position, out Tile tile))
@@ -62,5 +67,19 @@ public class Board_Manager : MonoBehaviour
         return null;
     }
 
+    //returns a Unit for a given v2 position
+    public BaseUnit GetUnitAtPosition(Vector2 position)
+    {
+        //checks if tile exists
+        if (_tiles.TryGetValue(position,out Tile tile))
+        {
+            if (tile.OccupiedUnit != null)
+            {
+                return tile.OccupiedUnit;
+            }
+        }
+
+        return null;
+    }
     
 }

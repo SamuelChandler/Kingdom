@@ -97,4 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfcac63d6cdd64a458430d46732573ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UnitName: lamb
   OccupiedTile: {fileID: 0}
+  Faction: 0

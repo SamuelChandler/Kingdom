@@ -97,4 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e06cc4bed523b244800331a662b2083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UnitName: Werewolf
   OccupiedTile: {fileID: 0}
+  Faction: 0

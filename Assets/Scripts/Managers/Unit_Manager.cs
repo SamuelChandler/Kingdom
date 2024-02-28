@@ -9,6 +9,8 @@ public class Unit_Manager : MonoBehaviour
 
     private List<ScriptableUnit> _units;
 
+    public BaseHero SelectedHero;
+
     private void Awake()
     {
         instance = this;
@@ -56,5 +58,11 @@ public class Unit_Manager : MonoBehaviour
     private T GetRandUnit<T>(Faction faction) where T: BaseUnit
     {
         return (T) _units.Where(u  => u.Faction == faction).OrderBy(o  => Random.value).First().UnitPrefab;
+    }
+
+    public void SetSelectedHero(BaseHero Hero)
+    {
+        SelectedHero = Hero;
+        Menu_Manager.instance.showSelectedHero(Hero);
     }
 }

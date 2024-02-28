@@ -115,5 +115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b519eb70f1828d845a6fcd245298a5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileName: Mountain
   _renderer: {fileID: 4266912305498247311}
   _highlight: {fileID: 6129224773843295516}
+  _isWalkable: 0
+  OccupiedUnit: {fileID: 0}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Tile : MonoBehaviour
 {
-    
+    public string tileName;
     [SerializeField] protected SpriteRenderer _renderer;
     [SerializeField] protected GameObject _highlight;
     [SerializeField] private bool _isWalkable;
@@ -20,11 +20,13 @@ public abstract class Tile : MonoBehaviour
     private void OnMouseEnter()
     {
         _highlight.SetActive(true);
+        Menu_Manager.instance.showTileInfo(this);
     }
 
     private void OnMouseExit()
     { 
         _highlight.SetActive(false); 
+        Menu_Manager.instance.showTileInfo(null);
     }
 
     public void setUnit(BaseUnit unit)
@@ -37,6 +39,34 @@ public abstract class Tile : MonoBehaviour
         unit.transform.position = transform.position;
         OccupiedUnit = unit;
         unit.OccupiedTile = this;
+    }
+
+    private void OnMouseDown()
+    {
+        if (Game_Manager.instance.GameState != GameState.HeroesTurn) return;
+
+        if (OccupiedUnit != null)
+        {
+            if (OccupiedUnit.Faction == Faction.Hero) Unit_Manager.instance.SetSelectedHero((BaseHero)OccupiedUnit);
+            else
+            {
+                if (Unit_Manager.instance.SelectedHero != null)
+                {
+                    var enemy = (BaseEnemy)OccupiedUnit;
+                    //attack 
+                    Destroy(enemy.gameObject);
+                    Unit_Manager.instance.SetSelectedHero(null);
+                }
+            }
+        }
+        else
+        {
+            if (Unit_Manager.instance.SelectedHero != null)
+            {
+                setUnit(Unit_Manager.instance.SelectedHero);
+                Unit_Manager.instance.SetSelectedHero(null);
+            }
+        }
     }
 
 }

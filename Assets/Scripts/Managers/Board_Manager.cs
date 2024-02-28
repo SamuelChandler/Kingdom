@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 //using System;
 
@@ -39,6 +40,16 @@ public class Board_Manager : MonoBehaviour
         _camera.transform.position = new Vector3((float)_width/2- 0.5f,(float)_height/2 - 0.5f,-1);
 
         Game_Manager.instance.ChangeState(GameState.SpawnHero);
+    }
+
+    public Tile GetHeroSpawnTile()
+    {
+        return _tiles.Where(t => t.Key.x < _width/2 && t.Value.Walkable).OrderBy(t=>Random.value).First().Value;
+    }
+
+    public Tile GetEnemySpawnTile()
+    {
+        return _tiles.Where(t => t.Key.x > _width / 2 && t.Value.Walkable).OrderBy(t => Random.value).First().Value;
     }
 
     public Tile GetTileAtPosition(Vector2 position)

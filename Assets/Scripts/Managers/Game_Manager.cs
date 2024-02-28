@@ -28,7 +28,7 @@ public class Game_Manager : MonoBehaviour
                 Board_Manager.instance.generateGrid();
                 break;
             case GameState.SpawnHero:
-
+                Unit_Manager.instance.SpawnHeros();
                 break;
             case GameState.SpawnEnemies:
                 break;

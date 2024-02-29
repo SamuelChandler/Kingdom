@@ -1,9 +1,10 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
-//using System;
+
 
 public class Board_Manager : MonoBehaviour
 {
@@ -81,5 +82,30 @@ public class Board_Manager : MonoBehaviour
 
         return null;
     }
-    
+
+    public void MoveUnit(Tile destTile, BaseUnit unit)
+    {
+        if(unit == null || destTile == null) return; //do nothing if the unit or tile does not exist. 
+
+        Tile sourceTile = unit.OccupiedTile;
+
+        //determine the change in the x and y axis
+        int x_change = Mathf.Abs(sourceTile.x - destTile.x);
+        int y_change = Mathf.Abs(sourceTile.y - destTile.y);
+
+        int total_change  = x_change + y_change;
+
+
+        if (total_change > unit.Speed)
+        {
+            //if the total change is greater than the units speed then do nothing and deselect
+            Unit_Manager.instance.SetSelectedHero(null);
+            return;  
+        }
+
+        destTile.setUnit(unit);
+        Unit_Manager.instance.SetSelectedHero(null);
+
+
+    }
 }

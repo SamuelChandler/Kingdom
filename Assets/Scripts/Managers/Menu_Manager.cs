@@ -10,12 +10,13 @@ public class Menu_Manager : MonoBehaviour
 
     [SerializeField] private GameObject _SelectedHeroObject,_tileInfo,_tileUnit;
 
-
+    
     private void Awake()
     {
         instance = this;
     }
 
+    //displays tile info on screen when called. null clears window
     public void showTileInfo(Tile tile)
     {
         //toggle off
@@ -39,6 +40,7 @@ public class Menu_Manager : MonoBehaviour
         }
     }
 
+    //displays the hero information when called. null clears window 
     public void showSelectedHero(BaseHero hero)
     {
         //toggle off 
@@ -50,7 +52,8 @@ public class Menu_Manager : MonoBehaviour
 
         //build text based on hero
         string displayedText = hero.UnitName;
-        displayedText += "\n" + hero.Health.ToString() + "/" + hero.MaxHealth.ToString();
+        displayedText += "\nHealth: " + hero.Health.ToString() + "/" + hero.MaxHealth.ToString();
+        displayedText += "\nSpeed: " + hero.Speed.ToString() + "   Attack: " + hero.attack.ToString();
 
         //display selected hero
         _SelectedHeroObject.GetComponentInChildren<TextMeshProUGUI>().text = displayedText;

@@ -8,13 +8,16 @@ public abstract class Tile : MonoBehaviour
     [SerializeField] protected SpriteRenderer _renderer;
     [SerializeField] protected GameObject _highlight;
     [SerializeField] private bool _isWalkable;
+    public int x, y;
 
     public BaseUnit OccupiedUnit;
     public bool Walkable => _isWalkable && OccupiedUnit == null;
 
-    public virtual void Init(int x,int y)
+    public virtual void Init(int a,int b)
     {
         _highlight.SetActive(false);
+        x = a; y = b;
+
     }
 
     //hover effect
@@ -34,14 +37,22 @@ public abstract class Tile : MonoBehaviour
     //sets a unit to be occupying a tile 
     public void setUnit(BaseUnit unit)
     {
+        //removes unit from the tile it was on logically, if it is ocuppying a tile
         if (unit.OccupiedTile != null)
         {
             unit.OccupiedTile.OccupiedUnit = null;
         }
 
-        unit.transform.position = transform.position;
-        OccupiedUnit = unit;
+        //sets unit to the selected tiles position. also sets references to each other
+        unit.transform.position = transform.position; 
+        OccupiedUnit = unit; 
         unit.OccupiedTile = this;
+    }
+
+    //helper to get unit. might be more complicated later
+    public BaseUnit getUnit()
+    {
+        return OccupiedUnit;
     }
 
     //events if the mouse button is pressed on a tile
@@ -66,13 +77,13 @@ public abstract class Tile : MonoBehaviour
                 }
             }
         }
-        else
+        else //tile is empty
         {
             //if a hero is selected set that unit into to unselected tile and unset the previosly occupied tile 
             if (Unit_Manager.instance.SelectedHero != null)
             {
-                setUnit(Unit_Manager.instance.SelectedHero);
-                Unit_Manager.instance.SetSelectedHero(null);
+                Board_Manager.instance.MoveUnit(this,Unit_Manager.instance.SelectedHero);
+                
             }
         }
     }

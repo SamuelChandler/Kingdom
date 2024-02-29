@@ -100,3 +100,7 @@ MonoBehaviour:
   UnitName: Werewolf
   OccupiedTile: {fileID: 0}
   Faction: 1
+  Health: 5
+  MaxHealth: 5
+  Speed: 2
+  attack: 3

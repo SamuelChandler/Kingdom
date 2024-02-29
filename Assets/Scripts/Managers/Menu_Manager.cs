@@ -48,8 +48,12 @@ public class Menu_Manager : MonoBehaviour
             return;
         }
 
+        //build text based on hero
+        string displayedText = hero.UnitName;
+        displayedText += "\n" + hero.Health.ToString() + "/" + hero.MaxHealth.ToString();
+
         //display selected hero
-        _SelectedHeroObject.GetComponentInChildren<TextMeshProUGUI>().text = hero.UnitName;
+        _SelectedHeroObject.GetComponentInChildren<TextMeshProUGUI>().text = displayedText;
         _SelectedHeroObject.SetActive(true);
     }
 }

@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class BaseHero : BaseUnit
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Attack(BaseEnemy enemy)
     {
-        
-    }
+        if (enemy == null) return;
+        enemy.Health = enemy.Health - this.attack;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //check if destroyed
+        if (enemy.Health < 0)
+        {
+            enemy.OccupiedTile.OccupiedUnit = null;
+            Destroy(enemy.gameObject);
+        }
     }
 }

@@ -35,7 +35,7 @@ public class Menu_Manager : MonoBehaviour
         // display unit on tile if there is one 
         if (tile.OccupiedUnit)
         {
-            _tileUnit.GetComponentInChildren<TextMeshProUGUI>().text = tile.OccupiedUnit.UnitName;
+            _tileUnit.GetComponentInChildren<TextMeshProUGUI>().text = tile.OccupiedUnit.UnitName + "\n" + tile.OccupiedUnit.Health + "/"+ tile.OccupiedUnit.MaxHealth;
             _tileUnit.SetActive(true);
         }
     }

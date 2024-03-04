@@ -8,12 +8,37 @@ public class Menu_Manager : MonoBehaviour
 {
     public static Menu_Manager instance;
 
-    [SerializeField] private GameObject _SelectedHeroObject,_tileInfo,_tileUnit;
+    [SerializeField] private GameObject _SelectedHeroObject,_tileInfo,_tileUnit,_messanger,_unitSelect;
+
+    //there are 4 unit select buttons for now
+
 
     
     private void Awake()
     {
         instance = this;
+
+        //clear unessisary windows 
+        _SelectedHeroObject.SetActive(false);
+        _tileInfo.SetActive(false);
+        //_unitSelect.SetActive(false);
+        _messanger.SetActive(false);
+
+
+    }
+
+    //sets the banner ot the bottom of the screen to warn the player or give info
+    public void SetMessenger(string message)
+    {
+        //if there is no message remove the message box 
+        if (message == null || message.Length == 0)
+        {
+            _messanger.SetActive(false) ;
+            return;
+        }
+
+        _messanger.GetComponentInChildren<TextMeshProUGUI>().text = message;
+        _messanger.SetActive (true);
     }
 
     //displays tile info on screen when called. null clears window
@@ -59,4 +84,6 @@ public class Menu_Manager : MonoBehaviour
         _SelectedHeroObject.GetComponentInChildren<TextMeshProUGUI>().text = displayedText;
         _SelectedHeroObject.SetActive(true);
     }
+
+
 }

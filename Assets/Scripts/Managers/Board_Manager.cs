@@ -89,6 +89,13 @@ public class Board_Manager : MonoBehaviour
 
         Tile sourceTile = unit.OccupiedTile;
 
+        //in the case the unit is being spawned
+        if(sourceTile == null)
+        {
+            destTile.setUnit(unit);
+            Unit_Manager.instance.SetSelectedHero(null);
+        }
+
         //determine the change in the x and y axis
         int x_change = Mathf.Abs(sourceTile.x - destTile.x);
         int y_change = Mathf.Abs(sourceTile.y - destTile.y);

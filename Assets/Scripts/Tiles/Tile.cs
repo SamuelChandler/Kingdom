@@ -81,7 +81,19 @@ public abstract class Tile : MonoBehaviour
             //if a hero is selected set that unit into to unselected tile and unset the previosly occupied tile 
             if (Unit_Manager.instance.SelectedHero != null)
             {
-                Board_Manager.instance.MoveUnit(this,Unit_Manager.instance.SelectedHero);
+
+                // if unit does not have a tile of is not summoned, summon it on selected tile
+                if(Unit_Manager.instance.SelectedHero.OccupiedTile == null)
+                {
+                    //place unit on tile and activat any summon effects
+                    var summonded_Hero = Instantiate(Unit_Manager.instance.SelectedHero);
+                    this.setUnit(summonded_Hero);
+                }
+                else //move the unit to the selected tile
+                {
+                    Board_Manager.instance.MoveUnit(this, Unit_Manager.instance.SelectedHero);
+                }
+               
                 
             }
         }

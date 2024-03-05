@@ -32,7 +32,7 @@ public class UnitSelector : MonoBehaviour
         if (held_unit == null) return;
         
         
-        var createdUnit = Instantiate(held_unit);
+        //var createdUnit = Instantiate(held_unit);
         Unit_Manager.instance.SetSelectedHero(held_unit);
     }
 }

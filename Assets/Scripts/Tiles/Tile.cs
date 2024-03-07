@@ -61,6 +61,8 @@ public abstract class Tile : MonoBehaviour
         //only works if it is not the heros turn
         if (Game_Manager.instance.GameState != GameState.HeroesTurn) return;
 
+        
+
         //if tile is not empty
         if (OccupiedUnit != null)
         {
@@ -79,11 +81,13 @@ public abstract class Tile : MonoBehaviour
         else //tile is empty
         {
             //if a hero is selected set that unit into to unselected tile and unset the previosly occupied tile 
-            if (Unit_Manager.instance.SelectedHero != null)
+            if (Unit_Manager.instance.SelectedHero != null) 
             {
 
-                // if unit does not have a tile of is not summoned, summon it on selected tile
-                if(Unit_Manager.instance.SelectedHero.OccupiedTile == null)
+                if(this._isWalkable == false) return;
+
+                // if unit does not have a tile it is not summoned, summon it on selected tile
+                if (Unit_Manager.instance.SelectedHero.OccupiedTile == null)
                 {
                     //place unit on tile and activat any summon effects
                     var summonded_Hero = Instantiate(Unit_Manager.instance.SelectedHero);

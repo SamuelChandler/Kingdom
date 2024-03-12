@@ -24,7 +24,6 @@ public class Menu_Manager : MonoBehaviour
         //_unitSelect.SetActive(false);
         _messanger.SetActive(false);
 
-
     }
 
     //sets the banner ot the bottom of the screen to warn the player or give info

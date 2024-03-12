@@ -10,8 +10,9 @@ public class Scene_Manager : MonoBehaviour
     private int Game_index = 2;
 
 
-    public void PlayGame()
+    public void GoToGame(int level)
     {
+        PlayerPrefs.SetInt("Level Selected", level);
         SceneManager.LoadScene(Game_index);
     }
 

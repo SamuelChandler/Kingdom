@@ -8,14 +8,18 @@ public class Game_Manager : MonoBehaviour
 {
     public static Game_Manager instance;
     public GameState GameState;
+    private int Level;
 
     private void Awake()
     {
         instance = this;
+        Level = PlayerPrefs.GetInt("Level Selected");
+
     }
 
     private void Start()
     {
+        Menu_Manager.instance.SetMessenger("Level: "+ Level);
         ChangeState(GameState.GenerateGrid);
     }
 

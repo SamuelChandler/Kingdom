@@ -675,7 +675,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 416869039}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1299730075}
+        m_TargetAssemblyTypeName: Scene_Manager, Assembly-CSharp
+        m_MethodName: GoToGame
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &416869039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1064,7 +1076,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 787005683}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1299730075}
+        m_TargetAssemblyTypeName: Scene_Manager, Assembly-CSharp
+        m_MethodName: GoToGame
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &787005683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1453,7 +1477,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 953747300}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1299730075}
+        m_TargetAssemblyTypeName: Scene_Manager, Assembly-CSharp
+        m_MethodName: GoToGame
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &953747300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1666,7 +1702,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1078869422}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1299730075}
+        m_TargetAssemblyTypeName: Scene_Manager, Assembly-CSharp
+        m_MethodName: GoToGame
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1078869422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2219,7 +2267,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1626610298}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1299730075}
+        m_TargetAssemblyTypeName: Scene_Manager, Assembly-CSharp
+        m_MethodName: GoToGame
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1626610298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2474,7 +2534,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1827165729}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1299730075}
+        m_TargetAssemblyTypeName: Scene_Manager, Assembly-CSharp
+        m_MethodName: GoToGame
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1827165729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2595,7 +2667,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1837021612}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1299730075}
+        m_TargetAssemblyTypeName: Scene_Manager, Assembly-CSharp
+        m_MethodName: GoToGame
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1837021612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2716,7 +2800,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1959982268}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1299730075}
+        m_TargetAssemblyTypeName: Scene_Manager, Assembly-CSharp
+        m_MethodName: GoToGame
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1959982268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2840,12 +2936,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1299730075}
         m_TargetAssemblyTypeName: Scene_Manager, Assembly-CSharp
-        m_MethodName: PlayGame
-        m_Mode: 1
+        m_MethodName: GoToGame
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3073,7 +3169,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2126171398}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1299730075}
+        m_TargetAssemblyTypeName: Scene_Manager, Assembly-CSharp
+        m_MethodName: GoToGame
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2126171398
 MonoBehaviour:
   m_ObjectHideFlags: 0

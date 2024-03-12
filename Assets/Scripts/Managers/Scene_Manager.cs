@@ -6,11 +6,17 @@ using UnityEngine.SceneManagement;
 public class Scene_Manager : MonoBehaviour
 {
     private int Main_menu_index = 0;
-    private int Game_index = 1;
+    private int Level_Select_index = 1;
+    private int Game_index = 2;
 
 
     public void PlayGame()
     {
         SceneManager.LoadScene(Game_index);
+    }
+
+    public void GoToLevelSelect()
+    {
+        SceneManager.LoadScene(Level_Select_index);
     }
 }

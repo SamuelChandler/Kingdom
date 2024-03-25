@@ -294,7 +294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -34.1}
+  m_AnchoredPosition: {x: 0, y: -34.100006}
   m_SizeDelta: {x: -15.596001, y: -241.64569}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &59482432
@@ -908,7 +908,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 42.6}
+  m_AnchoredPosition: {x: 0, y: 42.60002}
   m_SizeDelta: {x: -15.596001, y: -241.64569}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &501893328
@@ -2587,8 +2587,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e5869aba0a889947b40f6ca3d565908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _width: 10
-  _height: 10
+  _width: 3
+  _height: 3
   _grassTile: {fileID: -634359257596650371, guid: ed744768e5affe94f8c3b43391331046, type: 3}
   _mountainTile: {fileID: 8990336916624386182, guid: 06a5dcea328524345b15e5046d02fd56, type: 3}
   _camera: {fileID: 519420032}

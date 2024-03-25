@@ -69,6 +69,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8137682353039871671, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1736021913, guid: dd32d1c552b0227459724f51c2eb2369, type: 3}
+    - target: {fileID: 8137682353039871671, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
       propertyPath: m_Color.b
       value: 0.28969383
       objectReference: {fileID: 0}
@@ -119,4 +123,6 @@ MonoBehaviour:
   _renderer: {fileID: 4266912305498247311}
   _highlight: {fileID: 6129224773843295516}
   _isWalkable: 0
+  x: 0
+  y: 0
   OccupiedUnit: {fileID: 0}

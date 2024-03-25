@@ -11,8 +11,6 @@ public class GrassTile : Tile
     public override void Init(int a, int b)
     {
         x = a; y = b;
-        var isOffset = (x+y)%2 == 1;
-        _renderer.color = isOffset ? _offsetColor : _baseColor;
         _highlight.SetActive(false);
     }
 }

@@ -121,8 +121,8 @@ MonoBehaviour:
   x: 0
   y: 0
   OccupiedUnit: {fileID: 0}
-  _baseColor: {r: 0.29236382, g: 0.8490566, b: 0.34652686, a: 1}
-  _offsetColor: {r: 0.27069238, g: 0.745283, b: 0.3141409, a: 1}
+  _baseColor: {r: 1, g: 1, b: 1, a: 1}
+  _offsetColor: {r: 0.7981043, g: 0.8018868, b: 0.79844815, a: 1}
 --- !u!212 &7083851374388391367 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 8137682353039871671, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}

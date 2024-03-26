@@ -74,7 +74,7 @@ public abstract class Tile : MonoBehaviour
                 {
                     var enemy = (BaseEnemy)OccupiedUnit;
                     Unit_Manager.instance.SelectedHero.Attack(enemy);
-                    Unit_Manager.instance.SetSelectedHero(null);
+                    Unit_Manager.instance.SetSelectedHero((BaseHero)null);
                 }
             }
         }

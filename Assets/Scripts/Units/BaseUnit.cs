@@ -6,6 +6,10 @@ public class BaseUnit : MonoBehaviour
 {
     public Tile OccupiedTile;
     public ScriptableUnit unit;
-    
-    
+    public SpriteRenderer spriteRenderer;
+
+    private void Awake()
+    {
+        spriteRenderer.sprite = unit.image;
+    }
 }

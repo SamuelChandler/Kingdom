@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UnitSelector : MonoBehaviour
 {
-    public BaseHero held_unit;
+    public ScriptableUnit held_unit;
     private Button _button;
     //[SerializeField] protected Image _image;
 
@@ -23,7 +23,7 @@ public class UnitSelector : MonoBehaviour
     }
     private void OnMouseLeave()
     {
-        Menu_Manager.instance.showSelectedHero(null);
+        Menu_Manager.instance.showSelectedHero((BaseHero)null);
     }
 
     void btnClick()

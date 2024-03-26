@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2216078567971078873}
   - component: {fileID: 8541924346062359077}
   m_Layer: 0
-  m_Name: Unit Prefab
+  m_Name: Hero Unit Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,3 +99,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OccupiedTile: {fileID: 0}
   unit: {fileID: 0}
+  spriteRenderer: {fileID: 2216078567971078873}

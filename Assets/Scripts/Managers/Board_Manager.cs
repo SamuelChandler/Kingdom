@@ -93,7 +93,7 @@ public class Board_Manager : MonoBehaviour
         if(sourceTile == null)
         {
             destTile.setUnit(unit);
-            Unit_Manager.instance.SetSelectedHero(null);
+            Unit_Manager.instance.SetSelectedHero((BaseHero)null);
         }
 
         //determine the change in the x and y axis
@@ -106,12 +106,12 @@ public class Board_Manager : MonoBehaviour
         if (total_change > unit.unit.speed)
         {
             //if the total change is greater than the units speed then do nothing and deselect
-            Unit_Manager.instance.SetSelectedHero(null);
+            Unit_Manager.instance.SetSelectedHero((BaseHero)null);
             return;  
         }
 
         destTile.setUnit(unit);
-        Unit_Manager.instance.SetSelectedHero(null);
+        Unit_Manager.instance.SetSelectedHero((BaseHero)null);
 
 
     }

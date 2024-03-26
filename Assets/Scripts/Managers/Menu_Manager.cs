@@ -8,12 +8,12 @@ public class Menu_Manager : MonoBehaviour
 {
     public static Menu_Manager instance;
 
-    [SerializeField] private GameObject _SelectedHeroObject,_tileInfo,_tileUnit,_messanger,_unitSelect;
+    [SerializeField] private GameObject _SelectedHeroObject, _tileInfo, _tileUnit, _messanger, _unitSelect;
 
     //there are 4 unit select buttons for now
 
 
-    
+
     private void Awake()
     {
         instance = this;
@@ -32,12 +32,12 @@ public class Menu_Manager : MonoBehaviour
         //if there is no message remove the message box 
         if (message == null || message.Length == 0)
         {
-            _messanger.SetActive(false) ;
+            _messanger.SetActive(false);
             return;
         }
 
         _messanger.GetComponentInChildren<TextMeshProUGUI>().text = message;
-        _messanger.SetActive (true);
+        _messanger.SetActive(true);
     }
 
     //displays tile info on screen when called. null clears window
@@ -59,7 +59,7 @@ public class Menu_Manager : MonoBehaviour
         // display unit on tile if there is one 
         if (tile.OccupiedUnit)
         {
-            _tileUnit.GetComponentInChildren<TextMeshProUGUI>().text = tile.OccupiedUnit.unit.name + "\n" + tile.OccupiedUnit.unit.health + "/"+ tile.OccupiedUnit.unit.MaxHealth;
+            _tileUnit.GetComponentInChildren<TextMeshProUGUI>().text = tile.OccupiedUnit.unit.name + "\n" + tile.OccupiedUnit.unit.health + "/" + tile.OccupiedUnit.unit.MaxHealth;
             _tileUnit.SetActive(true);
         }
     }
@@ -84,5 +84,23 @@ public class Menu_Manager : MonoBehaviour
         _SelectedHeroObject.SetActive(true);
     }
 
+    public void showSelectedHero(ScriptableUnit unit)
+    {
+        //toggle off 
+        if (unit == null)
+        {
+            _SelectedHeroObject.SetActive(false);
+            return;
+        }
+
+        //build text based on hero
+        string displayedText = unit.name;
+        displayedText += "\nHealth: " + unit.health.ToString() + "/" + unit.MaxHealth.ToString();
+        displayedText += "\nSpeed: " + unit.speed.ToString() + "   Attack: " + unit.attack.ToString();
+
+        //display selected hero
+        _SelectedHeroObject.GetComponentInChildren<TextMeshProUGUI>().text = displayedText;
+        _SelectedHeroObject.SetActive(true);
+    }
 
 }

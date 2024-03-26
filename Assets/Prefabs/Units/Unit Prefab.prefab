@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2216078567971078873}
   - component: {fileID: 8541924346062359077}
   m_Layer: 0
-  m_Name: Sheep
+  m_Name: Unit Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1062176771, guid: fa45f8b4ec1ec7749abdae5a2d789f8d, type: 3}
+  m_Sprite: {fileID: 1214200094, guid: fa45f8b4ec1ec7749abdae5a2d789f8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,10 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfcac63d6cdd64a458430d46732573ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UnitName: Sheep
   OccupiedTile: {fileID: 0}
-  Faction: 0
-  Health: 10
-  MaxHealth: 10
-  Speed: 1
-  attack: 2
+  unit: {fileID: 0}

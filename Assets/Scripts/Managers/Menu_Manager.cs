@@ -59,7 +59,7 @@ public class Menu_Manager : MonoBehaviour
         // display unit on tile if there is one 
         if (tile.OccupiedUnit)
         {
-            _tileUnit.GetComponentInChildren<TextMeshProUGUI>().text = tile.OccupiedUnit.UnitName + "\n" + tile.OccupiedUnit.Health + "/"+ tile.OccupiedUnit.MaxHealth;
+            _tileUnit.GetComponentInChildren<TextMeshProUGUI>().text = tile.OccupiedUnit.unit.name + "\n" + tile.OccupiedUnit.unit.health + "/"+ tile.OccupiedUnit.unit.MaxHealth;
             _tileUnit.SetActive(true);
         }
     }
@@ -75,9 +75,9 @@ public class Menu_Manager : MonoBehaviour
         }
 
         //build text based on hero
-        string displayedText = hero.UnitName;
-        displayedText += "\nHealth: " + hero.Health.ToString() + "/" + hero.MaxHealth.ToString();
-        displayedText += "\nSpeed: " + hero.Speed.ToString() + "   Attack: " + hero.attack.ToString();
+        string displayedText = hero.unit.name;
+        displayedText += "\nHealth: " + hero.unit.health.ToString() + "/" + hero.unit.MaxHealth.ToString();
+        displayedText += "\nSpeed: " + hero.unit.speed.ToString() + "   Attack: " + hero.unit.attack.ToString();
 
         //display selected hero
         _SelectedHeroObject.GetComponentInChildren<TextMeshProUGUI>().text = displayedText;

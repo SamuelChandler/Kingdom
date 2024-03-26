@@ -67,7 +67,7 @@ public abstract class Tile : MonoBehaviour
         if (OccupiedUnit != null)
         {
             //if a hero character set it as the selected hero. If an enemy, and a hero is selected destroy the enemy 
-            if (OccupiedUnit.Faction == Faction.Hero) Unit_Manager.instance.SetSelectedHero((BaseHero)OccupiedUnit);
+            if (OccupiedUnit.unit.Faction == Faction.Hero) Unit_Manager.instance.SetSelectedHero((BaseHero)OccupiedUnit);
             else
             {
                 if (Unit_Manager.instance.SelectedHero != null)

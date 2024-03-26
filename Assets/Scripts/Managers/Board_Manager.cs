@@ -103,7 +103,7 @@ public class Board_Manager : MonoBehaviour
         int total_change  = x_change + y_change;
 
 
-        if (total_change > unit.Speed)
+        if (total_change > unit.unit.speed)
         {
             //if the total change is greater than the units speed then do nothing and deselect
             Unit_Manager.instance.SetSelectedHero(null);

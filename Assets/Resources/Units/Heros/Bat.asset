@@ -10,7 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d0ae76b5a4512e488865136dbaecdf2, type: 3}
-  m_Name: Hero1
+  m_Name: Bat
   m_EditorClassIdentifier: 
   Faction: 0
-  UnitPrefab: {fileID: 8541924346062359077, guid: 184e85698408cd64bb0187acf4ec83dc, type: 3}
+  image: {fileID: -1573047469, guid: fa45f8b4ec1ec7749abdae5a2d789f8d, type: 3}
+  name: Bat
+  health: 3
+  MaxHealth: 3
+  attack: 5
+  speed: 5

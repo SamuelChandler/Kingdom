@@ -55,7 +55,7 @@ public class Board_Manager : MonoBehaviour
             
         }
 
-        _camera.transform.position = new Vector3((float)_map.width/ 2- 0.5f,(float)_map.height /2 - 0.5f,-1);
+        _camera.transform.position = new Vector3((float)_map.width/ 2- 0.5f, -1 * ((float)_map.height /2 - 0.5f),-1);
 
         Game_Manager.instance.ChangeState(GameState.SpawnHero);
     }

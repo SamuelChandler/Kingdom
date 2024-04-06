@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class BaseUnit : MonoBehaviour
 {
-    public string UnitName;
     public Tile OccupiedTile;
-    public Faction Faction;
+    public ScriptableUnit unit;
+    public SpriteRenderer spriteRenderer;
 
-    //unit stats 
-    public int Health;
-    public int MaxHealth;
-    public int Speed;
-    public int attack;
-    
-    
+    private void Awake()
+    {
+        spriteRenderer.sprite = unit.image;
+    }
 }

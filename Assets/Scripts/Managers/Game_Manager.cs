@@ -10,16 +10,25 @@ public class Game_Manager : MonoBehaviour
     public GameState GameState;
     private int Level;
 
+    private int CurrentInspiration;
+    [SerializeField] private int CurrentMaxInspiration; 
+    private int MaxInspiration = 10;
+
     private void Awake()
     {
         instance = this;
         Level = PlayerPrefs.GetInt("Level Selected");
+        CurrentInspiration = CurrentMaxInspiration;
 
     }
 
     private void Start()
     {
+        //start of game menu manager updates with game info
         Menu_Manager.instance.SetMessenger("Level: "+ Level);
+        Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
+
+
         ChangeState(GameState.GenerateGrid);
     }
 
@@ -48,7 +57,18 @@ public class Game_Manager : MonoBehaviour
     }
     
 
+    public void IncreaseInsperationLimit()
+    {
+        
+        CurrentMaxInspiration += 1;
+        
+        if (CurrentMaxInspiration > MaxInspiration)
+        {
+            CurrentMaxInspiration -= 1;
+        }
 
+        Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
+    }
 }
 
 public enum GameState

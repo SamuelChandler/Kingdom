@@ -7,10 +7,10 @@ public class BaseHero : BaseUnit
     public void Attack(BaseEnemy enemy)
     {
         if (enemy == null) return;
-        enemy.Health = enemy.Health - this.attack;
+        enemy.unit.health = enemy.unit.health - this.unit.attack;
 
         //check if destroyed
-        if (enemy.Health < 0)
+        if (enemy.unit.health < 0)
         {
             enemy.OccupiedTile.OccupiedUnit = null;
             Destroy(enemy.gameObject);

@@ -10,9 +10,7 @@ public class Board_Manager : MonoBehaviour
 {
     public static Board_Manager instance;
 
-    [SerializeField] private int _width, _height;
-
-    [SerializeField] private Tile _grassTile,_mountainTile;
+    [SerializeField] private ScriptableMap _map;
 
     [SerializeField] private Transform _camera;
 
@@ -27,20 +25,37 @@ public class Board_Manager : MonoBehaviour
     public void generateGrid()
     {
         _tiles = new Dictionary<Vector2, Tile>();
-        for(int i = 0; i < _width; i++){
-            for(int j = 0; j < _height; j++){
-                var randTile = Random.Range(0,6) == 3 ? _mountainTile : _grassTile;
-                var spawnedTile = Instantiate(randTile, new Vector3(i, j), Quaternion.identity);
-                spawnedTile.name = $"Tile {i} {j}";
+        var log = 0;
+        var j = 0;
+        Debug.Log(_map.MapTiles.Length);
+        for(int i = 0; i < _map.MapTiles.Length; i++){
 
-                
-                spawnedTile.Init(i,j);
+            var id = _map.MapTiles.ElementAt(i);
 
-                _tiles[new Vector2(i, j)] = spawnedTile;
+            if(id != '\n')
+            {
+                var spawnedTile = Instantiate(_map.GetTile(id), new Vector3(log,-j), Quaternion.identity);
+                spawnedTile.name = $"Tile {log} {j}";
+
+                spawnedTile.Init(log, -j);
+
+                _tiles[new Vector2(log, -j)] = spawnedTile;
+
+                log++;
+                Debug.Log("created Tile");
             }
+            else
+            {
+                j++;
+                log = 0;
+                Debug.Log("new row");
+            }
+
+            
+            
         }
 
-        _camera.transform.position = new Vector3((float)_width/2- 0.5f,(float)_height/2 - 0.5f,-1);
+        _camera.transform.position = new Vector3((float)_map.width/ 2- 0.5f, -1 * ((float)_map.height /2 - 0.5f),-1);
 
         Game_Manager.instance.ChangeState(GameState.SpawnHero);
     }
@@ -48,13 +63,13 @@ public class Board_Manager : MonoBehaviour
     //spawns a random hero to the left of the screen on a walkable tile 
     public Tile GetHeroSpawnTile()
     {
-        return _tiles.Where(t => t.Key.x < _width/2 && t.Value.Walkable).OrderBy(t=>Random.value).First().Value;
+        return _tiles.Where(t => t.Key.x < _map.width /2 && t.Value.Walkable).OrderBy(t=>Random.value).First().Value;
     }
 
     //spawns a random eneny to the right on a walkable tile 
     public Tile GetEnemySpawnTile()
     {
-        return _tiles.Where(t => t.Key.x > _width / 2 && t.Value.Walkable).OrderBy(t => Random.value).First().Value;
+        return _tiles.Where(t => t.Key.x > _map.width / 2 && t.Value.Walkable).OrderBy(t => Random.value).First().Value;
     }
 
     //returns a tile for a givem v2 positon
@@ -93,7 +108,7 @@ public class Board_Manager : MonoBehaviour
         if(sourceTile == null)
         {
             destTile.setUnit(unit);
-            Unit_Manager.instance.SetSelectedHero(null);
+            Unit_Manager.instance.SetSelectedHero((BaseHero)null);
         }
 
         //determine the change in the x and y axis
@@ -103,15 +118,15 @@ public class Board_Manager : MonoBehaviour
         int total_change  = x_change + y_change;
 
 
-        if (total_change > unit.Speed)
+        if (total_change > unit.unit.speed)
         {
             //if the total change is greater than the units speed then do nothing and deselect
-            Unit_Manager.instance.SetSelectedHero(null);
+            Unit_Manager.instance.SetSelectedHero((BaseHero)null);
             return;  
         }
 
         destTile.setUnit(unit);
-        Unit_Manager.instance.SetSelectedHero(null);
+        Unit_Manager.instance.SetSelectedHero((BaseHero)null);
 
 
     }

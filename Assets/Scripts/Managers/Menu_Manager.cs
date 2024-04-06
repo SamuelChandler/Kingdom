@@ -10,6 +10,8 @@ public class Menu_Manager : MonoBehaviour
 
     [SerializeField] private GameObject _SelectedHeroObject, _tileInfo, _tileUnit, _messanger, _unitSelect;
 
+    [SerializeField] InspirationBar _iBar;
+
     //there are 4 unit select buttons for now
 
 
@@ -24,6 +26,13 @@ public class Menu_Manager : MonoBehaviour
         //_unitSelect.SetActive(false);
         _messanger.SetActive(false);
 
+    }
+
+    public void UpdateIBar(int i, int j, int k)
+    {
+        //set and update in insiration bar on awake
+        _iBar.SetInsperation(i, j, k);
+        _iBar.UpdateDisplay();
     }
 
     //sets the banner ot the bottom of the screen to warn the player or give info

@@ -15,6 +15,7 @@ MonoBehaviour:
   Faction: 0
   image: {fileID: -1887063760, guid: fa45f8b4ec1ec7749abdae5a2d789f8d, type: 3}
   name: Dog
+  inspirationCost: 4
   health: 5
   MaxHealth: 5
   attack: 3

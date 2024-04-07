@@ -12,19 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7ac5d555e1b33844a0e18a14326c594, type: 3}
   m_Name: TestMap
   m_EditorClassIdentifier: 
-  height: 6
-  width: 10
-  MapTiles: '111111111111
+  height: 3
+  width: 4
+  MapTiles: '1111
 
-    111111111111
+    1121
 
-    111222222222
-
-    111111111111
-
-    111111111111
-
-    111111111111'
+    1111'
   emptyTile: {fileID: -634359257596650371, guid: d43519453b7c80c4f959e2b4baaa4c9e, type: 3}
   t1: {fileID: -634359257596650371, guid: ed744768e5affe94f8c3b43391331046, type: 3}
   t2: {fileID: 8990336916624386182, guid: 06a5dcea328524345b15e5046d02fd56, type: 3}

@@ -36,6 +36,7 @@ public class InspirationBar : MonoBehaviour
 
     public void SetInsperation(int i, int j,int k)
     {
+        Debug.Log("Changing inspiration");
         CurrentInspiration = i;
         MaxTurnInspiration = j;
         MaxInspiration = k;

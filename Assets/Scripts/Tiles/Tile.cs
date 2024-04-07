@@ -89,9 +89,8 @@ public abstract class Tile : MonoBehaviour
                 // if unit does not have a tile it is not summoned, summon it on selected tile
                 if (Unit_Manager.instance.SelectedHero.OccupiedTile == null)
                 {
-                    //place unit on tile and activat any summon effects
-                    var summonded_Hero = Instantiate(Unit_Manager.instance.SelectedHero);
-                    this.setUnit(summonded_Hero);
+                    //Attempt to Summon Unit to tile
+                    Board_Manager.instance.SummonUnit(this,Unit_Manager.instance.SelectedHero);
                 }
                 else //move the unit to the selected tile
                 {

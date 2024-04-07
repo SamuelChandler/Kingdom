@@ -27,7 +27,6 @@ public class Board_Manager : MonoBehaviour
         _tiles = new Dictionary<Vector2, Tile>();
         var log = 0;
         var j = 0;
-        Debug.Log(_map.MapTiles.Length);
         for(int i = 0; i < _map.MapTiles.Length; i++){
 
             var id = _map.MapTiles.ElementAt(i);
@@ -42,13 +41,12 @@ public class Board_Manager : MonoBehaviour
                 _tiles[new Vector2(log, -j)] = spawnedTile;
 
                 log++;
-                Debug.Log("created Tile");
             }
             else
             {
                 j++;
                 log = 0;
-                Debug.Log("new row");
+               
             }
 
             
@@ -98,6 +96,24 @@ public class Board_Manager : MonoBehaviour
         return null;
     }
 
+    public void SummonUnit(Tile destTile,BaseUnit unit)
+    {
+        if(unit.unit.Faction == Faction.Hero)
+        {
+            //do not summon a ally unit that cannot be played
+            if (!Game_Manager.instance.CanBePlayed(unit)) { return; }
+
+            //pay cost relating to Unit
+            Game_Manager.instance.DecreaseCurrentInsperation(unit.unit.inspirationCost);
+
+            //create and set unit to tile
+            var summonded_Hero = Instantiate(unit);
+            destTile.setUnit(summonded_Hero);
+        }
+        
+    }
+
+
     public void MoveUnit(Tile destTile, BaseUnit unit)
     {
         if(unit == null || destTile == null) return; //do nothing if the unit or tile does not exist. 
@@ -107,8 +123,18 @@ public class Board_Manager : MonoBehaviour
         //in the case the unit is being spawned
         if(sourceTile == null)
         {
-            destTile.setUnit(unit);
-            Unit_Manager.instance.SetSelectedHero((BaseHero)null);
+            //check if the player has enough recources to summon unit if not return and do nothing
+            if(Game_Manager.instance.CanBePlayed(unit)) 
+            {
+                
+                destTile.setUnit(unit);
+                Unit_Manager.instance.SetSelectedHero((BaseHero)null);
+            }
+            else
+            {
+                Menu_Manager.instance.SetMessenger("Not enough Inspiration");
+            }
+            
         }
 
         //determine the change in the x and y axis

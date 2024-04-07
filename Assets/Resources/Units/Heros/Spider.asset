@@ -15,6 +15,7 @@ MonoBehaviour:
   Faction: 0
   image: {fileID: -803686875, guid: fa45f8b4ec1ec7749abdae5a2d789f8d, type: 3}
   name: Spider
+  inspirationCost: 2
   health: 6
   MaxHealth: 6
   attack: 5

@@ -15,6 +15,7 @@ MonoBehaviour:
   Faction: 0
   image: {fileID: 17262844, guid: fa45f8b4ec1ec7749abdae5a2d789f8d, type: 3}
   name: Turtle
+  inspirationCost: 2
   health: 12
   MaxHealth: 12
   attack: 1

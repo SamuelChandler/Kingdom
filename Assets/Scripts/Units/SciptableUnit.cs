@@ -12,6 +12,9 @@ public class ScriptableUnit : ScriptableObject
 
     public new string name;
 
+    //Cost 
+    public int inspirationCost;
+
     //player stats 
     public int health;
     public int MaxHealth;

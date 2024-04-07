@@ -69,6 +69,25 @@ public class Game_Manager : MonoBehaviour
 
         Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
     }
+
+    public void DecreaseCurrentInsperation(int i)
+    {
+        CurrentInspiration -= i;
+
+        Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
+    }
+
+    public bool CanBePlayed(BaseUnit unit)
+    {
+        //cannot be played if cost is greater than  current inspiration
+        if(unit.unit.inspirationCost > CurrentInspiration)
+        {
+            return false;
+        }
+        return true;
+    }
+
+    
 }
 
 public enum GameState

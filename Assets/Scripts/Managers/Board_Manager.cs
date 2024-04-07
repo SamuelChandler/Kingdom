@@ -120,23 +120,6 @@ public class Board_Manager : MonoBehaviour
 
         Tile sourceTile = unit.OccupiedTile;
 
-        //in the case the unit is being spawned
-        if(sourceTile == null)
-        {
-            //check if the player has enough recources to summon unit if not return and do nothing
-            if(Game_Manager.instance.CanBePlayed(unit)) 
-            {
-                
-                destTile.setUnit(unit);
-                Unit_Manager.instance.SetSelectedHero((BaseHero)null);
-            }
-            else
-            {
-                Menu_Manager.instance.SetMessenger("Not enough Inspiration");
-            }
-            
-        }
-
         //determine the change in the x and y axis
         int x_change = Mathf.Abs(sourceTile.x - destTile.x);
         int y_change = Mathf.Abs(sourceTile.y - destTile.y);

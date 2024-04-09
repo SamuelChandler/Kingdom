@@ -19,12 +19,13 @@ public class Player : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+        rb.MovePosition(rb.position + (movement * moveSpeed * Time.fixedDeltaTime));
 
     }
 
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + (movement*moveSpeed*Time.fixedDeltaTime));
+        
     }
 }

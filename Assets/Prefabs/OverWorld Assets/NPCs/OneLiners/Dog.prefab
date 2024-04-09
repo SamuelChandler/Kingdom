@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 217572019866986504}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.055, y: -0.033, z: 0}
-  m_LocalScale: {x: 0.8282434, y: 0.8342334, z: 1}
+  m_LocalPosition: {x: 0.0291, y: -0.0322, z: 0}
+  m_LocalScale: {x: 0.96439576, y: 0.8358184, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8536179728669430423}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 250645795070356503}
   - component: {fileID: 1202433214428392787}
   m_Layer: 0
-  m_Name: NPC
+  m_Name: Dog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,7 +160,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -902357279, guid: fa45f8b4ec1ec7749abdae5a2d789f8d, type: 3}
+  m_Sprite: {fileID: 223980913, guid: fa45f8b4ec1ec7749abdae5a2d789f8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -211,3 +211,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactSprite: {fileID: 8038981602709236478}
+  _name: Cat
+  _oneLiner: Meow!

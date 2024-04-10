@@ -14,6 +14,6 @@ public class One_Liner_NPC : NPC, ITalkable
     public void Talk(DialogText dialogText)
     {
         //one Liners should only have one line of text so only the first is displayed
-        dialog_UI.instance.displayOneLiner(dialogText.name, dialogText.Paragraphs[0]);
+        dialog_UI.instance.DisplayNextParagraph(dialogText);
     }
 }

@@ -261,6 +261,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &921293967 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1177575574908888297, guid: b4c2d75ca4fd88740b755b507b0faf32, type: 3}
+  m_PrefabInstance: {fileID: 1926950043792532922}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1054807915
 GameObject:
   m_ObjectHideFlags: 3
@@ -347,6 +358,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1080617341 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5339919282074896578, guid: b4c2d75ca4fd88740b755b507b0faf32, type: 3}
+  m_PrefabInstance: {fileID: 1926950043792532922}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1187419637
@@ -548,6 +570,11 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1393571110 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 333302753675382721, guid: b4c2d75ca4fd88740b755b507b0faf32, type: 3}
+  m_PrefabInstance: {fileID: 1926950043792532922}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &461951505399758476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -758,6 +785,22 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1203293128}
+    - target: {fileID: 4526706370693961267, guid: b4c2d75ca4fd88740b755b507b0faf32, type: 3}
+      propertyPath: _dialog
+      value: 
+      objectReference: {fileID: 1393571110}
+    - target: {fileID: 4526706370693961267, guid: b4c2d75ca4fd88740b755b507b0faf32, type: 3}
+      propertyPath: _nameText
+      value: 
+      objectReference: {fileID: 921293967}
+    - target: {fileID: 4526706370693961267, guid: b4c2d75ca4fd88740b755b507b0faf32, type: 3}
+      propertyPath: _typeSpeed
+      value: 0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526706370693961267, guid: b4c2d75ca4fd88740b755b507b0faf32, type: 3}
+      propertyPath: _dialogText
+      value: 
+      objectReference: {fileID: 1080617341}
     - target: {fileID: 5040881520735969786, guid: b4c2d75ca4fd88740b755b507b0faf32, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.055114746

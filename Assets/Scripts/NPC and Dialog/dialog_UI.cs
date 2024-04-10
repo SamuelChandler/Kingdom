@@ -53,7 +53,7 @@ public class dialog_UI : MonoBehaviour
                 //start conversation
                 StartConversation(dialog);
             }
-            else
+            else if(conversationEnded && !isTyping) 
             {
                 //end the conversation
                 EndConversation();
@@ -67,10 +67,11 @@ public class dialog_UI : MonoBehaviour
 
             typeDialogueCoroutine = StartCoroutine(TypeDialogText(p));
         }
-        
+        else
+        {
+            FinishParagraphEarly();
+        }
 
-        //update convo text
-        //_dialogText.text = p;
 
         //update conversation ended flag
         if(paragraphs.Count == 0 )
@@ -130,6 +131,18 @@ public class dialog_UI : MonoBehaviour
             yield return new WaitForSeconds(MAX_TYPE_TIME/_typeSpeed);
         }
 
+        isTyping = false;
+    }
+
+    private void FinishParagraphEarly()
+    {
+        //stop coroutine
+        StopCoroutine(typeDialogueCoroutine);
+
+        //finish displaying dialog
+        _dialogText.text = p;
+
+        //update is typing 
         isTyping = false;
     }
 }

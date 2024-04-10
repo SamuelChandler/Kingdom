@@ -211,5 +211,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactSprite: {fileID: 8038981602709236478}
-  _name: Cat
-  _oneLiner: Meow!
+  _dialogText: {fileID: 11400000, guid: 8aff12662c9327848957cf16bc352ff9, type: 2}

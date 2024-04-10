@@ -11,6 +11,7 @@ public class dialog_UI : MonoBehaviour
     [SerializeField] TextMeshProUGUI NameText;
     [SerializeField] GameObject Dialog;
 
+
     private void Awake()
     {
         instance = this;
@@ -21,13 +22,18 @@ public class dialog_UI : MonoBehaviour
         Dialog.SetActive(false);
     }
 
-
+    private void FixedUpdate()
+    {
+       
+    }
     public void displayOneLiner(string name, string text)
     {
         NameText.text = name;
         DialogText.text = text;
         Dialog.SetActive(true);
     }
+
+    
 
 }
 

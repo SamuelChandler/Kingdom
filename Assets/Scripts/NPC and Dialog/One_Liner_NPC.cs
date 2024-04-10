@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class One_Liner_NPC : NPC
+public class One_Liner_NPC : NPC, ITalkable
 {
-    [SerializeField] private string _name;
-    [SerializeField] private string _oneLiner;
+    [SerializeField] private DialogText _dialogText;
 
     public override void Interact()
     {
-        dialog_UI.instance.displayOneLiner(_name, _oneLiner);
+        Talk(_dialogText);
+    }
+
+    public void Talk(DialogText dialogText)
+    {
+        //one Liners should only have one line of text so only the first is displayed
+        dialog_UI.instance.displayOneLiner(dialogText.name, dialogText.Paragraphs[0]);
     }
 }

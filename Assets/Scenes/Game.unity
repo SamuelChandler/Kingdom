@@ -4503,6 +4503,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _map: {fileID: 11400000, guid: 16edba8df71a37141b348b18f92df767, type: 2}
   _camera: {fileID: 519420032}
+  Enemy_Prefab: {fileID: 5819117742030976045, guid: c95ccba0a7f10ae4dac63eefa0fdd3f2, type: 3}
+  Hero_Prefab: {fileID: 8541924346062359077, guid: 8e9d67deb09603248a93e050a241aa12, type: 3}
 --- !u!4 &2104909210
 Transform:
   m_ObjectHideFlags: 0

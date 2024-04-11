@@ -28,7 +28,8 @@ public class Unit_Manager : MonoBehaviour
 
     public void SpawnEnemies()
     {
-        
+        //spawn all the enemies for a given map 
+        Board_Manager.instance.SpawnEnemies();
 
         Game_Manager.instance.ChangeState(GameState.HeroesTurn);
     }

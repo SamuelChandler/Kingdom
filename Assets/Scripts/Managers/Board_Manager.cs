@@ -16,6 +16,9 @@ public class Board_Manager : MonoBehaviour
 
     private Dictionary<Vector2, Tile> _tiles;
 
+    public BaseEnemy Enemy_Prefab;
+    public BaseHero Hero_Prefab;
+
     private void Awake()
     {
         instance = this;
@@ -38,7 +41,7 @@ public class Board_Manager : MonoBehaviour
 
                 spawnedTile.Init(log, -j);
 
-                _tiles[new Vector2(log, -j)] = spawnedTile;
+                _tiles[new Vector2(log, j)] = spawnedTile;
 
                 log++;
             }
@@ -113,6 +116,57 @@ public class Board_Manager : MonoBehaviour
         
     }
 
+    public void SummonUnit(Tile destTile, ScriptableUnit unit)
+    {
+
+        if (destTile == null)
+        {
+            Debug.Log("Dest Tile does not exist");
+            return;
+        }
+        if (unit == null)
+        {
+            Debug.Log("Sciptable Unit not Defined");
+            return;
+        }
+
+        if (unit.Faction == Faction.Hero)
+        {
+            Hero_Prefab.unit = unit;
+            //do not summon a ally unit that cannot be played
+            if (!Game_Manager.instance.CanBePlayed(Hero_Prefab)) { return; }
+
+            //pay cost relating to Unit
+            Game_Manager.instance.DecreaseCurrentInsperation(Hero_Prefab.unit.inspirationCost);
+
+            //create and set unit to tile
+            var summonded_Hero = Instantiate(Hero_Prefab);
+            destTile.setUnit(summonded_Hero);
+        }
+
+        else if (unit.Faction == Faction.Enemy)
+        {
+            Enemy_Prefab.unit = unit;
+            //do not summon a ally unit that cannot be played
+            //if (!Game_Manager.instance.CanBePlayed(Enemy_Prefab)) { return; }
+
+            //pay cost relating to Unit
+            //Game_Manager.instance.DecreaseCurrentInsperation(Hero_Prefab.unit.inspirationCost);
+
+            //create and set unit to tile
+            var summonded_Enemy = Instantiate(Enemy_Prefab);
+            destTile.setUnit(summonded_Enemy);
+        }
+    }
+
+    public void SpawnEnemies()
+    {
+        Debug.Log("Spawning Enemies");
+        foreach (EnemyAndPoint item in _map.enemies)
+        {
+            SummonUnit(GetTileAtPosition(item.loc), item.enemy);
+        }
+    }
 
     public void MoveUnit(Tile destTile, BaseUnit unit)
     {

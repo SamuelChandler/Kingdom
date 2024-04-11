@@ -9,7 +9,7 @@ public class ScriptableMap : ScriptableObject
     [SerializeField] public int height;
     [SerializeField] public int width;
 
-    [SerializeField] [Multiline] public String MapTiles = "";
+    [SerializeField] [TextArea(5, 10)] public String MapTiles = "";
 
     [SerializeField] public Tile emptyTile;
     [SerializeField] public Tile t1;
@@ -17,6 +17,9 @@ public class ScriptableMap : ScriptableObject
     [SerializeField] public Tile t3;
     [SerializeField] public Tile t4;
     [SerializeField] public Tile t5;
+
+    [SerializeField] public EnemyAndPoint[] enemies;
+
     
     public Tile GetTile(char id)
     {
@@ -39,5 +42,12 @@ public class ScriptableMap : ScriptableObject
         }
     }
 
+}
+
+[Serializable]
+public class EnemyAndPoint
+{
+    public ScriptableUnit enemy;
+    public Vector2 loc;
 }
 

@@ -25,3 +25,6 @@ MonoBehaviour:
   t3: {fileID: 0}
   t4: {fileID: 0}
   t5: {fileID: 0}
+  enemies:
+  - enemy: {fileID: 11400000, guid: a50ab383eabb74245a058564ef0f1251, type: 2}
+    loc: {x: 1, y: 1}

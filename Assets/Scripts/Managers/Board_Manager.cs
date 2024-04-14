@@ -61,17 +61,6 @@ public class Board_Manager : MonoBehaviour
         Game_Manager.instance.ChangeState(GameState.SpawnHero);
     }
 
-    //spawns a random hero to the left of the screen on a walkable tile 
-    public Tile GetHeroSpawnTile()
-    {
-        return _tiles.Where(t => t.Key.x < _map.width /2 && t.Value.Walkable).OrderBy(t=>Random.value).First().Value;
-    }
-
-    //spawns a random eneny to the right on a walkable tile 
-    public Tile GetEnemySpawnTile()
-    {
-        return _tiles.Where(t => t.Key.x > _map.width / 2 && t.Value.Walkable).OrderBy(t => Random.value).First().Value;
-    }
 
     //returns a tile for a givem v2 positon
     public Tile GetTileAtPosition(Vector2 position)
@@ -99,6 +88,7 @@ public class Board_Manager : MonoBehaviour
         return null;
     }
 
+    //Attempts to summon a unit to the destTile 
     public void SummonUnit(Tile destTile,BaseUnit unit)
     {
         if(unit.unit.Faction == Faction.Hero)
@@ -116,6 +106,7 @@ public class Board_Manager : MonoBehaviour
         
     }
 
+    //Attempts to summon a unit to a dest Tile based on a scriptable unit
     public void SummonUnit(Tile destTile, ScriptableUnit unit)
     {
 
@@ -147,11 +138,6 @@ public class Board_Manager : MonoBehaviour
         else if (unit.Faction == Faction.Enemy)
         {
             Enemy_Prefab.unit = unit;
-            //do not summon a ally unit that cannot be played
-            //if (!Game_Manager.instance.CanBePlayed(Enemy_Prefab)) { return; }
-
-            //pay cost relating to Unit
-            //Game_Manager.instance.DecreaseCurrentInsperation(Hero_Prefab.unit.inspirationCost);
 
             //create and set unit to tile
             var summonded_Enemy = Instantiate(Enemy_Prefab);
@@ -159,6 +145,7 @@ public class Board_Manager : MonoBehaviour
         }
     }
 
+    //used to spawn all the enemies for the enemy list in the map scriptable object
     public void SpawnEnemies()
     {
         Debug.Log("Spawning Enemies");
@@ -168,6 +155,7 @@ public class Board_Manager : MonoBehaviour
         }
     }
 
+    //used to move a unit from one tile to another 
     public void MoveUnit(Tile destTile, BaseUnit unit)
     {
         if(unit == null || destTile == null) return; //do nothing if the unit or tile does not exist. 

@@ -32,6 +32,7 @@ public class Game_Manager : MonoBehaviour
         ChangeState(GameState.GenerateGrid);
     }
 
+    //used to change the state of the game 
     public void ChangeState(GameState newState)
     {
         GameState = newState;
@@ -47,17 +48,20 @@ public class Game_Manager : MonoBehaviour
                 Unit_Manager.instance.SpawnEnemies();
                 break;
             case GameState.HeroesTurn:
+                Debug.Log("Players Turn");
 
                 break;
             case GameState.EnemiesTurn:
+                Debug.Log("Enemies Turn");
+
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState),newState,null);
         }
     }
     
-
-    public void IncreaseInsperationLimit()
+    //used to increase the Inspiration limit of the player by 1
+    public void IncreaseInspirationLimit()
     {
         
         CurrentMaxInspiration += 1;
@@ -70,6 +74,7 @@ public class Game_Manager : MonoBehaviour
         Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
     }
 
+    //used to decrease the Inspiration of the player
     public void DecreaseCurrentInsperation(int i)
     {
         CurrentInspiration -= i;
@@ -77,6 +82,7 @@ public class Game_Manager : MonoBehaviour
         Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
     }
 
+    //returns whether a unit can be played
     public bool CanBePlayed(BaseUnit unit)
     {
         //cannot be played if cost is greater than  current inspiration

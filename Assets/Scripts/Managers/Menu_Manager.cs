@@ -1,3 +1,7 @@
+/*
+ * Used to manage the UI elements in the game scene 
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

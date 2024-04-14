@@ -7,9 +7,9 @@ public class BaseEnemy : BaseUnit
     public void Attack(BaseHero hero)
     {
         if (hero == null) return;
-        hero.unit.health = hero.unit.health - this.unit.attack;
+        hero.currentHealth = hero.currentHealth - this.unit.attack;
 
-        if (hero.unit.health < 0)
+        if (hero.currentHealth <= 0)
         {
             Destroy(hero.gameObject);
         }

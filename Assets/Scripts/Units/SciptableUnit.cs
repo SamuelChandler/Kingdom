@@ -17,7 +17,6 @@ public class ScriptableUnit : ScriptableObject
 
     //player stats 
     public int health;
-    public int MaxHealth;
     public int attack;
     public int speed;
     

@@ -8,8 +8,12 @@ public class BaseUnit : MonoBehaviour
     public ScriptableUnit unit;
     public SpriteRenderer spriteRenderer;
 
+    public int currentHealth;
+
     private void Awake()
     {
         spriteRenderer.sprite = unit.image;
+        currentHealth = unit.health;
+
     }
 }

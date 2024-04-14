@@ -10,6 +10,8 @@ public class Game_Manager : MonoBehaviour
     public GameState GameState;
     private int Level;
 
+    private EnemyAI eAI = new EnemyAI();
+
     private int CurrentInspiration;
     [SerializeField] private int CurrentMaxInspiration; 
     private int MaxInspiration = 10;
@@ -49,11 +51,11 @@ public class Game_Manager : MonoBehaviour
                 break;
             case GameState.HeroesTurn:
                 Debug.Log("Players Turn");
-
+                StartPlayerTurn();
                 break;
             case GameState.EnemiesTurn:
                 Debug.Log("Enemies Turn");
-
+                eAI.StartTurn();
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState),newState,null);
@@ -93,7 +95,21 @@ public class Game_Manager : MonoBehaviour
         return true;
     }
 
-    
+    //called to end the turn of the player
+    public void EndPlayerTurn()
+    {
+        Debug.Log("Player has ended the Turn");
+        instance.ChangeState(GameState.EnemiesTurn);
+    }
+
+    public void StartPlayerTurn()
+    {
+        //increase and refresh inspiration
+        IncreaseInspirationLimit();
+        CurrentInspiration = MaxInspiration;
+        Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
+        Debug.Log("Player has Started the Turn");
+    }
 }
 
 public enum GameState

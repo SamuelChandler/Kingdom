@@ -16,9 +16,6 @@ public class Unit_Manager : MonoBehaviour
 {
     public static Unit_Manager instance;
 
-    [SerializeField]
-    private List<ScriptableUnit> _units;
-
     public BaseHero SelectedHero;
     public BaseHero Unit_Prefab;
 
@@ -26,8 +23,6 @@ public class Unit_Manager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-
-        _units = Resources.LoadAll<ScriptableUnit>("Units").ToList();
     }
 
     //Used to Spawn allies and handle related logic

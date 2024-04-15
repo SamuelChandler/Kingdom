@@ -2876,7 +2876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameState: 0
   eAI: {fileID: 726013111}
-  CurrentMaxInspiration: 5
+  CurrentMaxInspiration: 1
 --- !u!1 &1210394846
 GameObject:
   m_ObjectHideFlags: 0

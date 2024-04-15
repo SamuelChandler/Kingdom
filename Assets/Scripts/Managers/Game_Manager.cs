@@ -12,7 +12,7 @@ public class Game_Manager : MonoBehaviour
 
     public EnemyAI eAI;
 
-    private int CurrentInspiration;
+    public int CurrentInspiration;
     [SerializeField] private int CurrentMaxInspiration; 
     private int MaxInspiration = 10;
 
@@ -105,7 +105,7 @@ public class Game_Manager : MonoBehaviour
     {
         //increase and refresh inspiration
         IncreaseInspirationLimit();
-        CurrentInspiration = MaxInspiration;
+        CurrentInspiration = CurrentMaxInspiration;
         Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
         Debug.Log("Player has Started the Turn");
     }

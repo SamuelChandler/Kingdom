@@ -51,9 +51,6 @@ public class Board_Manager : MonoBehaviour
                 log = 0;
                
             }
-
-            
-            
         }
 
         _camera.transform.position = new Vector3((float)_map.width/ 2- 0.5f, -1 * ((float)_map.height /2 - 0.5f),-1);
@@ -161,7 +158,7 @@ public class Board_Manager : MonoBehaviour
     //used to move a unit from one tile to another 
     public void MoveUnit(Tile destTile, BaseUnit unit)
     {
-        if(unit == null || destTile == null) return; //do nothing if the unit or tile does not exist. 
+        if(unit == null || destTile == null || !unit.isAbleToMove) return; //do nothing if the unit or tile does not exist. 
 
         Tile sourceTile = unit.OccupiedTile;
 
@@ -182,6 +179,7 @@ public class Board_Manager : MonoBehaviour
         destTile.setUnit(unit);
         Unit_Manager.instance.SetSelectedHero((BaseHero)null);
 
-
+        //remove movment token
+        unit.isAbleToMove = false;
     }
 }

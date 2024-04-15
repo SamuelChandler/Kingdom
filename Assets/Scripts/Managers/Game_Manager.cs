@@ -107,6 +107,7 @@ public class Game_Manager : MonoBehaviour
         IncreaseInspirationLimit();
         CurrentInspiration = CurrentMaxInspiration;
         Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
+        Event_Manager.instance.refresh();
         Debug.Log("Player has Started the Turn");
     }
 

@@ -6,7 +6,9 @@ public class BaseHero : BaseUnit
 {
     public void Attack(BaseEnemy enemy)
     {
-        if (enemy == null) return;
+        if (enemy == null||!this.isAbleToAttack) return;
+
+        this.isAbleToAttack = false;
         enemy.currentHealth = enemy.currentHealth - this.unit.attack;
 
         //check if destroyed
@@ -15,6 +17,8 @@ public class BaseHero : BaseUnit
             enemy.OccupiedTile.OccupiedUnit = null;
             Destroy(enemy.gameObject);
         }
+
+
     }
 
     

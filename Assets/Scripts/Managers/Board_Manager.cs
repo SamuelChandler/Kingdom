@@ -140,8 +140,10 @@ public class Board_Manager : MonoBehaviour
             Enemy_Prefab.unit = unit;
 
             //create and set unit to tile
-            var summonded_Enemy = Instantiate(Enemy_Prefab);
+            BaseEnemy summonded_Enemy = Instantiate(Enemy_Prefab);
             destTile.setUnit(summonded_Enemy);
+            Game_Manager.instance.eAI.elist.Add(summonded_Enemy);
+
         }
     }
 
@@ -152,6 +154,7 @@ public class Board_Manager : MonoBehaviour
         foreach (EnemyAndPoint item in _map.enemies)
         {
             SummonUnit(GetTileAtPosition(item.loc), item.enemy);
+
         }
     }
 

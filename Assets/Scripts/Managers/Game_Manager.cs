@@ -10,7 +10,7 @@ public class Game_Manager : MonoBehaviour
     public GameState GameState;
     private int Level;
 
-    private EnemyAI eAI = new EnemyAI();
+    public EnemyAI eAI;
 
     private int CurrentInspiration;
     [SerializeField] private int CurrentMaxInspiration; 
@@ -29,7 +29,6 @@ public class Game_Manager : MonoBehaviour
         //start of game menu manager updates with game info
         Menu_Manager.instance.SetMessenger("Level: "+ Level);
         Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
-
 
         ChangeState(GameState.GenerateGrid);
     }
@@ -110,6 +109,8 @@ public class Game_Manager : MonoBehaviour
         Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
         Debug.Log("Player has Started the Turn");
     }
+
+    
 }
 
 public enum GameState

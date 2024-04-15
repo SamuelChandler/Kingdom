@@ -7,12 +7,20 @@ public class UnitSelector : MonoBehaviour
 {
     public ScriptableUnit held_unit;
     private Button _button;
+    private Image _image;
     //[SerializeField] protected Image _image;
 
     private void Awake()
     {
         _button = GetComponent<Button>();
         _button.onClick.AddListener(btnClick);
+
+        _image = GetComponent<Image>();
+
+        if (held_unit.image != null)
+        {
+            _image.sprite = held_unit.image;
+        }
     }
 
     //in hover should show full unit info 
@@ -34,5 +42,10 @@ public class UnitSelector : MonoBehaviour
         
         //var createdUnit = Instantiate(held_unit);
         Unit_Manager.instance.SetSelectedHero(held_unit);
+    }
+
+    void setImage(Sprite s)
+    {
+        _image.sprite = s;
     }
 }

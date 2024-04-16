@@ -5,14 +5,27 @@ using UnityEngine;
 public class BaseEnemy : BaseUnit
 {
 
-    public void Attack(BaseHero hero)
-    { 
-        if (hero == null) return;
+    public bool Attack(BaseHero hero)
+    {
+        if (hero == null) return false;
+
+
+        //check if enemy is within one space
+        if (Mathf.Abs(this.OccupiedTile.x - hero.OccupiedTile.x) > 1 || Mathf.Abs(this.OccupiedTile.y - hero.OccupiedTile.y) > 1)
+        {
+            Debug.Log("Attack was out of Range");
+            return false;
+        }
+
+        
         hero.currentHealth = hero.currentHealth - this.unit.attack;
 
         if (hero.currentHealth <= 0)
         {
             Destroy(hero.gameObject);
+            
         }
+
+        return true;
     }
 }

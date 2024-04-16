@@ -36,7 +36,7 @@ public class UnitSelector : MonoBehaviour
 
     void btnClick()
     {
-        //Debug.Log("unit selector pressed");
+        
         if (held_unit == null) return;
         
         

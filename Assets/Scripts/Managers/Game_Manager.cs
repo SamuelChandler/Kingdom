@@ -49,11 +49,9 @@ public class Game_Manager : MonoBehaviour
                 Unit_Manager.instance.SpawnEnemies();
                 break;
             case GameState.HeroesTurn:
-                Debug.Log("Players Turn");
                 StartPlayerTurn();
                 break;
             case GameState.EnemiesTurn:
-                Debug.Log("Enemies Turn");
                 eAI.StartTurn();
                 break;
             default:

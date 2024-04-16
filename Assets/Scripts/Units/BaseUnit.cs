@@ -9,8 +9,6 @@ public class BaseUnit : MonoBehaviour
     public ScriptableUnit unit;
     public SpriteRenderer spriteRenderer;
 
-    public event EventHandler Refresh;
-
     public bool isAbleToMove;
     public bool isAbleToAttack;
 

@@ -19,6 +19,9 @@ public class Board_Manager : MonoBehaviour
     public BaseEnemy Enemy_Prefab;
     public BaseHero Hero_Prefab;
 
+    private List<BaseHero> _heroes = new List<BaseHero>();
+    private List<BaseEnemy> _enemies = new List<BaseEnemy>();
+
     private void Awake()
     {
         instance = this;
@@ -97,8 +100,10 @@ public class Board_Manager : MonoBehaviour
             Game_Manager.instance.DecreaseCurrentInsperation(unit.unit.inspirationCost);
 
             //create and set unit to tile
-            var summonded_Hero = Instantiate(unit);
+            var summonded_Hero = (BaseHero)Instantiate(unit);
             destTile.setUnit(summonded_Hero);
+
+            _heroes.Add(summonded_Hero);
         }
         
     }
@@ -130,6 +135,8 @@ public class Board_Manager : MonoBehaviour
             //create and set unit to tile
             var summonded_Hero = Instantiate(Hero_Prefab);
             destTile.setUnit(summonded_Hero);
+
+            _heroes.Add(summonded_Hero);
         }
 
         else if (unit.Faction == Faction.Enemy)
@@ -139,7 +146,9 @@ public class Board_Manager : MonoBehaviour
             //create and set unit to tile
             BaseEnemy summonded_Enemy = Instantiate(Enemy_Prefab);
             destTile.setUnit(summonded_Enemy);
+
             Game_Manager.instance.eAI.elist.Add(summonded_Enemy);
+            _enemies.Add(summonded_Enemy);
 
         }
     }
@@ -181,5 +190,25 @@ public class Board_Manager : MonoBehaviour
 
         //remove movment token
         unit.isAbleToMove = false;
+    }
+
+    public List<BaseHero> getHerosInCircleArea(Vector2 pos, int radius)
+    {
+        List<BaseHero> r = new List<BaseHero>();
+
+        foreach (BaseHero h in _heroes)
+        {
+            //check if in x bounds 
+            if(h.OccupiedTile.x <= pos.x+radius && h.OccupiedTile.x >= pos.x - radius)
+            {
+                //check if in y bounds
+                if(h.OccupiedTile.y <= pos.y + radius && h.OccupiedTile.y >= pos.y - radius)
+                {
+                    r.Add(h);
+                }
+            }
+        }
+
+        return r;
     }
 }

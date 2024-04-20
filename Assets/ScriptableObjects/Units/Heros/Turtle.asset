@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d0ae76b5a4512e488865136dbaecdf2, type: 3}
-  m_Name: E_Sheep
+  m_Name: Turtle
   m_EditorClassIdentifier: 
-  Faction: 1
-  image: {fileID: 374619307, guid: fa45f8b4ec1ec7749abdae5a2d789f8d, type: 3}
-  name: Evil Sheep
-  health: 10
-  MaxHealth: 10
-  attack: 2
+  Faction: 0
+  image: {fileID: 457276451, guid: 34e2142c1f85b8549a371d96bcde8262, type: 3}
+  name: Turtle
+  inspirationCost: 2
+  health: 12
+  attack: 1
   speed: 1

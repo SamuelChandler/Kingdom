@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 22898a095344b994e9734a610488f1ec
+guid: 51d23ee3bd4abeb4b96553a0bf716132
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bat_0
+      name: Grass Tiles_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,29 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b924d17f47139974cbed6b20930bbd8c
-      internalID: -1017626546
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bat_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f147078ca750ffe40bb57a1c231471a3
-      internalID: 341029267
+      spriteID: 63dfba60fb1c3c444963be40b5e1c465
+      internalID: 617032862
       vertices: []
       indices: 
       edges: []
@@ -175,8 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bat_0: -1017626546
-      Bat_1: 341029267
+      Grass Tiles_0: 617032862
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

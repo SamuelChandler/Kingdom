@@ -8,9 +8,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 159135131031000055, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159135131031000055, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159135131031000055, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 159135131031000055, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 159135131031000055, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
+      value: 0.467
+      objectReference: {fileID: 0}
     - target: {fileID: 2529484778085990369, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
       propertyPath: m_Name
       value: MountainTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202668672930484636, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202668672930484636, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3202668672930484636, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52,6 +80,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3202668672930484636, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5553256529938033025, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
       propertyPath: m_Color.a
       value: 0.3529412
@@ -69,9 +101,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8137682353039871671, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137682353039871671, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137682353039871671, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137682353039871671, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1420820950, guid: dd32d1c552b0227459724f51c2eb2369, type: 3}
+      objectReference: {fileID: 21300000, guid: 4eb17e61fa13f8442bd3c440bffe1b8a, type: 3}
     - target: {fileID: 8137682353039871671, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -83,6 +127,22 @@ PrefabInstance:
     - target: {fileID: 8137682353039871671, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137682353039871671, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137682353039871671, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_SpriteTileMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137682353039871671, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137682353039871671, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_AdaptiveModeThreshold
+      value: 0.467
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ac5d555e1b33844a0e18a14326c594, type: 3}
+  m_Name: BeeFight
+  m_EditorClassIdentifier: 
+  height: 6
+  width: 9
+  MapTiles: '222212212
+
+    221221222
+
+    122222212
+
+    221222212
+
+    212221221
+
+    222122212'
+  emptyTile: {fileID: -634359257596650371, guid: d43519453b7c80c4f959e2b4baaa4c9e, type: 3}
+  t1: {fileID: -634359257596650371, guid: de1c94dcba5e99341a26622ade00ca1f, type: 3}
+  t2: {fileID: -634359257596650371, guid: ed744768e5affe94f8c3b43391331046, type: 3}
+  t3: {fileID: 8990336916624386182, guid: 06a5dcea328524345b15e5046d02fd56, type: 3}
+  t4: {fileID: 0}
+  t5: {fileID: 0}
+  enemies:
+  - enemy: {fileID: 11400000, guid: 786966014d5d4f944a8d95263f3e3a74, type: 2}
+    loc: {x: 4, y: 2}
+  - enemy: {fileID: 11400000, guid: 786966014d5d4f944a8d95263f3e3a74, type: 2}
+    loc: {x: 5, y: 3}
+  - enemy: {fileID: 11400000, guid: 786966014d5d4f944a8d95263f3e3a74, type: 2}
+    loc: {x: 4, y: 4}
+  - enemy: {fileID: 11400000, guid: e28bff263a3d5da499cee8d128b061cc, type: 2}
+    loc: {x: 6, y: 3}

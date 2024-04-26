@@ -40,3 +40,4 @@ MonoBehaviour:
     loc: {x: 4, y: 4}
   - enemy: {fileID: 11400000, guid: e28bff263a3d5da499cee8d128b061cc, type: 2}
     loc: {x: 6, y: 3}
+  levelType: 1

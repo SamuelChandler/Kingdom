@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 [CreateAssetMenu(fileName = "New Map", menuName = "Scriptable Map")]
 public class ScriptableMap : ScriptableObject
 {
@@ -20,7 +21,9 @@ public class ScriptableMap : ScriptableObject
 
     [SerializeField] public EnemyAndPoint[] enemies;
 
-    
+    [SerializeField] public LevelType levelType;
+
+
     public Tile GetTile(char id)
     {
         switch (id)
@@ -49,5 +52,12 @@ public class EnemyAndPoint
 {
     public ScriptableUnit enemy;
     public Vector2 loc;
+}
+
+public enum LevelType
+{
+    ClearEnemies,
+    DefeatBoss,
+    Survive
 }
 

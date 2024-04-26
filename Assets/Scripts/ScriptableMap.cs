@@ -21,7 +21,16 @@ public class ScriptableMap : ScriptableObject
 
     [SerializeField] public EnemyAndPoint[] enemies;
 
-    [SerializeField] public LevelType levelType;
+    [Tooltip("The goal to win on this map")]
+    [SerializeField] public LevelType _levelType;
+
+    [Tooltip("Unit that will be end the game if destroyed by the player. Only Applicable when Level is set to Defeat Boss")]
+    [SerializeField] public EnemyAndPoint _boss;
+
+    [Tooltip("Number of rounds needed to win in survival mode")]
+    [SerializeField] public int _survivalTurns;
+
+
 
 
     public Tile GetTile(char id)

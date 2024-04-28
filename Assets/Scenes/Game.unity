@@ -1826,6 +1826,9 @@ MonoBehaviour:
   _camera: {fileID: 519420032}
   Enemy_Prefab: {fileID: 5819117742030976045, guid: c95ccba0a7f10ae4dac63eefa0fdd3f2, type: 3}
   Hero_Prefab: {fileID: 8541924346062359077, guid: 8e9d67deb09603248a93e050a241aa12, type: 3}
+  _allyS: {fileID: 6320511744291548585, guid: f35dc7c515ac704479d66315ee63eb3b, type: 3}
+  _enemyS: {fileID: 8200517103873319548, guid: f0c72aedeade20544867978e8c684662, type: 3}
+  _neutralS: {fileID: -8543341718320767285, guid: d8f6cfce9c4aeb84b97a234ea2200d1b, type: 3}
 --- !u!4 &2104909210
 Transform:
   m_ObjectHideFlags: 0

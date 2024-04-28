@@ -41,6 +41,7 @@ public class Game_Manager : MonoBehaviour
         {
             case GameState.GenerateGrid:
                 Board_Manager.instance.generateGrid();
+                Board_Manager.instance.SpawnMapStructures();
                 break;
             case GameState.SpawnHero:
                 Unit_Manager.instance.SpawnHeros();
@@ -87,6 +88,17 @@ public class Game_Manager : MonoBehaviour
         //cannot be played if cost is greater than  current inspiration
         if(unit.unit.inspirationCost > CurrentInspiration)
         {
+            Debug.Log("Not enough inspiration to play this card");
+            return false;
+        }
+        return true;
+    }
+
+    public bool CanBePlayed(AllyStructure structure){
+        //cannot be played if cost is greater than  current inspiration
+        if(structure._structure.inspirationCost > CurrentInspiration)
+        {
+            Debug.Log("Not enough inspiration to play this card");
             return false;
         }
         return true;

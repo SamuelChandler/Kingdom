@@ -40,7 +40,7 @@ MonoBehaviour:
     loc: {x: 4, y: 4}
   structures:
   - structure: {fileID: 11400000, guid: b7165513c21bcc044a3df6238ea100e0, type: 2}
-    loc: {x: 2, y: 7}
+    loc: {x: 7, y: 2}
   _levelType: 1
   _boss:
     enemy: {fileID: 11400000, guid: e28bff263a3d5da499cee8d128b061cc, type: 2}

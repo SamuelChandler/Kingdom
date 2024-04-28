@@ -5,12 +5,16 @@ using UnityEngine;
 //base class for all structure types 
 public class Structure : MonoBehaviour
 {
+    [SerializeField]
     public Tile[,] OccupiedTiles;
 
+    [SerializeField]
     public ScriptableStructure _structure;
 
+    [SerializeField]
     public SpriteRenderer spriteRenderer;
 
+    [SerializeField]
     public int currentHealth;
 
 
@@ -20,5 +24,5 @@ public class Structure : MonoBehaviour
         currentHealth = _structure.health;
     }
 
-    
+
 }

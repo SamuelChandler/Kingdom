@@ -19,8 +19,13 @@ public class Board_Manager : MonoBehaviour
     public BaseEnemy Enemy_Prefab;
     public BaseHero Hero_Prefab;
 
+    public AllyStructure _allyS;
+    public EnemyStructure _enemyS;
+    public NeutralStructure _neutralS;
+
     private List<BaseHero> _heroes = new List<BaseHero>();
     private List<BaseEnemy> _enemies = new List<BaseEnemy>();
+    private List<Structure> _structures = new List<Structure>();
 
     private void Awake()
     {
@@ -153,14 +158,128 @@ public class Board_Manager : MonoBehaviour
         }
     }
 
+    public void SummonStructure(Tile destTile, ScriptableStructure s){
+        //input val
+        if (destTile == null)
+        {
+            Debug.Log("Dest Tile does not exist");
+            return;
+        }
+        if (s == null)
+        {
+            Debug.Log("Sciptable Unit not Defined");
+            return;
+        }
+
+        if(s.Faction == Faction.Hero){
+            _allyS._structure = s;
+
+            if (!Game_Manager.instance.CanBePlayed(_allyS)) { return; }
+            //pay cost relating to Unit
+            Game_Manager.instance.DecreaseCurrentInsperation(_allyS._structure.inspirationCost);
+
+            //create and set unit to tile
+            var summonded_Structure = Instantiate(_allyS);
+
+
+            if((s.width == 0|| s.width ==1) && (s.height == 0||s.height == 1)){
+                summonded_Structure.OccupiedTiles = new Tile[1,1];
+                summonded_Structure.OccupiedTiles[0,0] = destTile.setStructure(summonded_Structure);
+                _structures.Add(summonded_Structure);
+                return;
+            }
+
+            //set to all tiles for the size of the structure
+            summonded_Structure.OccupiedTiles = new Tile[s.width,s.height];
+
+            for(int i = 0; i < s.width;i++){
+                for(int j =0; j < s.height; j++){
+                    summonded_Structure.OccupiedTiles[i,j] = destTile.setStructure(summonded_Structure);
+                }
+            }
+
+            //set postion based on the middle of oposite tiles 
+            summonded_Structure.transform.position = summonded_Structure.OccupiedTiles[0,0].transform.position + ((summonded_Structure.OccupiedTiles[0,0].transform.position -summonded_Structure.OccupiedTiles[s.width-1,s.height-1].transform.position)/2);
+             _structures.Add(summonded_Structure);
+            return;
+
+            
+
+        }
+        else if(s.Faction == Faction.Enemy){
+            _enemyS._structure = s;
+
+            //create and set unit to tile
+            var summonded_Structure = Instantiate(_enemyS);
+
+
+            if((s.width == 0|| s.width ==1) && (s.height == 0||s.height == 1)){
+                summonded_Structure.OccupiedTiles = new Tile[1,1];
+                summonded_Structure.OccupiedTiles[0,0] = destTile.setStructure(summonded_Structure);
+                _structures.Add(summonded_Structure);
+                return;
+            }
+
+            //set to all tiles for the size of the structure
+            summonded_Structure.OccupiedTiles = new Tile[s.width,s.height];
+
+            for(int i = 0; i < s.width;i++){
+                for(int j =0; j < s.height; j++){
+                    summonded_Structure.OccupiedTiles[i,j] = destTile.setStructure(summonded_Structure);
+                }
+            }
+
+            //set postion based on the middle of oposite tiles 
+            summonded_Structure.transform.position = summonded_Structure.OccupiedTiles[0,0].transform.position + ((summonded_Structure.OccupiedTiles[0,0].transform.position -summonded_Structure.OccupiedTiles[s.width-1,s.height-1].transform.position)/2);
+             _structures.Add(summonded_Structure);
+            return;
+        }
+        else if(s.Faction == Faction.Neutral){
+            _neutralS._structure = s;
+
+            //create and set unit to tile
+            var summonded_Structure = Instantiate(_neutralS);
+
+
+            if((s.width == 0|| s.width ==1) && (s.height == 0||s.height == 1)){
+                summonded_Structure.OccupiedTiles = new Tile[1,1];
+                summonded_Structure.OccupiedTiles[0,0] = destTile.setStructure(summonded_Structure);
+                _structures.Add(summonded_Structure);
+                return;
+            }
+
+            //set to all tiles for the size of the structure
+            summonded_Structure.OccupiedTiles = new Tile[s.width,s.height];
+
+            for(int i = 0; i < s.width;i++){
+                for(int j =0; j < s.height; j++){
+                    summonded_Structure.OccupiedTiles[i,j] = destTile.setStructure(summonded_Structure);
+                }
+            }
+
+            //set postion based on the middle of oposite tiles 
+            summonded_Structure.transform.position = summonded_Structure.OccupiedTiles[0,0].transform.position + ((summonded_Structure.OccupiedTiles[0,0].transform.position -summonded_Structure.OccupiedTiles[s.width-1,s.height-1].transform.position)/2);
+             _structures.Add(summonded_Structure);
+            return;
+        }
+
+    }
     //used to spawn all the enemies for the enemy list in the map scriptable object
-    public void SpawnEnemies()
+    public void SpawnMapEnemies()
     {
         Debug.Log("Spawning Enemies");
         foreach (EnemyAndPoint item in _map.enemies)
         {
             SummonUnit(GetTileAtPosition(item.loc), item.enemy);
+        }
+    }
 
+    public void SpawnMapStructures()
+    {
+        Debug.Log("Spawning Structures");
+        foreach (StructureAndPoint item in _map.structures)
+        {
+            SummonStructure(GetTileAtPosition(item.loc), item.structure);
         }
     }
 

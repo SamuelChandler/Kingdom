@@ -75,6 +75,12 @@ public class Menu_Manager : MonoBehaviour
             _tileUnit.GetComponentInChildren<TextMeshProUGUI>().text = tile.OccupiedUnit.unit.name + "\n" + tile.OccupiedUnit.currentHealth + "/" + tile.OccupiedUnit.unit.health;
             _tileUnit.SetActive(true);
         }
+
+        if (tile.OccupiedStructure){
+            _tileUnit.GetComponentInChildren<TextMeshProUGUI>().text = tile.OccupiedStructure._structure.name + "\n" + tile.OccupiedStructure.currentHealth 
+                                                                        + "/" + tile.OccupiedStructure._structure.health;
+            _tileUnit.SetActive(true);
+        }
     }
 
     //displays the hero information when called. null clears window 

@@ -11,7 +11,8 @@ public abstract class Tile : MonoBehaviour
     public int x, y;
 
     public BaseUnit OccupiedUnit;
-    public bool Walkable => _isWalkable && OccupiedUnit == null;
+    public Structure OccupiedStructure;
+    public bool Walkable => (_isWalkable && OccupiedUnit == null && OccupiedStructure == null);
 
     public virtual void Init(int a,int b)
     {
@@ -32,6 +33,12 @@ public abstract class Tile : MonoBehaviour
     { 
         _highlight.SetActive(false); 
         Menu_Manager.instance.showTileInfo(null);
+    }
+
+    public Tile setStructure(Structure structure){
+        structure.transform.position = transform.position;
+        OccupiedStructure = structure;
+        return this;
     }
 
     //sets a unit to be occupying a tile 

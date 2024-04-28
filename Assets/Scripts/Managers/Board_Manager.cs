@@ -158,9 +158,9 @@ public class Board_Manager : MonoBehaviour
         }
     }
 
-    public void SummonStructure(Tile destTile, ScriptableStructure s){
+    public void SummonStructure(StructureAndPoint s){
         //input val
-        if (destTile == null)
+        if (s.loc == null)
         {
             Debug.Log("Dest Tile does not exist");
             return;
@@ -171,8 +171,8 @@ public class Board_Manager : MonoBehaviour
             return;
         }
 
-        if(s.Faction == Faction.Hero){
-            _allyS._structure = s;
+        if(s.structure.Faction == Faction.Hero){
+            _allyS._structure = s.structure;
 
             if (!Game_Manager.instance.CanBePlayed(_allyS)) { return; }
             //pay cost relating to Unit
@@ -180,86 +180,101 @@ public class Board_Manager : MonoBehaviour
 
             //create and set unit to tile
             var summonded_Structure = Instantiate(_allyS);
+            Debug.Log(s.structure.width);
 
-
-            if((s.width == 0|| s.width ==1) && (s.height == 0||s.height == 1)){
+            if((s.structure.width == 0|| s.structure.width ==1) && (s.structure.height == 0||s.structure.height == 1)){
                 summonded_Structure.OccupiedTiles = new Tile[1,1];
-                summonded_Structure.OccupiedTiles[0,0] = destTile.setStructure(summonded_Structure);
+                summonded_Structure.OccupiedTiles[0,0] = GetTileAtPosition(s.loc).setStructure(summonded_Structure);;
                 _structures.Add(summonded_Structure);
                 return;
             }
 
             //set to all tiles for the size of the structure
-            summonded_Structure.OccupiedTiles = new Tile[s.width,s.height];
-
-            for(int i = 0; i < s.width;i++){
-                for(int j =0; j < s.height; j++){
-                    summonded_Structure.OccupiedTiles[i,j] = destTile.setStructure(summonded_Structure);
+            summonded_Structure.OccupiedTiles = new Tile[s.structure.width,s.structure.height];
+            
+            for(int i = 0; i < s.structure.width;i++){
+                for(int j =0; j < s.structure.height; j++){
+                    summonded_Structure.OccupiedTiles[i,j] = GetTileAtPosition(new Vector2(s.loc.x+i, s.loc.y+j)).setStructure(summonded_Structure);
                 }
             }
 
             //set postion based on the middle of oposite tiles 
-            summonded_Structure.transform.position = summonded_Structure.OccupiedTiles[0,0].transform.position + ((summonded_Structure.OccupiedTiles[0,0].transform.position -summonded_Structure.OccupiedTiles[s.width-1,s.height-1].transform.position)/2);
-             _structures.Add(summonded_Structure);
+            float x = summonded_Structure.OccupiedTiles[0,0].transform.position.x + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.x - summonded_Structure.OccupiedTiles[0,0].transform.position.x)/2);
+            float y = summonded_Structure.OccupiedTiles[0,0].transform.position.y + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.y - summonded_Structure.OccupiedTiles[0,0].transform.position.y)/2);
+            summonded_Structure.transform.position = new Vector3(x,y,0.0f);
+            Debug.Log(summonded_Structure.transform.position);
+            _structures.Add(summonded_Structure);
             return;
 
             
 
         }
-        else if(s.Faction == Faction.Enemy){
-            _enemyS._structure = s;
+        else if(s.structure.Faction == Faction.Enemy){
+            _enemyS._structure = s.structure;
 
             //create and set unit to tile
             var summonded_Structure = Instantiate(_enemyS);
 
 
-            if((s.width == 0|| s.width ==1) && (s.height == 0||s.height == 1)){
+            if((s.structure.width == 0|| s.structure.width ==1) && (s.structure.height == 0||s.structure.height == 1)){
                 summonded_Structure.OccupiedTiles = new Tile[1,1];
-                summonded_Structure.OccupiedTiles[0,0] = destTile.setStructure(summonded_Structure);
+                summonded_Structure.OccupiedTiles[0,0] = GetTileAtPosition(s.loc).setStructure(summonded_Structure);
                 _structures.Add(summonded_Structure);
                 return;
             }
 
             //set to all tiles for the size of the structure
-            summonded_Structure.OccupiedTiles = new Tile[s.width,s.height];
+            summonded_Structure.OccupiedTiles = new Tile[s.structure.width,s.structure.height];
 
-            for(int i = 0; i < s.width;i++){
-                for(int j =0; j < s.height; j++){
-                    summonded_Structure.OccupiedTiles[i,j] = destTile.setStructure(summonded_Structure);
+            for(int i = 0; i < s.structure.width;i++){
+                for(int j =0; j < s.structure.height; j++){
+                    summonded_Structure.OccupiedTiles[i,j] = GetTileAtPosition(new Vector2(s.loc.x+i, s.loc.y+j)).setStructure(summonded_Structure);
                 }
             }
 
+            Debug.Log(summonded_Structure.OccupiedTiles[0,0].transform.position);
+            Debug.Log(summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position);
+
             //set postion based on the middle of oposite tiles 
-            summonded_Structure.transform.position = summonded_Structure.OccupiedTiles[0,0].transform.position + ((summonded_Structure.OccupiedTiles[0,0].transform.position -summonded_Structure.OccupiedTiles[s.width-1,s.height-1].transform.position)/2);
-             _structures.Add(summonded_Structure);
+            float x = summonded_Structure.OccupiedTiles[0,0].transform.position.x + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.x - summonded_Structure.OccupiedTiles[0,0].transform.position.x)/2);
+            float y = summonded_Structure.OccupiedTiles[0,0].transform.position.y + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.y - summonded_Structure.OccupiedTiles[0,0].transform.position.y)/2);
+            summonded_Structure.transform.position = new Vector3(x,y,0.0f);
+            Debug.Log(summonded_Structure.transform.position);
+            _structures.Add(summonded_Structure);
             return;
         }
-        else if(s.Faction == Faction.Neutral){
-            _neutralS._structure = s;
+        else if(s.structure.Faction == Faction.Neutral){
+            _neutralS._structure = s.structure;;
 
             //create and set unit to tile
             var summonded_Structure = Instantiate(_neutralS);
 
 
-            if((s.width == 0|| s.width ==1) && (s.height == 0||s.height == 1)){
+            if((s.structure.width == 0|| s.structure.width ==1) && (s.structure.height == 0||s.structure.height == 1)){
                 summonded_Structure.OccupiedTiles = new Tile[1,1];
-                summonded_Structure.OccupiedTiles[0,0] = destTile.setStructure(summonded_Structure);
+                summonded_Structure.OccupiedTiles[0,0] = GetTileAtPosition(s.loc).setStructure(summonded_Structure);
                 _structures.Add(summonded_Structure);
                 return;
             }
 
             //set to all tiles for the size of the structure
-            summonded_Structure.OccupiedTiles = new Tile[s.width,s.height];
+            summonded_Structure.OccupiedTiles = new Tile[s.structure.width,s.structure.height];
 
-            for(int i = 0; i < s.width;i++){
-                for(int j =0; j < s.height; j++){
-                    summonded_Structure.OccupiedTiles[i,j] = destTile.setStructure(summonded_Structure);
+            for(int i = 0; i < s.structure.width;i++){
+                for(int j =0; j < s.structure.height; j++){
+                    summonded_Structure.OccupiedTiles[i,j] = GetTileAtPosition(new Vector2(s.loc.x+i, s.loc.y+j)).setStructure(summonded_Structure);
                 }
             }
 
+            Debug.Log(summonded_Structure.OccupiedTiles[0,0].transform.position);
+            Debug.Log(summonded_Structure.OccupiedTiles[s.structure.width,s.structure.height].transform.position);
+
             //set postion based on the middle of oposite tiles 
-            summonded_Structure.transform.position = summonded_Structure.OccupiedTiles[0,0].transform.position + ((summonded_Structure.OccupiedTiles[0,0].transform.position -summonded_Structure.OccupiedTiles[s.width-1,s.height-1].transform.position)/2);
-             _structures.Add(summonded_Structure);
+            float x = summonded_Structure.OccupiedTiles[0,0].transform.position.x + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.x - summonded_Structure.OccupiedTiles[0,0].transform.position.x)/2);
+            float y = summonded_Structure.OccupiedTiles[0,0].transform.position.y + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.y - summonded_Structure.OccupiedTiles[0,0].transform.position.y)/2);
+            summonded_Structure.transform.position = new Vector3(x,y,0.0f);
+            Debug.Log(summonded_Structure.transform.position);
+            _structures.Add(summonded_Structure);
             return;
         }
 
@@ -279,7 +294,7 @@ public class Board_Manager : MonoBehaviour
         Debug.Log("Spawning Structures");
         foreach (StructureAndPoint item in _map.structures)
         {
-            SummonStructure(GetTileAtPosition(item.loc), item.structure);
+            SummonStructure(item);
         }
     }
 

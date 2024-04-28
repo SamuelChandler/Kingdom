@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [System.Serializable]
@@ -20,6 +21,9 @@ public class ScriptableMap : ScriptableObject
     [SerializeField] public Tile t5;
 
     [SerializeField] public EnemyAndPoint[] enemies;
+
+    [Tooltip("list of structures in the map location is the top left tile of the structure")]
+    [SerializeField] public StructureAndPoint[] structures;
 
     [Tooltip("The goal to win on this map")]
     [SerializeField] public LevelType _levelType;
@@ -60,6 +64,13 @@ public class ScriptableMap : ScriptableObject
 public class EnemyAndPoint
 {
     public ScriptableUnit enemy;
+    public Vector2 loc;
+}
+
+[Serializable]
+//location is the top left tile of the structure
+public class StructureAndPoint{
+    public ScriptableStructure structure;
     public Vector2 loc;
 }
 

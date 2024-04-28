@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-
-[CreateAssetMenu(fileName = "New Unit",menuName = "Scriptable Unit")]
-public class ScriptableUnit : ScriptableObject
+[CreateAssetMenu(fileName = "New Unit",menuName = "Scriptable Structure")]
+public class ScriptableStructure : ScriptableObject
 {
     public Faction Faction;
     public Sprite image;
@@ -15,16 +13,13 @@ public class ScriptableUnit : ScriptableObject
     //Cost 
     public int inspirationCost;
 
+    //size it will take up on the map
+    public int height; 
+    public int width; 
+
     //player stats 
     public int health;
-    public int attack;
-    public int speed;
     
 }
 
-public enum Faction
-{
-    Hero = 0, 
-    Enemy = 1,
-    Neutral = 2
-}
+

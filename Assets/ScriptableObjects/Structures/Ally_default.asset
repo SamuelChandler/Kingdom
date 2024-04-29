@@ -19,3 +19,4 @@ MonoBehaviour:
   height: 1
   width: 1
   health: 1
+  effects: []

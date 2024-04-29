@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Unit",menuName = "Scriptable Structure")]
+[CreateAssetMenu(fileName = "New Unit",menuName = "Structure/Structure")]
 public class ScriptableStructure : ScriptableObject
 {
     public Faction Faction;
@@ -19,6 +19,8 @@ public class ScriptableStructure : ScriptableObject
 
     //player stats 
     public int health;
+
+    public StructureEffect[] effects;
     
 }
 

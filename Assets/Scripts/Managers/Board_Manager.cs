@@ -345,4 +345,26 @@ public class Board_Manager : MonoBehaviour
 
         return r;
     }
+
+    public List<BaseHero> getHerosInInteractableArea(Vector2 pos, int speed){
+        List<BaseHero> r = new List<BaseHero>();
+
+        foreach (BaseHero h in _heroes)
+        {
+
+            int range = speed +2;
+            float x_change = Mathf.Abs(pos.x - h.OccupiedTile.x);
+            float y_change = Mathf.Abs(pos.y - h.OccupiedTile.y);
+            float distance = x_change + y_change;
+
+            if(x_change == range || y_change == range){
+                //do nothing 
+            }else if(distance <= range){
+                r.Add(h);
+            }
+
+        }
+
+        return r;
+    }
 }

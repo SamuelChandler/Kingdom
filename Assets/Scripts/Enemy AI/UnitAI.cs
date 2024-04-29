@@ -10,7 +10,7 @@ public class UnitAI : MonoBehaviour
     //base turn should be moving to the nearest enemy and attacking it
     public virtual void TakeTurn(){
             //find all interactable units 
-            List<BaseHero> interacableUnits = Board_Manager.instance.getHerosInCircleArea(new Vector2(e.OccupiedTile.x, e.OccupiedTile.y), e.unit.speed);
+            List<BaseHero> interacableUnits = Board_Manager.instance.getHerosInInteractableArea(new Vector2(e.OccupiedTile.x, e.OccupiedTile.y), e.unit.speed);
 
             Debug.Log("Interactable Units: "+interacableUnits.Count);
     }

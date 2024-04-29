@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7874743866587202791}
   - component: {fileID: 2216078567971078873}
   - component: {fileID: 5819117742030976045}
+  - component: {fileID: 8681758162586962013}
   m_Layer: 0
   m_Name: Enemy Unit Prefab
   m_TagString: Untagged
@@ -103,3 +104,17 @@ MonoBehaviour:
   isAbleToMove: 0
   isAbleToAttack: 0
   currentHealth: 0
+  uAI: {fileID: 8681758162586962013}
+--- !u!114 &8681758162586962013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828814552749650596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf17b6ba2ea965f4cb5b3605f813a42c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 0}

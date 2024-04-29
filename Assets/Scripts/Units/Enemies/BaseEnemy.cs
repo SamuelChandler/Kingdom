@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class BaseEnemy : BaseUnit
 {
+    public UnitAI uAI;
+
+    private void Awake(){
+        base.Awake();
+        uAI.e = this;
+    }
 
     public bool Attack(BaseHero hero)
     {

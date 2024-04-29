@@ -30,10 +30,7 @@ public class EnemyAI : MonoBehaviour
         {
             Debug.Log(e.unit.name);
 
-            //find all interactable units 
-            List<BaseHero> interacableUnits = Board_Manager.instance.getHerosInCircleArea(new Vector2(e.OccupiedTile.x, e.OccupiedTile.y), e.unit.speed);
-
-            Debug.Log("Interactable Units: "+interacableUnits.Count);
+            e.uAI.TakeTurn();
         }
     }
 }

@@ -26,8 +26,39 @@ public class BaseHero : BaseUnit
         }
         
         return true;
+    }
 
+    public bool Attack(EnemyStructure enemy){
+        if (enemy == null||!this.isAbleToAttack) return false;
 
+        bool inRange = false;
+        
+        //check if enemy is within one space
+        foreach (Tile t in enemy.OccupiedTiles){
+            if(Mathf.Abs(this.OccupiedTile.x - t.x) <= 1 && Mathf.Abs(this.OccupiedTile.y - t.y) <= 1)
+            {
+                inRange = true;
+            }
+        }
+        if(inRange == false)
+        {
+            Debug.Log("Attack was out of Range");
+            return false;
+        }
+        
+        enemy.currentHealth = enemy.currentHealth - this.unit.attack;
+        this.isAbleToAttack = false;
+
+        //check if destroyed
+        if (enemy.currentHealth <= 0)
+        {
+            foreach(Tile t in enemy.OccupiedTiles){
+                t.OccupiedUnit = null;
+            }
+            Destroy(enemy.gameObject);
+        }
+        
+        return true;
     }
 
     

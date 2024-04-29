@@ -85,6 +85,22 @@ public abstract class Tile : MonoBehaviour
                 }
             }
         }
+        else if(OccupiedStructure != null){
+            //when there is a structure in the space
+
+            //check if a hero is selected
+            if (Unit_Manager.instance.SelectedHero != null)
+                {
+                    //if the strucuture is an enemy
+                    if(OccupiedStructure._structure.Faction == Faction.Enemy){
+                        var enemy = (EnemyStructure)OccupiedStructure;
+                        Unit_Manager.instance.SelectedHero.Attack(enemy);
+                        Unit_Manager.instance.SetSelectedHero((BaseHero)null);
+                    }
+                    
+                }
+
+        }
         else //tile is empty
         {
             //if a hero is selected set that unit into to unselected tile and unset the previosly occupied tile 

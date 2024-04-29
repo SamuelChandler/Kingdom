@@ -367,4 +367,23 @@ public class Board_Manager : MonoBehaviour
 
         return r;
     }
+
+    public BaseHero getClosestHero(Vector2 pos){
+        BaseHero r = new BaseHero();
+        float LowestDistance = float.MaxValue;
+
+        foreach (BaseHero h in _heroes)
+        {
+            
+            float x_change = Mathf.Abs(pos.x - h.OccupiedTile.x);
+            float y_change = Mathf.Abs(pos.y - h.OccupiedTile.y);
+            float distance = x_change + y_change;
+
+            if(distance < LowestDistance){
+                r = h;
+                LowestDistance = distance;
+            }
+        }
+        return r;
+    }
 }

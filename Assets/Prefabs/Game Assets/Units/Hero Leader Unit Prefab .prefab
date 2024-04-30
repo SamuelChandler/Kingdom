@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7874743866587202791}
   - component: {fileID: 2216078567971078873}
-  - component: {fileID: 1603683541253479809}
+  - component: {fileID: 8541924346062359077}
   m_Layer: 0
-  m_Name: Hero Unit Prefab
+  m_Name: 'Hero Leader Unit Prefab '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1603683541253479809
+--- !u!114 &8541924346062359077
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 828814552749650596}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41675c9c2658cbb4c800ec4d92b102e4, type: 3}
+  m_Script: {fileID: 11500000, guid: cfcac63d6cdd64a458430d46732573ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OccupiedTile: {fileID: 0}
@@ -103,3 +103,18 @@ MonoBehaviour:
   isAbleToMove: 0
   isAbleToAttack: 0
   currentHealth: 0
+  destroyEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1

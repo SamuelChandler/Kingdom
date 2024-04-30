@@ -18,6 +18,7 @@ public class Board_Manager : MonoBehaviour
 
     public BaseEnemy Enemy_Prefab;
     public BaseHero Hero_Prefab;
+    public Leader Hero_Leader_Prefab;
 
     public AllyStructure _allyS;
     public EnemyStructure _enemyS;
@@ -66,6 +67,28 @@ public class Board_Manager : MonoBehaviour
         Game_Manager.instance.ChangeState(GameState.SpawnHero);
     }
 
+    public void SpawnLeader(){
+        Tile destTile = GetTileAtPosition(_map._leader.loc);
+        ScriptableUnit unit = _map._leader.unit;
+
+        if (destTile == null)
+        {
+            Debug.Log("Leader: Dest Tile does not exist");
+            return;
+        }
+        if (unit == null)
+        {
+            Debug.Log("Leader: Sciptable Unit not Defined");
+            return;
+        }
+
+
+        Hero_Leader_Prefab.unit = unit;
+        var summonded_Hero = Instantiate(Hero_Leader_Prefab);
+        destTile.setUnit(summonded_Hero);
+
+        _heroes.Add(summonded_Hero);
+    }
 
     //returns a tile for a givem v2 positon
     public Tile GetTileAtPosition(Vector2 position)
@@ -157,6 +180,7 @@ public class Board_Manager : MonoBehaviour
 
         }
     }
+
 
     public void SummonStructure(StructureAndPoint s){
         //input val

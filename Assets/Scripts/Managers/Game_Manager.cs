@@ -44,7 +44,8 @@ public class Game_Manager : MonoBehaviour
                 Board_Manager.instance.SpawnMapStructures();
                 break;
             case GameState.SpawnHero:
-                Unit_Manager.instance.SpawnHeros();
+                Board_Manager.instance.SpawnLeader();
+                ChangeState(GameState.SpawnEnemies);
                 break;
             case GameState.SpawnEnemies:
                 Unit_Manager.instance.SpawnEnemies();
@@ -119,6 +120,10 @@ public class Game_Manager : MonoBehaviour
         Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
         Event_Manager.instance.refresh();
         Debug.Log("Player has Started the Turn");
+    }
+
+    public void LoseGame(){
+        Debug.Log("You Lost the game");
     }
 
     

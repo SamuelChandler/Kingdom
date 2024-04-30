@@ -31,6 +31,9 @@ public class ScriptableMap : ScriptableObject
     [Tooltip("Unit that will be end the game if destroyed by the player. Only Applicable when Level is set to Defeat Boss")]
     [SerializeField] public EnemyAndPoint _boss;
 
+    [Tooltip("Unit that will be end the game if destroyed by the enemy. Also the starting point for allies")]
+    [SerializeField] public LeaderAndPoint _leader;
+
     [Tooltip("Number of rounds needed to win in survival mode")]
     [SerializeField] public int _survivalTurns;
 
@@ -71,6 +74,12 @@ public class EnemyAndPoint
 //location is the top left tile of the structure
 public class StructureAndPoint{
     public ScriptableStructure structure;
+    public Vector2 loc;
+}
+
+[Serializable]
+public class LeaderAndPoint{
+    public ScriptableUnit unit;
     public Vector2 loc;
 }
 

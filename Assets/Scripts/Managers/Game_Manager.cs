@@ -48,6 +48,7 @@ public class Game_Manager : MonoBehaviour
                 ChangeState(GameState.SpawnEnemies);
                 break;
             case GameState.SpawnEnemies:
+                Board_Manager.instance.SpawnBoss();
                 Unit_Manager.instance.SpawnEnemies();
                 break;
             case GameState.HeroesTurn:
@@ -124,6 +125,10 @@ public class Game_Manager : MonoBehaviour
 
     public void LoseGame(){
         Debug.Log("You Lost the game");
+    }
+
+    public void WinGame(){
+        Debug.Log("You Win");
     }
 
     

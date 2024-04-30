@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Faction: 1
   image: {fileID: -284088876, guid: 417f25c8d1f66154087c6394d58ecda7, type: 3}
-  name: Elite Bee
+  name: Queen Bee
   inspirationCost: 4
-  health: 5
-  attack: 4
-  speed: 3
+  health: 8
+  attack: 2
+  speed: 2

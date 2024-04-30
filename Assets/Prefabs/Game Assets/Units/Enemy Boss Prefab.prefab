@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7874743866587202791}
   - component: {fileID: 2216078567971078873}
   - component: {fileID: 8681758162586962013}
-  - component: {fileID: 3274533661099625066}
+  - component: {fileID: 6900676545333843850}
   m_Layer: 0
-  m_Name: Enemy Unit Prefab
+  m_Name: Enemy Boss Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf17b6ba2ea965f4cb5b3605f813a42c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  e: {fileID: 0}
---- !u!114 &3274533661099625066
+  e: {fileID: 6900676545333843850}
+--- !u!114 &6900676545333843850
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 828814552749650596}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bf8fd4d63e8f3a4f97cc4543a344fcd, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e06cc4bed523b244800331a662b2083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OccupiedTile: {fileID: 0}

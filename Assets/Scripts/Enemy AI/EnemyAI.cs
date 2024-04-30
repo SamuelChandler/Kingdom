@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-
-    public List<BaseEnemy> elist;
-
-    private void Awake()
-    {
-        elist = new List<BaseEnemy>();
-    }
-
     public void StartTurn()
     {
         Debug.Log("AI has started Turn");
@@ -26,7 +18,7 @@ public class EnemyAI : MonoBehaviour
 
     private void UnitActions()
     {
-        foreach (var e in elist)
+        foreach (var e in Board_Manager.instance._enemies)
         {
             Debug.Log(e.unit.name);
 

@@ -23,7 +23,6 @@ public class BaseHero : BaseUnit
         {
             enemy.OccupiedTile.OccupiedUnit = null;
             Board_Manager.instance.RemoveEnemy(enemy);
-            Game_Manager.instance.eAI.elist.Remove(enemy);
             Destroy(enemy.gameObject);
         }
         

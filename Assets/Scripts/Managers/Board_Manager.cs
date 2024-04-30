@@ -27,7 +27,7 @@ public class Board_Manager : MonoBehaviour
     public NeutralStructure _neutralS;
 
     private List<BaseHero> _heroes = new List<BaseHero>();
-    private List<BaseEnemy> _enemies = new List<BaseEnemy>();
+    public List<BaseEnemy> _enemies = new List<BaseEnemy>();
     private List<Structure> _structures = new List<Structure>();
 
     private void Awake()
@@ -199,7 +199,6 @@ public class Board_Manager : MonoBehaviour
             BaseEnemy summonded_Enemy = Instantiate(Enemy_Prefab);
             destTile.setUnit(summonded_Enemy);
 
-            Game_Manager.instance.eAI.elist.Add(summonded_Enemy);
             _enemies.Add(summonded_Enemy);
 
         }
@@ -360,7 +359,7 @@ public class Board_Manager : MonoBehaviour
         int total_change  = x_change + y_change;
 
 
-        while(total_change > unit.unit.speed)
+        while(total_change > unit.unit.speed || destTile.OccupiedUnit != null || destTile.OccupiedStructure != null)
         {
             //check x and move one closer
             if(destTile.x > sourceTile.x){

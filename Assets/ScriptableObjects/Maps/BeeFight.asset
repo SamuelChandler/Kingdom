@@ -33,11 +33,11 @@ MonoBehaviour:
   t5: {fileID: 0}
   enemies:
   - enemy: {fileID: 11400000, guid: 786966014d5d4f944a8d95263f3e3a74, type: 2}
-    loc: {x: 4, y: 2}
+    loc: {x: 5, y: 2}
   - enemy: {fileID: 11400000, guid: 786966014d5d4f944a8d95263f3e3a74, type: 2}
-    loc: {x: 5, y: 3}
+    loc: {x: 6, y: 3}
   - enemy: {fileID: 11400000, guid: 786966014d5d4f944a8d95263f3e3a74, type: 2}
-    loc: {x: 4, y: 4}
+    loc: {x: 5, y: 4}
   structures:
   - structure: {fileID: 11400000, guid: b7165513c21bcc044a3df6238ea100e0, type: 2}
     loc: {x: 7, y: 2}

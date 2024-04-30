@@ -47,7 +47,7 @@ public class Board_Manager : MonoBehaviour
                 var spawnedTile = Instantiate(_map.GetTile(id), new Vector3(log,-j), Quaternion.identity);
                 spawnedTile.name = $"Tile {log} {j}";
 
-                spawnedTile.Init(log, -j);
+                spawnedTile.Init(log, j);
 
                 _tiles[new Vector2(log, j)] = spawnedTile;
 
@@ -369,7 +369,7 @@ public class Board_Manager : MonoBehaviour
     }
 
     public BaseHero getClosestHero(Vector2 pos){
-        BaseHero r = new BaseHero();
+        BaseHero r = null;
         float LowestDistance = float.MaxValue;
 
         foreach (BaseHero h in _heroes)
@@ -385,5 +385,56 @@ public class Board_Manager : MonoBehaviour
             }
         }
         return r;
+    }
+
+    public Tile FindNearestEmptyTile(Tile src, Tile dst){
+        //get all adjacent Tiles of dst that are empty
+        List<Tile> posibilities = new List<Tile>();
+
+        for(int i = -1; i < 2; i++){
+            for(int j = -1; j < 2; j++){
+                if(GetTileAtPosition(new Vector2(dst.x + i, dst.y + j))==null){ }
+                else if (GetTileAtPosition(new Vector2(dst.x + i, dst.y + j)).OccupiedUnit == null){
+                    posibilities.Add(GetTileAtPosition(new Vector2(dst.x + i, dst.y + j)));
+                }
+            }
+        }
+        
+        Tile result = src;
+        float smallest_distance = float.MaxValue;
+
+        foreach(Tile t in posibilities){
+            float x_change = Mathf.Abs(t.x - src.x);
+            float y_change = Mathf.Abs(t.y - src.y);
+
+            float total_change  = x_change + y_change;
+
+            if(total_change < smallest_distance){
+                result = t;
+                smallest_distance = total_change;
+            }
+        }
+
+        return result;
+    }
+
+    //remove hero from list if it exists
+    public bool RemoveHero(BaseHero h){
+
+        if(_heroes.Contains(h)){
+            _heroes.Remove(h);
+            return true;
+        }
+        return false;
+    }
+
+    //remove hero from list if it exists
+    public bool RemoveEnemy(BaseEnemy e){
+
+        if(_enemies.Contains(e)){
+            _enemies.Remove(e);
+            return true;
+        }
+        return false;
     }
 }

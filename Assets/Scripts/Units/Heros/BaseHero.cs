@@ -22,6 +22,8 @@ public class BaseHero : BaseUnit
         if (enemy.currentHealth <= 0)
         {
             enemy.OccupiedTile.OccupiedUnit = null;
+            Board_Manager.instance.RemoveEnemy(enemy);
+            Game_Manager.instance.eAI.elist.Remove(enemy);
             Destroy(enemy.gameObject);
         }
         
@@ -55,6 +57,7 @@ public class BaseHero : BaseUnit
             foreach(Tile t in enemy.OccupiedTiles){
                 t.OccupiedUnit = null;
             }
+            
             Destroy(enemy.gameObject);
         }
         

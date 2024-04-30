@@ -14,7 +14,7 @@ public class BaseUnit : MonoBehaviour
 
     public int currentHealth;
 
-    public void Awake()
+    public virtual void Awake()
     {
         spriteRenderer.sprite = unit.image;
         currentHealth = unit.health;

@@ -13,8 +13,11 @@ public class UnitAI : MonoBehaviour
             List<BaseHero> interacableUnits = Board_Manager.instance.getHerosInInteractableArea(new Vector2(e.OccupiedTile.x, e.OccupiedTile.y), e.unit.speed);
             BaseHero ClosestHero = Board_Manager.instance.getClosestHero(new Vector2(e.OccupiedTile.x, e.OccupiedTile.y));
 
-            Debug.Log("Interactable Units: "+interacableUnits.Count);
-            Debug.Log("Closest: "+ClosestHero.unit.name);
+            if(ClosestHero != null){
+                Tile destTile = Board_Manager.instance.FindNearestEmptyTile(e.OccupiedTile,ClosestHero.OccupiedTile);
+                Board_Manager.instance.MoveUnit(destTile,e);
+                e.Attack(ClosestHero);
+            } 
     }
 }
 

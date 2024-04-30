@@ -360,11 +360,38 @@ public class Board_Manager : MonoBehaviour
         int total_change  = x_change + y_change;
 
 
-        if (total_change > unit.unit.speed)
+        while(total_change > unit.unit.speed)
         {
-            //if the total change is greater than the units speed then do nothing and deselect
-            Unit_Manager.instance.SetSelectedHero((BaseHero)null);
-            return;  
+            //check x and move one closer
+            if(destTile.x > sourceTile.x){
+                destTile = GetTileAtPosition(new Vector2(destTile.x-1,destTile.y));
+            }else if(destTile.x < sourceTile.x){
+                destTile = GetTileAtPosition(new Vector2(destTile.x+1,destTile.y));
+            }
+            
+
+            x_change = Mathf.Abs(sourceTile.x - destTile.x);
+            y_change = Mathf.Abs(sourceTile.y - destTile.y);
+
+            total_change  = x_change + y_change;
+
+            if(total_change > unit.unit.speed){
+                //check y and move one closer
+                if(destTile.y > sourceTile.y){
+                    destTile = GetTileAtPosition(new Vector2(destTile.x,destTile.y-1));
+                }else if(destTile.y < sourceTile.y){
+                    destTile = GetTileAtPosition(new Vector2(destTile.x,destTile.y+1));
+                }
+
+                
+                x_change = Mathf.Abs(sourceTile.x - destTile.x);
+                y_change = Mathf.Abs(sourceTile.y - destTile.y);
+
+                total_change  = x_change + y_change;
+           
+            }
+
+
         }
 
         destTile.setUnit(unit);

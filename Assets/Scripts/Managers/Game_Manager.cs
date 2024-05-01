@@ -10,7 +10,7 @@ public class Game_Manager : MonoBehaviour
     public GameState GameState;
     private int Level;
 
-    public float MoveDuration;
+    [SerializeField] public static float MoveDuration = 0.5f;
 
     public EnemyAI eAI;
 

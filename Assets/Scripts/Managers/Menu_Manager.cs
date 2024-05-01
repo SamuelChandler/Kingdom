@@ -14,6 +14,8 @@ public class Menu_Manager : MonoBehaviour
 
     [SerializeField] private GameObject _SelectedHeroObject, _tileInfo, _tileUnit, _messanger, _unitSelect;
 
+    [SerializeField] private Button _endTurn;
+
     [SerializeField] InspirationBar _iBar;
 
     //there are 4 unit select buttons for now
@@ -29,6 +31,8 @@ public class Menu_Manager : MonoBehaviour
         _tileInfo.SetActive(false);
         //_unitSelect.SetActive(false);
         _messanger.SetActive(false);
+
+        _endTurn.onClick.AddListener(Game_Manager.instance.EndPlayerTurn);
 
     }
 

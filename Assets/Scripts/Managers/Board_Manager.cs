@@ -279,8 +279,7 @@ public class Board_Manager : MonoBehaviour
                 }
             }
 
-            Debug.Log(summonded_Structure.OccupiedTiles[0,0].transform.position);
-            Debug.Log(summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position);
+            
 
             //set postion based on the middle of oposite tiles 
             float x = summonded_Structure.OccupiedTiles[0,0].transform.position.x + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.x - summonded_Structure.OccupiedTiles[0,0].transform.position.x)/2);
@@ -313,14 +312,11 @@ public class Board_Manager : MonoBehaviour
                 }
             }
 
-            Debug.Log(summonded_Structure.OccupiedTiles[0,0].transform.position);
-            Debug.Log(summonded_Structure.OccupiedTiles[s.structure.width,s.structure.height].transform.position);
-
             //set postion based on the middle of oposite tiles 
             float x = summonded_Structure.OccupiedTiles[0,0].transform.position.x + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.x - summonded_Structure.OccupiedTiles[0,0].transform.position.x)/2);
             float y = summonded_Structure.OccupiedTiles[0,0].transform.position.y + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.y - summonded_Structure.OccupiedTiles[0,0].transform.position.y)/2);
             summonded_Structure.transform.position = new Vector3(x,y,0.0f);
-            Debug.Log(summonded_Structure.transform.position);
+
             _structures.Add(summonded_Structure);
             return;
         }
@@ -359,7 +355,7 @@ public class Board_Manager : MonoBehaviour
         int total_change  = x_change + y_change;
 
 
-        while(total_change > unit.unit.speed || destTile.OccupiedUnit != null || destTile.OccupiedStructure != null)
+        while((total_change > unit.unit.speed || destTile.OccupiedUnit != null || destTile.OccupiedStructure != null) && destTile != sourceTile)
         {
             //check x and move one closer
             if(destTile.x > sourceTile.x){
@@ -374,7 +370,7 @@ public class Board_Manager : MonoBehaviour
 
             total_change  = x_change + y_change;
 
-            if(total_change > unit.unit.speed){
+            if((total_change > unit.unit.speed|| destTile.OccupiedUnit != null || destTile.OccupiedStructure != null) && destTile != sourceTile){
                 //check y and move one closer
                 if(destTile.y > sourceTile.y){
                     destTile = GetTileAtPosition(new Vector2(destTile.x,destTile.y-1));

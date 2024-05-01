@@ -59,6 +59,12 @@ public class Game_Manager : MonoBehaviour
             case GameState.EnemiesTurn:
                 eAI.StartTurn();
                 break;
+            case GameState.GameWin:
+                Menu_Manager.instance.showWinScreen();
+                break;
+            case GameState.GameLoss:
+                Menu_Manager.instance.showLossScreen();
+                break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState),newState,null);
         }
@@ -142,5 +148,9 @@ public enum GameState
     SpawnHero = 1,
     SpawnEnemies = 2,
     HeroesTurn = 3,
-    EnemiesTurn = 4
+    EnemiesTurn = 4,
+
+    GameWin = 5, 
+
+    GameLoss = 6
 }

@@ -12,13 +12,12 @@ public class Menu_Manager : MonoBehaviour
 {
     public static Menu_Manager instance;
 
-    [SerializeField] private GameObject _SelectedHeroObject, _tileInfo, _tileUnit, _messanger, _unitSelect;
+    [SerializeField] private GameObject _SelectedHeroObject, _tileInfo, _tileUnit, _messanger, _unitSelect,_winScreen,_lossScreen;
 
     [SerializeField] private Button _endTurn;
 
     [SerializeField] InspirationBar _iBar;
 
-    //there are 4 unit select buttons for now
 
 
 
@@ -29,8 +28,9 @@ public class Menu_Manager : MonoBehaviour
         //clear unessisary windows 
         _SelectedHeroObject.SetActive(false);
         _tileInfo.SetActive(false);
-        //_unitSelect.SetActive(false);
         _messanger.SetActive(false);
+        _winScreen.SetActive(false);
+        _lossScreen.SetActive(false);
 
         _endTurn.onClick.AddListener(Game_Manager.instance.EndPlayerTurn);
 
@@ -128,4 +128,12 @@ public class Menu_Manager : MonoBehaviour
         _SelectedHeroObject.SetActive(true);
     }
 
+
+    public void showWinScreen(){
+        _winScreen.SetActive(true);
+    }
+
+    public void showLossScreen(){
+        _lossScreen.SetActive(true);
+    }
 }

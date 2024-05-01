@@ -647,7 +647,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb0435f35dfc4594e8ef3600f98b1aa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elist: []
 --- !u!4 &726013112
 Transform:
   m_ObjectHideFlags: 0
@@ -968,6 +967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameState: 0
+  MoveDuration: 0.4
   eAI: {fileID: 726013111}
   CurrentInspiration: 0
   CurrentMaxInspiration: 1
@@ -1831,6 +1831,7 @@ MonoBehaviour:
   _allyS: {fileID: 6320511744291548585, guid: f35dc7c515ac704479d66315ee63eb3b, type: 3}
   _enemyS: {fileID: 8200517103873319548, guid: f0c72aedeade20544867978e8c684662, type: 3}
   _neutralS: {fileID: -8543341718320767285, guid: d8f6cfce9c4aeb84b97a234ea2200d1b, type: 3}
+  _enemies: []
 --- !u!4 &2104909210
 Transform:
   m_ObjectHideFlags: 0

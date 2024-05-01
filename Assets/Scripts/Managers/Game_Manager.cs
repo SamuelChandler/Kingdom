@@ -10,6 +10,8 @@ public class Game_Manager : MonoBehaviour
     public GameState GameState;
     private int Level;
 
+    public float MoveDuration;
+
     public EnemyAI eAI;
 
     public int CurrentInspiration;

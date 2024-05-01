@@ -51,9 +51,29 @@ public abstract class Tile : MonoBehaviour
         }
 
         //sets unit to the selected tiles position. also sets references to each other
-        unit.transform.position = transform.position; 
+        if(unit.OccupiedTile != null){
+            StartCoroutine(MoveUnitToPos(transform.position,unit));
+
+        }else{
+            unit.transform.position = transform.position;
+        }
+        
+
         OccupiedUnit = unit; 
         unit.OccupiedTile = this;
+    }
+
+    IEnumerator MoveUnitToPos(Vector2 dest, BaseUnit unit){
+        float timeElapsed = 0;
+        Vector2 start = unit.transform.position;
+        float dur = Game_Manager.instance.MoveDuration;
+
+        while(timeElapsed < dur){
+            unit.transform.position = Vector2.Lerp(start,dest,timeElapsed/dur);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+        unit.transform.position = dest;
     }
 
     //helper to get unit. might be more complicated later

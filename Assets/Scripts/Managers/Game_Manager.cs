@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.XR;
+using Unity.VisualScripting;
 
 public class Game_Manager : MonoBehaviour
 {
@@ -93,7 +94,7 @@ public class Game_Manager : MonoBehaviour
     }
 
     //returns whether a unit can be played
-    public bool CanBePlayed(BaseUnit unit)
+    public bool CanBePlayed(BaseUnit unit,Tile dest)
     {
         //cannot be played if cost is greater than  current inspiration
         if(unit.unit.inspirationCost > CurrentInspiration)
@@ -101,7 +102,13 @@ public class Game_Manager : MonoBehaviour
             Debug.Log("Not enough inspiration to play this card");
             return false;
         }
-        return true;
+
+        foreach (BaseHero a in Board_Manager.instance._heroes){
+            if(Board_Manager.instance.WithinOne(a,dest)){
+                return true;
+            }
+        }
+        return false;
     }
 
     public bool CanBePlayed(AllyStructure structure){

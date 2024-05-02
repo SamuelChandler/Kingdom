@@ -20,13 +20,14 @@ public class Board_Manager : MonoBehaviour
     public BaseHero Hero_Prefab;
     public Leader Hero_Leader_Prefab;
 
+
     public EnemyBoss Boss_Prefab;
 
     public AllyStructure _allyS;
     public EnemyStructure _enemyS;
     public NeutralStructure _neutralS;
 
-    private List<BaseHero> _heroes = new List<BaseHero>();
+    public List<BaseHero> _heroes = new List<BaseHero>();
     public List<BaseEnemy> _enemies = new List<BaseEnemy>();
     private List<Structure> _structures = new List<Structure>();
 
@@ -146,7 +147,7 @@ public class Board_Manager : MonoBehaviour
         if(unit.unit.Faction == Faction.Hero)
         {
             //do not summon a ally unit that cannot be played
-            if (!Game_Manager.instance.CanBePlayed(unit)) { return; }
+            if (!Game_Manager.instance.CanBePlayed(unit,destTile)) { return; }
 
             //pay cost relating to Unit
             Game_Manager.instance.DecreaseCurrentInsperation(unit.unit.inspirationCost);
@@ -179,7 +180,7 @@ public class Board_Manager : MonoBehaviour
         {
             Hero_Prefab.unit = unit;
             //do not summon a ally unit that cannot be played
-            if (!Game_Manager.instance.CanBePlayed(Hero_Prefab)) { return; }
+            if (!Game_Manager.instance.CanBePlayed(Hero_Prefab,destTile)) { return; }
 
             //pay cost relating to Unit
             Game_Manager.instance.DecreaseCurrentInsperation(Hero_Prefab.unit.inspirationCost);
@@ -506,5 +507,20 @@ public class Board_Manager : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public bool WithinOne(BaseUnit a, Tile t){
+
+        float x_change = Mathf.Abs(a.OccupiedTile.x - t.x);
+        float y_change = Mathf.Abs(a.OccupiedTile.y - t.y);
+
+        if( x_change <= 1 && y_change <= 1){
+            return true;
+        }
+        else{
+            Debug.Log("cannot summon here");
+            return false;
+
+        }
     }
 }

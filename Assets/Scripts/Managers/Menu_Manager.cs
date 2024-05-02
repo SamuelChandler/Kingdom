@@ -12,7 +12,10 @@ public class Menu_Manager : MonoBehaviour
 {
     public static Menu_Manager instance;
 
-    [SerializeField] private GameObject _SelectedHeroObject, _tileInfo, _tileUnit, _messanger, _unitSelect,_winScreen,_lossScreen;
+    [SerializeField] private GameObject _displayCardObject, _tileInfo, _tileUnit, _messanger, _unitSelect,_winScreen,_lossScreen;
+
+
+    [SerializeField] private HeroCardFrame _displayCard;
 
     [SerializeField] private Button _endTurn;
 
@@ -26,7 +29,7 @@ public class Menu_Manager : MonoBehaviour
         instance = this;
 
         //clear unessisary windows 
-        _SelectedHeroObject.SetActive(false);
+        _displayCardObject.SetActive(false);
         _tileInfo.SetActive(false);
         _messanger.SetActive(false);
         _winScreen.SetActive(false);
@@ -93,19 +96,14 @@ public class Menu_Manager : MonoBehaviour
         //toggle off 
         if (hero == null)
         {
-            _SelectedHeroObject.SetActive(false);
+            _displayCardObject.SetActive(false);
             return;
         }
 
-        //build text based on hero
-        string displayedText = hero.unit.name;
-        displayedText += "\nCost: " + hero.unit.inspirationCost.ToString();
-        displayedText += "\nHealth: " + hero.currentHealth.ToString() + "/" + hero.unit.health.ToString();
-        displayedText += "\nSpeed: " + hero.unit.speed.ToString() + "   Attack: " + hero.unit.attack.ToString();
+        _displayCard.setCard(hero);
 
         //display selected hero
-        _SelectedHeroObject.GetComponentInChildren<TextMeshProUGUI>().text = displayedText;
-        _SelectedHeroObject.SetActive(true);
+        _displayCardObject.SetActive(true);
     }
 
     public void showSelectedHero(ScriptableUnit unit)
@@ -113,19 +111,14 @@ public class Menu_Manager : MonoBehaviour
         //toggle off 
         if (unit == null)
         {
-            _SelectedHeroObject.SetActive(false);
+            _displayCardObject.SetActive(false);
             return;
         }
 
         //build text based on hero
-        string displayedText = unit.name;
-        displayedText += "\nCost: " + unit.inspirationCost.ToString();
-        displayedText += "\nHealth: "+ unit.health.ToString();
-        displayedText += "\nSpeed: " + unit.speed.ToString() + "   Attack: " + unit.attack.ToString();
+        _displayCard.setCard(unit);
 
-        //display selected hero
-        _SelectedHeroObject.GetComponentInChildren<TextMeshProUGUI>().text = displayedText;
-        _SelectedHeroObject.SetActive(true);
+        _displayCardObject.SetActive(true);
     }
 
 

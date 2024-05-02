@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class BaseEnemy : BaseUnit
@@ -20,7 +21,6 @@ public class BaseEnemy : BaseUnit
         //check if enemy is within one space
         if (Mathf.Abs(this.OccupiedTile.x - hero.OccupiedTile.x) > 1 || Mathf.Abs(this.OccupiedTile.y - hero.OccupiedTile.y) > 1)
         {
-            Debug.Log("Attack was out of Range");
             return false;
         }
 

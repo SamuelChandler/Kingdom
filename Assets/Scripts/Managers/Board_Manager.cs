@@ -250,7 +250,7 @@ public class Board_Manager : MonoBehaviour
             float x = summonded_Structure.OccupiedTiles[0,0].transform.position.x + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.x - summonded_Structure.OccupiedTiles[0,0].transform.position.x)/2);
             float y = summonded_Structure.OccupiedTiles[0,0].transform.position.y + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.y - summonded_Structure.OccupiedTiles[0,0].transform.position.y)/2);
             summonded_Structure.transform.position = new Vector3(x,y,0.0f);
-            Debug.Log(summonded_Structure.transform.position);
+  
             _structures.Add(summonded_Structure);
             return;
 
@@ -286,7 +286,7 @@ public class Board_Manager : MonoBehaviour
             float x = summonded_Structure.OccupiedTiles[0,0].transform.position.x + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.x - summonded_Structure.OccupiedTiles[0,0].transform.position.x)/2);
             float y = summonded_Structure.OccupiedTiles[0,0].transform.position.y + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.y - summonded_Structure.OccupiedTiles[0,0].transform.position.y)/2);
             summonded_Structure.transform.position = new Vector3(x,y,0.0f);
-            Debug.Log(summonded_Structure.transform.position);
+
             _structures.Add(summonded_Structure);
             return;
         }
@@ -518,7 +518,7 @@ public class Board_Manager : MonoBehaviour
             return true;
         }
         else{
-            Debug.Log("cannot summon here");
+            Menu_Manager.instance.SetMessenger("cannot summon here");
             return false;
 
         }

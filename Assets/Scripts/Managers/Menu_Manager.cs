@@ -21,6 +21,9 @@ public class Menu_Manager : MonoBehaviour
 
     [SerializeField] InspirationBar _iBar;
 
+    [SerializeField] float _displayTime;
+    [SerializeField] float _fadeOutTime;
+
 
 
 
@@ -34,8 +37,6 @@ public class Menu_Manager : MonoBehaviour
         _messanger.SetActive(false);
         _winScreen.SetActive(false);
         _lossScreen.SetActive(false);
-
-        _endTurn.onClick.AddListener(Game_Manager.instance.EndPlayerTurn);
 
     }
 
@@ -58,6 +59,8 @@ public class Menu_Manager : MonoBehaviour
 
         _messanger.GetComponentInChildren<TextMeshProUGUI>().text = message;
         _messanger.SetActive(true);
+
+        StartCoroutine(DisplayBeforeFadeOut(_messanger));
     }
 
     //displays tile info on screen when called. null clears window
@@ -128,5 +131,40 @@ public class Menu_Manager : MonoBehaviour
 
     public void showLossScreen(){
         _lossScreen.SetActive(true);
+    }
+
+    IEnumerator DisplayBeforeFadeOut(GameObject o){
+        float timeElapsed = 0f;
+
+        while(timeElapsed < _displayTime){
+            //do nothing 
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        StartCoroutine(FadeOut(o));
+
+    }
+
+    IEnumerator FadeOut(GameObject o){
+        float timeElapsed = 0f;
+        Color c = o.GetComponent<Image>().color;
+        Color textc = o.GetComponentInChildren<TextMeshProUGUI>().faceColor;
+        //fade out 
+        while(timeElapsed < _fadeOutTime){
+            
+            c =  new Color(c.r,c.g,c.b,1 - timeElapsed/_fadeOutTime);
+            textc = new Color(textc.r,textc.g,textc.b,1 - timeElapsed/_fadeOutTime);
+
+            o.GetComponentInChildren<TextMeshProUGUI>().faceColor = textc;
+            o.GetComponent<Image>().color = c;
+
+             timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        o.SetActive(false);
+        o.GetComponentInChildren<TextMeshProUGUI>().faceColor = new Color(textc.r,textc.g,textc.b,255f);
+        o.GetComponent<Image>().color = new Color(c.r,c.g,c.b,255f);
     }
 }

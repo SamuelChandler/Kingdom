@@ -11,8 +11,6 @@ public class EnemyAI : MonoBehaviour
         //perform unit actions
         UnitActions();
 
-
-        Debug.Log("AI has ended Their Turn");
         Game_Manager.instance.ChangeState(GameState.HeroesTurn);
     }
 
@@ -20,7 +18,7 @@ public class EnemyAI : MonoBehaviour
     {
         foreach (var e in Board_Manager.instance._enemies)
         {
-            Debug.Log(e.unit.name);
+          
 
             e.uAI.TakeTurn();
         }

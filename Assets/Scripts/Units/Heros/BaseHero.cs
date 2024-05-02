@@ -11,7 +11,7 @@ public class BaseHero : BaseUnit
         //check if enemy is within one space
         if(Mathf.Abs(this.OccupiedTile.x - enemy.OccupiedTile.x) > 1|| Mathf.Abs(this.OccupiedTile.y - enemy.OccupiedTile.y) > 1)
         {
-            Debug.Log("Attack was out of Range");
+            Menu_Manager.instance.SetMessenger("Attack was out of Range");
             return false;
         }
         
@@ -43,7 +43,7 @@ public class BaseHero : BaseUnit
         }
         if(inRange == false)
         {
-            Debug.Log("Attack was out of Range");
+            Menu_Manager.instance.SetMessenger("Attack was out of Range");
             return false;
         }
         

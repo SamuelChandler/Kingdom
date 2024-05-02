@@ -99,7 +99,7 @@ public class Game_Manager : MonoBehaviour
         //cannot be played if cost is greater than  current inspiration
         if(unit.unit.inspirationCost > CurrentInspiration)
         {
-            Debug.Log("Not enough inspiration to play this card");
+            Menu_Manager.instance.SetMessenger("Not enough inspiration to play this card");
             return false;
         }
 
@@ -115,7 +115,7 @@ public class Game_Manager : MonoBehaviour
         //cannot be played if cost is greater than  current inspiration
         if(structure._structure.inspirationCost > CurrentInspiration)
         {
-            Debug.Log("Not enough inspiration to play this card");
+            Menu_Manager.instance.SetMessenger("Not enough inspiration to play this card");
             return false;
         }
         return true;
@@ -124,7 +124,6 @@ public class Game_Manager : MonoBehaviour
     //called to end the turn of the player
     public void EndPlayerTurn()
     {
-        Debug.Log("Player has ended the Turn");
         instance.ChangeState(GameState.EnemiesTurn);
     }
 

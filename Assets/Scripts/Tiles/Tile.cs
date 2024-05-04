@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public abstract class Tile : MonoBehaviour
 {
@@ -35,6 +36,13 @@ public abstract class Tile : MonoBehaviour
         Menu_Manager.instance.showTileInfo(null);
     }
 
+    private void OnMouseOver(){
+        if(Input.GetMouseButtonDown(0)){
+            MouseClickLeft();
+        }else if(Input.GetMouseButtonDown(1)){
+            MouseClickRight();
+        }
+    }
     public Tile setStructure(Structure structure){
         structure.transform.position = transform.position;
         OccupiedStructure = structure;
@@ -84,12 +92,10 @@ public abstract class Tile : MonoBehaviour
     }
 
     //events if the mouse button is pressed on a tile
-    private void OnMouseDown()
+    private void MouseClickLeft()
     {
         //only works if it is not the heros turn
         if (Game_Manager.instance.GameState != GameState.HeroesTurn) return;
-
-        
 
         //if tile is not empty
         if (OccupiedUnit != null)
@@ -149,5 +155,13 @@ public abstract class Tile : MonoBehaviour
         }
     }
 
+    private void MouseClickRight(){
+
+        if (Game_Manager.instance.GameState != GameState.HeroesTurn) return;
+
+        if(OccupiedUnit != null){
+            Menu_Manager.instance.showUnit(OccupiedUnit.unit);
+        }
+    }
 }
 

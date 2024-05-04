@@ -518,7 +518,6 @@ public class Board_Manager : MonoBehaviour
             return true;
         }
         else{
-            Menu_Manager.instance.SetMessenger("cannot summon here");
             return false;
 
         }

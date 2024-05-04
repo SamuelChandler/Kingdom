@@ -16,6 +16,6 @@ MonoBehaviour:
   image: {fileID: 1663432448, guid: 11d71db6e067fd041b2880530eb621d8, type: 3}
   name: Snake
   inspirationCost: 3
-  health: 7
-  attack: 3
+  health: 5
+  attack: 2
   speed: 2

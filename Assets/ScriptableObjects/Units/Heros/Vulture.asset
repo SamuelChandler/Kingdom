@@ -16,6 +16,6 @@ MonoBehaviour:
   image: {fileID: 1610201171, guid: 067c613b1c75b72438d2e3e216685e26, type: 3}
   name: Vulture
   inspirationCost: 4
-  health: 6
-  attack: 2
-  speed: 5
+  health: 4
+  attack: 5
+  speed: 2

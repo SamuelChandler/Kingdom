@@ -108,6 +108,7 @@ public class Game_Manager : MonoBehaviour
                 return true;
             }
         }
+        Menu_Manager.instance.SetMessenger("cannot summon here");
         return false;
     }
 

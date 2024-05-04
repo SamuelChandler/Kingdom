@@ -16,6 +16,6 @@ MonoBehaviour:
   image: {fileID: 341029267, guid: 22898a095344b994e9734a610488f1ec, type: 3}
   name: Bat
   inspirationCost: 3
-  health: 3
-  attack: 5
-  speed: 5
+  health: 4
+  attack: 4
+  speed: 2

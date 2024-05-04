@@ -27,11 +27,11 @@ public class UnitSelector : MonoBehaviour
     private void OnMouseEnter()
     {
         Menu_Manager.instance.SetMessenger("hovering");
-        Menu_Manager.instance.showSelectedHero(held_unit);
+        Menu_Manager.instance.showUnit(held_unit);
     }
     private void OnMouseLeave()
     {
-        Menu_Manager.instance.showSelectedHero((BaseHero)null);
+        Menu_Manager.instance.showUnit((BaseHero)null);
     }
 
     void btnClick()

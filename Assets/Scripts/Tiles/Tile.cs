@@ -104,6 +104,9 @@ public abstract class Tile : MonoBehaviour
                     Unit_Manager.instance.SelectedHero.Attack(enemy);
                     Unit_Manager.instance.SetSelectedHero((BaseHero)null);
                 }
+                else{
+                    Menu_Manager.instance.showUnit(OccupiedUnit.unit);
+                }
             }
         }
         else if(OccupiedStructure != null){

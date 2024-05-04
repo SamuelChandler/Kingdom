@@ -74,22 +74,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5553256529938033025, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
       propertyPath: m_Color.a
-      value: 0.33333334
+      value: 0.019607844
       objectReference: {fileID: 0}
     - target: {fileID: 5553256529938033025, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5553256529938033025, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5553256529938033025, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5553256529938033025, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553256529938033025, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8137682353039871671, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
@@ -149,6 +153,7 @@ MonoBehaviour:
   x: 0
   y: 0
   OccupiedUnit: {fileID: 0}
+  OccupiedStructure: {fileID: 0}
   _baseColor: {r: 1, g: 1, b: 1, a: 1}
   _offsetColor: {r: 0.7981043, g: 0.8018868, b: 0.79844815, a: 1}
 --- !u!212 &7083851374388391367 stripped

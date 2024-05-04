@@ -44,7 +44,7 @@ public class Unit_Manager : MonoBehaviour
     public void SetSelectedHero(BaseHero Hero)
     {
         SelectedHero = Hero;
-        Menu_Manager.instance.showSelectedHero(Hero);
+        Menu_Manager.instance.showUnit(Hero);
     }
 
     //sets the selected hero based on a scriptable Unit
@@ -54,7 +54,7 @@ public class Unit_Manager : MonoBehaviour
         SelectedHero = Unit_Prefab;
         SelectedHero.unit = unit;
 
-        Menu_Manager.instance.showSelectedHero(unit);
+        Menu_Manager.instance.showUnit(unit);
     }
 
     

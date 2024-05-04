@@ -94,7 +94,7 @@ public class Menu_Manager : MonoBehaviour
     }
 
     //displays the hero information when called. null clears window 
-    public void showSelectedHero(BaseHero hero)
+    public void showUnit(BaseHero hero)
     {
         //toggle off 
         if (hero == null)
@@ -109,7 +109,7 @@ public class Menu_Manager : MonoBehaviour
         _displayCardObject.SetActive(true);
     }
 
-    public void showSelectedHero(ScriptableUnit unit)
+    public void showUnit(ScriptableUnit unit)
     {
         //toggle off 
         if (unit == null)

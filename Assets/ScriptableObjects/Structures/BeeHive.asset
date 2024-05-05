@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e32db9108dba6b40bae96850bf15ee1, type: 3}
   m_Name: BeeHive
   m_EditorClassIdentifier: 
-  Faction: 1
-  image: {fileID: -465612688, guid: e6394e7f1c3ece84b917fb083db18fe0, type: 3}
+  image: {fileID: 2326962257876183662, guid: e0b34306e91534440b40fc81b331af1f, type: 3}
   name: BeeHive
   inspirationCost: 5
+  description: 
+  Faction: 1
   height: 2
   width: 2
   health: 8

@@ -5,15 +5,9 @@ using UnityEngine.UI;
 
 
 [CreateAssetMenu(fileName = "New Unit",menuName = "Scriptable Unit")]
-public class ScriptableUnit : ScriptableObject
+public class ScriptableUnit : Card
 {
     public Faction Faction;
-    public Sprite image;
-
-    public new string name;
-
-    //Cost 
-    public int inspirationCost;
 
     //player stats 
     public int health;

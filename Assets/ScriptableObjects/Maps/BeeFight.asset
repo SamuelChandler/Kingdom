@@ -43,9 +43,9 @@ MonoBehaviour:
     loc: {x: 7, y: 2}
   _levelType: 1
   _boss:
-    enemy: {fileID: 11400000, guid: e28bff263a3d5da499cee8d128b061cc, type: 2}
+    enemy: {fileID: 11400000, guid: a50ab383eabb74245a058564ef0f1251, type: 2}
     loc: {x: 6, y: 4}
   _leader:
-    unit: {fileID: 11400000, guid: 99611d2e63e7f81468a79fdcdd0bc7e8, type: 2}
+    unit: {fileID: 11400000, guid: 9451116f651674f4c81eaedfb07e3dbb, type: 2}
     loc: {x: 1, y: 1}
   _survivalTurns: 0

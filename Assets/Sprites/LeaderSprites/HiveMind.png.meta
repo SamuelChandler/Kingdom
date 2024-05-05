@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 559ffbc08e84c754bb335b6889a75ab8
+guid: 6aeba15f88211ff469206fd978da62e2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -70,9 +70,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bee_0
+      name: HiveMind_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40b4b23d8071fc54cbc6bd2ec1b5efef
-      internalID: 2043147500
+      spriteID: 150a487bad127db43902bcb53d007c18
+      internalID: 136373307
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee_1
+      name: HiveMind_1
       rect:
         serializedVersion: 2
         x: 0
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e7c4fa813993f24bb8a3fd45c237a07
-      internalID: 1583630752
+      spriteID: 6f804970225be764c8d68171166d9034
+      internalID: 694017729
       vertices: []
       indices: 
       edges: []
@@ -175,8 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bee_0: 2043147500
-      Bee_1: 1583630752
+      HiveMind_0: 136373307
+      HiveMind_1: 694017729
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

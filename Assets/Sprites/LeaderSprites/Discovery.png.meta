@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 559ffbc08e84c754bb335b6889a75ab8
+guid: b599779e33d9d0b45ad606ff73211161
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bee_0
+      name: Discovery_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40b4b23d8071fc54cbc6bd2ec1b5efef
-      internalID: 2043147500
+      spriteID: 097055f1023684d4b8d94fad4f2acd97
+      internalID: -18867061
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee_1
+      name: Discovery_1
       rect:
         serializedVersion: 2
         x: 0
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e7c4fa813993f24bb8a3fd45c237a07
-      internalID: 1583630752
+      spriteID: dc9b559b22e69b24592c6a1ccbdc2f28
+      internalID: -455310802
       vertices: []
       indices: 
       edges: []
@@ -175,8 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bee_0: 2043147500
-      Bee_1: 1583630752
+      Discovery_0: -18867061
+      Discovery_1: -455310802
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

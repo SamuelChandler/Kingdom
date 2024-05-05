@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0ae76b5a4512e488865136dbaecdf2, type: 3}
   m_Name: Sheep
   m_EditorClassIdentifier: 
-  Faction: 0
-  image: {fileID: -570928064, guid: 164c541b1effff643994616ac0ec14a3, type: 3}
+  image: {fileID: 2097456177, guid: 164c541b1effff643994616ac0ec14a3, type: 3}
   name: Sheep
   inspirationCost: 4
+  description: Beep Beep Im A Sheep
+  Faction: 0
   health: 7
   attack: 3
   speed: 2

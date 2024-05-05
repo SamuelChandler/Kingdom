@@ -3,15 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Unit",menuName = "Structure/Structure")]
-public class ScriptableStructure : ScriptableObject
+public class ScriptableStructure : Card
 {
     public Faction Faction;
-    public Sprite image;
-
-    public new string name;
-
-    //Cost 
-    public int inspirationCost;
 
     //size it will take up on the map
     public int height; 

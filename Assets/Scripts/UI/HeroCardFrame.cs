@@ -23,6 +23,14 @@ public class HeroCardFrame : MonoBehaviour
         health.text = h.health.ToString();
         attack.text = h.attack.ToString();
         unitImage.sprite = h.image;
+        description.text = h.description;
         
+    }
+
+    public void setCard(Card c){
+        unitName.text = c.name;
+        cost.text = c.inspirationCost.ToString();
+        unitImage.sprite = c.image;
+        description.text = c.description;
     }
 }

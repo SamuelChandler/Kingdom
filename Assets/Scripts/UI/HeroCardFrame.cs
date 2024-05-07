@@ -8,6 +8,7 @@ public class HeroCardFrame : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI unitName,cost,health,attack,description;
     [SerializeField] private Image unitImage;
+    
     public void setCard(BaseHero h){
         unitName.text = h.unit.name;
         cost.text = h.unit.inspirationCost.ToString();
@@ -33,4 +34,5 @@ public class HeroCardFrame : MonoBehaviour
         unitImage.sprite = c.image;
         description.text = c.description;
     }
+
 }

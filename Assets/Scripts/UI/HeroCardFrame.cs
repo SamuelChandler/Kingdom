@@ -29,6 +29,11 @@ public class HeroCardFrame : MonoBehaviour
     }
 
     public void setCard(Card c){
+
+        if((ScriptableUnit)c != null){
+            setCard((ScriptableUnit)c);
+            return;
+        }
         unitName.text = c.name;
         cost.text = c.inspirationCost.ToString();
         unitImage.sprite = c.image;

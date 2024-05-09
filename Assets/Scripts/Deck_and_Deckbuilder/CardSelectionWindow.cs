@@ -9,7 +9,7 @@ public class CardSelectionWindow : MonoBehaviour
 {
 
     [SerializeField]
-    HeroCardFrame[] _cards;
+    CardSelector[] _cardSelectors;
 
     [SerializeField]
     private int _numberOfCardsOnScreen;
@@ -28,21 +28,7 @@ public class CardSelectionWindow : MonoBehaviour
         pageNumber = 0;
 
         for(int i = 0; i < _numberOfCardsOnScreen; i++){
-            if((ScriptableUnit)_currentSet.CardsInSet[i]){
-
-                _cards[i].gameObject.SetActive(true);
-                _cards[i].setCard((ScriptableUnit)_currentSet.CardsInSet[i]);
-
-            }else if(_currentSet.CardsInSet[i]){
-
-                _cards[i].gameObject.SetActive(true);
-                _cards[i].setCard(_currentSet.CardsInSet[i]);
-
-            }else{
-
-                _cards[i].gameObject.SetActive(false);
-
-            }
+            _cardSelectors[i].SetDisplayedCard(_currentSet.CardsInSet[i]);
         }
 
     
@@ -54,17 +40,10 @@ public class CardSelectionWindow : MonoBehaviour
 
         for(int i = 0; i < _numberOfCardsOnScreen; i++){
             if(i + 8*pageNumber >= _currentSet.CardsInSet.Count){
-                _cards[i].gameObject.SetActive(false);
+                _cardSelectors[i].gameObject.SetActive(false);
             }
-            else if((ScriptableUnit)_currentSet.CardsInSet[i + 8*pageNumber] ){
-
-                _cards[i].gameObject.SetActive(true);
-                _cards[i].setCard((ScriptableUnit)_currentSet.CardsInSet[i+ 8*pageNumber] );
-
-            }else{
-
-                _cards[i].gameObject.SetActive(true);
-                _cards[i].setCard(_currentSet.CardsInSet[i+ 8*pageNumber]);
+            else{
+                _cardSelectors[i].SetDisplayedCard(_currentSet.CardsInSet[i+ 8*pageNumber]);
                 
             }
         }
@@ -84,17 +63,10 @@ public class CardSelectionWindow : MonoBehaviour
 
         for(int i = 0; i < _numberOfCardsOnScreen; i++){
             if(i + 8*pageNumber >= _currentSet.CardsInSet.Count){
-                _cards[i].gameObject.SetActive(false);
+                _cardSelectors[i].gameObject.SetActive(false);
             }
-            else if((ScriptableUnit)_currentSet.CardsInSet[i + 8*pageNumber] ){
-
-                _cards[i].gameObject.SetActive(true);
-                _cards[i].setCard((ScriptableUnit)_currentSet.CardsInSet[i+ 8*pageNumber] );
-
-            }else{
-
-                _cards[i].gameObject.SetActive(true);
-                _cards[i].setCard(_currentSet.CardsInSet[i+ 8*pageNumber]);
+            else{
+                _cardSelectors[i].SetDisplayedCard(_currentSet.CardsInSet[i+ 8*pageNumber]);
                 
             }
         }

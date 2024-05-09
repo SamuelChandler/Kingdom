@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 3011711129500810724}
   - component: {fileID: 7571347538586083917}
   - component: {fileID: 5203552770841504787}
+  - component: {fileID: 151845221789201657}
   m_Layer: 5
   m_Name: Card_In_Deck_Icon
   m_TagString: Untagged
@@ -212,6 +213,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &151845221789201657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7622589837384490824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5396f40fe7516d7429517c93a76e9cd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: {fileID: 8110113030769538349}
+  Cost: {fileID: 2895879755360200277}
+  card: {fileID: 0}
+  Number: {fileID: 1052383348028717016}
 --- !u!1 &8664734467992162527
 GameObject:
   m_ObjectHideFlags: 0

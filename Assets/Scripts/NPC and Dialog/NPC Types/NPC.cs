@@ -19,6 +19,7 @@ public abstract class NPC : MonoBehaviour, IInteractable
 
     private void Update()
     {
+        //check it the user wants to interact.
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             //interact method 

@@ -24,7 +24,8 @@ public class DeckBuilder : MonoBehaviour
     }
 
     public void AddCardToDeck(Card c){
-        _dWindow.AddCard(c);
+        
+        _dWindow.CreateAndAddCard(c);
     }
 
     public void RemoveCardFromDeck(Card c){

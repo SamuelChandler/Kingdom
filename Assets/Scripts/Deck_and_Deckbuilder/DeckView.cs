@@ -16,10 +16,13 @@ public class DeckView : MonoBehaviour
     [SerializeField]
     GameObject EntryList;
 
-    
+    public void CreateAndAddCard(Card argCard){
 
+        //if card is already in a list then just add an adittional
+        if(increaseCount(argCard)){
+            return;
+        }
 
-    public void AddCard(Card argCard){
         //create entry
         GameObject addedEntry = Instantiate(DeckEntryPrefab, EntryList.transform);
 
@@ -31,6 +34,16 @@ public class DeckView : MonoBehaviour
         cardInDeckView.Add(addedEntry.transform.gameObject.GetComponent(typeof(DeckEntry)) as DeckEntry);
 
         
+    }
+
+    public bool increaseCount(Card argCard){
+        foreach(DeckEntry x in cardInDeckView){
+            if(x.card == argCard){
+                x.AddCard();
+                return true;
+            }
+        }
+        return false;
     }
 
     public void RemoveCard(Card argCard){

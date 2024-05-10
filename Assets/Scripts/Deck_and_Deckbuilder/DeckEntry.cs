@@ -12,7 +12,7 @@ public class DeckEntry : MonoBehaviour, IPointerClickHandler
     [SerializeField]
     TextMeshProUGUI Cost;
     [SerializeField]
-    Card card;
+    public Card card;
     [SerializeField]
     TextMeshProUGUI Number;
 

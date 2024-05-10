@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e32db9108dba6b40bae96850bf15ee1, type: 3}
   m_Name: Neutral_default
   m_EditorClassIdentifier: 
-  Faction: 2
   image: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   name: Unit Didnt spawn
   inspirationCost: 1
+  description: 
+  Faction: 2
   height: 1
   width: 1
   health: 1
+  effects:
+  - {fileID: 0}

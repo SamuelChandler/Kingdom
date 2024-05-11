@@ -10,7 +10,6 @@ using UnityEngine.SceneManagement;
 
 public class Scene_Manager : MonoBehaviour
 {
-    //private int Main_menu_index = 0;
     private int Level_Select_index = 1;
     private int Game_index = 2;
 
@@ -26,4 +25,20 @@ public class Scene_Manager : MonoBehaviour
     {
         SceneManager.LoadScene(Level_Select_index);
     }
+
+    //loads the overworld scene
+    public void GoToOverworld(){
+        SceneManager.LoadScene(3);
+    }
+
+    public void StartNewGame(){
+        DataPersistanceManager.instance.NewGame("NewPlayer");
+        DataPersistanceManager.instance.SaveGame();
+
+        GoToOverworld();
+    }
+
+
+
+    
 }

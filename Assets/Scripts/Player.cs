@@ -14,7 +14,9 @@ public class Player : MonoBehaviour, IDataPersistance
     [SerializeField]
     private PauseMenu _pauseMenu;
 
-    public List<Deck> _decks;
+    public PlayerData data;
+
+    public Card cardToSave;
 
     // Update is called once per frame
     void Update()
@@ -31,6 +33,7 @@ public class Player : MonoBehaviour, IDataPersistance
     }
 
 
+
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + (movement * moveSpeed * Time.fixedDeltaTime));
@@ -38,11 +41,15 @@ public class Player : MonoBehaviour, IDataPersistance
 
     public void LoadData(PlayerData playerData)
     {
-        this._decks = playerData._decks;
+        this.data._decks = playerData._decks;
+        this.data._cardInventory = playerData._cardInventory;
+        data._cardInventory.Add(cardToSave);
+        data._cardInventory.Add(cardToSave);
     }
 
     public void SaveData(ref PlayerData playerData)
     {
-        playerData._decks = this._decks;
+        playerData._decks = this.data._decks;
+        playerData._cardInventory = this.data._cardInventory;
     }
 }

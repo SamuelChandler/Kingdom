@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fightable_NPC : MonoBehaviour
+public class Fightable_NPC : NPC, ITalkable
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private DialogText _dialogText;
+
+    
+
+    public override void Interact()
     {
-        
+        Talk(_dialogText);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Talk(DialogText dialogText)
     {
-        
+        //one Liners should only have one line of text so only the first is displayed
+        dialog_UI.instance.DisplayNextParagraph(dialogText);
     }
 }

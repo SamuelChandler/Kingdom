@@ -14,5 +14,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/OverWorld.unity
+    guid: eb48ac66148a22d41bf1378949aaa5cf
+  - enabled: 1
+    path: Assets/Scenes/DeckBuilder.unity
+    guid: 0d3d30db59ebb20409064c2960fdc70b
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 1b810d138ee9a3d4aa449494eb590dc2, type: 2}

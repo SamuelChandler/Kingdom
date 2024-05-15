@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e32db9108dba6b40bae96850bf15ee1, type: 3}
   m_Name: BeeHive
   m_EditorClassIdentifier: 
-  image: {fileID: 2326962257876183662, guid: e0b34306e91534440b40fc81b331af1f, type: 3}
+  id: 
+  image: {fileID: -465612688, guid: e6394e7f1c3ece84b917fb083db18fe0, type: 3}
   name: BeeHive
   inspirationCost: 5
-  description: 
+  description: This Spawns Bees
   Faction: 1
-  height: 2
-  width: 2
+  height: 1
+  width: 1
   health: 8
   effects:
   - {fileID: 11400000, guid: 746ff559c4d4ef848b5c332b94e79d62, type: 2}

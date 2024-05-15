@@ -38,4 +38,18 @@ public class One_Liner_NPC : NPC, ITalkable
         }
         
     }
+
+    public override void ResolveChoice(bool c)
+    {
+        Debug.Log("No choices implemented Yet");
+    }
+
+    public override void StopInteracting()
+    {
+        if(convoStats.ConversationPointer == 0){return;}
+
+        dialog_UI.instance.EndConversation();
+        convoStats = new ConversationStats(false,true,0,_dialogText.Paragraphs.Length);
+        
+    }
 }

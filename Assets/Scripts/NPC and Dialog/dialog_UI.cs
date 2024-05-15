@@ -10,12 +10,17 @@ public class dialog_UI : MonoBehaviour
     [SerializeField] TextMeshProUGUI _dialogText;
     [SerializeField] TextMeshProUGUI _nameText;
     [SerializeField] GameObject _dialog;
+    [SerializeField] GameObject _choices;
+    [SerializeField] TextMeshProUGUI _choice1;
+    [SerializeField] TextMeshProUGUI _choice2;
     [SerializeField] private float _typeSpeed  = 10f;
 
     //variables used in display Next Paragraph
     private Queue<string> paragraphs = new Queue<string>();
     private bool conversationEnded;
     private string p;
+
+    public NPC currentlyTalkingNPC;
 
     private Coroutine typeDialogueCoroutine;
     private bool isTyping;
@@ -31,6 +36,7 @@ public class dialog_UI : MonoBehaviour
     private void Start()
     {
         _dialog.SetActive(false);
+        _choices.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -112,6 +118,7 @@ public class dialog_UI : MonoBehaviour
 
         //stop displaying dialog box 
         _dialog.SetActive(false);
+        _choices.SetActive(false);
     }
 
     private IEnumerator TypeDialogText(string p)
@@ -150,6 +157,22 @@ public class dialog_UI : MonoBehaviour
 
         //update is typing 
         isTyping = false;
+    }
+
+    public void DisplayChoices(string c1,string c2){
+        _choices.SetActive(true);
+        _choice1.text = c1;
+        _choice2.text = c2;
+    }
+
+    public void ChoiceOne(){
+        currentlyTalkingNPC.ResolveChoice(true);
+        _choices.SetActive(false);
+    }
+
+    public void ChoiceTwo(){
+        currentlyTalkingNPC.ResolveChoice(false);
+        _choices.SetActive(false);
     }
 }
 

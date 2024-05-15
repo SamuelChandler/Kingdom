@@ -13,6 +13,13 @@ public class Scene_Manager : MonoBehaviour
     private int Level_Select_index = 1;
     private int Game_index = 2;
 
+    public static Scene_Manager instance;
+
+
+    private void Awake(){
+        instance = this;
+    }
+    
     //Goes to the Game scene and defines it the level integer
     public void GoToGame(int level)
     {
@@ -29,6 +36,11 @@ public class Scene_Manager : MonoBehaviour
     //loads the overworld scene
     public void GoToOverworld(){
         SceneManager.LoadScene(3);
+    }
+
+    public void GoToBattle(){
+        PlayerPrefs.SetInt("Level Selected", 69);
+        SceneManager.LoadScene(2);
     }
 
     public void StartNewGame(){

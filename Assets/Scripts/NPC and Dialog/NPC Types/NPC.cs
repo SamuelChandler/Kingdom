@@ -29,6 +29,10 @@ public abstract class NPC : MonoBehaviour, IInteractable
             }
         }
 
+        if(!IsWithinInteractDistance()){
+            StopInteracting();
+        }
+
         if (_interactSprite.gameObject.activeSelf && !IsWithinInteractDistance())
         {
             //turn off sprite
@@ -44,6 +48,9 @@ public abstract class NPC : MonoBehaviour, IInteractable
 
     public abstract void Interact();
 
+    public abstract void StopInteracting();
+
+    public abstract void ResolveChoice(bool c);
     private bool IsWithinInteractDistance()
     {
         if (Vector2.Distance(_playerTransform.position, transform.position) < INTERACT_DISTANCE)
@@ -56,4 +63,5 @@ public abstract class NPC : MonoBehaviour, IInteractable
         }
         
     }
+
 }

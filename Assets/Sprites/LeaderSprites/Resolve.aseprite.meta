@@ -123,15 +123,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Resolve
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: -0.015873017}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 10
-      height: 61
+      width: 12
+      height: 63
     spriteID: 3e6862c7a7baaaf458e129936e2d3707
     spriteBone: []
     spriteOutline: []
@@ -153,10 +153,10 @@ ScriptedImporter:
     - name: Resolve
       frameIndex: 0
       cellRect:
-        x: 11
-        y: 0
-        width: 10
-        height: 61
+        x: 10
+        y: 1
+        width: 12
+        height: 63
       spriteId: 3e6862c7a7baaaf458e129936e2d3707
     linkedCells: []
     parentIndex: -1

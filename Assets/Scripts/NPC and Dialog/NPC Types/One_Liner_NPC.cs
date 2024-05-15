@@ -6,14 +6,36 @@ public class One_Liner_NPC : NPC, ITalkable
 {
     [SerializeField] private DialogText _dialogText;
 
+    private ConversationStats convoStats;
+
+    private void Awake(){
+        //set convorsation stats
+        convoStats = new ConversationStats(false,true,0,_dialogText.Paragraphs.Length);
+    }
+
     public override void Interact()
     {
         Talk(_dialogText);
     }
 
     public void Talk(DialogText dialogText)
-    {
-        //one Liners should only have one line of text so only the first is displayed
-        dialog_UI.instance.DisplayNextParagraph(dialogText);
+    {   
+
+
+        if(convoStats.Ended == true){
+            convoStats = new ConversationStats(false,true,0,_dialogText.Paragraphs.Length);
+        }
+
+        convoStats = dialog_UI.instance.DisplayNextParagraph(_dialogText,convoStats);
+
+        if(convoStats.ReadyForNextParagraph){
+            convoStats.ConversationPointer++;
+            convoStats.ReadyForNextParagraph = false;
+        }
+
+        if(convoStats.hasConversationEnded()){
+            convoStats.ReadyToEnd = true;
+        }
+        
     }
 }

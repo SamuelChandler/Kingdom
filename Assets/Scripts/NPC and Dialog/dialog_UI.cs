@@ -44,44 +44,50 @@ public class dialog_UI : MonoBehaviour
         _dialog.SetActive(true);
     }
 
-    public void DisplayNextParagraph(DialogText dialog)
+    //displays the next paragraph returns true on new text 
+    //being created and false on completeing the previos text 
+    public ConversationStats DisplayNextParagraph(DialogText dialog,ConversationStats c)
     {
         //if there is nothing in the queue
-        if (paragraphs.Count == 0) { 
+        if (c.ConversationPointer == 0) { 
             if(!conversationEnded)
             {
                 //start conversation
                 StartConversation(dialog);
             }
-            else if(conversationEnded && !isTyping) 
-            {
-                //end the conversation
-                EndConversation();
-            }
+            
         }
 
-        // if queue is not empty
-        if (!isTyping)
+        if(c.ReadyToEnd && !isTyping) 
         {
-            p = paragraphs.Dequeue();
+            //end the conversation
+            EndConversation();
+            c.Ended = true;
+        }
+
+        //
+        if (!isTyping && !c.Ended)
+        {
+            p = dialog.Paragraphs[c.ConversationPointer];
 
             typeDialogueCoroutine = StartCoroutine(TypeDialogText(p));
+
+            c.ReadyForNextParagraph = true;
+            return c;
         }
         else
         {
             FinishParagraphEarly();
+
+            c.ReadyForNextParagraph = false;
+            return c;
         }
 
 
-        //update conversation ended flag
-        if(paragraphs.Count == 0 )
-        {
-            conversationEnded = true;
-        }
+        
     }
 
-
-    private void StartConversation(DialogText dialog)
+    public void StartConversation(DialogText dialog)
     {
         _dialog.SetActive(true);
 
@@ -96,7 +102,7 @@ public class dialog_UI : MonoBehaviour
 
     }
 
-    private void EndConversation()
+    public void EndConversation()
     {
         //clear the queue
         paragraphs.Clear();
@@ -134,7 +140,7 @@ public class dialog_UI : MonoBehaviour
         isTyping = false;
     }
 
-    private void FinishParagraphEarly()
+    public void FinishParagraphEarly()
     {
         //stop coroutine
         StopCoroutine(typeDialogueCoroutine);

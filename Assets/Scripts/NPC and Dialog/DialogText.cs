@@ -12,12 +12,16 @@ public class DialogText : ScriptableObject
     [TextArea(5,10)]
     public string[] Paragraphs;
 
-    public choices[] _choices;
+    public choice[] _choices;
 
 }
 
 [Serializable]
-public class choices{
+public class choice{
+
+    //the location of the choice in dialog
+    public int _choicePos;
+
     //2 choices that can be chosen
     public string _choiceOne;
 
@@ -28,6 +32,4 @@ public class choices{
 
     public int _choiceTwoResult;
 
-    //the location of the choice in dialog
-    public int _choicePos;
 }

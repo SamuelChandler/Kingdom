@@ -14,6 +14,8 @@ public class Board_Manager : MonoBehaviour
 
     [SerializeField] private Transform _camera;
 
+    [SerializeField] private int Tilesize;
+
     private Dictionary<Vector2, Tile> _tiles;
 
     public BaseEnemy Enemy_Prefab;
@@ -50,7 +52,7 @@ public class Board_Manager : MonoBehaviour
 
             if(id != '\n')
             {
-                var spawnedTile = Instantiate(_map.GetTile(id), new Vector3(log,-j), Quaternion.identity);
+                var spawnedTile = Instantiate(_map.GetTile(id), new Vector3(Tilesize * log,Tilesize *-j), Quaternion.identity);
                 spawnedTile.name = $"Tile {log} {j}";
 
                 spawnedTile.Init(log, j);
@@ -67,7 +69,7 @@ public class Board_Manager : MonoBehaviour
             }
         }
 
-        _camera.transform.position = new Vector3((float)_map.width/ 2- 0.5f, -1 * ((float)_map.height /2 - 0.5f),-1);
+        _camera.transform.position = new Vector3(Tilesize*((float)_map.width/ 2- 0.5f), -Tilesize * ((float)_map.height /2 - 0.5f),-1);
 
         Game_Manager.instance.ChangeState(GameState.SpawnHero);
     }

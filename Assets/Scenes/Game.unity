@@ -1686,6 +1686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _map: {fileID: 11400000, guid: c618d6a595ac3fe4a8f779ca35b8f8b4, type: 2}
   _camera: {fileID: 519420032}
+  Tilesize: 1
   Enemy_Prefab: {fileID: 3274533661099625066, guid: c95ccba0a7f10ae4dac63eefa0fdd3f2, type: 3}
   Hero_Prefab: {fileID: 1603683541253479809, guid: 8e9d67deb09603248a93e050a241aa12, type: 3}
   Hero_Leader_Prefab: {fileID: 8541924346062359077, guid: a0b2097e79d8a7144a236e7a2ff32cc0, type: 3}
@@ -1951,6 +1952,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 929003427714031241, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.1000061
+      objectReference: {fileID: 0}
     - target: {fileID: 3818533682759484748, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.6000366
@@ -1958,6 +1963,14 @@ PrefabInstance:
     - target: {fileID: 4581309386223697152, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_Name
       value: GameCardDisplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388702743030502988, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.049697876
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388702743030502988, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.9313049
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

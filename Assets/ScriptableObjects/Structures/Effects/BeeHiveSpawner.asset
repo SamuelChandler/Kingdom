@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: BeeHiveSpawner
   m_EditorClassIdentifier: Assembly-CSharp::SpawnerEffect
-  _roundsForEachSpawn: 3
+  _roundsForEachSpawn: 2
   _spawn: {fileID: 11400000, guid: 786966014d5d4f944a8d95263f3e3a74, type: 2}

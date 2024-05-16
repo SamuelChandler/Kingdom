@@ -13,6 +13,7 @@ public class DataPersistanceManager : MonoBehaviour
     private PlayerData playerData;
 
     private List<IDataPersistance> dataPersistanceObjects;
+    public ScriptableDeck _starterDeck;
     private FileDataHandler dataHandler; 
 
 
@@ -29,6 +30,13 @@ public class DataPersistanceManager : MonoBehaviour
 
     public void NewGame(string playerName){
         this.playerData = new PlayerData(playerName);
+        this.playerData._deckContents = new List<Card>();
+        this.playerData._decks = new List<string>();
+        this.playerData._cardInventory = new List<Card>();
+
+
+        this.playerData.AddDeck(_starterDeck);
+        this.playerData.AddDeckToInventory(_starterDeck);
     }
 
     public void LoadGame(){

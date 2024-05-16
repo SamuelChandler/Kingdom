@@ -30,8 +30,6 @@ public class CardSelectionWindow : MonoBehaviour
         for(int i = 0; i < _numberOfCardsOnScreen; i++){
             _cardSelectors[i].SetDisplayedCard(_currentSet.CardsInSet[i]);
         }
-
-    
     }
 
     public void NextPage(){
@@ -44,11 +42,8 @@ public class CardSelectionWindow : MonoBehaviour
             }
             else{
                 _cardSelectors[i].SetDisplayedCard(_currentSet.CardsInSet[i+ 8*pageNumber]);
-                
             }
         }
-
-        
     }
 
     public void PreviosPage(){

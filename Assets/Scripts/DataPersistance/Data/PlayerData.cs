@@ -24,6 +24,21 @@ public class PlayerData
         }
     }
 
+    public void AddDeck(ScriptableDeck d){
+        foreach(CardAndAmount c in d.deck){
+            for(int i = 0; i < c.amount; i++){
+                _deckContents.Add(c.card);
+                _decks.Add(d.name);
+            }
+        }
+    }
+
+    public void AddDeckToInventory(ScriptableDeck d){
+        foreach(CardAndAmount c in d.deck){
+            _cardInventory.Add(c.card); 
+        }
+    }
+
     public void RemoveDeck(string n){
         for(int i =0; i < _decks.Count;i++){
             if(_decks[i] == n){

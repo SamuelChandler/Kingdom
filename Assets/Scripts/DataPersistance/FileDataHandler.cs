@@ -35,7 +35,6 @@ public class FileDataHandler
                 }
 
                 //deserialize json to data
-                Debug.Log(dataToLoad);
                 loadedData = JsonUtility.FromJson<PlayerData>(dataToLoad);
 
             }catch(Exception e){
@@ -58,7 +57,6 @@ public class FileDataHandler
 
             //Serialize C# game data object into Json 
             string dataToStore = JsonUtility.ToJson(playerData,true);
-            Debug.Log(dataToStore);
 
             //write the serializable data to the file
             using (FileStream stream = new FileStream(fullPath,FileMode.Create)){

@@ -13,6 +13,9 @@ public class ScriptableUnit : Card
     public int health;
     public int attack;
     public int speed;
+
+    //determines if the unit is a leader unit
+    public bool _leader;
     
 }
 

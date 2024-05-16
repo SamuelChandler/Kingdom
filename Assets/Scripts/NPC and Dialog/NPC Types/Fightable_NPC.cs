@@ -23,8 +23,6 @@ public class Fightable_NPC : NPC, ITalkable
         {
             choicePoints.Add(item._choicePos, item);
         }
-
-        Debug.Log("I am Alive");
     }
 
     public override void Interact()

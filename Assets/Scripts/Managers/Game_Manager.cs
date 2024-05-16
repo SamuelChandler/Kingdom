@@ -124,8 +124,14 @@ public class Game_Manager : MonoBehaviour
 
     //called to end the turn of the player
     public void EndPlayerTurn()
-    {
+    {   
+        Board_Manager.instance.ActivateAllyStructureEndOfTurnEffects();
         instance.ChangeState(GameState.EnemiesTurn);
+    }
+
+    public void EndEnemyTurn(){
+        Board_Manager.instance.ActivateEnemyStructureEndOfTurnEffects();
+        instance.ChangeState(GameState.HeroesTurn);
     }
 
     public void StartPlayerTurn()

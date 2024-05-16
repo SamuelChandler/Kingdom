@@ -11,15 +11,14 @@ public class EnemyAI : MonoBehaviour
         //perform unit actions
         UnitActions();
 
-        Game_Manager.instance.ChangeState(GameState.HeroesTurn);
+        Game_Manager.instance.EndEnemyTurn();
     }
 
     private void UnitActions()
     {
         foreach (var e in Board_Manager.instance._enemies)
         {
-          
-
+        
             e.uAI.TakeTurn();
         }
     }

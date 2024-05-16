@@ -29,7 +29,9 @@ public class Board_Manager : MonoBehaviour
 
     public List<BaseHero> _heroes = new List<BaseHero>();
     public List<BaseEnemy> _enemies = new List<BaseEnemy>();
-    private List<Structure> _structures = new List<Structure>();
+    private List<Structure> _AllyStructures = new List<Structure>();
+    private List<Structure> _EnemyStructures = new List<Structure>();
+    private List<Structure> _NeutralStructures = new List<Structure>();
 
     private void Awake()
     {
@@ -205,7 +207,6 @@ public class Board_Manager : MonoBehaviour
         }
     }
 
-
     public void SummonStructure(StructureAndPoint s){
         //input val
         if (s.loc == null)
@@ -233,7 +234,7 @@ public class Board_Manager : MonoBehaviour
             if((s.structure.width == 0|| s.structure.width ==1) && (s.structure.height == 0||s.structure.height == 1)){
                 summonded_Structure.OccupiedTiles = new Tile[1,1];
                 summonded_Structure.OccupiedTiles[0,0] = GetTileAtPosition(s.loc).setStructure(summonded_Structure);;
-                _structures.Add(summonded_Structure);
+                _AllyStructures.Add(summonded_Structure);
                 return;
             }
 
@@ -251,7 +252,7 @@ public class Board_Manager : MonoBehaviour
             float y = summonded_Structure.OccupiedTiles[0,0].transform.position.y + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.y - summonded_Structure.OccupiedTiles[0,0].transform.position.y)/2);
             summonded_Structure.transform.position = new Vector3(x,y,0.0f);
   
-            _structures.Add(summonded_Structure);
+            _AllyStructures.Add(summonded_Structure);
             return;
 
             
@@ -267,7 +268,7 @@ public class Board_Manager : MonoBehaviour
             if((s.structure.width == 0|| s.structure.width ==1) && (s.structure.height == 0||s.structure.height == 1)){
                 summonded_Structure.OccupiedTiles = new Tile[1,1];
                 summonded_Structure.OccupiedTiles[0,0] = GetTileAtPosition(s.loc).setStructure(summonded_Structure);
-                _structures.Add(summonded_Structure);
+                _EnemyStructures.Add(summonded_Structure);
                 return;
             }
 
@@ -287,7 +288,7 @@ public class Board_Manager : MonoBehaviour
             float y = summonded_Structure.OccupiedTiles[0,0].transform.position.y + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.y - summonded_Structure.OccupiedTiles[0,0].transform.position.y)/2);
             summonded_Structure.transform.position = new Vector3(x,y,0.0f);
 
-            _structures.Add(summonded_Structure);
+            _EnemyStructures.Add(summonded_Structure);
             return;
         }
         else if(s.structure.Faction == Faction.Neutral){
@@ -300,7 +301,7 @@ public class Board_Manager : MonoBehaviour
             if((s.structure.width == 0|| s.structure.width ==1) && (s.structure.height == 0||s.structure.height == 1)){
                 summonded_Structure.OccupiedTiles = new Tile[1,1];
                 summonded_Structure.OccupiedTiles[0,0] = GetTileAtPosition(s.loc).setStructure(summonded_Structure);
-                _structures.Add(summonded_Structure);
+                _NeutralStructures.Add(summonded_Structure);
                 return;
             }
 
@@ -318,7 +319,7 @@ public class Board_Manager : MonoBehaviour
             float y = summonded_Structure.OccupiedTiles[0,0].transform.position.y + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.y - summonded_Structure.OccupiedTiles[0,0].transform.position.y)/2);
             summonded_Structure.transform.position = new Vector3(x,y,0.0f);
 
-            _structures.Add(summonded_Structure);
+            _NeutralStructures.Add(summonded_Structure);
             return;
         }
 
@@ -520,6 +521,26 @@ public class Board_Manager : MonoBehaviour
         else{
             return false;
 
+        }
+    }
+
+    public void ActivateEnemyStructureEndOfTurnEffects(){
+        foreach(Structure s in _EnemyStructures){
+            s.ActivateEndOfTurnEffects();
+        }
+
+        foreach(Structure s in _NeutralStructures){
+            s.ActivateEndOfTurnEffects();
+        }
+    }
+
+    public void ActivateAllyStructureEndOfTurnEffects(){
+        foreach(Structure s in _AllyStructures){
+            s.ActivateEndOfTurnEffects();
+        }
+
+        foreach(Structure s in _NeutralStructures){
+            s.ActivateEndOfTurnEffects();
         }
     }
 }

@@ -24,5 +24,11 @@ public class Structure : MonoBehaviour
         currentHealth = _structure.health;
     }
 
+    public void ActivateEndOfTurnEffects(){
+        foreach( EndOfTurnEffects effect in _structure.effects){
+            effect.ActivateEffect(_structure);
+        }
+    }
+
 
 }

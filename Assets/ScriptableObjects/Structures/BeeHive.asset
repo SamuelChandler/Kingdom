@@ -22,4 +22,4 @@ MonoBehaviour:
   width: 1
   health: 8
   effects:
-  - {fileID: 11400000, guid: 746ff559c4d4ef848b5c332b94e79d62, type: 2}
+  - {fileID: 11400000, guid: b4bb17b2043053b49b45d852e303c89f, type: 2}

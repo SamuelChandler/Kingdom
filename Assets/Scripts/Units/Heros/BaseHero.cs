@@ -56,8 +56,10 @@ public class BaseHero : BaseUnit
             foreach(Tile t in enemy.OccupiedTiles){
                 t.OccupiedUnit = null;
             }
-            
+            Board_Manager.instance.removeEnemyStructure(enemy);
+
             Destroy(enemy.gameObject);
+
         }
         
         return true;

@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
+
 using UnityEngine.XR;
 using Unity.VisualScripting;
+using System;
 
 public class Game_Manager : MonoBehaviour
 {
@@ -121,7 +122,7 @@ public class Game_Manager : MonoBehaviour
         }
         return true;
     }
-
+    
     //called to end the turn of the player
     public void EndPlayerTurn()
     {   

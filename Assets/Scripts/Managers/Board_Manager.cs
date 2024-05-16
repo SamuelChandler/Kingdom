@@ -510,6 +510,14 @@ public class Board_Manager : MonoBehaviour
         return false;
     }
 
+    public bool removeEnemyStructure(EnemyStructure e){
+        if(_EnemyStructures.Contains(e)){
+            _EnemyStructures.Remove(e);
+            return true;
+        }
+        return false;
+    }
+
     public bool WithinOne(BaseUnit a, Tile t){
 
         float x_change = Mathf.Abs(a.OccupiedTile.x - t.x);
@@ -542,5 +550,33 @@ public class Board_Manager : MonoBehaviour
         foreach(Structure s in _NeutralStructures){
             s.ActivateEndOfTurnEffects();
         }
+    }
+
+    public Tile GetRandAdjactentFreeTile(Tile src){
+        
+        List<Tile> tiles = new List<Tile>();
+
+        //load options for tile
+        for(int x = -1;x <= 1;x++){
+            for(int y = -1; y <= 1; y++){
+                _tiles.TryGetValue(new Vector2(src.x + x, src.y+y),out Tile temp);
+
+                if(temp != null){
+                    if(temp.Walkable){
+                        tiles.Add(temp);
+                    }
+                }
+            }
+        }
+
+        if(tiles.Count == 0){
+            return null;
+        }
+
+        //chose a random tile and return it
+        int rand = Random.Range(0,tiles.Count-1);
+
+        return tiles[rand];
+
     }
 }

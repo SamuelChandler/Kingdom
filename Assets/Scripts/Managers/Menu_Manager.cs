@@ -126,11 +126,16 @@ public class Menu_Manager : MonoBehaviour
 
 
     public void showWinScreen(){
-        _winScreen.SetActive(true);
+        if(_winScreen != null){
+            _winScreen.SetActive(true);
+        }
     }
 
     public void showLossScreen(){
-        _lossScreen.SetActive(true);
+        if(_lossScreen != null){
+            _lossScreen.SetActive(true);
+        }
+        
     }
 
     IEnumerator DisplayBeforeFadeOut(GameObject o){

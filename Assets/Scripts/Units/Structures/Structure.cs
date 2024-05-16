@@ -26,7 +26,7 @@ public class Structure : MonoBehaviour
 
     public void ActivateEndOfTurnEffects(){
         foreach( EndOfTurnEffects effect in _structure.effects){
-            effect.ActivateEffect(_structure);
+            effect.ActivateEffect(this);
         }
     }
 

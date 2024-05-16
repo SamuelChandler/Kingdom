@@ -7,7 +7,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Structure_Effect",menuName = "StructureNew Effect")]
 public class EndOfTurnEffects: ScriptableObject{  
 
-    public virtual void ActivateEffect(ScriptableStructure s){
+    public virtual void ActivateEffect(Structure s){
         Debug.Log("No Effect");
     }
 }
@@ -20,7 +20,15 @@ public class SpawnerEffect: EndOfTurnEffects{
 
     public ScriptableUnit _spawn;
 
-    public override void ActivateEffect(ScriptableStructure s){
-        Debug.Log("Spawning:" + _spawn.name);
+    public override void ActivateEffect(Structure s){
+        Tile dest = Board_Manager.instance.GetRandAdjactentFreeTile(s.OccupiedTiles[0,0]);
+        
+        if(dest == null){
+            Debug.Log("No Available Tiles");
+        }else{
+            Board_Manager.instance.SummonUnit(dest,_spawn);
+        }
+
+        
     }
 }

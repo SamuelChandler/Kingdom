@@ -26,6 +26,7 @@ public class BaseEnemy : BaseUnit
 
         
         hero.currentHealth = hero.currentHealth - this.unit.attack;
+        hero.UpdateAttackAndHealthDisplay();
 
         if (hero.currentHealth <= 0)
         {

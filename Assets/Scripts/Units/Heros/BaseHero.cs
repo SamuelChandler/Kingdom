@@ -16,6 +16,7 @@ public class BaseHero : BaseUnit
         }
         
         enemy.currentHealth = enemy.currentHealth - this.unit.attack;
+        enemy.UpdateAttackAndHealthDisplay();
         this.isAbleToAttack = false;
 
         //check if destroyed

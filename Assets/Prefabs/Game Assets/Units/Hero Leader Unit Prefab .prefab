@@ -101,6 +101,8 @@ MonoBehaviour:
   OccupiedTile: {fileID: 0}
   unit: {fileID: 11400000, guid: 847d8d0628220014ebc4321b8b7d02a5, type: 2}
   spriteRenderer: {fileID: 2216078567971078873}
+  attack: {fileID: 1374200962840766109}
+  health: {fileID: 3774865798873020229}
   isAbleToMove: 0
   isAbleToAttack: 0
   currentHealth: 0

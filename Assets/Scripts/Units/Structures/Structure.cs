@@ -17,17 +17,22 @@ public class Structure : MonoBehaviour
     [SerializeField]
     public int currentHealth;
 
+    public int turnCounter;
+
 
     private void Awake()
     {
         spriteRenderer.sprite = _structure.image;
         currentHealth = _structure.health;
+        turnCounter = 0;
     }
 
     public void ActivateEndOfTurnEffects(){
+        turnCounter++;
         foreach( EndOfTurnEffects effect in _structure.effects){
             effect.ActivateEffect(this);
         }
+        
     }
 
 

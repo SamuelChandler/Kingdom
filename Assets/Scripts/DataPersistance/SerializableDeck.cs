@@ -7,6 +7,11 @@ public class SerializableDeck : Deck, ISerializationCallbackReceiver
 {
 
     [SerializeField] string s_name;
+
+    public SerializableDeck(string n) : base(n)
+    {
+    }
+
     public void OnAfterDeserialize()
     {
         s_name = this.name;

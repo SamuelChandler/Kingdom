@@ -9,12 +9,15 @@ public class DataPersistanceManager : MonoBehaviour
 {
     [Header("File Storage Config")]
     [SerializeField] private string fileName;
+    [SerializeField] public CardIDTable idTable;
 
     private PlayerData playerData;
 
     private List<IDataPersistance> dataPersistanceObjects;
     public ScriptableDeck _starterDeck;
     private FileDataHandler dataHandler; 
+
+
 
 
     public static DataPersistanceManager instance {get; private set; }
@@ -30,9 +33,9 @@ public class DataPersistanceManager : MonoBehaviour
 
     public void NewGame(string playerName){
         this.playerData = new PlayerData(playerName);
-        this.playerData._deckContents = new List<Card>();
+        this.playerData._deckContents = new List<int>();
         this.playerData._decks = new List<string>();
-        this.playerData._cardInventory = new List<Card>();
+        this.playerData._cardInventory = new List<int>();
 
 
         this.playerData.AddDeck(_starterDeck);

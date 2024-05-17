@@ -12,6 +12,12 @@ public class PauseMenuDeckSlot : MonoBehaviour
 
     [SerializeField] public GameObject SelectedFrame;
 
+    [SerializeField] public GameObject SelectButton;
+
+    [SerializeField] public GameObject EditButton;
+
+    [SerializeField] public GameObject CreateDeckButton;
+
     private Deck CurrentlyHeldDeck;
 
 
@@ -23,6 +29,18 @@ public class PauseMenuDeckSlot : MonoBehaviour
         title.text = d.name;
         LeaderImage.sprite = d._leader.image;
         CurrentlyHeldDeck = d;
+        CreateDeckButton.SetActive(false);
+        EditButton.SetActive(true);
+        SelectButton.SetActive(true);
+    }
+
+    public void SetToEmpty(){
+        title.text = "";
+        LeaderImage.sprite = null;
+        CurrentlyHeldDeck = null;
+        CreateDeckButton.SetActive(true);
+        EditButton.SetActive(false);
+        SelectButton.SetActive(false);
     }
 
     public void EditDeck(){
@@ -32,5 +50,9 @@ public class PauseMenuDeckSlot : MonoBehaviour
     public void SelectDeck(){
         Debug.Log("Selecting Deck");
         SelectedFrame.SetActive(true);
+    }
+
+    public void CreateDeck(){
+        Debug.Log("Creating Deck");
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-[CreateAssetMenu(fileName = "New Unit",menuName = "Scriptable Unit")]
+[CreateAssetMenu(fileName = "New Unit",menuName = "Card/Scriptable Unit")]
 public class ScriptableUnit : Card
 {
     public Faction Faction;

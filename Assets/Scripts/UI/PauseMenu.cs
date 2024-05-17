@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject DeckSlotPrefab;
+    [SerializeField] private PauseMenuDeckSlot[] deckSlots;
 
     [SerializeField] private GameObject DeckView;
 
@@ -17,6 +17,9 @@ public class PauseMenu : MonoBehaviour
 
     public void ShowDecks(){
         DeckView.SetActive(true);
+        List<Deck> decksToShow = Player.instance.data.GetAllDecks();
+
+
     }
 
     public void PauseGame(){

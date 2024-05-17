@@ -19,6 +19,11 @@ public class Player : MonoBehaviour, IDataPersistance
 
     public PlayerData data;
 
+    public static Player instance;
+
+    void Awake(){
+        instance = this;
+    }
 
     // Update is called once per frame
     void Update()
@@ -34,8 +39,6 @@ public class Player : MonoBehaviour, IDataPersistance
 
     }
 
-
-
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + (movement * moveSpeed * Time.fixedDeltaTime));
@@ -44,6 +47,7 @@ public class Player : MonoBehaviour, IDataPersistance
     public void LoadData(PlayerData playerData)
     {
         this.data._decks = playerData._decks;
+        this.data._deckContents = playerData._deckContents;
         this.data._cardInventory = playerData._cardInventory;
         this.data.PlayerName = playerData.PlayerName;
         PlayerName = playerData.PlayerName;
@@ -53,6 +57,7 @@ public class Player : MonoBehaviour, IDataPersistance
     public void SaveData(ref PlayerData playerData)
     {
         playerData._decks = this.data._decks;
+        playerData._deckContents = this.data._deckContents;
         playerData._cardInventory = this.data._cardInventory;
         playerData.PlayerName = this.data.PlayerName;
     }

@@ -987,7 +987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8eb888d359a64f4cb2c03a77c21c8bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeckSlotPrefab: {fileID: 7536672572699365482, guid: da82d56068f032445977b48de635e015, type: 3}
+  deckSlots: []
   DeckView: {fileID: 1358324692}
 --- !u!224 &898906201 stripped
 RectTransform:
@@ -2637,7 +2637,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fileName: PlayerData
-  _starterDeck: {fileID: 0}
+  idTable: {fileID: 11400000, guid: 524729f2df3c1c2479425881f84e7eb4, type: 2}
+  _starterDeck: {fileID: 11400000, guid: af7d0c62920dd35419ea2d1c0952e189, type: 2}
 --- !u!4 &2061526144
 Transform:
   m_ObjectHideFlags: 0

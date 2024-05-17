@@ -1,20 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+[Serializable]
 public class Card : ScriptableObject
 {
 
-    [SerializeField] private string id;
-    [ContextMenu("Generate Guid for id")]
-    private void GenerateGuid(){
-        id = System.Guid.NewGuid().ToString();
-    }
-
-
-
+    [SerializeField] public int ID ;
+    
     public Sprite image;
 
     public new string name;
@@ -23,4 +18,14 @@ public class Card : ScriptableObject
     public int inspirationCost;
 
     public string description; 
+    public CardType type;
+  
+}
+
+[Serializable]
+public enum CardType{
+    Leader,
+    Unit,
+    Spell,
+    Structure
 }

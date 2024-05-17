@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour, IDataPersistance
 {
+
+    public string PlayerName;
+
     public float moveSpeed = 5f;
 
     public Rigidbody2D rb;
@@ -16,7 +19,6 @@ public class Player : MonoBehaviour, IDataPersistance
 
     public PlayerData data;
 
-    public Card cardToSave;
 
     // Update is called once per frame
     void Update()
@@ -43,13 +45,15 @@ public class Player : MonoBehaviour, IDataPersistance
     {
         this.data._decks = playerData._decks;
         this.data._cardInventory = playerData._cardInventory;
-        data._cardInventory.Add(cardToSave);
-        data._cardInventory.Add(cardToSave);
+        this.data.PlayerName = playerData.PlayerName;
+        PlayerName = playerData.PlayerName;
+
     }
 
     public void SaveData(ref PlayerData playerData)
     {
         playerData._decks = this.data._decks;
         playerData._cardInventory = this.data._cardInventory;
+        playerData.PlayerName = this.data.PlayerName;
     }
 }

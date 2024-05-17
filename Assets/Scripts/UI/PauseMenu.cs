@@ -5,9 +5,18 @@ using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
-    
+    [SerializeField] private GameObject DeckSlotPrefab;
+
+    [SerializeField] private GameObject DeckView;
+
+
     void Awake(){
         gameObject.SetActive(false);
+        DeckView.SetActive(false);
+    }
+
+    public void ShowDecks(){
+        DeckView.SetActive(true);
     }
 
     public void PauseGame(){

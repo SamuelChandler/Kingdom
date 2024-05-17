@@ -49,19 +49,20 @@ public class PlayerData
     }
 
     public Deck GetDeck(string n){
-        Deck ret = new Deck();
+        Deck outputDeck = new Deck();
 
-        ret.name = n;
+        outputDeck.name = n;
+        outputDeck.contents = new List<Card>();
 
+        //Add cards that align with decks to the deck data object
         for(int i =0; i < _decks.Count;i++){
             if(_decks[i] == n){
-                
-                ret.AddCard(_deckContents[i]);
+                outputDeck.contents.Add(_deckContents[i]);
             }
         }
-        
-        return ret;
 
+        return outputDeck;
     }
+    
 
 }

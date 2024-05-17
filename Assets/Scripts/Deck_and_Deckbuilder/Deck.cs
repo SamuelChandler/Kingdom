@@ -5,6 +5,8 @@ public class Deck{
     public string name;
     public List<Card> contents;
 
+    public Card _leader;
+
     public void AddCard(Card card){
         contents.Add(card);
     }

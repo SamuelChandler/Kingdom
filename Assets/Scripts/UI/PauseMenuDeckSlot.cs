@@ -27,6 +27,7 @@ public class PauseMenuDeckSlot : MonoBehaviour
 
     public void SetToDeck(Deck d){
         title.text = d.name;
+        LeaderImage.color = new Color(255,255,255,255);
         LeaderImage.sprite = d._leader.image;
         CurrentlyHeldDeck = d;
         CreateDeckButton.SetActive(false);
@@ -36,7 +37,7 @@ public class PauseMenuDeckSlot : MonoBehaviour
 
     public void SetToEmpty(){
         title.text = "";
-        LeaderImage.sprite = null;
+        LeaderImage.color = new Color(0,0,0,255);
         CurrentlyHeldDeck = null;
         CreateDeckButton.SetActive(true);
         EditButton.SetActive(false);

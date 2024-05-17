@@ -16,10 +16,19 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void ShowDecks(){
+
+        //set view to active and get the list of decks
         DeckView.SetActive(true);
         List<Deck> decksToShow = Player.instance.data.GetAllDecks();
 
-
+        //Set each view to the deck selected 
+        for(int i = 0 ; i < deckSlots.Length; i++){
+            if(i >= decksToShow.Count){
+                deckSlots[i].SetToEmpty();
+            }else{
+                deckSlots[i].SetToDeck(decksToShow[i]);
+            }
+        }
     }
 
     public void PauseGame(){

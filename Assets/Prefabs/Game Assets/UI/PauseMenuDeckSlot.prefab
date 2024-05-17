@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 694017729, guid: 6aeba15f88211ff469206fd978da62e2, type: 3}
+  m_Sprite: {fileID: 136373307, guid: 6aeba15f88211ff469206fd978da62e2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -719,7 +719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4636196645659472021
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1217,7 +1217,7 @@ MonoBehaviour:
   SelectedFrame: {fileID: 7361649612106071640}
   SelectButton: {fileID: 7718031377890602272}
   EditButton: {fileID: 954501188937045505}
-  CreateDeckButton: {fileID: 0}
+  CreateDeckButton: {fileID: 3610316625642429259}
 --- !u!1 &7718031377890602272
 GameObject:
   m_ObjectHideFlags: 0

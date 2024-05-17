@@ -13,6 +13,8 @@ public class PlayerData
 
    public string PlayerName;
 
+   public string SelectedDeck;
+
 
     public PlayerData(string name){
         PlayerName = name;
@@ -23,6 +25,10 @@ public class PlayerData
             _deckContents.Add(DataPersistanceManager.instance.idTable.getID(c));
             _decks.Add(d.name);
         }
+
+        if(SelectedDeck == null){
+            SelectedDeck = d.name;
+        }
     }
 
     public void AddDeck(ScriptableDeck d){
@@ -31,6 +37,10 @@ public class PlayerData
                 _deckContents.Add(DataPersistanceManager.instance.idTable.getID(c.card));
                 _decks.Add(d.name);
             }
+        }
+
+        if(SelectedDeck == null){
+            SelectedDeck = d.name;
         }
     }
 
@@ -46,6 +56,10 @@ public class PlayerData
                 _decks.RemoveAt(i);
                 _deckContents.RemoveAt(i);
             }
+        }
+
+        if(SelectedDeck == n){
+            SelectedDeck = null;
         }
     }
 

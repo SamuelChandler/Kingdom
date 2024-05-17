@@ -40,6 +40,7 @@ public class DataPersistanceManager : MonoBehaviour
 
         this.playerData.AddDeck(_starterDeck);
         this.playerData.AddDeckToInventory(_starterDeck);
+        this.playerData.SelectedDeck = _starterDeck.name;
     }
 
     public void LoadGame(){

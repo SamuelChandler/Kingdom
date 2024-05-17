@@ -15,14 +15,21 @@ public class Player : MonoBehaviour, IDataPersistance
     private Vector2 movement;
 
     [SerializeField]
-    private PauseMenu _pauseMenu;
+    public PauseMenu _pauseMenu;
 
     public PlayerData data;
 
     public static Player instance;
 
+    public Deck SelectedDeck;
+
     void Awake(){
         instance = this;
+    }
+
+    public void SetSelectedDeck(Deck d){
+        SelectedDeck = d;
+        data.SelectedDeck = d.name;
     }
 
     // Update is called once per frame
@@ -50,6 +57,9 @@ public class Player : MonoBehaviour, IDataPersistance
         this.data._deckContents = playerData._deckContents;
         this.data._cardInventory = playerData._cardInventory;
         this.data.PlayerName = playerData.PlayerName;
+        this.data.SelectedDeck = playerData.SelectedDeck;
+
+        SelectedDeck = playerData.GetDeck(playerData.SelectedDeck);
         PlayerName = playerData.PlayerName;
 
     }
@@ -60,5 +70,6 @@ public class Player : MonoBehaviour, IDataPersistance
         playerData._deckContents = this.data._deckContents;
         playerData._cardInventory = this.data._cardInventory;
         playerData.PlayerName = this.data.PlayerName;
+        playerData.SelectedDeck = SelectedDeck.name;
     }
 }

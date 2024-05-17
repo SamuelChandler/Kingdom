@@ -9,6 +9,8 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField] private GameObject DeckView;
 
+    public Deck SelectedDeck;
+
 
     void Awake(){
         gameObject.SetActive(false);
@@ -27,7 +29,14 @@ public class PauseMenu : MonoBehaviour
                 deckSlots[i].SetToEmpty();
             }else{
                 deckSlots[i].SetToDeck(decksToShow[i]);
+
+                if(decksToShow[i] == Player.instance.SelectedDeck){
+                    deckSlots[i].SelectDeck();
+                }else{
+                    deckSlots[i].DeselectDeck();
+                }
             }
+
         }
     }
 

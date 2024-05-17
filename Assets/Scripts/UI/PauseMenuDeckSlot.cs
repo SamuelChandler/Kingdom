@@ -51,6 +51,15 @@ public class PauseMenuDeckSlot : MonoBehaviour
     public void SelectDeck(){
         Debug.Log("Selecting Deck");
         SelectedFrame.SetActive(true);
+
+        if(CurrentlyHeldDeck != Player.instance.SelectedDeck){
+            Player.instance.SetSelectedDeck(CurrentlyHeldDeck);
+            Player.instance._pauseMenu.ShowDecks();
+        }
+    }
+
+    public void DeselectDeck(){
+        SelectedFrame.SetActive(false);
     }
 
     public void CreateDeck(){

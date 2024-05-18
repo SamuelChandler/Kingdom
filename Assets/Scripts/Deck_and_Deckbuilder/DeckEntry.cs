@@ -17,8 +17,9 @@ public class DeckEntry : MonoBehaviour, IPointerClickHandler
     TextMeshProUGUI Number;
 
     public void OnPointerClick(PointerEventData data){
-        
-    }
+        DeckBuilder.instance.RemoveCardFromDeck(card);
+        RemoveCard();
+    } 
     public void SetEntry(Card c){
         Name.text = c.name;
         Cost.text = c.inspirationCost.ToString();
@@ -32,6 +33,7 @@ public class DeckEntry : MonoBehaviour, IPointerClickHandler
         }else if(Number.text == "2"){
             Number.text = "1";
         }else if(Number.text == "1"){
+            DeckBuilder.instance._dWindow.RemoveEntry(this);
            Destroy(gameObject);
         }
     }

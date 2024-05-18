@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ public class DeckBuilder : MonoBehaviour,IDataPersistance
     private CardSelectionWindow _sWindow;
 
     [SerializeField]
-    private DeckView _dWindow;
+    public DeckView _dWindow;
 
     private List<Card> inventory;
 
@@ -17,20 +18,33 @@ public class DeckBuilder : MonoBehaviour,IDataPersistance
 
     private string oldDeckName;
 
+    [SerializeField] private TextMeshProUGUI _infographic;
+
     public static DeckBuilder instance;
 
     public void Awake(){
         
         instance = this;
+        _infographic.text = "";
     }
 
     public void AddCardToDeck(Card c){
         deck.AddCard(c);
+
+        if(c.type == CardType.Leader){
+            _sWindow.ShowNonLeaders();
+            _infographic.text = "";
+        }
+
         _dWindow.CreateAndAddCard(c);
     }
 
     public void RemoveCardFromDeck(Card c){
-        _dWindow.RemoveCard(c);
+        deck.RemoveCard(c);
+
+        if(c.type == CardType.Leader){
+            PromptSelectLeader();
+        }
     }
 
     public void LoadData(PlayerData playerData)
@@ -60,6 +74,7 @@ public class DeckBuilder : MonoBehaviour,IDataPersistance
     public void CreateNewDeck(){
 
         _sWindow.SetCards(inventory);
+        PromptSelectLeader();
 
     }
 
@@ -72,10 +87,22 @@ public class DeckBuilder : MonoBehaviour,IDataPersistance
             AddCardToDeck(argCard);
         }
 
+        if(deck._leader == null){
+            PromptSelectLeader();
+        }else{
+            _sWindow.ShowNonLeaders();
+            _infographic.text = "";
+        }
     }
 
     public void SaveData(ref PlayerData playerData)
     {   
+        if(deck._leader == null){
+            Debug.Log("Cannot Save A Deck Without A leader");
+            _infographic.text = "Cannot Save A Deck Without A Leader";
+            return;
+        }
+
         playerData.RemoveDeck(oldDeckName);
         oldDeckName = deck.name;
         playerData.AddDeck(deck);
@@ -83,5 +110,10 @@ public class DeckBuilder : MonoBehaviour,IDataPersistance
 
     public void SetTitle(string title){
         deck.name = title;
+    }
+
+    public void PromptSelectLeader(){
+        _sWindow.ShowOnlyLeaders();
+        _infographic.text = "Please Select A Leader Unit for the Deck";
     }
 }

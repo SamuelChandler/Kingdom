@@ -52,7 +52,12 @@ public class Deck{
         contents.Remove(card);
         numberOfEachCard[card]--;
 
+        if(numberOfEachCard[card] <= 0){
+            numberOfEachCard.Remove(card);
+        }
+
         if(card.type == CardType.Leader){
+            Debug.Log("Leader Removed");
             _leader = null;
         }
     }

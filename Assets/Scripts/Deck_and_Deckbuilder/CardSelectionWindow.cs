@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -14,6 +15,8 @@ public class CardSelectionWindow : MonoBehaviour
     [SerializeField]
     private int _numberOfCardsOnScreen;
 
+    private List<Card> inventory;
+
     private List<Card> _currentSet;
 
     private int pageNumber;
@@ -23,13 +26,8 @@ public class CardSelectionWindow : MonoBehaviour
     }
 
     public void SetCards(List<Card> s){
-
-        _currentSet = s;
-        pageNumber = 0;
-
-        for(int i = 0; i < _numberOfCardsOnScreen; i++){
-            _cardSelectors[i].SetDisplayedCard(_currentSet[i]);
-        }
+        inventory = s;
+        ShowNonLeaders();
     }
 
     public void NextPage(){
@@ -67,5 +65,46 @@ public class CardSelectionWindow : MonoBehaviour
         }
 
         
+    }
+
+    public void ShowOnlyLeaders()
+    {
+        _currentSet = new List<Card>();
+        foreach(Card c in inventory){
+            if(c.type == CardType.Leader){
+                _currentSet.Add(c);
+            }
+        }
+
+        pageNumber = 0;
+
+        for(int i = 0; i < _numberOfCardsOnScreen; i++){
+            if(i >= _currentSet.Count){
+                _cardSelectors[i].gameObject.SetActive(false);
+            }else{
+                _cardSelectors[i].SetDisplayedCard(_currentSet[i]);
+            }
+        }
+    }
+
+    public void ShowNonLeaders(){
+        _currentSet = new List<Card>();
+        foreach(Card c in inventory){
+            if(c.type != CardType.Leader){
+                _currentSet.Add(c);
+            }
+        }
+
+        pageNumber = 0;
+
+        for(int i = 0; i < _numberOfCardsOnScreen; i++){
+            //checking if at the end of list
+            if(i >= _currentSet.Count){
+                _cardSelectors[i].gameObject.SetActive(false);
+            }else{
+                _cardSelectors[i].SetDisplayedCard(_currentSet[i]);
+            }
+            
+        }
     }
 }

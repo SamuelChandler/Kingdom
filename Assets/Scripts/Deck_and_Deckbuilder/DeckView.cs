@@ -46,7 +46,7 @@ public class DeckView : MonoBehaviour
         return false;
     }
 
-    public void RemoveCard(Card argCard){
-        
+    public void RemoveEntry(DeckEntry e){
+        cardInDeckView.Remove(e);
     }
 }

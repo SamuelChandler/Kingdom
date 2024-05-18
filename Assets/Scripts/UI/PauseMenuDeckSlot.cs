@@ -21,10 +21,6 @@ public class PauseMenuDeckSlot : MonoBehaviour
     private Deck CurrentlyHeldDeck;
 
 
-    private void Awake(){
-        SelectedFrame.SetActive(false);
-    } 
-
     public void SetToDeck(Deck d){
         title.text = d.name;
         LeaderImage.color = new Color(255,255,255,255);
@@ -39,6 +35,7 @@ public class PauseMenuDeckSlot : MonoBehaviour
         title.text = "";
         LeaderImage.color = new Color(0,0,0,255);
         CurrentlyHeldDeck = null;
+        SelectedFrame.SetActive(false);
         CreateDeckButton.SetActive(true);
         EditButton.SetActive(false);
         SelectButton.SetActive(false);
@@ -51,18 +48,14 @@ public class PauseMenuDeckSlot : MonoBehaviour
 
     public void SelectDeck(){
         Debug.Log("Selecting Deck");
-        Debug.Log(Player.instance.data.SelectedDeck);
-        SelectedFrame.SetActive(true);
+        Debug.Log(Player.instance.data.SelectedDeck);  
 
-        if(CurrentlyHeldDeck != Player.instance.SelectedDeck){
+        if(CurrentlyHeldDeck.name != Player.instance.data.SelectedDeck){
             Player.instance.SetSelectedDeck(CurrentlyHeldDeck);
-            Player.instance._pauseMenu.ShowDecks();
+            SelectedFrame.SetActive(true);
+            Debug.Log(Player.instance.data.SelectedDeck);
         }
-        Debug.Log(Player.instance.data.SelectedDeck);
-    }
-
-    public void DeselectDeck(){
-        SelectedFrame.SetActive(false);
+        
     }
 
     public void CreateDeck(){

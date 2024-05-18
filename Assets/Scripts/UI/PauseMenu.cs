@@ -17,7 +17,7 @@ public class PauseMenu : MonoBehaviour
         DeckView.SetActive(false);
     }
 
-    public void ShowDecks(){
+    public void ShowDecks(string selectedname){
 
         //set view to active and get the list of decks
         DeckView.SetActive(true);
@@ -30,10 +30,12 @@ public class PauseMenu : MonoBehaviour
             }else{
                 deckSlots[i].SetToDeck(decksToShow[i]);
 
-                if(decksToShow[i] == Player.instance.SelectedDeck){
-                    deckSlots[i].SelectDeck();
+                Debug.Log(decksToShow[i].name);
+
+                if(decksToShow[i].name == selectedname){
+                    deckSlots[i].SelectedFrame.SetActive(true);
                 }else{
-                    deckSlots[i].DeselectDeck();
+                    deckSlots[i].SelectedFrame.SetActive(false);
                 }
             }
 

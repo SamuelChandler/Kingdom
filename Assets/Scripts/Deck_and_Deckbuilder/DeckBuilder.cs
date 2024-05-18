@@ -77,6 +77,7 @@ public class DeckBuilder : MonoBehaviour,IDataPersistance
     public void SaveData(ref PlayerData playerData)
     {   
         playerData.RemoveDeck(oldDeckName);
+        oldDeckName = deck.name;
         playerData.AddDeck(deck);
     }
 

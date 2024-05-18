@@ -18,6 +18,7 @@ public class DeckView : MonoBehaviour
 
     public void CreateAndAddCard(Card argCard){
 
+
         //if card is already in a list then just add an adittional
         if(increaseCount(argCard)){
             return;
@@ -32,7 +33,6 @@ public class DeckView : MonoBehaviour
 
         //add cart entry to list
         cardInDeckView.Add(addedEntry.transform.gameObject.GetComponent(typeof(DeckEntry)) as DeckEntry);
-
         
     }
 

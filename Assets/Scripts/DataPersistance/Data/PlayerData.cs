@@ -51,10 +51,14 @@ public class PlayerData
     }
 
     public void RemoveDeck(string n){
-        for(int i =0; i < _decks.Count;i++){
+        
+        for(int i =0; i < _decks.Count;){
+
             if(_decks[i] == n){
                 _decks.RemoveAt(i);
                 _deckContents.RemoveAt(i);
+            }else{
+                i++;
             }
         }
 
@@ -68,11 +72,12 @@ public class PlayerData
 
         outputDeck.name = n;
         outputDeck.contents = new List<Card>();
+        outputDeck.numberOfEachCard = new Dictionary<Card, int>();
 
         //Add cards that align with decks to the deck data object
         for(int i =0; i < _decks.Count;i++){
             if(_decks[i] == n){
-                outputDeck.contents.Add(DataPersistanceManager.instance.idTable.getCard(_deckContents[i]));
+                outputDeck.AddCard(DataPersistanceManager.instance.idTable.getCard(_deckContents[i]));
             }
         }
 
@@ -83,8 +88,8 @@ public class PlayerData
         List<Deck> res = new List<Deck>();
         Dictionary<string,List<Card>> decks = new Dictionary<string, List<Card>>();
         int i = 0;
-        Debug.Log(_deckContents.Count);
-        Debug.Log(_decks.Count);
+        Debug.Log("Number in contents: "+_deckContents.Count);
+        Debug.Log("Number in decks: "+_decks.Count);
 
         while(i < _decks.Count){
             
@@ -119,4 +124,17 @@ public class PlayerData
 
         return res;
     }
+
+    public List<Card> GetInventory(){
+
+        List<Card> res = new List<Card>();
+
+        foreach(int i in _cardInventory){
+            res.Add(DataPersistanceManager.instance.idTable.getCard(i));
+        }
+
+        return res;
+    }
+
+    
 }

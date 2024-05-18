@@ -14,7 +14,7 @@ public class CardSelectionWindow : MonoBehaviour
     [SerializeField]
     private int _numberOfCardsOnScreen;
 
-    private Set _currentSet;
+    private List<Card> _currentSet;
 
     private int pageNumber;
 
@@ -22,13 +22,13 @@ public class CardSelectionWindow : MonoBehaviour
         
     }
 
-    public void SetCards(Set s){
+    public void SetCards(List<Card> s){
 
         _currentSet = s;
         pageNumber = 0;
 
         for(int i = 0; i < _numberOfCardsOnScreen; i++){
-            _cardSelectors[i].SetDisplayedCard(_currentSet.CardsInSet[i]);
+            _cardSelectors[i].SetDisplayedCard(_currentSet[i]);
         }
     }
 
@@ -37,11 +37,11 @@ public class CardSelectionWindow : MonoBehaviour
         pageNumber++;
 
         for(int i = 0; i < _numberOfCardsOnScreen; i++){
-            if(i + 8*pageNumber >= _currentSet.CardsInSet.Count){
+            if(i + 8*pageNumber >= _currentSet.Count){
                 _cardSelectors[i].gameObject.SetActive(false);
             }
             else{
-                _cardSelectors[i].SetDisplayedCard(_currentSet.CardsInSet[i+ 8*pageNumber]);
+                _cardSelectors[i].SetDisplayedCard(_currentSet[i+ 8*pageNumber]);
             }
         }
     }
@@ -57,11 +57,11 @@ public class CardSelectionWindow : MonoBehaviour
         }
 
         for(int i = 0; i < _numberOfCardsOnScreen; i++){
-            if(i + 8*pageNumber >= _currentSet.CardsInSet.Count){
+            if(i + 8*pageNumber >= _currentSet.Count){
                 _cardSelectors[i].gameObject.SetActive(false);
             }
             else{
-                _cardSelectors[i].SetDisplayedCard(_currentSet.CardsInSet[i+ 8*pageNumber]);
+                _cardSelectors[i].SetDisplayedCard(_currentSet[i+ 8*pageNumber]);
                 
             }
         }

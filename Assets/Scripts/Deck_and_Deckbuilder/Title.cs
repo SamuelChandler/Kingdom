@@ -22,6 +22,7 @@ public class Title : MonoBehaviour
         _titletext.SetActive(true);
 
         _titletext.GetComponent<TextMeshProUGUI>().text = titletextbox.GetComponent<TMP_InputField>().text;
+        DeckBuilder.instance.SetTitle(titletextbox.GetComponent<TMP_InputField>().text);
   
     }
     

@@ -46,16 +46,19 @@ public class PauseMenuDeckSlot : MonoBehaviour
 
     public void EditDeck(){
         Debug.Log("Opening the deck editor");
+        Scene_Manager.instance.GoToEditDeck(CurrentlyHeldDeck.name);
     }
 
     public void SelectDeck(){
         Debug.Log("Selecting Deck");
+        Debug.Log(Player.instance.data.SelectedDeck);
         SelectedFrame.SetActive(true);
 
         if(CurrentlyHeldDeck != Player.instance.SelectedDeck){
             Player.instance.SetSelectedDeck(CurrentlyHeldDeck);
             Player.instance._pauseMenu.ShowDecks();
         }
+        Debug.Log(Player.instance.data.SelectedDeck);
     }
 
     public void DeselectDeck(){
@@ -64,5 +67,6 @@ public class PauseMenuDeckSlot : MonoBehaviour
 
     public void CreateDeck(){
         Debug.Log("Creating Deck");
+        Scene_Manager.instance.GoToCreatedeck();
     }
 }

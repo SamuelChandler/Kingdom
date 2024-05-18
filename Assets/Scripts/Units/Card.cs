@@ -6,10 +6,7 @@ using UnityEngine.UI;
 
 [Serializable]
 public class Card : ScriptableObject
-{
-
-    [SerializeField] public int ID ;
-    
+{   
     public Sprite image;
 
     public new string name;

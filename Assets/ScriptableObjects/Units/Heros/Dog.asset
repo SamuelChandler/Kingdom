@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0ae76b5a4512e488865136dbaecdf2, type: 3}
   m_Name: Dog
   m_EditorClassIdentifier: 
-  Faction: 0
+  ID: 0
   image: {fileID: -258935519, guid: 21d346382cd4594448ff3d2e4b5f5634, type: 3}
   name: Dog
   inspirationCost: 6
+  description: 
+  type: 1
+  Faction: 0
   health: 7
   attack: 7
   speed: 2
+  _leader: 0

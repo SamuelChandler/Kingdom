@@ -25,6 +25,8 @@ public class Player : MonoBehaviour, IDataPersistance
 
     void Awake(){
         instance = this;
+
+        
     }
 
     public void SetSelectedDeck(Deck d){
@@ -59,8 +61,14 @@ public class Player : MonoBehaviour, IDataPersistance
         this.data.PlayerName = playerData.PlayerName;
         this.data.SelectedDeck = playerData.SelectedDeck;
 
-        SelectedDeck = playerData.GetDeck(playerData.SelectedDeck);
+        SetSelectedDeck(playerData.GetDeck(playerData.SelectedDeck));
         PlayerName = playerData.PlayerName;
+
+        if(PlayerPrefs.GetString("FromDeckbuiler") == "Yes"){
+            _pauseMenu.PauseGame();
+            _pauseMenu.ShowDecks();
+            PlayerPrefs.SetString("FromDeckbuiler","No");
+        }
 
     }
 

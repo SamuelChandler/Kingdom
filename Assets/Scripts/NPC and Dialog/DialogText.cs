@@ -14,6 +14,8 @@ public class DialogText : ScriptableObject
 
     public choice[] _choices;
 
+    [SerializeField] public ScriptableMap[] _maps;
+
 }
 
 [Serializable]

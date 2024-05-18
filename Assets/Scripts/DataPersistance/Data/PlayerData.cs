@@ -15,6 +15,8 @@ public class PlayerData
 
    public string SelectedDeck;
 
+   public int CombatMap;
+
 
     public PlayerData(string name){
         PlayerName = name;
@@ -136,5 +138,5 @@ public class PlayerData
         return res;
     }
 
-    
+
 }

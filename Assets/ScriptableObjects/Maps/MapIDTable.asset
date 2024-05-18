@@ -9,20 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d48c8c2a0043ca140b0459e7a27e30a0, type: 3}
-  m_Name: Bee
+  m_Script: {fileID: 11500000, guid: 6af81173c1487f844820dc2679d1b937, type: 3}
+  m_Name: MapIDTable
   m_EditorClassIdentifier: 
-  Name: Bee
-  Paragraphs:
-  - Huh?!?!?
-  - Why are you looking at me like that?
-  - 'Looking for a fight? '
-  - Thats what I thought
-  _choices:
-  - _choicePos: 2
-    _choiceOne: Yes
-    _choiceOneResult: -1
-    _choiceTwo: No
-    _choiceTwoResult: 3
-  _maps:
+  IdTable:
   - {fileID: 11400000, guid: c618d6a595ac3fe4a8f779ca35b8f8b4, type: 2}
+  - {fileID: 11400000, guid: 16edba8df71a37141b348b18f92df767, type: 2}

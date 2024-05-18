@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [System.Serializable]
-[CreateAssetMenu(fileName = "New Map", menuName = "Scriptable Map")]
+[CreateAssetMenu(fileName = "New Map", menuName = "Scriptable Map/Map")]
 public class ScriptableMap : ScriptableObject
 {
     [SerializeField] public int height;

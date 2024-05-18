@@ -10,6 +10,7 @@ public class DataPersistanceManager : MonoBehaviour
     [Header("File Storage Config")]
     [SerializeField] private string fileName;
     [SerializeField] public CardIDTable idTable;
+    [SerializeField] public MapIDTable mapIDTable;
 
     private PlayerData playerData;
 
@@ -86,4 +87,5 @@ public class DataPersistanceManager : MonoBehaviour
     private void OnApplicationQuit(){
         SaveGame();
     }
+
 }

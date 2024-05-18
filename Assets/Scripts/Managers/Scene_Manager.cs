@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 public class Scene_Manager : MonoBehaviour
 {
     private int Level_Select_index = 1;
-    private int Game_index = 2;
+    private int CombatMap_index = 2;
 
     private int OverWorld = 3;
 
@@ -22,13 +22,6 @@ public class Scene_Manager : MonoBehaviour
 
     private void Awake(){
         instance = this;
-    }
-    
-    //Goes to the Game scene and defines it the level integer
-    public void GoToGame(int level)
-    {
-        PlayerPrefs.SetInt("Level Selected", level);
-        SceneManager.LoadScene(Game_index);
     }
 
     //Loads the Load Level Scene
@@ -42,10 +35,10 @@ public class Scene_Manager : MonoBehaviour
         SceneManager.LoadScene(OverWorld);
     }
 
-    public void GoToBattle(){
+    public void GoToBattle(ScriptableMap map){
+        Player.instance.data.CombatMap = DataPersistanceManager.instance.mapIDTable.getID(map);
         DataPersistanceManager.instance.SaveGame();
-        PlayerPrefs.SetInt("Level Selected", 69);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(CombatMap_index);
     }
 
     //goes to the deckbuilder with the name of the deck being created

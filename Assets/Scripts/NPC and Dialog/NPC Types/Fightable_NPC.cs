@@ -10,7 +10,7 @@ public class Fightable_NPC : NPC, ITalkable
 
     private ConversationStats convoStats;
 
-    [SerializeField] private ScriptableMap[] _maps;
+    
 
 
     private void Awake(){
@@ -84,7 +84,9 @@ public class Fightable_NPC : NPC, ITalkable
     }
 
     public void StartFight(int BattleNum){
-        Scene_Manager.instance.GoToBattle();
+        Debug.Log(BattleNum * -1);
+        ScriptableMap battleMap = _dialogText._maps[(BattleNum * -1)-1];
+        Scene_Manager.instance.GoToBattle(battleMap);
     }
 
     public override void StopInteracting()

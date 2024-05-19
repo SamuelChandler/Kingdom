@@ -14,7 +14,7 @@ public class ScriptableStructure : Card
     //player stats 
     public int health;
 
-    public EndOfTurnEffects[] effects;
+    public EndOfTurnEffect[] effects;
     
 }
 

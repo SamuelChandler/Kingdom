@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 94a4062e8b3326649b53f2332b0cc70b
+guid: 3bccc6f1e269cdc478a46f727b77f491
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Large Units
+  - name: House1
     originalName: 
-    pivot: {x: 7.65, y: -4.980769}
+    pivot: {x: 0.49579835, y: -0.03809524}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 20
-      height: 52
-    spriteID: 6b18f3f922796c347a69d7080f82d861
+      width: 119
+      height: 105
+    spriteID: 7ad4f9d9ae62b3348ab8fc68204f4d74
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,24 +144,24 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 2016607670
-    name: Large Units
+    guid: -1017381599
+    name: House1
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Large Units
+    - name: House1
       frameIndex: 0
       cellRect:
-        x: 7
-        y: 259
-        width: 20
-        height: 52
-      spriteId: 6b18f3f922796c347a69d7080f82d861
+        x: 5
+        y: 4
+        width: 119
+        height: 105
+      spriteId: 7ad4f9d9ae62b3348ab8fc68204f4d74
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 320, y: 320}
+  canvasSize: {x: 128, y: 128}

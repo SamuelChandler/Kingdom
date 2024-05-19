@@ -16,7 +16,9 @@ MonoBehaviour:
   name: HiveMind
   inspirationCost: 0
   description: The Colective consionce of the Bees and hive
+  type: 0
   Faction: 1
-  health: 15
+  health: 20
   attack: 2
   speed: 2
+  _leader: 0

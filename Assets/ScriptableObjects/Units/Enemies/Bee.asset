@@ -16,7 +16,9 @@ MonoBehaviour:
   name: Bee
   inspirationCost: 2
   description: Bzzzzzzzz
+  type: 0
   Faction: 1
-  health: 3
+  health: 1
   attack: 2
   speed: 3
+  _leader: 0

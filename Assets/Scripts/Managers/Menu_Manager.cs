@@ -26,8 +26,7 @@ public class Menu_Manager : MonoBehaviour
     [SerializeField] float _displayTime;
     [SerializeField] float _fadeOutTime;
 
-
-
+    public UnitSelector CurrentSelectedSelector;
 
     private void Awake()
     {
@@ -193,4 +192,5 @@ public class Menu_Manager : MonoBehaviour
 
         Debug.Log("No space in hand");
     }
+
 }

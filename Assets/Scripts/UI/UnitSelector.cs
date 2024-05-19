@@ -41,6 +41,7 @@ public class UnitSelector : MonoBehaviour
         //var createdUnit = Instantiate(held_unit);
         if(held_card.type == CardType.Unit){
             Unit_Manager.instance.SetSelectedHero((ScriptableUnit)held_card);
+            Menu_Manager.instance.CurrentSelectedSelector = this;
         }
         
     }

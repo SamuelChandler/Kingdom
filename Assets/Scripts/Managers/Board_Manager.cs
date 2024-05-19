@@ -155,11 +155,17 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             //pay cost relating to Unit
             Game_Manager.instance.DecreaseCurrentInsperation(unit.unit.inspirationCost);
 
+            //remove unit from hand
+            Menu_Manager.instance.CurrentSelectedSelector.ClearCard();
+
             //create and set unit to tile
             var summonded_Hero = (BaseHero)Instantiate(unit);
             destTile.setUnit(summonded_Hero);
 
             _heroes.Add(summonded_Hero);
+
+            Unit_Manager.instance.SelectedHero = null;
+            Menu_Manager.instance.CurrentSelectedSelector = null;
         }
         
     }
@@ -187,12 +193,18 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
             //pay cost relating to Unit
             Game_Manager.instance.DecreaseCurrentInsperation(Hero_Prefab.unit.inspirationCost);
+            
+            //remove unit from hand
+            Menu_Manager.instance.CurrentSelectedSelector.ClearCard();
 
             //create and set unit to tile
             var summonded_Hero = Instantiate(Hero_Prefab);
             destTile.setUnit(summonded_Hero);
 
             _heroes.Add(summonded_Hero);
+
+            Unit_Manager.instance.SelectedHero = null;
+            Menu_Manager.instance.CurrentSelectedSelector = null;
         }
 
         else if (unit.Faction == Faction.Enemy)

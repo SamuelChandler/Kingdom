@@ -24,11 +24,14 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
     [SerializeField] private int cardsDrawnPerTurn = 1;
     [SerializeField] private int StartingHandSize = 3;
 
+    private bool GameWin;
+
     private Deck deck;
 
     private void Awake()
     {
         instance = this;
+        GameWin = false;
         Level = PlayerPrefs.GetInt("Level Selected");
         CurrentInspiration = CurrentMaxInspiration;
 
@@ -69,7 +72,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
                 eAI.StartTurn();
                 break;
             case GameState.GameWin:
-                Menu_Manager.instance.showWinScreen();
+                ResolveGameWin();
                 break;
             case GameState.GameLoss:
                 Menu_Manager.instance.showLossScreen();
@@ -180,7 +183,11 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
 
     public void SaveData(ref PlayerData playerData)
     {
-        Debug.Log("Nothing Saved From Game Manager");
+        int addedID = DataPersistanceManager.instance.idTable.getID(Board_Manager.instance.GetRewardCard());
+        Debug.Log(addedID);
+        if(GameWin){
+            playerData._cardInventory.Add(addedID);
+        }
     }
 
     private void PlayerPregameActions(){
@@ -189,6 +196,14 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         Draw(StartingHandSize-cardsDrawnPerTurn);
 
     }
+
+    private void ResolveGameWin(){
+        Debug.Log("Resolving Game Win");
+        GameWin = true;
+        Menu_Manager.instance.showWinScreen(Board_Manager.instance.GetRewardCard());
+        DataPersistanceManager.instance.SaveGame();
+        
+    } 
 }
 
 public enum GameState

@@ -51,3 +51,4 @@ MonoBehaviour:
     unit: {fileID: 0}
     loc: {x: 0, y: 3}
   _survivalTurns: 0
+  reward: {fileID: 11400000, guid: 61350efe83198ac48a23eba8c587ec86, type: 2}

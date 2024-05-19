@@ -12,7 +12,9 @@ public class Menu_Manager : MonoBehaviour
 {
     public static Menu_Manager instance;
 
-    [SerializeField] private GameObject _displayCardObject, _tileInfo, _tileUnit, _messanger,_winScreen,_lossScreen;
+    [SerializeField] private GameObject _displayCardObject, _tileInfo, _tileUnit, _messanger,_lossScreen;
+
+    [SerializeField] private WinScreen _winScreen;
 
 
     [SerializeField] private UnitSelector[] unitSelectors;
@@ -36,7 +38,6 @@ public class Menu_Manager : MonoBehaviour
         _displayCardObject.SetActive(false);
         _tileInfo.SetActive(false);
         _messanger.SetActive(false);
-        _winScreen.SetActive(false);
         _lossScreen.SetActive(false);
         SetUnitSelectorsToEmpty();
 
@@ -127,15 +128,19 @@ public class Menu_Manager : MonoBehaviour
     }
 
 
-    public void showWinScreen(){
+    public void showWinScreen(Card c){
         if(_winScreen != null){
-            _winScreen.SetActive(true);
+            _winScreen.ShowWinScreen(c);
+        }else{
+            Debug.Log("Win Screen is null");
         }
     }
 
     public void showLossScreen(){
         if(_lossScreen != null){
             _lossScreen.SetActive(true);
+        }else{
+            Debug.Log("Loss Screen is null");
         }
         
     }

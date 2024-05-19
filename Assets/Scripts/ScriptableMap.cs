@@ -37,6 +37,8 @@ public class ScriptableMap : ScriptableObject
     [Tooltip("Number of rounds needed to win in survival mode")]
     [SerializeField] public int _survivalTurns;
 
+    [SerializeField] public Card reward;
+
 
 
 

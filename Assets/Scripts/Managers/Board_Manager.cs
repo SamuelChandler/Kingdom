@@ -592,6 +592,10 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
     }
 
+    public Card GetRewardCard(){
+        return _map.reward;
+    }
+
     public void LoadData(PlayerData playerData)
     {
 

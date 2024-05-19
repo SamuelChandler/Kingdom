@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 
-public class Board_Manager : MonoBehaviour
+public class Board_Manager : MonoBehaviour, IDataPersistance
 {
     public static Board_Manager instance;
 
@@ -74,23 +74,22 @@ public class Board_Manager : MonoBehaviour
         Game_Manager.instance.ChangeState(GameState.SpawnHero);
     }
 
-    public void SpawnLeader(){
+    public void SpawnLeader(ScriptableUnit leader){
         Tile destTile = GetTileAtPosition(_map._leader.loc);
-        ScriptableUnit unit = _map._leader.unit;
 
         if (destTile == null)
         {
             Debug.Log("Leader: Dest Tile does not exist");
             return;
         }
-        if (unit == null)
+        if (leader == null)
         {
             Debug.Log("Leader: Sciptable Unit not Defined");
             return;
         }
 
 
-        Hero_Leader_Prefab.unit = unit;
+        Hero_Leader_Prefab.unit = leader;
         var summonded_Hero = Instantiate(Hero_Leader_Prefab);
         destTile.setUnit(summonded_Hero);
 
@@ -338,7 +337,6 @@ public class Board_Manager : MonoBehaviour
 
     public void SpawnMapStructures()
     {
-        Debug.Log("Spawning Structures");
         foreach (StructureAndPoint item in _map.structures)
         {
             SummonStructure(item);
@@ -580,5 +578,17 @@ public class Board_Manager : MonoBehaviour
 
         return tiles[rand];
 
+    }
+
+    public void LoadData(PlayerData playerData)
+    {
+
+        _map = DataPersistanceManager.instance.mapIDTable.getMap(playerData.CombatMap);
+        Debug.Log("Map Set: " + _map.name);
+    }
+
+    public void SaveData(ref PlayerData playerData)
+    {
+        Debug.Log("DeckBuilder Not Currently saving Data");
     }
 }

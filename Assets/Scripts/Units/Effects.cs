@@ -25,12 +25,10 @@ public class SpawnerEffect: EndOfTurnEffects{
         
         if(dest == null){
             Debug.Log("No Available Tiles");
-        }else if(s.turnCounter%_roundsForEachSpawn != 0){
-            Debug.Log("Spawner On cooldown");
-        }
-        else{
+        }else if(s.turnCounter%_roundsForEachSpawn == 0){
             Board_Manager.instance.SummonUnit(dest,_spawn);
         }
+        
 
         
     }

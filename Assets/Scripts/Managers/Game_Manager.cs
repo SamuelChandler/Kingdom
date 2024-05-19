@@ -6,7 +6,7 @@ using UnityEngine.XR;
 using Unity.VisualScripting;
 using System;
 
-public class Game_Manager : MonoBehaviour
+public class Game_Manager : MonoBehaviour,IDataPersistance
 {
     public static Game_Manager instance;
     public GameState GameState;
@@ -19,6 +19,12 @@ public class Game_Manager : MonoBehaviour
     public int CurrentInspiration;
     [SerializeField] private int CurrentMaxInspiration; 
     private int MaxInspiration = 10;
+
+    //feilds relating to drawing cards and hand size
+    [SerializeField] private int cardsDrawnPerTurn = 1;
+    [SerializeField] private int StartingHandSize = 3;
+
+    private Deck deck;
 
     private void Awake()
     {
@@ -48,7 +54,8 @@ public class Game_Manager : MonoBehaviour
                 Board_Manager.instance.SpawnMapStructures();
                 break;
             case GameState.SpawnHero:
-                Board_Manager.instance.SpawnLeader();
+                Board_Manager.instance.SpawnLeader((ScriptableUnit)deck._leader);
+                PlayerPregameActions();
                 ChangeState(GameState.SpawnEnemies);
                 break;
             case GameState.SpawnEnemies:
@@ -139,6 +146,7 @@ public class Game_Manager : MonoBehaviour
     {
         //increase and refresh inspiration
         IncreaseInspirationLimit();
+        Draw(cardsDrawnPerTurn);
         CurrentInspiration = CurrentMaxInspiration;
         Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
         Event_Manager.instance.refresh();
@@ -153,7 +161,34 @@ public class Game_Manager : MonoBehaviour
         Debug.Log("You Win");
     }
 
-    
+    public void Draw(int amount){
+        for(int i = 0; i < amount; i++){
+            Card temp = deck.DrawCard();
+            Menu_Manager.instance.SetSelectorToCard(temp);
+        }
+    }
+
+    public void ShuffleDeck(){
+        deck.ShuffleDeck();
+    }
+
+    public void LoadData(PlayerData playerData)
+    {
+        deck = playerData.GetDeck(playerData.SelectedDeck);
+        Debug.Log("Deck Being Loaded: "+deck.name);
+    }
+
+    public void SaveData(ref PlayerData playerData)
+    {
+        Debug.Log("Nothing Saved From Game Manager");
+    }
+
+    private void PlayerPregameActions(){
+        deck.RemoveCard(deck._leader);
+        ShuffleDeck();
+        Draw(StartingHandSize-cardsDrawnPerTurn);
+
+    }
 }
 
 public enum GameState

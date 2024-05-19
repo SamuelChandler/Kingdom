@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UnitSelector : MonoBehaviour
 {
-    public ScriptableUnit held_unit;
+    public Card held_card;
     private Button _button;
     private Image _image;
     //[SerializeField] protected Image _image;
@@ -17,17 +17,16 @@ public class UnitSelector : MonoBehaviour
 
         _image = GetComponent<Image>();
 
-        if (held_unit.image != null)
-        {
-            _image.sprite = held_unit.image;
-        }
     }
 
     //in hover should show full unit info 
     private void OnMouseEnter()
     {
         Menu_Manager.instance.SetMessenger("hovering");
-        Menu_Manager.instance.showUnit(held_unit);
+        if(held_card.type == CardType.Unit){
+            Menu_Manager.instance.showUnit((ScriptableUnit)held_card);
+        }
+        
     }
     private void OnMouseLeave()
     {
@@ -37,15 +36,31 @@ public class UnitSelector : MonoBehaviour
     void btnClick()
     {
         
-        if (held_unit == null) return;
-        
+        if (held_card == null) return;
         
         //var createdUnit = Instantiate(held_unit);
-        Unit_Manager.instance.SetSelectedHero(held_unit);
+        if(held_card.type == CardType.Unit){
+            Unit_Manager.instance.SetSelectedHero((ScriptableUnit)held_card);
+        }
+        
     }
 
     void setImage(Sprite s)
     {
         _image.sprite = s;
+    }
+
+    public void SetCard(Card c){
+        held_card = c;
+
+        if (held_card.image != null)
+        {
+            _image.sprite = held_card.image;
+        }
+    }
+
+    public void ClearCard(){
+        held_card = null;
+        _image.sprite = null;
     }
 }

@@ -12,8 +12,10 @@ public class Menu_Manager : MonoBehaviour
 {
     public static Menu_Manager instance;
 
-    [SerializeField] private GameObject _displayCardObject, _tileInfo, _tileUnit, _messanger, _unitSelect,_winScreen,_lossScreen;
+    [SerializeField] private GameObject _displayCardObject, _tileInfo, _tileUnit, _messanger,_winScreen,_lossScreen;
 
+
+    [SerializeField] private UnitSelector[] unitSelectors;
 
     [SerializeField] private HeroCardFrame _displayCard;
 
@@ -37,6 +39,7 @@ public class Menu_Manager : MonoBehaviour
         _messanger.SetActive(false);
         _winScreen.SetActive(false);
         _lossScreen.SetActive(false);
+        SetUnitSelectorsToEmpty();
 
     }
 
@@ -171,5 +174,23 @@ public class Menu_Manager : MonoBehaviour
         o.SetActive(false);
         o.GetComponentInChildren<TextMeshProUGUI>().faceColor = new Color(textc.r,textc.g,textc.b,255f);
         o.GetComponent<Image>().color = new Color(c.r,c.g,c.b,255f);
+    }
+
+    public void SetUnitSelectorsToEmpty(){
+        foreach(UnitSelector s in unitSelectors){
+            s.ClearCard();
+        }
+    }
+
+    //sets the first selector it finds to a unit, used for drawing 
+    public void SetSelectorToCard(Card c){
+        foreach(UnitSelector s in unitSelectors){
+            if(s.held_card == null){
+                s.SetCard(c);
+                return;
+            }
+        }
+
+        Debug.Log("No space in hand");
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Deck{
     public string name;
@@ -60,6 +61,35 @@ public class Deck{
             Debug.Log("Leader Removed");
             _leader = null;
         }
+    }
+
+    public void ShuffleDeck(){
+        int n = contents.Count;
+        
+
+        while(n > 1){
+            n--;
+            int k = Random.Range(0,n);
+            Card temp = contents[n];
+            contents[n] = contents[k];
+            contents[k] = temp;
+        }
+
+        Debug.Log("Shuffled Deck");
+    }
+
+    public Card DrawCard(){
+
+        if(contents.Count == 0){
+            Debug.Log("Deck is empty");
+            return null;
+        }
+
+        Card temp = contents[0];
+        contents.RemoveAt(0);
+
+        return temp;
+        
     }
 }
 

@@ -18,7 +18,7 @@ public class MapIDTable : ScriptableObject
         return -1;
     }
 
-    public ScriptableMap getCard(int i){
+    public ScriptableMap getMap(int i){
         return IdTable[i];
     }
 }

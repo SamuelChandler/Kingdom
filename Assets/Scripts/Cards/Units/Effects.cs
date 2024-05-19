@@ -4,13 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-[CreateAssetMenu(fileName = "Structure_Effect",menuName = "StructureNew Effect")]
-public class EndOfTurnEffects: ScriptableObject{  
+
+public class Effect: ScriptableObject{
+    
+}
+
+
+[Serializable]
+[CreateAssetMenu(fileName = "EndOfTurn_Effect",menuName = "Effect/End Of Turn Effect")]
+public class EndOfTurnEffects: Effect{  
 
     public virtual void ActivateEffect(Structure s){
         Debug.Log("No Effect");
     }
 }
+
+
 
 [Serializable]
 [CreateAssetMenu(fileName = "Effect_Timed_Unit_Spawner",menuName = "New Effect/Timed Unit Spawner")]

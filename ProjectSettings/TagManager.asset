@@ -42,6 +42,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 2285860403
+    locked: 0
+  - name: BuildingLower
+    uniqueID: 2788987101
+    locked: 0
   - name: Unit UI
     uniqueID: 318461885
+    locked: 0
+  - name: PLayerAndNPC
+    uniqueID: 2773066353
+    locked: 0
+  - name: BuildingHigher
+    uniqueID: 1424678693
     locked: 0

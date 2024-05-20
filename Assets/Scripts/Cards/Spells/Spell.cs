@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [Serializable]
+[CreateAssetMenu(fileName = "New Spell",menuName = "Card/Spell")]
 public class Spell : Card
 {
 

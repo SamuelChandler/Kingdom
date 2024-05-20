@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c45279cf4aff48a45ac5e89ac3c3b2c4, type: 3}
+  m_Name: Bolt
+  m_EditorClassIdentifier: 
+  image: {fileID: 240023151897313887, guid: 04c3d1fdc5ea8434f9e7b91c231c87c1, type: 3}
+  name: Creative Bolt
+  inspirationCost: 1
+  description: Deal 2 damage in one location
+  type: 2
+  faction: 0
+  effects:
+  - {fileID: 0}
+  target: 1

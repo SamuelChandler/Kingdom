@@ -23,14 +23,14 @@ public class UnitSelector : MonoBehaviour
     private void OnMouseEnter()
     {
         Menu_Manager.instance.SetMessenger("hovering");
-        if(held_card.type == CardType.Unit){
-            Menu_Manager.instance.showUnit((ScriptableUnit)held_card);
-        }
+        
+        Menu_Manager.instance.showCard(held_card);
+        
         
     }
     private void OnMouseLeave()
     {
-        Menu_Manager.instance.showUnit((BaseHero)null);
+        Menu_Manager.instance.showCard(null);
     }
 
     void btnClick()
@@ -43,7 +43,7 @@ public class UnitSelector : MonoBehaviour
             Unit_Manager.instance.SetSelectedHero((ScriptableUnit)held_card);
             Menu_Manager.instance.CurrentSelectedSelector = this;
         }else if(held_card.type == CardType.Spell){
-            Unit_Manager.instance.SelectedSpell = (Spell)held_card;
+            Unit_Manager.instance.SetSelectedSpell((Spell)held_card);
             Menu_Manager.instance.CurrentSelectedSelector = this;
         }
         

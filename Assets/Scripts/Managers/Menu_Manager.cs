@@ -107,8 +107,6 @@ public class Menu_Manager : MonoBehaviour
         }
 
         _displayCard.setCard(hero);
-
-        //display selected hero
         _displayCardObject.SetActive(true);
     }
 
@@ -123,7 +121,6 @@ public class Menu_Manager : MonoBehaviour
 
         //build text based on hero
         _displayCard.setCard(unit);
-
         _displayCardObject.SetActive(true);
     }
 

@@ -170,6 +170,43 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         
     }
 
+    // summoning without the decrease of inspiration and UI logic
+    public void SpawnUnit(Tile destTile, ScriptableUnit unit){
+        if (destTile == null)
+        {
+            Debug.Log("Dest Tile does not exist");
+            return;
+        }
+        if (unit == null)
+        {
+            Debug.Log("Sciptable Unit not Defined");
+            return;
+        }
+
+        if (unit.Faction == Faction.Hero)
+        {
+            Hero_Prefab.unit = unit;
+
+            //create and set unit to tile
+            var summonded_Hero = Instantiate(Hero_Prefab);
+            destTile.setUnit(summonded_Hero);
+
+            _heroes.Add(summonded_Hero);
+        }
+
+        else if (unit.Faction == Faction.Enemy)
+        {
+            Enemy_Prefab.unit = unit;
+
+            //create and set unit to tile
+            BaseEnemy summonded_Enemy = Instantiate(Enemy_Prefab);
+            destTile.setUnit(summonded_Enemy);
+
+            _enemies.Add(summonded_Enemy);
+
+        }
+    }
+
     //Attempts to summon a unit to a dest Tile based on a scriptable unit
     public void SummonUnit(Tile destTile, ScriptableUnit unit)
     {
@@ -242,11 +279,16 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
             //create and set unit to tile
             var summonded_Structure = Instantiate(_allyS);
-            Debug.Log(s.structure.width);
 
             if((s.structure.width == 0|| s.structure.width ==1) && (s.structure.height == 0||s.structure.height == 1)){
                 summonded_Structure.OccupiedTiles = new Tile[1,1];
                 summonded_Structure.OccupiedTiles[0,0] = GetTileAtPosition(s.loc).setStructure(summonded_Structure);;
+                
+                //remove unit from hand and clear related UI
+                Menu_Manager.instance.CurrentSelectedSelector.ClearCard();
+                Unit_Manager.instance.SelectedCardInHand = null;
+                Menu_Manager.instance.CurrentSelectedSelector = null;
+                
                 _AllyStructures.Add(summonded_Structure);
                 return;
             }
@@ -266,6 +308,12 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             summonded_Structure.transform.position = new Vector3(x,y,0.0f);
   
             _AllyStructures.Add(summonded_Structure);
+
+            //remove unit from hand and clear related UI
+            Menu_Manager.instance.CurrentSelectedSelector.ClearCard();
+            Unit_Manager.instance.SelectedCardInHand = null;
+            Menu_Manager.instance.CurrentSelectedSelector = null;
+            
             return;
 
             

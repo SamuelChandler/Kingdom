@@ -18,7 +18,7 @@ public class Unit_Manager : MonoBehaviour
 
     public BaseHero SelectedHero;
 
-    public Spell SelectedSpell;
+    public Card SelectedCardInHand;
     bool selectingTargets;
 
     public BaseHero Unit_Prefab;
@@ -52,22 +52,31 @@ public class Unit_Manager : MonoBehaviour
     }
 
     //sets the selected hero based on a scriptable Unit
-    public void SetSelectedHero(ScriptableUnit unit)
+    public void SetSelectedCard(Card C)
     {
         //create unit and set to selected hero 
-        SelectedHero = Unit_Prefab;
-        SelectedHero.unit = unit;
+        SelectedCardInHand = C;
 
-        Menu_Manager.instance.showUnit(unit);
-    }
-
-    public void SetSelectedSpell(Spell s){
-        SelectedSpell = s;
-        Menu_Manager.instance.showCard(s);
+        if(C.type == CardType.Unit){
+            SelectedHero = Unit_Prefab;
+            SelectedHero.unit = (ScriptableUnit)C;
+            
+        }
+        
+        Menu_Manager.instance.showCard(C);
     }
 
     public void CastSpell(Tile t){
-        if(SelectedSpell.CastSpell(t)){
+
+        if(SelectedCardInHand.type != CardType.Spell){
+            Debug.Log("Card Being cast is not a spell");
+            return;
+        }
+
+        Spell s = (Spell)SelectedCardInHand;
+
+        if(s.CastSpell(t)){
+            SelectedCardInHand = null;
             Menu_Manager.instance.CurrentSelectedSelector.ClearCard();
         }else{
             Debug.Log("Was not able to cast the spell");

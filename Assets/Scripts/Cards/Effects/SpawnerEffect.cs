@@ -18,7 +18,7 @@ public class SpawnerEffect: EndOfTurnEffect{
         if(dest == null){
             Debug.Log("No Available Tiles");
         }else if(s.turnCounter%_roundsForEachSpawn == 0){
-            Board_Manager.instance.SummonUnit(dest,_spawn);
+            Board_Manager.instance.SpawnUnit(dest,_spawn);
         }
         
 

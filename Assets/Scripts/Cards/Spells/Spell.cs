@@ -28,8 +28,6 @@ public class Spell : Card
             Debug.Log(e.EffectName);
             resolveEffect(e,T);
         }
-
-        Unit_Manager.instance.SelectedSpell = null;
         return true;
     }
 

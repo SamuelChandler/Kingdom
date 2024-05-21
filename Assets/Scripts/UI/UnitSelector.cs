@@ -38,15 +38,9 @@ public class UnitSelector : MonoBehaviour
         
         if (held_card == null) return;
         
-        //var createdUnit = Instantiate(held_unit);
-        if(held_card.type == CardType.Unit){
-            Unit_Manager.instance.SetSelectedHero((ScriptableUnit)held_card);
-            Menu_Manager.instance.CurrentSelectedSelector = this;
-        }else if(held_card.type == CardType.Spell){
-            Unit_Manager.instance.SetSelectedSpell((Spell)held_card);
-            Menu_Manager.instance.CurrentSelectedSelector = this;
-        }
-        
+
+        Unit_Manager.instance.SetSelectedCard(held_card);
+        Menu_Manager.instance.CurrentSelectedSelector = this;
     }
 
     void setImage(Sprite s)

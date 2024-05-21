@@ -99,8 +99,11 @@ public abstract class Tile : MonoBehaviour
         if (Game_Manager.instance.GameState != GameState.HeroesTurn) return;
 
         //if a spell is selected
-        if(Unit_Manager.instance.SelectedSpell != null){
-            Unit_Manager.instance.CastSpell(this);
+        if(Unit_Manager.instance.SelectedCardInHand != null){
+            if(Unit_Manager.instance.SelectedCardInHand.type == CardType.Spell){
+                Unit_Manager.instance.CastSpell(this);
+                return;
+            }
         }
 
 
@@ -158,7 +161,14 @@ public abstract class Tile : MonoBehaviour
                 }
                
                 
+            }else if(Unit_Manager.instance.SelectedCardInHand.type == CardType.Structure){
+                StructureAndPoint sp = new StructureAndPoint();
+                sp.structure = (ScriptableStructure)Unit_Manager.instance.SelectedCardInHand;
+                sp.loc = new Vector2(x,y);
+                Board_Manager.instance.SummonStructure(sp);
             }
+
+            
         }
     }
 

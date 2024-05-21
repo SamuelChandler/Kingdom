@@ -530,6 +530,14 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         return false;
     }
 
+    public bool removeAllyStructure(AllyStructure allyStructure){
+        if(_AllyStructures.Contains(allyStructure)){
+            _AllyStructures.Remove(allyStructure);
+            return true;
+        }
+        return false;
+    }
+
     public bool WithinOne(BaseUnit a, Tile t){
 
         float x_change = Mathf.Abs(a.OccupiedTile.x - t.x);
@@ -607,4 +615,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     {
         Debug.Log("DeckBuilder Not Currently saving Data");
     }
+
+    
+
 }

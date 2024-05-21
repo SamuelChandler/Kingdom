@@ -1,5 +1,5 @@
 /*
- * Used to Manage the interactions between the units and other game objects
+ * Used to Manage info with the players turn such as selected units and casting spells and abilities 
  * 
  * Features:
  * - Tracks the Selected Unit for movment puposes 
@@ -17,6 +17,10 @@ public class Unit_Manager : MonoBehaviour
     public static Unit_Manager instance;
 
     public BaseHero SelectedHero;
+
+    public Spell SelectedSpell;
+    bool selectingTargets;
+
     public BaseHero Unit_Prefab;
 
 
@@ -56,6 +60,20 @@ public class Unit_Manager : MonoBehaviour
 
         Menu_Manager.instance.showUnit(unit);
     }
+
+    public void SetSelectedSpell(Spell s){
+        SelectedSpell = s;
+    }
+
+    public void CastSpell(Tile t){
+        if(SelectedSpell.CastSpell(t)){
+            Menu_Manager.instance.CurrentSelectedSelector.ClearCard();
+        }else{
+            Debug.Log("Was not able to cast the spell");
+        }
+    }
+
+    
 
     
 }

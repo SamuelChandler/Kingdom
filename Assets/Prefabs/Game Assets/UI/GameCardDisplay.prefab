@@ -368,6 +368,10 @@ MonoBehaviour:
   attack: {fileID: 8673967030009700715}
   description: {fileID: 1768760893822995458}
   unitImage: {fileID: 2547057058939911541}
+  _backgroundImage: {fileID: 2708788781248470003}
+  spellBG: {fileID: -5632944209032475372, guid: dfdf99e67dec8864a99b0e3ec0800970, type: 3}
+  unitBG: {fileID: 5245698472836401156, guid: 7aa36d66fba788842ab47fc6d70a8b18, type: 3}
+  structureBG: {fileID: 9121151024599066337, guid: 6273bbdb6b87eca4b9d075845005224b, type: 3}
 --- !u!1 &6395731487669291642
 GameObject:
   m_ObjectHideFlags: 0

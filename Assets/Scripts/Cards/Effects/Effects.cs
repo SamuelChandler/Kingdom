@@ -5,17 +5,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [Serializable]
-
 public class Effect: ScriptableObject{
-    [SerializeField] string EffectName;
+    [SerializeField] public string EffectName;
+    [SerializeField] public EffectTypes Etype;
 }
-
 
 [Serializable]
 [CreateAssetMenu(fileName = "OnPlayEffect",menuName = "Effect/On Play Effect")]
 public class OnPlayEffect: Effect{  
-
-
 
     public virtual void ActivateEffect(Card c){
         Debug.Log("No On Play Effect");
@@ -23,18 +20,12 @@ public class OnPlayEffect: Effect{
 }
 
 [Serializable]
-[CreateAssetMenu(fileName = "TargetTileEffect",menuName = "Effect/Target Tile Effect")]
 public class TargetedEffect: Effect{  
 
     [SerializeField] public Faction targetedFaction;
     [SerializeField] public int numberTargets;
 
-    public virtual Tile SetTarget(){
-        Debug.Log("Set Target is not implemented");
-        return null;
-    }
-
-    public virtual void ActivateEffect(Card c){
+    public virtual void ActivateEffect(Tile t){
         Debug.Log("No trageted Effect Effect");
     }
 }
@@ -73,4 +64,10 @@ public class SpawnerEffect: EndOfTurnEffect{
 
         
     }
+}
+
+
+public enum EffectTypes{
+    TargetedDamageEffect,
+    EndOfTurn_Effect
 }

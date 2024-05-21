@@ -66,5 +66,10 @@ public class BaseHero : BaseUnit
         return true;
     }
 
-    
+    public override void removeUnit()
+    {
+        Board_Manager.instance.RemoveHero(this);
+    }
+
+
 }

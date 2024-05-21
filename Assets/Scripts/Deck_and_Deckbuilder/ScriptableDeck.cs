@@ -14,6 +14,6 @@ public class ScriptableDeck : ScriptableObject
 [Serializable]
 public class CardAndAmount
 {
-    public ScriptableUnit card;
+    public Card card;
     public int amount;
 }

@@ -37,4 +37,9 @@ public class BaseEnemy : BaseUnit
 
         return true;
     }
+
+    public override void removeUnit()
+    {
+        Board_Manager.instance.RemoveEnemy(this);
+    }
 }

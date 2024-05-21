@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.XR;
 using Unity.VisualScripting;
 using System;
+using UnityEditor;
 
 public class Game_Manager : MonoBehaviour,IDataPersistance
 {
@@ -121,6 +122,38 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         }
         Menu_Manager.instance.SetMessenger("cannot summon here");
         return false;
+    }
+
+    public bool CanBePlayed(Spell s, Tile t){
+
+        if(s.inspirationCost > CurrentInspiration){
+                Menu_Manager.instance.SetMessenger("Not enough inspiration to play this spell");
+                return false;
+        }
+
+        if(t != null){
+            //if the tile is null then the spell does not target one tile 
+            if(t.OccupiedStructure == null && t.OccupiedUnit == null){
+                Menu_Manager.instance.SetMessenger("there is not target in this location");
+                return false;   
+            }
+
+            if(t.OccupiedStructure != null){
+                if(t.OccupiedStructure._structure.Faction != s.TargetFaction){
+                    Menu_Manager.instance.SetMessenger("Cannot target this unit with this spell");
+                    return false;
+                }
+            }
+
+             if(t.OccupiedUnit != null){
+                if(t.OccupiedUnit.unit.Faction != s.TargetFaction){
+                    Menu_Manager.instance.SetMessenger("Cannot target this unit with this spell");
+                    return false;
+                }
+            }
+        }
+        
+        return true;
     }
 
     public bool CanBePlayed(AllyStructure structure){

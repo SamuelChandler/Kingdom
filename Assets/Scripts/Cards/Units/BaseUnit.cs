@@ -46,4 +46,21 @@ public class BaseUnit : MonoBehaviour
         health.text = currentHealth.ToString();
 
     }
+
+    public void TakeDamage(int d){
+        currentHealth = currentHealth-d;
+
+        if (currentHealth <= 0)
+        {
+            
+            OccupiedTile.OccupiedUnit = null;
+            
+            removeUnit();
+
+            Destroy(gameObject);
+
+        }
+    }
+
+    public virtual void removeUnit(){}
 }

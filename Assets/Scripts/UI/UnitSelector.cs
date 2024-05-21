@@ -42,6 +42,9 @@ public class UnitSelector : MonoBehaviour
         if(held_card.type == CardType.Unit){
             Unit_Manager.instance.SetSelectedHero((ScriptableUnit)held_card);
             Menu_Manager.instance.CurrentSelectedSelector = this;
+        }else if(held_card.type == CardType.Spell){
+            Unit_Manager.instance.SelectedSpell = (Spell)held_card;
+            Menu_Manager.instance.CurrentSelectedSelector = this;
         }
         
     }

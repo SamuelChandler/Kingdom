@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -96,6 +97,12 @@ public abstract class Tile : MonoBehaviour
     {
         //only works if it is not the heros turn
         if (Game_Manager.instance.GameState != GameState.HeroesTurn) return;
+
+        //if a spell is selected
+        if(Unit_Manager.instance.SelectedSpell != null){
+            Unit_Manager.instance.CastSpell(this);
+        }
+
 
         //if tile is not empty
         if (OccupiedUnit != null)

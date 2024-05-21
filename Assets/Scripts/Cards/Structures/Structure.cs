@@ -35,5 +35,22 @@ public class Structure : MonoBehaviour
         
     }
 
+    public void TakeDamage(int d){
+        currentHealth = currentHealth-d;
+
+        if (currentHealth <= 0)
+        {
+            foreach(Tile t in OccupiedTiles){
+                t.OccupiedUnit = null;
+            }
+            removeStructure();
+
+            Destroy(gameObject);
+
+        }
+    }
+
+    public virtual void removeStructure(){}
+
 
 }

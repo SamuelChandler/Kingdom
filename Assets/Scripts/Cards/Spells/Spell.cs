@@ -22,10 +22,14 @@ public class Spell : Card
             return false;
         }
 
+        Game_Manager.instance.DecreaseCurrentInsperation(inspirationCost);
+
         foreach(Effect e in effects){
+            Debug.Log(e.EffectName);
             resolveEffect(e,T);
         }
 
+        Unit_Manager.instance.SelectedSpell = null;
         return true;
     }
 
@@ -41,4 +45,6 @@ public class Spell : Card
 
         }
     }
+
+    
 }

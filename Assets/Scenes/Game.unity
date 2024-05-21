@@ -581,11 +581,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368497379}
   m_CullTransparentMesh: 1
---- !u!1 &412106791 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3525311172909173192, guid: 378b52678f269794699e089adbfce718, type: 3}
+--- !u!114 &412106796 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3921081990578718876, guid: 378b52678f269794699e089adbfce718, type: 3}
   m_PrefabInstance: {fileID: 8464513712470622166}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53f8716ab7204c4ab8c4fda0e5b65ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &424594814 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4533150934600301055, guid: 66aa6628eceb3084b8e27583b4cfa502, type: 3}
@@ -1511,6 +1517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelectedHero: {fileID: 0}
+  SelectedSpell: {fileID: 0}
   Unit_Prefab: {fileID: 1603683541253479809, guid: 8e9d67deb09603248a93e050a241aa12, type: 3}
 --- !u!4 &1688171377
 Transform:
@@ -1767,8 +1774,8 @@ MonoBehaviour:
   _tileInfo: {fileID: 782108587}
   _tileUnit: {fileID: 1530016057}
   _messanger: {fileID: 368497379}
-  _lossScreen: {fileID: 412106791}
   _winScreen: {fileID: 2901431182184881033}
+  _lossScreen: {fileID: 412106796}
   unitSelectors:
   - {fileID: 312066196}
   - {fileID: 782683080}
@@ -2677,7 +2684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3525311172909173192, guid: 378b52678f269794699e089adbfce718, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4411280709910956369, guid: 378b52678f269794699e089adbfce718, type: 3}
       propertyPath: m_Pivot.x

@@ -63,6 +63,7 @@ public class Unit_Manager : MonoBehaviour
 
     public void SetSelectedSpell(Spell s){
         SelectedSpell = s;
+        Menu_Manager.instance.showCard(s);
     }
 
     public void CastSpell(Tile t){

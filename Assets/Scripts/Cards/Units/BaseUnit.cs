@@ -49,14 +49,13 @@ public class BaseUnit : MonoBehaviour
 
     public void TakeDamage(int d){
         currentHealth = currentHealth-d;
+        UpdateAttackAndHealthDisplay();
 
         if (currentHealth <= 0)
         {
             
             OccupiedTile.OccupiedUnit = null;
-            
             removeUnit();
-
             Destroy(gameObject);
 
         }

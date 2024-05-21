@@ -12,9 +12,10 @@ public class Menu_Manager : MonoBehaviour
 {
     public static Menu_Manager instance;
 
-    [SerializeField] private GameObject _displayCardObject, _tileInfo, _tileUnit, _messanger,_lossScreen;
+    [SerializeField] private GameObject _displayCardObject, _tileInfo, _tileUnit, _messanger;
 
     [SerializeField] private WinScreen _winScreen;
+    [SerializeField] private LossScreen _lossScreen;
 
 
     [SerializeField] private UnitSelector[] unitSelectors;
@@ -38,7 +39,6 @@ public class Menu_Manager : MonoBehaviour
         _displayCardObject.SetActive(false);
         _tileInfo.SetActive(false);
         _messanger.SetActive(false);
-        _lossScreen.SetActive(false);
         SetUnitSelectorsToEmpty();
 
     }
@@ -127,6 +127,17 @@ public class Menu_Manager : MonoBehaviour
         _displayCardObject.SetActive(true);
     }
 
+    public void showCard(Card c){
+        if(c == null){
+            _displayCardObject.SetActive(false);
+            return;
+        }
+
+        //build text based on hero
+        _displayCard.setCard(c);
+        _displayCardObject.SetActive(true);
+    }
+
 
     public void showWinScreen(Card c){
         if(_winScreen != null){
@@ -138,7 +149,7 @@ public class Menu_Manager : MonoBehaviour
 
     public void showLossScreen(){
         if(_lossScreen != null){
-            _lossScreen.SetActive(true);
+            _lossScreen.ShowLossScreen();
         }else{
             Debug.Log("Loss Screen is null");
         }

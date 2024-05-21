@@ -91,5 +91,9 @@ public class Deck{
         return temp;
         
     }
+
+    public void RemoveLeaderFromDeck(){
+        
+    }
 }
 

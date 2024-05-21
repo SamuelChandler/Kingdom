@@ -17,7 +17,7 @@ MonoBehaviour:
   inspirationCost: 1
   description: Deal 2 damage in one location
   type: 2
-  TargetFaction: 0
+  TargetFaction: 1
   effects:
   - {fileID: 11400000, guid: 9997b0a7f212c0e43a985a6474afe2d6, type: 2}
   target: 1

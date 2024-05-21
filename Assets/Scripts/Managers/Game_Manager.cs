@@ -76,7 +76,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
                 ResolveGameWin();
                 break;
             case GameState.GameLoss:
-                Menu_Manager.instance.showLossScreen();
+                ResolveGameLoss();
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState),newState,null);
@@ -134,7 +134,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         if(t != null){
             //if the tile is null then the spell does not target one tile 
             if(t.OccupiedStructure == null && t.OccupiedUnit == null){
-                Menu_Manager.instance.SetMessenger("there is not target in this location");
+                Menu_Manager.instance.SetMessenger("there is not a target in this location");
                 return false;   
             }
 
@@ -189,14 +189,6 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         Debug.Log("Player has Started the Turn");
     }
 
-    public void LoseGame(){
-        Debug.Log("You Lost the game");
-    }
-
-    public void WinGame(){
-        Debug.Log("You Win");
-    }
-
     public void Draw(int amount){
         for(int i = 0; i < amount; i++){
             Card temp = deck.DrawCard();
@@ -217,8 +209,8 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
     public void SaveData(ref PlayerData playerData)
     {
         int addedID = DataPersistanceManager.instance.idTable.getID(Board_Manager.instance.GetRewardCard());
-        Debug.Log(addedID);
         if(GameWin){
+            Debug.Log(DataPersistanceManager.instance.idTable.getCard(addedID).name + " Added To inventory");
             playerData._cardInventory.Add(addedID);
         }
     }
@@ -235,8 +227,14 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         GameWin = true;
         Menu_Manager.instance.showWinScreen(Board_Manager.instance.GetRewardCard());
         DataPersistanceManager.instance.SaveGame();
-        
     } 
+
+    private void ResolveGameLoss(){
+        Debug.Log("Resolving game Loss");
+        GameWin = false;
+        Menu_Manager.instance.showLossScreen();
+        DataPersistanceManager.instance.SaveGame();
+    }
 }
 
 public enum GameState

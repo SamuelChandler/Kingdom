@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 03536ce0ebd4d4644b5713a444402144
+guid: 89f2ed03e7fd0da44a1e2bb5bda6d4a2
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638520236219389853
+  platformSettingsDirtyTick: 638520236067679950
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Predation
+  - name: Faith
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: -0.032786883}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 32
+      width: 14
       height: 61
-    spriteID: d0f8783c40489a54a9c7304f3b252a80
+    spriteID: d9a80520b757db647bd4b5439e5d499c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -142,7 +142,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
   spriteSheetImportData:
-  - name: Predation_0
+  - name: Faith_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -151,9 +151,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 36
-      width: 32
+      width: 13
       height: 29
-    spriteID: deb271cbed217124b84165946b8ec1d4
+    spriteID: 9bcdf769f48a1ed4fa36b0acd48c9870
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -162,18 +162,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: Predation_1
+  - name: Faith_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
+      x: 5
       y: 4
-      width: 32
+      width: 13
       height: 29
-    spriteID: 082baff3887b45444bba42b1cedaa63d
+    spriteID: d3fa4b8ddb2f13b4fbe5a2a65866a1f0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -184,20 +184,20 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
-    guid: -167491962
-    name: Predation
+    guid: -298374582
+    name: Faith
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Predation
+    - name: Faith
       frameIndex: 0
       cellRect:
-        x: 0
-        y: 0
-        width: 32
+        x: 9
+        y: 2
+        width: 14
         height: 61
-      spriteId: d0f8783c40489a54a9c7304f3b252a80
+      spriteId: d9a80520b757db647bd4b5439e5d499c
     linkedCells: []
     parentIndex: -1
   platformSettings:

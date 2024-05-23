@@ -73,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -1521900943
+  m_SortingLayer: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: 1214200094, guid: fa45f8b4ec1ec7749abdae5a2d789f8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -113,13 +113,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OccupiedTile: {fileID: 0}
-  unit: {fileID: 0}
+  unit: {fileID: 11400000, guid: 786966014d5d4f944a8d95263f3e3a74, type: 2}
   spriteRenderer: {fileID: 2216078567971078873}
   attack: {fileID: 415745895536302369}
   health: {fileID: 3207627085579696872}
   isAbleToMove: 0
   isAbleToAttack: 0
   currentHealth: 0
+  currentAttack: 0
   uAI: {fileID: 8681758162586962013}
 --- !u!1 &1451157680133172598
 GameObject:
@@ -181,7 +182,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 318461885
+  m_SortingLayerID: 1424678693
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &1067322552988581838

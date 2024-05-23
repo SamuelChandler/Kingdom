@@ -34,9 +34,12 @@ public class DeckBuilder : MonoBehaviour,IDataPersistance
         if(c.type == CardType.Leader){
             _sWindow.ShowNonLeaders();
             _infographic.text = "";
+            _dWindow.AddLeaderEntry(c);
+        }else{
+             _dWindow.CreateAndAddCard(c);
         }
 
-        _dWindow.CreateAndAddCard(c);
+       
     }
 
     public void RemoveCardFromDeck(Card c){

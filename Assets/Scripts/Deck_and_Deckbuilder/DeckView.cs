@@ -8,6 +8,9 @@ public class DeckView : MonoBehaviour
     Title title;
 
     [SerializeField]
+    LeaderEntry leaderEntry;
+
+    [SerializeField]
     List<DeckEntry> cardInDeckView;
 
     [SerializeField]
@@ -48,5 +51,12 @@ public class DeckView : MonoBehaviour
 
     public void RemoveEntry(DeckEntry e){
         cardInDeckView.Remove(e);
+    }
+
+    public void AddLeaderEntry(Card argCard){
+        
+        //set the leader card to the leader entry
+        leaderEntry.SetEntry(argCard);
+
     }
 }

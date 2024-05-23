@@ -1,11 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-using UnityEngine.XR;
-using Unity.VisualScripting;
 using System;
-using UnityEditor;
+
 
 public class Game_Manager : MonoBehaviour,IDataPersistance
 {
@@ -31,6 +27,8 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
 
     private int _turn;
 
+    private List<Spawner> spawners;
+
     private void Awake()
     {
         instance = this;
@@ -47,7 +45,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         Menu_Manager.instance.SetMessenger("Level: "+ Level);
         Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
 
-        ChangeState(GameState.GenerateGrid);
+        ChangeState(GameState.GenerateMap);
     }
 
     //used to change the state of the game 
@@ -56,9 +54,10 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         GameState = newState;
         switch (newState)
         {
-            case GameState.GenerateGrid:
+            case GameState.GenerateMap:
                 Board_Manager.instance.generateGrid();
                 Board_Manager.instance.SpawnMapStructures();
+                SetSpawners();
                 break;
             case GameState.SpawnHero:
                 Board_Manager.instance.SpawnLeader((ScriptableUnit)deck._leader);
@@ -73,6 +72,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
                 StartPlayerTurn();
                 break;
             case GameState.EnemiesTurn:
+                ResolveSpawners();
                 eAI.StartTurn();
                 break;
             case GameState.GameWin:
@@ -86,6 +86,26 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         }
     }
     
+    private void SetSpawners(){
+
+        spawners = new List<Spawner>();
+
+        foreach(Spawner s in Board_Manager.instance._map._spawners){
+            spawners.Add(s);
+        }
+    }
+
+    private void ResolveSpawners(){
+        foreach(Spawner s in spawners){
+            if(_turn % s.turnsForSpawnToOccur == 0){
+                //if spawner timer is up
+                Vector2 dest = s.posLocations[UnityEngine.Random.Range(0,s.posLocations.Length)];
+                Tile destTile = Board_Manager.instance.GetTileAtPosition(dest);
+                Board_Manager.instance.SpawnUnit(destTile, s.unit);
+            }
+        }
+    }
+
     //used to increase the Inspiration limit of the player by 1
     public void IncreaseInspirationLimit()
     {
@@ -195,7 +215,6 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         //check if in survival mode and if the player has won the game
         SurvivalTurnCheck();
         
-
         //increase and refresh inspiration
         IncreaseInspirationLimit();
         Draw(cardsDrawnPerTurn);
@@ -264,7 +283,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
 
 public enum GameState
 {
-    GenerateGrid = 0,
+    GenerateMap = 0,
     SpawnHero = 1,
     SpawnEnemies = 2,
     HeroesTurn = 3,

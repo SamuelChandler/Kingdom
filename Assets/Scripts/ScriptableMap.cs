@@ -37,6 +37,9 @@ public class ScriptableMap : ScriptableObject
     [Tooltip("Number of rounds needed to win in survival mode")]
     [SerializeField] public int _survivalTurns;
 
+    [Tooltip("Spawners used within the level")]
+    [SerializeField] public Spawner[] _spawners;
+
     [SerializeField] public Card reward;
 
 
@@ -83,6 +86,13 @@ public class StructureAndPoint{
 public class LeaderAndPoint{
     public ScriptableUnit unit;
     public Vector2 loc;
+}
+
+[Serializable]
+public class Spawner{
+    public Vector2[] posLocations;
+    public ScriptableUnit unit;
+    public int turnsForSpawnToOccur;
 }
 
 public enum LevelType

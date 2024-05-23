@@ -80,5 +80,6 @@ public class Player : MonoBehaviour, IDataPersistance
         playerData._cardInventory = this.data._cardInventory;
         playerData.PlayerName = this.data.PlayerName;
         playerData.SelectedDeck = data.SelectedDeck;
+        playerData.CombatMap = data.CombatMap;
     }
 }

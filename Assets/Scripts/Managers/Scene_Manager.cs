@@ -36,6 +36,7 @@ public class Scene_Manager : MonoBehaviour
     }
 
     public void GoToBattle(ScriptableMap map){
+        Debug.Log("going to fight" + map.name);
         Player.instance.data.CombatMap = DataPersistanceManager.instance.mapIDTable.getID(map);
         DataPersistanceManager.instance.SaveGame();
         SceneManager.LoadScene(CombatMap_index);

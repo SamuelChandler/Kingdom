@@ -29,10 +29,13 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
 
     private Deck deck;
 
+    private int _turn;
+
     private void Awake()
     {
         instance = this;
         GameWin = false;
+        _turn = 0;
         Level = PlayerPrefs.GetInt("Level Selected");
         CurrentInspiration = CurrentMaxInspiration;
 
@@ -186,6 +189,13 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
 
     public void StartPlayerTurn()
     {
+        //increase turn number
+        _turn++;
+
+        //check if in survival mode and if the player has won the game
+        SurvivalTurnCheck();
+        
+
         //increase and refresh inspiration
         IncreaseInspirationLimit();
         Draw(cardsDrawnPerTurn);
@@ -193,6 +203,15 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
         Event_Manager.instance.refresh();
         //Debug.Log("Player has Started the Turn");
+    }
+
+    public void SurvivalTurnCheck(){
+        //do nothing if it is not a survival map
+        if(Board_Manager.instance._map._levelType != LevelType.Survive){return;}
+
+        if(Board_Manager.instance._map._survivalTurns < _turn){
+            ChangeState(GameState.GameWin);
+        }
     }
 
     public void Draw(int amount){

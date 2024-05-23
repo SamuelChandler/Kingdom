@@ -10,7 +10,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 {
     public static Board_Manager instance;
 
-    [SerializeField] private ScriptableMap _map;
+    [SerializeField] public ScriptableMap _map;
 
     [SerializeField] private Transform _camera;
 

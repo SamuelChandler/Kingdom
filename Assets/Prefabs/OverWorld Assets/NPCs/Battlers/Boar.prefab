@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 217572019866986504}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0109, y: 0.0012, z: 0}
-  m_LocalScale: {x: 0.9567254, y: 0.9727863, z: 1}
+  m_LocalPosition: {x: -0.002, y: 0.0036, z: 0}
+  m_LocalScale: {x: 1.0410197, y: 0.5920049, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8536179728669430423}
@@ -96,9 +96,9 @@ GameObject:
   - component: {fileID: 6082600041520807024}
   - component: {fileID: 250645795070356503}
   - component: {fileID: 6548399014018550044}
-  - component: {fileID: -5992393247134896742}
+  - component: {fileID: 8288022691614133631}
   m_Layer: 0
-  m_Name: Bee
+  m_Name: Boar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,7 +161,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1583630752, guid: 559ffbc08e84c754bb335b6889a75ab8, type: 3}
+  m_Sprite: {fileID: -2008833726999652680, guid: d638bd75cd70bb440a71e2feae2ef94d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -212,9 +212,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactSprite: {fileID: 8038981602709236478}
-  _dialogText: {fileID: 11400000, guid: 87646079c2a046941bf03ffc5b69b367, type: 2}
---- !u!58 &-5992393247134896742
-CircleCollider2D:
+  _dialogText: {fileID: 11400000, guid: 6e838def3051c284cae1e0d385f154bf, type: 2}
+--- !u!70 &8288022691614133631
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -245,6 +245,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Offset: {x: 0.0024304395, y: 0.0016219019}
+  m_Size: {x: 1.0071746, y: 0.556744}
+  m_Direction: 1

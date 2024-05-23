@@ -25,7 +25,6 @@ public class Spell : Card
         Game_Manager.instance.DecreaseCurrentInsperation(inspirationCost);
 
         foreach(Effect e in effects){
-            Debug.Log(e.EffectName);
             resolveEffect(e,T);
         }
         return true;

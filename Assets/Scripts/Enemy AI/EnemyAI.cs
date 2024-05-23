@@ -6,7 +6,7 @@ public class EnemyAI : MonoBehaviour
 {
     public void StartTurn()
     {
-        Debug.Log("AI has started Turn");
+        //Debug.Log("AI has started Turn");
 
         //perform unit actions
         UnitActions();

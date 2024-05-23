@@ -186,7 +186,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         CurrentInspiration = CurrentMaxInspiration;
         Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
         Event_Manager.instance.refresh();
-        Debug.Log("Player has Started the Turn");
+        //Debug.Log("Player has Started the Turn");
     }
 
     public void Draw(int amount){

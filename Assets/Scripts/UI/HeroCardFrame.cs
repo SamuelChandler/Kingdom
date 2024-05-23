@@ -19,6 +19,7 @@ public class HeroCardFrame : MonoBehaviour
         health.text = h.unit.health.ToString();
         attack.text = h.unit.attack.ToString();
         unitImage.sprite = h.unit.image;
+        description.text = h.unit.description;
         
     }
 

@@ -40,8 +40,6 @@ public class Fightable_NPC : NPC, ITalkable
         dialog_UI.instance.currentlyTalkingNPC = this;
         convoStats = dialog_UI.instance.DisplayNextParagraph(_dialogText,convoStats);
 
-        Debug.Log(convoStats.ConversationPointer);
-
         //check if the current dialog point is a dialog point
         if(choicePoints.ContainsKey(convoStats.ConversationPointer) && convoStats.ReadyForNextParagraph){
             //stop reading 

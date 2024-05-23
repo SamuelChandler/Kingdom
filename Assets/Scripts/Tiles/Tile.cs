@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -129,16 +130,18 @@ public abstract class Tile : MonoBehaviour
             //when there is a structure in the space
 
             //check if a hero is selected
-            if (Unit_Manager.instance.SelectedHero != null)
-                {
-                    //if the strucuture is an enemy
-                    if(OccupiedStructure._structure.Faction == Faction.Enemy){
-                        var enemy = (EnemyStructure)OccupiedStructure;
-                        Unit_Manager.instance.SelectedHero.Attack(enemy);
-                        Unit_Manager.instance.SetSelectedHero((BaseHero)null);
-                    }
-                    
-                }
+            if (Unit_Manager.instance.SelectedHero != null){
+                //if the strucuture is an enemy
+                if(OccupiedStructure._structure.Faction == Faction.Enemy){
+                    var enemy = (EnemyStructure)OccupiedStructure;
+                    Unit_Manager.instance.SelectedHero.Attack(enemy);
+                    Unit_Manager.instance.SetSelectedHero((BaseHero)null);
+                }else{
+                    Menu_Manager.instance.showCard(OccupiedStructure._structure);
+                }  
+            }else{
+                Menu_Manager.instance.showCard(OccupiedStructure._structure);
+            }
 
         }
         else //tile is empty

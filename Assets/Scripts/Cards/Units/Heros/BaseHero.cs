@@ -47,21 +47,10 @@ public class BaseHero : BaseUnit
             Menu_Manager.instance.SetMessenger("Attack was out of Range");
             return false;
         }
+
+        enemy.TakeDamage(this.unit.attack);
         
-        enemy.currentHealth = enemy.currentHealth - this.unit.attack;
         this.isAbleToAttack = false;
-
-        //check if destroyed
-        if (enemy.currentHealth <= 0)
-        {
-            foreach(Tile t in enemy.OccupiedTiles){
-                t.OccupiedUnit = null;
-            }
-            Board_Manager.instance.removeEnemyStructure(enemy);
-
-            Destroy(enemy.gameObject);
-
-        }
         
         return true;
     }

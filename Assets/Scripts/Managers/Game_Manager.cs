@@ -116,7 +116,13 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         }
 
         foreach (BaseHero a in Board_Manager.instance._heroes){
-            if(Board_Manager.instance.WithinOne(a,dest)){
+            if(Board_Manager.instance.WithinOne(a.OccupiedTile,dest)){
+                return true;
+            }
+        }
+
+        foreach(AllyStructure s in Board_Manager.instance._AllyStructures){
+            if(Board_Manager.instance.WithinOne(s.OccupiedTiles[0,0],dest)){
                 return true;
             }
         }

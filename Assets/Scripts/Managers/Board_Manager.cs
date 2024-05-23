@@ -31,7 +31,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
     public List<BaseHero> _heroes = new List<BaseHero>();
     public List<BaseEnemy> _enemies = new List<BaseEnemy>();
-    private List<Structure> _AllyStructures = new List<Structure>();
+    public List<Structure> _AllyStructures = new List<Structure>();
     private List<Structure> _EnemyStructures = new List<Structure>();
     private List<Structure> _NeutralStructures = new List<Structure>();
 
@@ -586,10 +586,10 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         return false;
     }
 
-    public bool WithinOne(BaseUnit a, Tile t){
+    public bool WithinOne(Tile s, Tile t){
 
-        float x_change = Mathf.Abs(a.OccupiedTile.x - t.x);
-        float y_change = Mathf.Abs(a.OccupiedTile.y - t.y);
+        float x_change = Mathf.Abs(s.x - t.x);
+        float y_change = Mathf.Abs(s.y - t.y);
 
         if( x_change <= 1 && y_change <= 1){
             return true;

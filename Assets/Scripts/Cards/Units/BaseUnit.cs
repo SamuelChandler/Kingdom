@@ -25,8 +25,14 @@ public class BaseUnit : MonoBehaviour
         currentHealth = unit.health;
         currentAttack = unit.attack;
 
-        isAbleToAttack = false;
-        isAbleToMove = false;
+        if(unit._swift){
+            isAbleToAttack = true;
+            isAbleToMove = true;
+        }else{
+            isAbleToAttack = false;
+            isAbleToMove = false;
+        }
+        
 
         attack.text = unit.attack.ToString();
         health.text = currentHealth.ToString();

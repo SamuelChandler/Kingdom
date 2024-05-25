@@ -16,6 +16,8 @@ public class ScriptableUnit : Card
 
     //determines if the unit is a leader unit
     public bool _leader;
+
+    public bool _swift;
     
 }
 

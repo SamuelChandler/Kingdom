@@ -22,3 +22,4 @@ MonoBehaviour:
   attack: 5
   speed: 2
   _leader: 0
+  _swift: 1

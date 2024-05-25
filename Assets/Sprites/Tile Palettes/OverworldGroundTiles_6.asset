@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: OverworldGroundTiles_6
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -8541449183775978070, guid: 815f6abac42476e4cbc5882860926889, type: 3}
+  m_Sprite: {fileID: -8440804198470296068, guid: 815f6abac42476e4cbc5882860926889, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

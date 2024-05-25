@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 16
+    spritePixelsToUnits: 32
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -73,7 +73,7 @@ ScriptedImporter:
   previousAsepriteImporterSettings:
     fileImportMode: 0
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
@@ -86,7 +86,7 @@ ScriptedImporter:
   asepriteImporterSettings:
     fileImportMode: 0
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638521880892356370
+  platformSettingsDirtyTick: 638522499273234002
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -204,20 +204,20 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
-    guid: -1017381599
-    name: House1
-    layerFlags: 0
+    guid: 1317221553
+    name: Layer 2
+    layerFlags: 19
     layerType: 0
     blendMode: 0
     cells:
-    - name: House1
+    - name: Layer 2
       frameIndex: 0
       cellRect:
         x: 5
         y: 4
         width: 119
         height: 105
-      spriteId: 7ad4f9d9ae62b3348ab8fc68204f4d74
+      spriteId: f7cede492947f1143a4995135aca24c8
     linkedCells: []
     parentIndex: -1
   platformSettings:

@@ -61,6 +61,7 @@ public class Player : MonoBehaviour, IDataPersistance
         this.data._cardInventory = playerData._cardInventory;
         this.data.PlayerName = playerData.PlayerName;
         this.data.SelectedDeck = playerData.SelectedDeck;
+        gameObject.transform.position = playerData.MapLocation;
 
         SetSelectedDeck(playerData.GetDeck(data.SelectedDeck));
         PlayerName = playerData.PlayerName;
@@ -81,5 +82,6 @@ public class Player : MonoBehaviour, IDataPersistance
         playerData.PlayerName = this.data.PlayerName;
         playerData.SelectedDeck = data.SelectedDeck;
         playerData.CombatMap = data.CombatMap;
+        playerData.MapLocation = (Vector2)gameObject.transform.position;
     }
 }

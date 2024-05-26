@@ -17,6 +17,8 @@ public class PlayerData
 
    public int CombatMap;
 
+   public Vector2 MapLocation;
+
 
     public PlayerData(string name){
         PlayerName = name;

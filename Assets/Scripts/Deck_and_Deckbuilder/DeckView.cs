@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DeckView : MonoBehaviour
@@ -18,6 +19,9 @@ public class DeckView : MonoBehaviour
 
     [SerializeField]
     GameObject EntryList;
+
+    [SerializeField]
+    TextMeshProUGUI DeckLimitText;
 
     public void CreateAndAddCard(Card argCard){
 
@@ -47,6 +51,10 @@ public class DeckView : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void updateDeckLimitText(int a, int b){
+        DeckLimitText.text = a.ToString() + "/" +b.ToString();
     }
 
     public void RemoveEntry(DeckEntry e){

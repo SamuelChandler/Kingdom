@@ -164,6 +164,10 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
             _heroes.Add(summonded_Hero);
 
+            if(summonded_Hero.unit.OnPlay != null){
+                summonded_Hero.unit.OnPlay.ActivateEffect(summonded_Hero);
+            }
+
             Unit_Manager.instance.SelectedHero = null;
             Menu_Manager.instance.CurrentSelectedSelector = null;
         }
@@ -240,6 +244,10 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
             _heroes.Add(summonded_Hero);
 
+            if(summonded_Hero.unit.OnPlay != null){
+                summonded_Hero.unit.OnPlay.ActivateEffect(summonded_Hero);
+            }
+
             Unit_Manager.instance.SelectedHero = null;
             Menu_Manager.instance.CurrentSelectedSelector = null;
         }
@@ -290,6 +298,10 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
                 Menu_Manager.instance.CurrentSelectedSelector = null;
                 
                 _AllyStructures.Add(summonded_Structure);
+
+                if(summonded_Structure._structure.OnSummon != null){
+                    summonded_Structure._structure.OnSummon.ActivateEffect(summonded_Structure);
+                }
                 return;
             }
 
@@ -313,6 +325,10 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             Menu_Manager.instance.CurrentSelectedSelector.ClearCard();
             Unit_Manager.instance.SelectedCardInHand = null;
             Menu_Manager.instance.CurrentSelectedSelector = null;
+
+            if(summonded_Structure._structure.OnSummon != null){
+                    summonded_Structure._structure.OnSummon.ActivateEffect(summonded_Structure);
+            }
             
             return;
 
@@ -350,6 +366,11 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             summonded_Structure.transform.position = new Vector3(x,y,0.0f);
 
             _EnemyStructures.Add(summonded_Structure);
+
+            if(summonded_Structure._structure.OnSummon != null){
+                summonded_Structure._structure.OnSummon.ActivateEffect(summonded_Structure);
+            }
+
             return;
         }
         else if(s.structure.Faction == Faction.Neutral){
@@ -381,6 +402,10 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             summonded_Structure.transform.position = new Vector3(x,y,0.0f);
 
             _NeutralStructures.Add(summonded_Structure);
+
+            if(summonded_Structure._structure.OnSummon != null){
+                summonded_Structure._structure.OnSummon.ActivateEffect(summonded_Structure);
+            }
             return;
         }
 

@@ -25,6 +25,6 @@ MonoBehaviour:
   _swift: 0
   OnDeath: {fileID: 0}
   OnPlay: {fileID: 0}
-  OnAttack: {fileID: 11400000, guid: a3f2a13e0f1239646a4a9a4543680854, type: 2}
+  OnAttack: {fileID: 0}
   OnEndTurn: {fileID: 0}
   OnStartOfTurn: {fileID: 0}

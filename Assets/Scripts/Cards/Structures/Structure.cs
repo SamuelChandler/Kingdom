@@ -29,10 +29,21 @@ public class Structure : MonoBehaviour
         currentHealth = _structure.health;
         health.text = currentHealth.ToString();
         turnCounter = 0;
+
+        Event_Manager.OnRefresh += Refresh;
+    }
+
+    public void Refresh(){
+        turnCounter++;
+
+        if(_structure.StartOfTurn != null){
+            _structure.StartOfTurn.ActivateEffect(this);
+        }
+        
     }
 
     public void ActivateEndOfTurnEffects(){
-        turnCounter++;
+        
         
         _structure.EndOfTurn.ActivateEffect(this);
         
@@ -50,6 +61,11 @@ public class Structure : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+
+            if(_structure.WhenDestroyed != null){
+                _structure.WhenDestroyed.ActivateEffect(this);
+            }
+
             foreach(Tile t in OccupiedTiles){
                 t.OccupiedUnit = null;
             }

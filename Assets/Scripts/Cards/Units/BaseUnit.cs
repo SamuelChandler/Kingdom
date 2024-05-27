@@ -40,15 +40,21 @@ public class BaseUnit : MonoBehaviour
         attack.text = unit.attack.ToString();
         health.text = currentHealth.ToString();
 
-        Event_Manager.OnRefresh += RefreshAttackAndMove;
+        Event_Manager.OnRefresh += Refresh;
 
     }
 
-    void RefreshAttackAndMove()
+
+    void Refresh()
     {
         isAbleToMove=true;
         isAbleToAttack=true;
         turnCounter++;
+
+        if(unit.OnStartOfTurn != null){
+            unit.OnStartOfTurn.ActivateEffect(this);
+        }
+        
     }
 
     public void UpdateAttackAndHealthDisplay(){

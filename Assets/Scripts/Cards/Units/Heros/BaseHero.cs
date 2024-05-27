@@ -59,8 +59,11 @@ public class BaseHero : BaseUnit
 
     public override void removeUnit()
     {
+        if(unit.OnDeath != null){
+            unit.OnDeath.ActivateEffect(this);
+        }
+
         Board_Manager.instance.RemoveHero(this);
     }
-
 
 }

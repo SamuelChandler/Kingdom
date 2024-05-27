@@ -30,8 +30,6 @@ public class CardSelector : MonoBehaviour, IPointerClickHandler
 
             Amount = a;
 
-            Debug.Log("A: Setting " + c.name + " to " + Amount);
-
             for(int i = 0; i < a; i++){
                 
                 increment[i].GetComponent<Image>().color = unUsedColor;

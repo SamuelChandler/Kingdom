@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EffectName: Bee Spawner
   Etype: 1
-  _roundsForEachSpawn: 2
+  _roundsForEachSpawn: 1
   _spawn: {fileID: 11400000, guid: 61350efe83198ac48a23eba8c587ec86, type: 2}

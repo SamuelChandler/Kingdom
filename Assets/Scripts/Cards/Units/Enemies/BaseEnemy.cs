@@ -14,6 +14,12 @@ public class BaseEnemy : BaseUnit
         uAI.e = this;
     }
 
+    public void Refresh(){
+        if(unit.OnStartOfTurn != null){
+            unit.OnStartOfTurn.ActivateEffect(this);
+        }
+    }
+
     public bool Attack(BaseHero hero)
     {
         if (hero == null) return false;
@@ -37,6 +43,13 @@ public class BaseEnemy : BaseUnit
 
     public override void removeUnit()
     {
+
+        if(unit.OnDeath != null){
+            unit.OnDeath.ActivateEffect(this);
+        }
+        
         Board_Manager.instance.RemoveEnemy(this);
+
+
     }
 }

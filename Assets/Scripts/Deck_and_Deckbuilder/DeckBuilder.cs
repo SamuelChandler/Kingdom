@@ -12,6 +12,8 @@ public class DeckBuilder : MonoBehaviour,IDataPersistance
     [SerializeField]
     public DeckView _dWindow;
 
+    [SerializeField] public int DeckLimit = 20;
+
     private List<Card> inventory;
 
     Deck deck;
@@ -29,6 +31,12 @@ public class DeckBuilder : MonoBehaviour,IDataPersistance
     }
 
     public void AddCardToDeck(Card c){
+
+        if(deck.contents.Count >= DeckLimit + 1){
+            Debug.Log("Cannot Add Cards greater than: " + DeckLimit.ToString());
+            return;
+        }
+
         deck.AddCard(c);
 
         if(c.type == CardType.Leader){
@@ -37,6 +45,7 @@ public class DeckBuilder : MonoBehaviour,IDataPersistance
             _dWindow.AddLeaderEntry(c);
         }else{
              _dWindow.CreateAndAddCard(c);
+             _dWindow.updateDeckLimitText(deck.contents.Count-1,DeckLimit);
         }
 
        
@@ -47,6 +56,8 @@ public class DeckBuilder : MonoBehaviour,IDataPersistance
 
         if(c.type == CardType.Leader){
             PromptSelectLeader();
+        }else{
+            _dWindow.updateDeckLimitText(deck.contents.Count-1,DeckLimit);
         }
     }
 
@@ -104,7 +115,11 @@ public class DeckBuilder : MonoBehaviour,IDataPersistance
             Debug.Log("Cannot Save A Deck Without A leader");
             _infographic.text = "Cannot Save A Deck Without A Leader";
             return;
+        }else if(deck.contents.Count < DeckLimit + 1){
+            Debug.Log("Cannot Save a deck with less cards than: " +  DeckLimit.ToString());
+            return;
         }
+        
 
         playerData.RemoveDeck(oldDeckName);
         oldDeckName = deck.name;

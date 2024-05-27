@@ -30,23 +30,27 @@ public class DeckBuilder : MonoBehaviour,IDataPersistance
         _infographic.text = "";
     }
 
-    public void AddCardToDeck(Card c){
+    public bool AddCardToDeck(Card c){
 
         if(deck.contents.Count >= DeckLimit + 1){
             Debug.Log("Cannot Add Cards greater than: " + DeckLimit.ToString());
-            return;
+            return false;
         }
 
         deck.AddCard(c);
+        
 
         if(c.type == CardType.Leader){
             _sWindow.ShowNonLeaders();
             _infographic.text = "";
             _dWindow.AddLeaderEntry(c);
         }else{
-             _dWindow.CreateAndAddCard(c);
-             _dWindow.updateDeckLimitText(deck.contents.Count-1,DeckLimit);
+            _sWindow.RemoveCard(c);
+            _dWindow.CreateAndAddCard(c);
+            _dWindow.updateDeckLimitText(deck.contents.Count-1,DeckLimit);
         }
+
+        return true;
 
        
     }
@@ -54,9 +58,11 @@ public class DeckBuilder : MonoBehaviour,IDataPersistance
     public void RemoveCardFromDeck(Card c){
         deck.RemoveCard(c);
 
+
         if(c.type == CardType.Leader){
             PromptSelectLeader();
         }else{
+            _sWindow.AddCard(c);
             _dWindow.updateDeckLimitText(deck.contents.Count-1,DeckLimit);
         }
     }

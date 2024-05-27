@@ -15,7 +15,7 @@ public class CardSelectionWindow : MonoBehaviour
     [SerializeField]
     private int _numberOfCardsOnScreen;
 
-    private List<Card> inventory;
+    private Dictionary<Card,int> inventory;
 
     private List<Card> _currentSet;
 
@@ -26,7 +26,11 @@ public class CardSelectionWindow : MonoBehaviour
     }
 
     public void SetCards(List<Card> s){
-        inventory = s;
+        inventory = new Dictionary<Card, int>();
+
+        foreach(Card c in s){
+            inventory.Add(c,3);
+        }
         ShowNonLeaders();
     }
 
@@ -39,7 +43,7 @@ public class CardSelectionWindow : MonoBehaviour
                 _cardSelectors[i].gameObject.SetActive(false);
             }
             else{
-                _cardSelectors[i].SetDisplayedCard(_currentSet[i+ 8*pageNumber]);
+                _cardSelectors[i].SetDisplayedCard(_currentSet[i+ 8*pageNumber],inventory[_currentSet[i+ 8*pageNumber]]);
             }
         }
     }
@@ -59,7 +63,7 @@ public class CardSelectionWindow : MonoBehaviour
                 _cardSelectors[i].gameObject.SetActive(false);
             }
             else{
-                _cardSelectors[i].SetDisplayedCard(_currentSet[i+ 8*pageNumber]);
+                _cardSelectors[i].SetDisplayedCard(_currentSet[i+ 8*pageNumber],inventory[_currentSet[i+ 8*pageNumber]]);
                 
             }
         }
@@ -67,10 +71,38 @@ public class CardSelectionWindow : MonoBehaviour
         
     }
 
+    public void RefreshPage(){
+
+
+        for(int i = 0; i < _numberOfCardsOnScreen; i++){
+            if(i + 8*pageNumber >= _currentSet.Count){
+                _cardSelectors[i].gameObject.SetActive(false);
+            }
+            else{
+                _cardSelectors[i].SetDisplayedCard(_currentSet[i+ 8*pageNumber],inventory[_currentSet[i+ 8*pageNumber]]);
+                
+            }
+        }
+
+        
+    }
+
+    public void AddCard(Card c){
+        Debug.Log("Adding "+c.name);
+        inventory[c] ++;
+        RefreshPage();
+    }
+
+    public void RemoveCard(Card c){
+        Debug.Log("Removing "+c.name);
+        inventory[c]--;
+        RefreshPage();
+    }
+
     public void ShowOnlyLeaders()
     {
         _currentSet = new List<Card>();
-        foreach(Card c in inventory){
+        foreach(Card c in inventory.Keys){
             if(c.type == CardType.Leader){
                 _currentSet.Add(c);
             }
@@ -82,14 +114,14 @@ public class CardSelectionWindow : MonoBehaviour
             if(i >= _currentSet.Count){
                 _cardSelectors[i].gameObject.SetActive(false);
             }else{
-                _cardSelectors[i].SetDisplayedCard(_currentSet[i]);
+                _cardSelectors[i].SetDisplayedCard(_currentSet[i],inventory[_currentSet[i]]);
             }
         }
     }
 
     public void ShowNonLeaders(){
         _currentSet = new List<Card>();
-        foreach(Card c in inventory){
+        foreach(Card c in inventory.Keys){
             if(c.type != CardType.Leader){
                 _currentSet.Add(c);
             }
@@ -102,7 +134,7 @@ public class CardSelectionWindow : MonoBehaviour
             if(i >= _currentSet.Count){
                 _cardSelectors[i].gameObject.SetActive(false);
             }else{
-                _cardSelectors[i].SetDisplayedCard(_currentSet[i]);
+                _cardSelectors[i].SetDisplayedCard(_currentSet[i],inventory[_currentSet[i]]);
             }
             
         }

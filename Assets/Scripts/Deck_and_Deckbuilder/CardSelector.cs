@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class CardSelector : MonoBehaviour, IPointerClickHandler
 {
@@ -9,27 +10,49 @@ public class CardSelector : MonoBehaviour, IPointerClickHandler
     HeroCardFrame _cardframe;
     Card _card;
 
-    public void SetDisplayedCard(Card c){
+    [SerializeField] public GameObject[] increment;
+
+    public int Amount = 3;
+
+    [SerializeField] public Color selectedColor;
+    [SerializeField] public Color unUsedColor;
+
+    public void Awake(){
+        selectedColor = Color.grey;
+        unUsedColor = Color.white;
+    }
+
+    public void SetDisplayedCard(Card c, int a){
         if(c != null){
             _card = c;
             _cardframe.setCard(_card);
             gameObject.SetActive(true);
+
+            Amount = a;
+
+            Debug.Log("A: Setting " + c.name + " to " + Amount);
+
+            for(int i = 0; i < a; i++){
+                
+                increment[i].GetComponent<Image>().color = unUsedColor;
+            }
+            for(int i = a; i < 3; i ++ ){
+                increment[i].GetComponent<Image>().color = selectedColor;
+            }
+
         }else{
             gameObject.SetActive(false);
         }
         
     }
 
+
     public void OnPointerClick(PointerEventData data){
-        Debug.Log(_card.name);
-        AddCard(_card);
+        if(Amount == 0){
+            return;
+        }
+        DeckBuilder.instance.AddCardToDeck(_card);
     }
 
-    public void AddCard(Card card){
-        DeckBuilder.instance.AddCardToDeck(card);
-    }
-
-    public void saveInventory(){
-        
-    }
+    
 }

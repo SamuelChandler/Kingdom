@@ -14,7 +14,7 @@ public class Effect: ScriptableObject{
         throw new NotImplementedException();
     }
 
-    public virtual void ActivateEffect(Unit unit)
+    public virtual void ActivateEffect(BaseUnit unit)
     {
         throw new NotImplementedException();
     }

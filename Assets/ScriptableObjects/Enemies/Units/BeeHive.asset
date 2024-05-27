@@ -21,7 +21,7 @@ MonoBehaviour:
   height: 1
   width: 1
   health: 8
-  EndOfTurn: {fileID: 11400000, guid: a3f2a13e0f1239646a4a9a4543680854, type: 2}
+  EndOfTurn: {fileID: 11400000, guid: 9eb99df21c89f1f47996ff3cc4812085, type: 2}
   StartOfTurn: {fileID: 0}
   WhenDestroyed: {fileID: 0}
   OnSummon: {fileID: 0}

@@ -21,7 +21,16 @@ public class SpawnerEffect: Effect{
             Board_Manager.instance.SpawnUnit(dest,_spawn);
         }
         
+    }
 
+    public override void ActivateEffect(BaseUnit u){
+        Tile dest = Board_Manager.instance.GetRandAdjactentFreeTile(u.OccupiedTile);
+        
+        if(dest == null){
+            Debug.Log("No Available Tiles for the spawn");
+        }else if(u.turnCounter%_roundsForEachSpawn == 0){
+            Board_Manager.instance.SpawnUnit(dest,_spawn);
+        }
         
     }
 }

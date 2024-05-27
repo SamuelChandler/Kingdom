@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -24,15 +25,11 @@ public class BaseEnemy : BaseUnit
             return false;
         }
 
-        
-        hero.currentHealth = hero.currentHealth - this.unit.attack;
-        hero.UpdateAttackAndHealthDisplay();
+        hero.TakeDamage(currentAttack);
 
-        if (hero.currentHealth <= 0)
-        {
-            Board_Manager.instance.RemoveHero(hero);
-            Destroy(hero.gameObject);
-            
+        if(unit.OnAttack != null){
+            Debug.Log("Attack Trigger");
+            unit.OnAttack.ActivateEffect(this);
         }
 
         return true;

@@ -19,11 +19,14 @@ public class BaseUnit : MonoBehaviour
     public int currentHealth;
     public int currentAttack;
 
+    public int turnCounter;
+
     public virtual void Awake()
     {
         spriteRenderer.sprite = unit.image;
         currentHealth = unit.health;
         currentAttack = unit.attack;
+        turnCounter = 0;
 
         if(unit._swift){
             isAbleToAttack = true;
@@ -45,6 +48,7 @@ public class BaseUnit : MonoBehaviour
     {
         isAbleToMove=true;
         isAbleToAttack=true;
+        turnCounter++;
     }
 
     public void UpdateAttackAndHealthDisplay(){

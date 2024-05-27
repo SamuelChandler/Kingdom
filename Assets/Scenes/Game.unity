@@ -1517,7 +1517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelectedHero: {fileID: 0}
-  SelectedSpell: {fileID: 0}
+  SelectedCardInHand: {fileID: 0}
   Unit_Prefab: {fileID: 1603683541253479809, guid: 8e9d67deb09603248a93e050a241aa12, type: 3}
 --- !u!4 &1688171377
 Transform:
@@ -1831,6 +1831,7 @@ MonoBehaviour:
   _neutralS: {fileID: -8543341718320767285, guid: d8f6cfce9c4aeb84b97a234ea2200d1b, type: 3}
   _heroes: []
   _enemies: []
+  _AllyStructures: []
 --- !u!4 &2104909210
 Transform:
   m_ObjectHideFlags: 0
@@ -1898,6 +1899,22 @@ PrefabInstance:
     - target: {fileID: 2702639149487798702, guid: 3ec0fbdc4989fd846844cfafee88cd12, type: 3}
       propertyPath: m_RenderMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030755221888953575, guid: 3ec0fbdc4989fd846844cfafee88cd12, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.07499695
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395559702826674216, guid: 3ec0fbdc4989fd846844cfafee88cd12, type: 3}
+      propertyPath: m_fontSize
+      value: 45.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395559702826674216, guid: 3ec0fbdc4989fd846844cfafee88cd12, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029282455627790053, guid: 3ec0fbdc4989fd846844cfafee88cd12, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0000076293945
       objectReference: {fileID: 0}
     - target: {fileID: 6496718935397279533, guid: 3ec0fbdc4989fd846844cfafee88cd12, type: 3}
       propertyPath: m_Name
@@ -2789,6 +2806,14 @@ PrefabInstance:
     - target: {fileID: 6172175176635355690, guid: 378b52678f269794699e089adbfce718, type: 3}
       propertyPath: m_RenderMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9032957322259009263, guid: 378b52678f269794699e089adbfce718, type: 3}
+      propertyPath: m_fontSize
+      value: 43.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 9032957322259009263, guid: 378b52678f269794699e089adbfce718, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

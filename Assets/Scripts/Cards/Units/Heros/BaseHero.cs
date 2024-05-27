@@ -15,17 +15,14 @@ public class BaseHero : BaseUnit
             return false;
         }
         
-        enemy.currentHealth = enemy.currentHealth - this.unit.attack;
-        enemy.UpdateAttackAndHealthDisplay();
+        if(unit.OnAttack != null){
+            Debug.Log("Attack Trigger");
+            unit.OnAttack.ActivateEffect(this);
+        }
+
         this.isAbleToAttack = false;
 
-        //check if destroyed
-        if (enemy.currentHealth <= 0)
-        {
-            enemy.OccupiedTile.OccupiedUnit = null;
-            Board_Manager.instance.RemoveEnemy(enemy);
-            Destroy(enemy.gameObject);
-        }
+        enemy.TakeDamage(currentAttack);
         
         return true;
     }
@@ -48,10 +45,15 @@ public class BaseHero : BaseUnit
             return false;
         }
 
+        if(unit.OnAttack != null){
+            Debug.Log("Attack Trigger");
+            unit.OnAttack.ActivateEffect(this);
+        }
+
+        isAbleToAttack = false;
+
         enemy.TakeDamage(this.unit.attack);
-        
-        this.isAbleToAttack = false;
-        
+  
         return true;
     }
 

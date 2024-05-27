@@ -34,7 +34,6 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         instance = this;
         GameWin = false;
         _turn = 0;
-        Level = PlayerPrefs.GetInt("Level Selected");
         CurrentInspiration = CurrentMaxInspiration;
 
     }
@@ -42,7 +41,6 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
     private void Start()
     {
         //start of game menu manager updates with game info
-        Menu_Manager.instance.SetMessenger("Level: "+ Level);
         Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
 
         ChangeState(GameState.GenerateMap);

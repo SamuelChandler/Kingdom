@@ -33,9 +33,9 @@ public class Structure : MonoBehaviour
 
     public void ActivateEndOfTurnEffects(){
         turnCounter++;
-        foreach( EndOfTurnEffect effect in _structure.effects){
-            effect.ActivateEffect(this);
-        }
+        
+        _structure.EndOfTurn.ActivateEffect(this);
+        
         
     }
 

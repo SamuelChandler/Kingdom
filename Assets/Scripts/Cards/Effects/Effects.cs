@@ -8,6 +8,21 @@ using UnityEngine;
 public class Effect: ScriptableObject{
     [SerializeField] public string EffectName;
     [SerializeField] public EffectTypes Etype;
+
+    public virtual void ActivateEffect(Structure structure)
+    {
+        throw new NotImplementedException();
+    }
+
+    public virtual void ActivateEffect(Unit unit)
+    {
+        throw new NotImplementedException();
+    }
+
+    public virtual void ActivateEffect(Spell spell)
+    {
+        throw new NotImplementedException();
+    }
 }
 
 [Serializable]
@@ -29,20 +44,6 @@ public class TargetedEffect: Effect{
         Debug.Log("No trageted Effect Effect");
     }
 }
-
-[Serializable]
-[CreateAssetMenu(fileName = "EndOfTurn_Effect",menuName = "Effect/End Of Turn Effect")]
-public class EndOfTurnEffect: Effect{  
-
-    public virtual void ActivateEffect(Structure s){
-        Debug.Log("No Effect");
-    }
-}
-
-
-
-
-
 
 public enum EffectTypes{
     TargetedDamageEffect,

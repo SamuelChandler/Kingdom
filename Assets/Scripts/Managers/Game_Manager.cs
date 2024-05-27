@@ -209,6 +209,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
     {
         //increase turn number
         _turn++;
+        Debug.Log("Level: "+ _turn.ToString());
 
         //check if in survival mode and if the player has won the game
         SurvivalTurnCheck();

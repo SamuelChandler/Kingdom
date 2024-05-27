@@ -21,5 +21,7 @@ MonoBehaviour:
   height: 1
   width: 1
   health: 8
-  effects:
-  - {fileID: 11400000, guid: b4bb17b2043053b49b45d852e303c89f, type: 2}
+  EndOfTurn: {fileID: 11400000, guid: a3f2a13e0f1239646a4a9a4543680854, type: 2}
+  StartOfTurn: {fileID: 0}
+  WhenDestroyed: {fileID: 0}
+  OnSummon: {fileID: 0}

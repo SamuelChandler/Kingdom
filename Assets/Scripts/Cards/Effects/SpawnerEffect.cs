@@ -6,7 +6,7 @@ using UnityEngine;
 
 [Serializable]
 [CreateAssetMenu(fileName = "Structure_Unit_Spawner",menuName = "Effect/Structure Unit Spawner")]
-public class SpawnerEffect: EndOfTurnEffect{
+public class SpawnerEffect: Effect{
 
     public int _roundsForEachSpawn;
 

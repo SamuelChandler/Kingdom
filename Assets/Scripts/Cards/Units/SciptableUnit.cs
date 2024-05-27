@@ -18,6 +18,17 @@ public class ScriptableUnit : Card
     public bool _leader;
 
     public bool _swift;
+
+    public Effect OnDeath;
+
+    public Effect OnPlay;
+
+    public Effect OnAttack;
+
+    public Effect OnEndTurn; 
+
+    public Effect OnStartOfTurn;
+
     
 }
 

@@ -19,6 +19,7 @@ public class Structure : MonoBehaviour
 
     [SerializeField]
     public int currentHealth;
+    public int currentMaxHealth;
 
     public int turnCounter;
 
@@ -27,6 +28,7 @@ public class Structure : MonoBehaviour
     {
         spriteRenderer.sprite = _structure.image;
         currentHealth = _structure.health;
+        currentMaxHealth = currentHealth;
         health.text = currentHealth.ToString();
         turnCounter = 0;
 
@@ -43,11 +45,9 @@ public class Structure : MonoBehaviour
     }
 
     public void ActivateEndOfTurnEffects(){
-        
-        
-        _structure.EndOfTurn.ActivateEffect(this);
-        
-        
+        if(_structure.EndOfTurn != null){
+            _structure.EndOfTurn.ActivateEffect(this);
+        }
     }
 
     public void UpdateHealthDisplay(){

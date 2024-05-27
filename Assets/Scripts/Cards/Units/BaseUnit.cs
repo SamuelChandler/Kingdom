@@ -17,6 +17,7 @@ public class BaseUnit : MonoBehaviour
     public bool isAbleToAttack;
 
     public int currentHealth;
+    public int currentMaxHealth;
     public int currentAttack;
 
     public int turnCounter;
@@ -25,6 +26,7 @@ public class BaseUnit : MonoBehaviour
     {
         spriteRenderer.sprite = unit.image;
         currentHealth = unit.health;
+        currentMaxHealth = currentHealth;
         currentAttack = unit.attack;
         turnCounter = 0;
 
@@ -53,6 +55,13 @@ public class BaseUnit : MonoBehaviour
 
         if(unit.OnStartOfTurn != null){
             unit.OnStartOfTurn.ActivateEffect(this);
+        }
+        
+    }
+
+    public void ActivateEndOfTurnEffects(){
+        if(unit.OnEndTurn != null){
+            unit.OnEndTurn.ActivateEffect(this);
         }
         
     }

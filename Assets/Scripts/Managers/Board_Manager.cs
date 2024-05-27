@@ -368,7 +368,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             _EnemyStructures.Add(summonded_Structure);
 
             if(summonded_Structure._structure.OnSummon != null){
-                summonded_Structure._structure.OnSummon.ActivateEffect(summonded_Structure);
+                    summonded_Structure._structure.OnSummon.ActivateEffect(summonded_Structure);
             }
 
             return;
@@ -633,6 +633,10 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         foreach(Structure s in _NeutralStructures){
             s.ActivateEndOfTurnEffects();
         }
+
+        foreach(BaseEnemy be in _enemies){
+            be.ActivateEndOfTurnEffects();
+        }
     }
 
     public void ActivateAllyStructureEndOfTurnEffects(){
@@ -642,6 +646,10 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
         foreach(Structure s in _NeutralStructures){
             s.ActivateEndOfTurnEffects();
+        }
+
+        foreach(BaseHero bh in _heroes){
+            bh.ActivateEndOfTurnEffects();
         }
     }
 

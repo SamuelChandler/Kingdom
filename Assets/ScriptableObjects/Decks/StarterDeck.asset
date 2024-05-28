@@ -13,24 +13,20 @@ MonoBehaviour:
   m_Name: StarterDeck
   m_EditorClassIdentifier: 
   deck:
-  - card: {fileID: 11400000, guid: aeb7fa016f851704f96fd02494d8aa39, type: 2}
-    amount: 3
-  - card: {fileID: 11400000, guid: d49bb2ed8b677be4493b45945a5753bc, type: 2}
-    amount: 3
-  - card: {fileID: 11400000, guid: f9694b6187251d649b7fcbf1ede34ac1, type: 2}
-    amount: 3
-  - card: {fileID: 11400000, guid: 22a4d42ce3bfa3f479aaf85c11383c2f, type: 2}
+  - card: {fileID: 11400000, guid: 9451116f651674f4c81eaedfb07e3dbb, type: 2}
+    amount: 1
+  - card: {fileID: 11400000, guid: 25797eca0d896ce4db3dd95c9c1c6091, type: 2}
     amount: 3
   - card: {fileID: 11400000, guid: 99611d2e63e7f81468a79fdcdd0bc7e8, type: 2}
     amount: 3
+  - card: {fileID: 11400000, guid: 22a4d42ce3bfa3f479aaf85c11383c2f, type: 2}
+    amount: 3
   - card: {fileID: 11400000, guid: 847d8d0628220014ebc4321b8b7d02a5, type: 2}
     amount: 2
-  - card: {fileID: 11400000, guid: 1bb9d30ee869c80478f2ad62f70a4a01, type: 2}
-    amount: 1
-  - card: {fileID: 11400000, guid: 9451116f651674f4c81eaedfb07e3dbb, type: 2}
-    amount: 1
-  - card: {fileID: 11400000, guid: 85e2d3eb799647e48ac2d14999bb269d, type: 2}
+  - card: {fileID: 11400000, guid: f9694b6187251d649b7fcbf1ede34ac1, type: 2}
     amount: 3
-  - card: {fileID: 11400000, guid: 3092afebc744fc24bbb1b86509f07855, type: 2}
+  - card: {fileID: 11400000, guid: aeb7fa016f851704f96fd02494d8aa39, type: 2}
+    amount: 3
+  - card: {fileID: 11400000, guid: d49bb2ed8b677be4493b45945a5753bc, type: 2}
     amount: 3
   DeckName: Starter

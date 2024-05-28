@@ -1288,7 +1288,7 @@ GameObject:
   - component: {fileID: 1530016060}
   - component: {fileID: 1530016059}
   m_Layer: 5
-  m_Name: Tile Unit Info
+  m_Name: Game Goal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1409,7 +1409,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tile unit Info
+  m_text: Goal Info
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1436,7 +1436,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.1
+  m_fontSize: 57.95
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1

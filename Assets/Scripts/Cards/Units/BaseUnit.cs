@@ -86,5 +86,15 @@ public class BaseUnit : MonoBehaviour
         }
     }
 
+    public void Heal(int healAmount){
+        currentHealth += healAmount;
+
+        if(currentHealth > currentMaxHealth){
+            currentHealth = currentMaxHealth;
+        }
+
+        UpdateAttackAndHealthDisplay();
+    }
+
     public virtual void removeUnit(){}
 }

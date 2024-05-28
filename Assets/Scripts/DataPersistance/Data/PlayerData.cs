@@ -35,6 +35,19 @@ public class PlayerData
         }
     }
 
+    public void AddCardToInventory(Card c){
+        //check if card is already in inventory
+
+        int id = DataPersistanceManager.instance.idTable.getID(c);
+
+        if(_cardInventory.Contains(id)){
+            Debug.Log("data already contains this card");
+            return;
+        }
+
+        _cardInventory.Add(id);
+    }
+
     public void AddDeck(ScriptableDeck d){
         foreach(CardAndAmount c in d.deck){
             for(int i = 0; i < c.amount; i++){

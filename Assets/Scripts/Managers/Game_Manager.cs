@@ -251,10 +251,8 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
 
     public void SaveData(ref PlayerData playerData)
     {
-        int addedID = DataPersistanceManager.instance.idTable.getID(Board_Manager.instance.GetRewardCard());
         if(GameWin){
-            Debug.Log(DataPersistanceManager.instance.idTable.getCard(addedID).name + " Added To inventory");
-            playerData._cardInventory.Add(addedID);
+            playerData.AddCardToInventory(Board_Manager.instance.GetRewardCard());
         }
     }
 

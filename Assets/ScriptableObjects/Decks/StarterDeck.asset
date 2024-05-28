@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StarterDeck
   m_EditorClassIdentifier: 
   deck:
-  - card: {fileID: 11400000, guid: 9451116f651674f4c81eaedfb07e3dbb, type: 2}
+  - card: {fileID: 11400000, guid: 2250b36b14aab7346a40227bf7b0af24, type: 2}
     amount: 1
   - card: {fileID: 11400000, guid: 25797eca0d896ce4db3dd95c9c1c6091, type: 2}
     amount: 3

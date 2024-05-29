@@ -12,7 +12,7 @@ public class Menu_Manager : MonoBehaviour
 {
     public static Menu_Manager instance;
 
-    [SerializeField] private GameObject _displayCardObject, _tileInfo, _tileUnit, _messanger;
+    [SerializeField] private GameObject _displayCardObject, _tileInfo, _GameGoal, _messanger;
 
     [SerializeField] private WinScreen _winScreen;
     [SerializeField] private LossScreen _lossScreen;
@@ -38,6 +38,7 @@ public class Menu_Manager : MonoBehaviour
         //clear unessisary windows 
         _displayCardObject.SetActive(false);
         _tileInfo.SetActive(false);
+        _GameGoal.SetActive(false);
         _messanger.SetActive(false);
         SetUnitSelectorsToEmpty();
 
@@ -66,6 +67,17 @@ public class Menu_Manager : MonoBehaviour
         StartCoroutine(DisplayBeforeFadeOut(_messanger));
     }
 
+    public void showGameGoal(string s){
+        if(s == null){
+            _GameGoal.SetActive(false);
+        }
+
+        _GameGoal.GetComponentInChildren<TextMeshProUGUI>().text = s;
+        _GameGoal.SetActive(true);
+
+        StartCoroutine(DisplayBeforeFadeOut(_GameGoal));
+    }
+
     //displays tile info on screen when called. null clears window
     public void showTileInfo(Tile tile)
     {
@@ -73,27 +85,13 @@ public class Menu_Manager : MonoBehaviour
         if (tile == null)
         {
             _tileInfo.SetActive(false);
-            _tileUnit.SetActive(false);
+            
             return;
         }
 
         //display name of tile if selected
         _tileInfo.GetComponentInChildren<TextMeshProUGUI>().text = tile.tileName;
         _tileInfo.SetActive(true);
-
-
-        // display unit on tile if there is one 
-        if (tile.OccupiedUnit)
-        {
-            _tileUnit.GetComponentInChildren<TextMeshProUGUI>().text = tile.OccupiedUnit.unit.name + "\n" + tile.OccupiedUnit.currentHealth + "/" + tile.OccupiedUnit.unit.health;
-            _tileUnit.SetActive(true);
-        }
-
-        if (tile.OccupiedStructure){
-            _tileUnit.GetComponentInChildren<TextMeshProUGUI>().text = tile.OccupiedStructure._structure.name + "\n" + tile.OccupiedStructure.currentHealth 
-                                                                        + "/" + tile.OccupiedStructure._structure.health;
-            _tileUnit.SetActive(true);
-        }
     }
 
     //displays the hero information when called. null clears window 

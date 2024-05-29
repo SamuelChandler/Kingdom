@@ -21,4 +21,10 @@ MonoBehaviour:
   health: 20
   attack: 2
   speed: 2
-  _leader: 0
+  _leader: 1
+  _swift: 0
+  OnDeath: {fileID: 0}
+  OnPlay: {fileID: 0}
+  OnAttack: {fileID: 0}
+  OnEndTurn: {fileID: 0}
+  OnStartOfTurn: {fileID: 0}

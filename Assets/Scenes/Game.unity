@@ -1309,10 +1309,10 @@ RectTransform:
   - {fileID: 1572884978}
   m_Father: {fileID: 855810257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -9, y: 132.94}
-  m_SizeDelta: {x: 236.6171, y: 120.44}
+  m_AnchorMin: {x: 0.099375054, y: 0.82988995}
+  m_AnchorMax: {x: 0.519375, y: 0.98}
+  m_AnchoredPosition: {x: -2.282959, y: 3.1481934}
+  m_SizeDelta: {x: -11.233826, y: -6.7182007}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1530016059
 MonoBehaviour:
@@ -1327,7 +1327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5254902}
+  m_Color: {r: 0.5377358, g: 0.5250534, b: 0.5250534, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1436,7 +1436,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 57.95
+  m_fontSize: 72
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1472,7 +1472,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 9.624023, y: 0, z: 6.736847, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1782,7 +1782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _displayCardObject: {fileID: 4261117142001222370}
   _tileInfo: {fileID: 782108587}
-  _tileUnit: {fileID: 1530016057}
+  _GameGoal: {fileID: 1530016057}
   _messanger: {fileID: 368497379}
   _winScreen: {fileID: 2901431182184881033}
   _lossScreen: {fileID: 412106796}
@@ -1924,7 +1924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4029282455627790053, guid: 3ec0fbdc4989fd846844cfafee88cd12, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0000076293945
+      value: -0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 4029282455627790053, guid: 3ec0fbdc4989fd846844cfafee88cd12, type: 3}
       propertyPath: m_AnchoredPosition.y

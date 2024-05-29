@@ -65,6 +65,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
             case GameState.SpawnEnemies:
                 Board_Manager.instance.SpawnBoss();
                 Unit_Manager.instance.SpawnEnemies();
+                OnEnemySpawn();
                 break;
             case GameState.HeroesTurn:
                 StartPlayerTurn();
@@ -81,6 +82,13 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState),newState,null);
+        }
+    }
+
+    public void OnEnemySpawn(){
+        if(Board_Manager.instance._map._levelType == LevelType.DefeatBoss){
+            string BossName = Board_Manager.instance._map._boss.enemy.name;
+            Menu_Manager.instance.showGameGoal("Defeat: " + BossName);
         }
     }
     
@@ -226,6 +234,9 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
     public void SurvivalTurnCheck(){
         //do nothing if it is not a survival map
         if(Board_Manager.instance._map._levelType != LevelType.Survive){return;}
+
+        string goalString = "Turns Left to Survive = " + (Board_Manager.instance._map._survivalTurns - _turn +1).ToString();
+        Menu_Manager.instance.showGameGoal(goalString);
 
         if(Board_Manager.instance._map._survivalTurns < _turn){
             ChangeState(GameState.GameWin);

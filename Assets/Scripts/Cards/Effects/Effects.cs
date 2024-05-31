@@ -7,7 +7,6 @@ using UnityEngine;
 [Serializable]
 public class Effect: ScriptableObject{
     [SerializeField] public string EffectName;
-    [SerializeField] public EffectTypes Etype;
 
     public virtual void ActivateEffect(Structure structure)
     {
@@ -26,15 +25,6 @@ public class Effect: ScriptableObject{
 }
 
 [Serializable]
-[CreateAssetMenu(fileName = "OnPlayEffect",menuName = "Effect/On Play Effect")]
-public class OnPlayEffect: Effect{  
-
-    public virtual void ActivateEffect(Card c){
-        Debug.Log("No On Play Effect");
-    }
-}
-
-[Serializable]
 public class TargetedEffect: Effect{  
 
     [SerializeField] public Faction targetedFaction;
@@ -43,10 +33,4 @@ public class TargetedEffect: Effect{
     public virtual void ActivateEffect(Tile t){
         Debug.Log("No trageted Effect Effect");
     }
-}
-
-public enum EffectTypes{
-    TargetedDamageEffect,
-    EndOfTurn_Effect,
-    
 }

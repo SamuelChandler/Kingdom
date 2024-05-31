@@ -88,13 +88,11 @@ public class CardSelectionWindow : MonoBehaviour
     }
 
     public void AddCard(Card c){
-        Debug.Log("Adding "+c.name);
         inventory[c] ++;
         RefreshPage();
     }
 
     public void RemoveCard(Card c){
-        Debug.Log("Removing "+c.name);
         inventory[c]--;
         RefreshPage();
     }

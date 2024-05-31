@@ -31,15 +31,10 @@ public class Spell : Card
     }
 
     public void resolveEffect(Effect e, Tile t){
-        switch (e.Etype){
-            case EffectTypes.TargetedDamageEffect:
-                TargetedDamageEffect effect = (TargetedDamageEffect)e;
-                effect.ActivateEffect(t);
-                break;
-            default:
-                Debug.Log("Effect Type not assigned or isnt implemented");
-                break;
-
+        if (t.OccupiedStructure != null){   
+            e.ActivateEffect(t.OccupiedStructure);
+        }else if(t.OccupiedUnit != null){
+            e.ActivateEffect(t.OccupiedUnit);
         }
     }
 

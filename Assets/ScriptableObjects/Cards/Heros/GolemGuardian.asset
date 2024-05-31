@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d0ae76b5a4512e488865136dbaecdf2, type: 3}
-  m_Name: Snake
+  m_Name: GolemGuardian
   m_EditorClassIdentifier: 
-  image: {fileID: 1663432448, guid: 11d71db6e067fd041b2880530eb621d8, type: 3}
-  name: Snake
-  inspirationCost: 3
+  image: {fileID: -419425613, guid: 3e8abb5153ccb804e8e91b09652eac89, type: 3}
+  name: Golem Guardian
+  inspirationCost: 6
   description: 
   type: 1
   Faction: 0
-  health: 5
-  attack: 2
+  health: 7
+  attack: 7
   speed: 2
   _leader: 0
   _swift: 0

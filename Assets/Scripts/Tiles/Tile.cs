@@ -164,6 +164,8 @@ public abstract class Tile : MonoBehaviour
                 }
                
                 
+            }else if(Unit_Manager.instance.SelectedCardInHand == null){
+                //do nothing
             }else if(Unit_Manager.instance.SelectedCardInHand.type == CardType.Structure){
                 StructureAndPoint sp = new StructureAndPoint();
                 sp.structure = (ScriptableStructure)Unit_Manager.instance.SelectedCardInHand;

@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1846631480, guid: 7dc7c7102f275f44ba099f4edb70e47f, type: 3}
   name: Fire Fae
-  inspirationCost: 2
-  description: 'On Death: Give an Ally +1/+1'
+  inspirationCost: 1
+  description: 
   type: 1
   Faction: 0
-  health: 2
-  attack: 2
+  health: 1
+  attack: 3
   speed: 2
-  _leader: 0
+  _leader: 1
   _swift: 0
-  OnDeath: {fileID: 11400000, guid: 2db79a0bb7b141b4c9f68587b19a4a55, type: 2}
+  OnDeath: {fileID: 0}
   OnPlay: {fileID: 0}
   OnAttack: {fileID: 0}
   OnEndTurn: {fileID: 0}

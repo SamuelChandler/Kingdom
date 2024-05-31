@@ -10,16 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d0ae76b5a4512e488865136dbaecdf2, type: 3}
-  m_Name: Dog
+  m_Name: Ooze
   m_EditorClassIdentifier: 
-  ID: 0
-  image: {fileID: -258935519, guid: 21d346382cd4594448ff3d2e4b5f5634, type: 3}
-  name: Dog
-  inspirationCost: 6
+  image: {fileID: -1735312623, guid: 61809cc173f97ef4fae47bdb13e0a950, type: 3}
+  name: Ooze
+  inspirationCost: 3
   description: 
   type: 1
   Faction: 0
-  health: 7
-  attack: 7
+  health: 5
+  attack: 2
   speed: 2
   _leader: 0
+  _swift: 0
+  OnDeath: {fileID: 0}
+  OnPlay: {fileID: 0}
+  OnAttack: {fileID: 0}
+  OnEndTurn: {fileID: 0}
+  OnStartOfTurn: {fileID: 0}

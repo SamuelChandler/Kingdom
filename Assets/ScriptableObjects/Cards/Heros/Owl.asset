@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0ae76b5a4512e488865136dbaecdf2, type: 3}
   m_Name: Owl
   m_EditorClassIdentifier: 
-  image: {fileID: -124533737818426573, guid: 995b167049932834c94e921a0f30b487, type: 3}
-  name: Owl
+  image: {fileID: -1775074803, guid: 12390818b3a534743b8eae6a26a7ebfe, type: 3}
+  name: Winter Hawk
   inspirationCost: 4
   description: 'On Play: Draw a Card'
   type: 1

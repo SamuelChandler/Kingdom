@@ -18,6 +18,13 @@ public class DialogText : ScriptableObject
 
     [SerializeField] public int[] endPoints;
 
+    [SerializeField] public int LastWordsEvent;
+
+    [TextArea(5,10)]
+    [SerializeField] public string LastWords;
+
+
+
 }
 
 [Serializable]

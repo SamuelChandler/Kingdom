@@ -264,6 +264,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
     {
         if(GameWin){
             playerData.AddCardToInventory(Board_Manager.instance.GetRewardCard());
+            playerData.SetEventCompleted(Board_Manager.instance._map.onWinEvent);
         }
     }
 

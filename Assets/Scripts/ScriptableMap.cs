@@ -42,7 +42,7 @@ public class ScriptableMap : ScriptableObject
 
     [SerializeField] public Card reward;
 
-
+    [SerializeField] public int onWinEvent;
 
 
     public Tile GetTile(char id)

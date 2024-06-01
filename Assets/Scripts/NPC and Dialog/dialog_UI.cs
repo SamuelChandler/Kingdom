@@ -46,9 +46,10 @@ public class dialog_UI : MonoBehaviour
     public void displayOneLiner(string name, string text)
     {
         _nameText.text = name;
-        _dialogText.text = text;
-        _dialog.SetActive(true);
+        typeDialogueCoroutine = StartCoroutine(TypeDialogText(text));
+         
     }
+    
 
     //displays the next paragraph returns true on new text 
     //being created and false on completeing the previos text 

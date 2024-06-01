@@ -11,6 +11,8 @@ public class PlayerData
 
    public List<int> _cardInventory;
 
+   public List<int> _storyEventsCompleted;
+
    public string PlayerName;
 
    public string SelectedDeck;
@@ -22,6 +24,13 @@ public class PlayerData
 
     public PlayerData(string name){
         PlayerName = name;
+    }
+
+    public void SetEventCompleted(int id){
+        if(!_storyEventsCompleted.Contains(id)){
+            Debug.Log(id);
+            _storyEventsCompleted.Add(id);
+        }
     }
 
     public void AddDeck(Deck d){

@@ -19,3 +19,6 @@ MonoBehaviour:
   - Just head north and youll see the guardian
   _choices: []
   _maps: []
+  endPoints: 
+  LastWordsEvent: 0
+  LastWords: 

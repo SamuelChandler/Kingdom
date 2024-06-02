@@ -20,3 +20,6 @@ MonoBehaviour:
   - Procede further if you wish to test your mettle!
   _choices: []
   _maps: []
+  endPoints: 
+  LastWordsEvent: 0
+  LastWords: 

@@ -20,7 +20,6 @@ public class WinScreen : MonoBehaviour
 
     //should return the user to the overworld saving of data is done before this point
     public void Continue(){
-        Debug.Log("Continue Pressed");
         Scene_Manager.instance.GoToOverworld();
     }
 }

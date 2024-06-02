@@ -21,6 +21,11 @@ public class GrowRandomAllyEffect: Effect{
             while(unit.unit._leader){
                 target = UnityEngine.Random.Range(0,Board_Manager.instance._heroes.Count);
                 unit = Board_Manager.instance._heroes[target];
+
+                //should only be one if only the leader is on the field and should not resolve if that is the case
+                if(Board_Manager.instance._heroes.Count == 1){
+                    return;
+                }
             }
 
             Debug.Log("Buffing " + unit.unit.name);
@@ -58,6 +63,11 @@ public class GrowRandomAllyEffect: Effect{
             while(unit.unit._leader || unit == u ){
                 target = UnityEngine.Random.Range(0,Board_Manager.instance._heroes.Count);
                 unit = Board_Manager.instance._heroes[target];
+
+                //should only be two if only the leader and the triggered unit is on the field and should not resolve if that is the case
+                if(Board_Manager.instance._heroes.Count == 2){
+                    return;
+                }
             }
             
             Debug.Log("Buffing " + unit.unit.name);

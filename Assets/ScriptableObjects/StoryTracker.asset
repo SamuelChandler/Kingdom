@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StoryTracker
   m_EditorClassIdentifier: 
   events:
-  - completed: 0
+  - completed: 1
     desc: Defeated Hivemind battle
-  - completed: 0
+  - completed: 1
     desc: 'Defeated Boar fight '

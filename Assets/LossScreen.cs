@@ -14,8 +14,6 @@ public class LossScreen : MonoBehaviour
     } 
 
     public void Continue(){
-        
-        Debug.Log("Continue Pressed");
         Scene_Manager.instance.GoToOverworld();
     
     }

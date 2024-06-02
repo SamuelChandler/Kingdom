@@ -53,21 +53,25 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         switch (newState)
         {
             case GameState.GenerateMap:
+                Debug.Log("Generating Map");
                 Board_Manager.instance.generateGrid();
                 Board_Manager.instance.SpawnMapStructures();
                 SetSpawners();
                 break;
             case GameState.SpawnHero:
+                Debug.Log("Spawning Hero");
                 Board_Manager.instance.SpawnLeader((ScriptableUnit)deck._leader);
                 PlayerPregameActions();
                 ChangeState(GameState.SpawnEnemies);
                 break;
             case GameState.SpawnEnemies:
+                Debug.Log("Spawning Enemies");
                 Board_Manager.instance.SpawnBoss();
                 Unit_Manager.instance.SpawnEnemies();
                 OnEnemySpawn();
                 break;
             case GameState.HeroesTurn:
+                Debug.Log("Player Turn");
                 StartPlayerTurn();
                 break;
             case GameState.EnemiesTurn:
@@ -217,7 +221,6 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
     {
         //increase turn number
         _turn++;
-        Debug.Log("Level: "+ _turn.ToString());
 
         //check if in survival mode and if the player has won the game
         SurvivalTurnCheck();
@@ -228,7 +231,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         CurrentInspiration = CurrentMaxInspiration;
         Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
         Event_Manager.instance.refresh();
-        //Debug.Log("Player has Started the Turn");
+
     }
 
     public void SurvivalTurnCheck(){

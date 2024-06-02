@@ -135,7 +135,14 @@ public abstract class Tile : MonoBehaviour
                 if(OccupiedStructure._structure.Faction == Faction.Enemy){
                     var enemy = (EnemyStructure)OccupiedStructure;
                     Unit_Manager.instance.SelectedHero.Attack(enemy);
-                    Unit_Manager.instance.SetSelectedHero((BaseHero)null);
+                    Unit_Manager.instance.SetSelectedHero(null);
+
+                }else if(OccupiedStructure._structure.Faction == Faction.Neutral){
+
+                    var enemy = (NeutralStructure)OccupiedStructure;
+                    Unit_Manager.instance.SelectedHero.Attack(enemy);
+                    Unit_Manager.instance.SetSelectedHero(null);
+
                 }else{
                     Menu_Manager.instance.showCard(OccupiedStructure._structure);
                 }  

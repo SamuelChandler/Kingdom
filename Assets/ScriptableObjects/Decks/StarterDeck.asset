@@ -27,10 +27,10 @@ MonoBehaviour:
     amount: 2
   - card: {fileID: 11400000, guid: 15b5383b197d1e74c9ae36d94f5676bf, type: 2}
     amount: 2
-  - card: {fileID: 11400000, guid: d49bb2ed8b677be4493b45945a5753bc, type: 2}
+  - card: {fileID: 11400000, guid: 1bb9d30ee869c80478f2ad62f70a4a01, type: 2}
     amount: 2
   - card: {fileID: 11400000, guid: da9666b027dd918438d659161477b537, type: 2}
     amount: 2
   - card: {fileID: 11400000, guid: 85e2d3eb799647e48ac2d14999bb269d, type: 2}
-    amount: 3
+    amount: 2
   DeckName: Starter

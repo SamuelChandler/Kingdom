@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: -1521900943
   m_SortingLayer: 4
   m_SortingOrder: 2
-  m_Sprite: {fileID: -7572208527054512103, guid: e816f5c70685807438f9c67f67c974b8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8f7f6fcd374187547abc5fe2aacb490d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -134,9 +134,11 @@ MonoBehaviour:
     _decks: []
     _deckContents: 
     _cardInventory: 
+    _storyEventsCompleted: 
     PlayerName: 
     SelectedDeck: 
     CombatMap: 0
+    MapLocation: {x: 0, y: 0}
 --- !u!61 &1114111796477610764
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -169,16 +171,16 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0016203225, y: -0.44557685}
+  m_Offset: {x: -0.017823026, y: -0.44395655}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.34375, y: 0.96875}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.37457222, y: 0.10884634}
+  m_Size: {x: 0.4134589, y: 0.12504908}
   m_EdgeRadius: 0

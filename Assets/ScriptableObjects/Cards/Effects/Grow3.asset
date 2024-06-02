@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 608d6d3b13e548b418890c0d6f1597ee, type: 3}
-  m_Name: StoryTracker
+  m_Script: {fileID: 11500000, guid: 557cb55c6d8c56f4abffa3ccbbc8415c, type: 3}
+  m_Name: Grow3
   m_EditorClassIdentifier: 
-  events:
-  - completed: 0
-    desc: Defeated Hivemind battle
-  - completed: 0
-    desc: 'Defeated Boar fight '
-  - completed: 0
-    desc: Defeated Sturdy Tree
+  EffectName: Grow3
+  _attackGain: 3
+  _healthGain: 3

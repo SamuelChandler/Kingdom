@@ -176,20 +176,6 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
                 Menu_Manager.instance.SetMessenger("there is not a target in this location");
                 return false;   
             }
-
-            if(t.OccupiedStructure != null){
-                if(t.OccupiedStructure._structure.Faction != s.TargetFaction){
-                    Menu_Manager.instance.SetMessenger("Cannot target this unit with this spell");
-                    return false;
-                }
-            }
-
-             if(t.OccupiedUnit != null){
-                if(t.OccupiedUnit.unit.Faction != s.TargetFaction){
-                    Menu_Manager.instance.SetMessenger("Cannot target this unit with this spell");
-                    return false;
-                }
-            }
         }
         
         return true;
@@ -238,10 +224,10 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         //do nothing if it is not a survival map
         if(Board_Manager.instance._map._levelType != LevelType.Survive){return;}
 
-        string goalString = "Turns Left to Survive = " + (Board_Manager.instance._map._survivalTurns - _turn +1).ToString();
+        string goalString = "Turns Left to Survive = " + (Board_Manager.instance._map._turns - _turn +1).ToString();
         Menu_Manager.instance.showGameGoal(goalString);
 
-        if(Board_Manager.instance._map._survivalTurns < _turn){
+        if(Board_Manager.instance._map._turns < _turn){
             ChangeState(GameState.GameWin);
         }
     }

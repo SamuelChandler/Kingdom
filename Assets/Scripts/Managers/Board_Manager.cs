@@ -374,7 +374,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             return;
         }
         else if(s.structure.Faction == Faction.Neutral){
-            _neutralS._structure = s.structure;;
+            _neutralS._structure = s.structure;
 
             //create and set unit to tile
             var summonded_Structure = Instantiate(_neutralS);
@@ -600,6 +600,20 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             _EnemyStructures.Remove(e);
             return true;
         }
+        return false;
+    }
+
+    public bool removeNeutralStructure(NeutralStructure n){
+        if(_NeutralStructures.Contains(n)){
+            _NeutralStructures.Remove(n);
+
+            if(_NeutralStructures.Count <= 0 ){
+                Game_Manager.instance.ResolveNoNeutralStructures();
+            }
+
+            return true;
+        }
+
         return false;
     }
 

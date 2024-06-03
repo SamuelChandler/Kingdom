@@ -29,6 +29,8 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
 
     private List<Spawner> spawners;
 
+    private bool TimeLimit;
+
     private void Awake()
     {
         instance = this;
@@ -42,6 +44,12 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
     {
         //start of game menu manager updates with game info
         Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
+        
+        if(Board_Manager.instance._map._levelType == LevelType.ClearAllNeutralEnemiesInTimeLimit){
+            TimeLimit = true;
+        }else{
+            TimeLimit = false;
+        }
 
         ChangeState(GameState.GenerateMap);
     }
@@ -113,6 +121,12 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
                 Tile destTile = Board_Manager.instance.GetTileAtPosition(dest);
                 Board_Manager.instance.SpawnUnit(destTile, s.unit);
             }
+        }
+    }
+
+    public void ResolveNoNeutralStructures(){
+        if(Board_Manager.instance._map._levelType == LevelType.ClearAllNeutralEnemiesInTimeLimit){
+            ChangeState(GameState.GameWin);
         }
     }
 
@@ -210,6 +224,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
 
         //check if in survival mode and if the player has won the game
         SurvivalTurnCheck();
+        TimeLimitCheck();
         
         //increase and refresh inspiration
         IncreaseInspirationLimit();
@@ -218,6 +233,17 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
         Event_Manager.instance.refresh();
 
+    }
+
+    public void TimeLimitCheck(){
+        if(!TimeLimit){return;}
+
+        string goalString = "Turns Left = " + (Board_Manager.instance._map._turns - _turn +1).ToString();
+        Menu_Manager.instance.showGameGoal(goalString);
+
+        if(Board_Manager.instance._map._turns < _turn){
+            ChangeState(GameState.GameLoss);
+        }
     }
 
     public void SurvivalTurnCheck(){

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4f03e6d262cd9547a56da9dc494dfec, type: 3}
-  m_Name: UnitIdTable
+  m_Name: CardIdTable
   m_EditorClassIdentifier: 
   IdTable:
   - {fileID: 11400000, guid: 99611d2e63e7f81468a79fdcdd0bc7e8, type: 2}
@@ -32,4 +32,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a2989d696ddb2a840a8b331f71d58891, type: 2}
   - {fileID: 11400000, guid: 2250b36b14aab7346a40227bf7b0af24, type: 2}
   - {fileID: 11400000, guid: 15b5383b197d1e74c9ae36d94f5676bf, type: 2}
+  - {fileID: 11400000, guid: da9666b027dd918438d659161477b537, type: 2}
   - {fileID: 11400000, guid: da9666b027dd918438d659161477b537, type: 2}

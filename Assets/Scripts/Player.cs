@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,8 +25,12 @@ public class Player : MonoBehaviour, IDataPersistance
 
     public Deck SelectedDeck;
 
+    [SerializeField]
+    private Animator animator;
+
     void Awake(){
         instance = this;
+        animator = GetComponent<Animator>();
 
         
     }
@@ -35,13 +41,43 @@ public class Player : MonoBehaviour, IDataPersistance
         _pauseMenu.ShowDecks(data.SelectedDeck);
     }
 
+    public void SetDirection(Vector2 movmentVector){
+
+        float x = Math.Abs(movmentVector.normalized.x);
+        float y = Math.Abs(movmentVector.normalized.y);
+
+        if(y ==0 && x ==0){
+            animator.SetInteger("GoState",0);
+            return;
+        }
+
+        if(x >= y){
+            if(movmentVector.x > 0){
+                animator.SetInteger("GoState",3);
+                return;
+            }else{
+                animator.SetInteger("GoState",4);
+                return;
+            }
+        }else{
+            if(movmentVector.y > 0){
+                animator.SetInteger("GoState",2);
+                return;
+            }else{
+                animator.SetInteger("GoState",1);
+                return;
+            }
+        }
+
+    }
+
     // Update is called once per frame
     void Update()
     {
 
-        //get user movment input
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        movement = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
+
+        SetDirection(movement);
 
         if(Keyboard.current.escapeKey.wasPressedThisFrame){
             _pauseMenu.PauseGame();
@@ -51,7 +87,7 @@ public class Player : MonoBehaviour, IDataPersistance
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + (movement * moveSpeed * Time.fixedDeltaTime));
+        rb.MovePosition(rb.position + (movement.normalized * moveSpeed * Time.fixedDeltaTime));
     }
 
     public void LoadData(PlayerData playerData)
@@ -84,4 +120,8 @@ public class Player : MonoBehaviour, IDataPersistance
         playerData.CombatMap = data.CombatMap;
         playerData.MapLocation = (Vector2)gameObject.transform.position;
     }
+
+    
 }
+
+

@@ -149,6 +149,8 @@ MonoBehaviour:
   tileName: Flower
   _renderer: {fileID: 7083851374388391367}
   _highlight: {fileID: 898074623937503316}
+  _attackIndicator: {fileID: 4117991818530003401}
+  _moveIndicator: {fileID: 6777912711963125659}
   _isWalkable: 1
   x: 0
   y: 0
@@ -156,6 +158,16 @@ MonoBehaviour:
   OccupiedStructure: {fileID: 0}
   _baseColor: {r: 1, g: 1, b: 1, a: 1}
   _offsetColor: {r: 0.7981043, g: 0.8018868, b: 0.79844815, a: 1}
+--- !u!1 &4117991818530003401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3136251411227949753, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+  m_PrefabInstance: {fileID: 1342142744570438512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6777912711963125659 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5525850790554993899, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+  m_PrefabInstance: {fileID: 1342142744570438512}
+  m_PrefabAsset: {fileID: 0}
 --- !u!212 &7083851374388391367 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 8137682353039871671, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}

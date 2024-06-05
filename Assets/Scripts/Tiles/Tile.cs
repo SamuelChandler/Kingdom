@@ -10,6 +10,10 @@ public abstract class Tile : MonoBehaviour
     public string tileName;
     [SerializeField] protected SpriteRenderer _renderer;
     [SerializeField] protected GameObject _highlight;
+
+    [SerializeField] protected GameObject _attackIndicator;
+
+    [SerializeField] protected GameObject _moveIndicator;
     [SerializeField] private bool _isWalkable;
     public int x, y;
 
@@ -20,6 +24,9 @@ public abstract class Tile : MonoBehaviour
     public virtual void Init(int a,int b)
     {
         _highlight.SetActive(false);
+        _attackIndicator.SetActive(false);
+        _moveIndicator.SetActive(false);
+
         x = a; y = b;
 
     }
@@ -45,6 +52,23 @@ public abstract class Tile : MonoBehaviour
             MouseClickRight();
         }
     }
+
+    public void SetAttackIndicator(){
+        _attackIndicator.SetActive(true);
+    }
+
+    public void SetMoveIndicator(){
+        _attackIndicator.SetActive(false);
+        _moveIndicator.SetActive(true);
+    }
+
+    public void ClearTile(){
+        _highlight.SetActive(false);
+        _attackIndicator.SetActive(false);
+        _moveIndicator.SetActive(false);
+    }
+
+
     public Tile setStructure(Structure structure){
         structure.transform.position = transform.position;
         OccupiedStructure = structure;

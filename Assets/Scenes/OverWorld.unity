@@ -37997,7 +37997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4230810133705356493, guid: 423e607a0c7461e4ca1b1af69822e0cd, type: 3}
       propertyPath: moveSpeed
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4230810133705356493, guid: 423e607a0c7461e4ca1b1af69822e0cd, type: 3}
       propertyPath: _pauseMenu

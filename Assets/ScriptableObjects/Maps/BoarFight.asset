@@ -44,7 +44,7 @@ MonoBehaviour:
   _leader:
     unit: {fileID: 0}
     loc: {x: 0, y: 3}
-  _survivalTurns: 7
+  _turns: 7
   _spawners:
   - posLocations:
     - {x: 9, y: 0}

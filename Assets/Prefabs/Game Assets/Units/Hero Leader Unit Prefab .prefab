@@ -103,10 +103,14 @@ MonoBehaviour:
   spriteRenderer: {fileID: 2216078567971078873}
   attack: {fileID: 1374200962840766109}
   health: {fileID: 3774865798873020229}
+  SelectedMaterial: {fileID: 2100000, guid: 21a1e1d262f69fb498a3854e33bc5ce4, type: 2}
+  defualtMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   isAbleToMove: 0
   isAbleToAttack: 0
   currentHealth: 0
+  currentMaxHealth: 0
   currentAttack: 0
+  turnCounter: 0
 --- !u!1 &3240512504801302143
 GameObject:
   m_ObjectHideFlags: 0

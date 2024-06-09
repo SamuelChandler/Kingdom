@@ -13,6 +13,10 @@ public class BaseUnit : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI attack, health;
 
+    [SerializeField]  Material SelectedMaterial;
+
+    [SerializeField] Material defualtMaterial;
+
     public bool isAbleToMove;
     public bool isAbleToAttack;
 
@@ -24,6 +28,9 @@ public class BaseUnit : MonoBehaviour
 
     public virtual void Awake()
     {
+
+         GetComponent<Renderer>().material = defualtMaterial; 
+
         spriteRenderer.sprite = unit.image;
         currentHealth = unit.health;
         currentMaxHealth = currentHealth;
@@ -94,6 +101,15 @@ public class BaseUnit : MonoBehaviour
         }
 
         UpdateAttackAndHealthDisplay();
+    }
+
+    public void Select(){
+        GetComponent<Renderer>().material = SelectedMaterial; 
+
+    }
+
+    public void DeSelect(){
+        GetComponent<Renderer>().material = defualtMaterial; 
     }
 
     public virtual void removeUnit(){}

@@ -311,7 +311,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1521900943
   m_SortingLayer: 4
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 1214200094, guid: fa45f8b4ec1ec7749abdae5a2d789f8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -321,7 +321,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!114 &1603683541253479809
 MonoBehaviour:
@@ -336,14 +336,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OccupiedTile: {fileID: 0}
-  unit: {fileID: 11400000, guid: 61350efe83198ac48a23eba8c587ec86, type: 2}
+  unit: {fileID: 11400000, guid: 99611d2e63e7f81468a79fdcdd0bc7e8, type: 2}
   spriteRenderer: {fileID: 2216078567971078873}
   attack: {fileID: 3622923866107887960}
   health: {fileID: 4268145055172470545}
+  SelectedMaterial: {fileID: -876546973899608171, guid: f6d2c8e46f279f046bab56c55f8b88b7, type: 3}
+  defualtMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   isAbleToMove: 0
   isAbleToAttack: 0
   currentHealth: 0
+  currentMaxHealth: 0
   currentAttack: 0
+  turnCounter: 0
 --- !u!1 &3873494568955814715
 GameObject:
   m_ObjectHideFlags: 0

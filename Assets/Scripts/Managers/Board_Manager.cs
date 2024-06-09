@@ -129,6 +129,18 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         return null;
     }
 
+    public int GetDistanceBetweenTiles(Tile src,Tile dst){
+         
+        //determine the change in the x and y axis
+        int x_change = Mathf.Abs(src.x - dst.x);
+        int y_change = Mathf.Abs(src.y - dst.y);
+
+        int total_change  = x_change + y_change;
+
+        return total_change;
+
+    }
+    
     public Tile GetTileAtPosition(Tile src, Vector2 offset)
     {
 
@@ -713,19 +725,46 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
     }
 
-    public void ShowMovmentTiles(Tile src, int speed){
+    public void ShowUnitActionTiles(BaseUnit baseUnit){
 
         int width = 0;
+        
+        if(!baseUnit.isAbleToMove){
+            ShowAttackIndicatorOnly(baseUnit);
+            return;
+        }
 
-        for(int j = speed; j >= -speed;j--){
+        for(int j = baseUnit.unit.speed+1; j >= -baseUnit.unit.speed-1;j--){
 
             for(int i = width; i >= -width; i--){
                 Vector2 offset = new Vector2(i,j);
-                Tile cTile = GetTileAtPosition(src,offset);
+                Tile cTile = GetTileAtPosition(baseUnit.OccupiedTile,offset);
 
                 if(cTile != null){
-                    cTile.SetMoveIndicator();
+                    if(cTile.OccupiedStructure == null && cTile.OccupiedUnit == null){
+                        cTile.SetMoveIndicator();
+                    }else{
+                        if(cTile.OccupiedStructure != null){
+                            if(cTile.OccupiedStructure._structure.Faction == Faction.Enemy){
+                                if(baseUnit.isAbleToAttack){cTile.SetAttackIndicator();}
+                            }
+                        }
+                        else if(cTile.OccupiedUnit != null){
+                            if(cTile.OccupiedUnit.unit.Faction == Faction.Enemy){
+                                if(baseUnit.isAbleToAttack){cTile.SetAttackIndicator();}  
+                            }
+                        }
+                    }
+
+                    int dist = GetDistanceBetweenTiles(baseUnit.OccupiedTile,cTile);
+
+                    if( dist > baseUnit.unit.speed){
+                        if(baseUnit.isAbleToAttack){cTile.SetAttackIndicator();}
+                        else{cTile.ClearTile();}
+                    }
                 }
+
+                
 
             }
             
@@ -738,10 +777,37 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         }
     }
 
+    public void ShowAttackIndicatorOnly(BaseUnit baseUnit){
+        if(!baseUnit.isAbleToAttack){
+            return;
+        }
+
+        for(int i = 1; i >= -1; i--){
+            for(int j = 1; j >= -1; j--){
+
+                Vector2 offset = new Vector2(i,j);
+                Tile cTile = GetTileAtPosition(baseUnit.OccupiedTile,offset);
+
+                if(cTile != null){
+                    if(cTile.OccupiedUnit != null){
+                        if(cTile.OccupiedUnit.unit.Faction == Faction.Enemy || cTile.OccupiedUnit.unit.Faction == Faction.Neutral){
+                            cTile.SetAttackIndicator();
+                        }
+                    }else if(cTile.OccupiedStructure != null){
+                        if(cTile.OccupiedStructure._structure.Faction == Faction.Enemy || cTile.OccupiedStructure._structure.Faction == Faction.Neutral){
+                            cTile.SetAttackIndicator();
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
     public void UnShowMovmentTiles(Tile src, int speed){
         int width = 0;
 
-        for(int j = speed; j >= -speed;j--){
+        for(int j = speed+1; j >= -speed-1;j--){
 
             for(int i = width; i >= -width; i--){
                 Vector2 offset = new Vector2(i,j);

@@ -106,7 +106,7 @@ public class BaseUnit : MonoBehaviour
     public void Select(){
         GetComponent<Renderer>().material = SelectedMaterial; 
 
-        Board_Manager.instance.ShowMovmentTiles(OccupiedTile,unit.speed);
+        Board_Manager.instance.ShowUnitActionTiles(this);
 
     }
 

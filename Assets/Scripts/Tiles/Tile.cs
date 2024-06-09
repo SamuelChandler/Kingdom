@@ -54,6 +54,7 @@ public abstract class Tile : MonoBehaviour
     }
 
     public void SetAttackIndicator(){
+        _moveIndicator.SetActive(false);
         _attackIndicator.SetActive(true);
     }
 

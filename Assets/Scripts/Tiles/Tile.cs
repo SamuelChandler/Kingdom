@@ -62,6 +62,7 @@ public abstract class Tile : MonoBehaviour
         _moveIndicator.SetActive(true);
     }
 
+    //clears all indicators on the Tile
     public void ClearTile(){
         _highlight.SetActive(false);
         _attackIndicator.SetActive(false);

@@ -106,10 +106,13 @@ public class BaseUnit : MonoBehaviour
     public void Select(){
         GetComponent<Renderer>().material = SelectedMaterial; 
 
+        Board_Manager.instance.ShowMovmentTiles(OccupiedTile,unit.speed);
+
     }
 
     public void DeSelect(){
         GetComponent<Renderer>().material = defualtMaterial; 
+        Board_Manager.instance.UnShowMovmentTiles(OccupiedTile,unit.speed);
     }
 
     public virtual void removeUnit(){}

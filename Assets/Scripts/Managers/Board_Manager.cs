@@ -129,6 +129,19 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         return null;
     }
 
+    public Tile GetTileAtPosition(Tile src, Vector2 offset)
+    {
+
+        Vector2 position = new Vector2(src.x + offset.x, src.y + offset.y);
+
+        if(_tiles.TryGetValue(position, out Tile tile))
+        {
+            return tile;
+        }
+
+        return null;
+    }
+
     //returns a Unit for a given v2 position
     public BaseUnit GetUnitAtPosition(Vector2 position)
     {
@@ -476,8 +489,13 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
         }
 
+
+        if(unit.unit.Faction == Faction.Hero){
+            Unit_Manager.instance.SetSelectedHero((BaseHero)null);
+        }
+        
         destTile.setUnit(unit);
-        Unit_Manager.instance.SetSelectedHero((BaseHero)null);
+        
 
         //remove movment token
         unit.isAbleToMove = false;
@@ -694,6 +712,56 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         return tiles[rand];
 
     }
+
+    public void ShowMovmentTiles(Tile src, int speed){
+
+        int width = 0;
+
+        for(int j = speed; j >= -speed;j--){
+
+            for(int i = width; i >= -width; i--){
+                Vector2 offset = new Vector2(i,j);
+                Tile cTile = GetTileAtPosition(src,offset);
+
+                if(cTile != null){
+                    cTile.SetMoveIndicator();
+                }
+
+            }
+            
+            if(j>0){
+                width++;
+            }else{
+                width--;
+            }
+            
+        }
+    }
+
+    public void UnShowMovmentTiles(Tile src, int speed){
+        int width = 0;
+
+        for(int j = speed; j >= -speed;j--){
+
+            for(int i = width; i >= -width; i--){
+                Vector2 offset = new Vector2(i,j);
+                Tile cTile = GetTileAtPosition(src,offset);
+
+                if(cTile != null){
+                    cTile.ClearTile();
+                }
+
+            }
+            
+            if(j>0){
+                width++;
+            }else{
+                width--;
+            }
+            
+        }
+    }
+
 
     public Card GetRewardCard(){
         return _map.reward;

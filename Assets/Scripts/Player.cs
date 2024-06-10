@@ -44,7 +44,14 @@ public class Player : MonoBehaviour, IDataPersistance
         movement.y = Input.GetAxisRaw("Vertical");
 
         if(Keyboard.current.escapeKey.wasPressedThisFrame){
-            _pauseMenu.PauseGame();
+            if (!_pauseMenu.isPaused)
+            {
+                _pauseMenu.PauseGame();
+            }
+            else if (_pauseMenu.isPaused)
+            {
+                _pauseMenu.ContinueGame();
+            }
         }
 
     }

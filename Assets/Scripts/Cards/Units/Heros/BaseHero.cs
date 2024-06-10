@@ -57,6 +57,36 @@ public class BaseHero : BaseUnit
         return true;
     }
 
+    public bool Attack(NeutralStructure enemy){
+        if (enemy == null||!this.isAbleToAttack) return false;
+
+        bool inRange = false;
+        
+        //check if enemy is within one space
+        foreach (Tile t in enemy.OccupiedTiles){
+            if(Mathf.Abs(OccupiedTile.x - t.x) <= 1 && Mathf.Abs(this.OccupiedTile.y - t.y) <= 1)
+            {
+                inRange = true;
+            }
+        }
+        if(inRange == false)
+        {
+            Menu_Manager.instance.SetMessenger("Attack was out of Range");
+            return false;
+        }
+
+        if(unit.OnAttack != null){
+            Debug.Log("Attack Trigger");
+            unit.OnAttack.ActivateEffect(this);
+        }
+
+        isAbleToAttack = false;
+
+        enemy.TakeDamage(this.unit.attack);
+  
+        return true;
+    }
+
     public override void removeUnit()
     {
         if(unit.OnDeath != null){

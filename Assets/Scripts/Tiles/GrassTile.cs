@@ -12,5 +12,8 @@ public class GrassTile : Tile
     {
         x = a; y = b;
         _highlight.SetActive(false);
+        _attackIndicator.SetActive(false);
+        _moveIndicator.SetActive(false);
+
     }
 }

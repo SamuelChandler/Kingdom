@@ -10,6 +10,10 @@ public abstract class Tile : MonoBehaviour
     public string tileName;
     [SerializeField] protected SpriteRenderer _renderer;
     [SerializeField] protected GameObject _highlight;
+
+    [SerializeField] protected GameObject _attackIndicator;
+
+    [SerializeField] protected GameObject _moveIndicator;
     [SerializeField] private bool _isWalkable;
     public int x, y;
 
@@ -20,6 +24,9 @@ public abstract class Tile : MonoBehaviour
     public virtual void Init(int a,int b)
     {
         _highlight.SetActive(false);
+        _attackIndicator.SetActive(false);
+        _moveIndicator.SetActive(false);
+
         x = a; y = b;
 
     }
@@ -45,6 +52,25 @@ public abstract class Tile : MonoBehaviour
             MouseClickRight();
         }
     }
+
+    public void SetAttackIndicator(){
+        _moveIndicator.SetActive(false);
+        _attackIndicator.SetActive(true);
+    }
+
+    public void SetMoveIndicator(){
+        _attackIndicator.SetActive(false);
+        _moveIndicator.SetActive(true);
+    }
+
+    //clears all indicators on the Tile
+    public void ClearTile(){
+        _highlight.SetActive(false);
+        _attackIndicator.SetActive(false);
+        _moveIndicator.SetActive(false);
+    }
+
+
     public Tile setStructure(Structure structure){
         structure.transform.position = transform.position;
         OccupiedStructure = structure;
@@ -135,7 +161,14 @@ public abstract class Tile : MonoBehaviour
                 if(OccupiedStructure._structure.Faction == Faction.Enemy){
                     var enemy = (EnemyStructure)OccupiedStructure;
                     Unit_Manager.instance.SelectedHero.Attack(enemy);
-                    Unit_Manager.instance.SetSelectedHero((BaseHero)null);
+                    Unit_Manager.instance.SetSelectedHero(null);
+
+                }else if(OccupiedStructure._structure.Faction == Faction.Neutral){
+
+                    var enemy = (NeutralStructure)OccupiedStructure;
+                    Unit_Manager.instance.SelectedHero.Attack(enemy);
+                    Unit_Manager.instance.SetSelectedHero(null);
+
                 }else{
                     Menu_Manager.instance.showCard(OccupiedStructure._structure);
                 }  
@@ -164,6 +197,8 @@ public abstract class Tile : MonoBehaviour
                 }
                
                 
+            }else if(Unit_Manager.instance.SelectedCardInHand == null){
+                //do nothing
             }else if(Unit_Manager.instance.SelectedCardInHand.type == CardType.Structure){
                 StructureAndPoint sp = new StructureAndPoint();
                 sp.structure = (ScriptableStructure)Unit_Manager.instance.SelectedCardInHand;

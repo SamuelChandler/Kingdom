@@ -34,15 +34,15 @@ public class ScriptableMap : ScriptableObject
     [Tooltip("Unit that will be end the game if destroyed by the enemy. Also the starting point for allies")]
     [SerializeField] public LeaderAndPoint _leader;
 
-    [Tooltip("Number of rounds needed to win in survival mode")]
-    [SerializeField] public int _survivalTurns;
+    [Tooltip("Number of rounds needed to win in survival mode or the number of turns to complete an objective")]
+    [SerializeField] public int _turns;
 
     [Tooltip("Spawners used within the level")]
     [SerializeField] public Spawner[] _spawners;
 
     [SerializeField] public Card reward;
 
-
+    [SerializeField] public int onWinEvent;
 
 
     public Tile GetTile(char id)
@@ -99,6 +99,7 @@ public enum LevelType
 {
     ClearEnemies,
     DefeatBoss,
-    Survive
+    Survive,
+    ClearAllNeutralEnemiesInTimeLimit,
 }
 

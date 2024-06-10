@@ -17,7 +17,7 @@ public abstract class NPC : MonoBehaviour, IInteractable
         _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    private void Update()
+    protected void Update()
     {
         //check it the user wants to interact.
         if (Keyboard.current.spaceKey.wasPressedThisFrame)

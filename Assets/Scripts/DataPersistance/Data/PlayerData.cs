@@ -11,6 +11,8 @@ public class PlayerData
 
    public List<int> _cardInventory;
 
+   public List<int> _storyEventsCompleted;
+
    public string PlayerName;
 
    public string SelectedDeck;
@@ -24,6 +26,13 @@ public class PlayerData
         PlayerName = name;
     }
 
+    public void SetEventCompleted(int id){
+        if(!_storyEventsCompleted.Contains(id)){
+            Debug.Log(id);
+            _storyEventsCompleted.Add(id);
+        }
+    }
+
     public void AddDeck(Deck d){
         foreach(Card c in d.contents){
             _deckContents.Add(DataPersistanceManager.instance.idTable.getID(c));
@@ -33,6 +42,19 @@ public class PlayerData
         if(SelectedDeck == null){
             SelectedDeck = d.name;
         }
+    }
+
+    public void AddCardToInventory(Card c){
+        //check if card is already in inventory
+
+        int id = DataPersistanceManager.instance.idTable.getID(c);
+
+        if(_cardInventory.Contains(id)){
+            Debug.Log("data already contains this card");
+            return;
+        }
+
+        _cardInventory.Add(id);
     }
 
     public void AddDeck(ScriptableDeck d){

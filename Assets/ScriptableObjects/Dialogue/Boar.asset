@@ -26,3 +26,5 @@ MonoBehaviour:
   _maps:
   - {fileID: 11400000, guid: 17d26cda3753ffd4b875fbef40c9fbca, type: 2}
   endPoints: 02000000
+  LastWordsEvent: 1
+  LastWords: 

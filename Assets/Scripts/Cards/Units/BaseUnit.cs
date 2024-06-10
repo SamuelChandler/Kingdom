@@ -13,18 +13,27 @@ public class BaseUnit : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI attack, health;
 
+    [SerializeField]  Material SelectedMaterial;
+
+    [SerializeField] Material defualtMaterial;
+
     public bool isAbleToMove;
     public bool isAbleToAttack;
 
     public int currentHealth;
+    public int currentMaxHealth;
     public int currentAttack;
 
     public int turnCounter;
 
     public virtual void Awake()
     {
+
+         GetComponent<Renderer>().material = defualtMaterial; 
+
         spriteRenderer.sprite = unit.image;
         currentHealth = unit.health;
+        currentMaxHealth = currentHealth;
         currentAttack = unit.attack;
         turnCounter = 0;
 
@@ -57,6 +66,13 @@ public class BaseUnit : MonoBehaviour
         
     }
 
+    public void ActivateEndOfTurnEffects(){
+        if(unit.OnEndTurn != null){
+            unit.OnEndTurn.ActivateEffect(this);
+        }
+        
+    }
+
     public void UpdateAttackAndHealthDisplay(){
         attack.text = currentAttack.ToString();
         health.text = currentHealth.ToString();
@@ -75,6 +91,28 @@ public class BaseUnit : MonoBehaviour
             Destroy(gameObject);
 
         }
+    }
+
+    public void Heal(int healAmount){
+        currentHealth += healAmount;
+
+        if(currentHealth > currentMaxHealth){
+            currentHealth = currentMaxHealth;
+        }
+
+        UpdateAttackAndHealthDisplay();
+    }
+
+    public void Select(){
+        GetComponent<Renderer>().material = SelectedMaterial; 
+
+        Board_Manager.instance.ShowUnitActionTiles(this);
+
+    }
+
+    public void DeSelect(){
+        GetComponent<Renderer>().material = defualtMaterial; 
+        Board_Manager.instance.UnShowMovmentTiles(OccupiedTile,unit.speed);
     }
 
     public virtual void removeUnit(){}

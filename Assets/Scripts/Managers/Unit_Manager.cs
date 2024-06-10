@@ -47,7 +47,17 @@ public class Unit_Manager : MonoBehaviour
     //sets the selected hero based on a hero object
     public void SetSelectedHero(BaseHero Hero)
     {
+
+        if(SelectedHero != null){
+            SelectedHero.DeSelect();
+        }
+
         SelectedHero = Hero;
+
+        if(SelectedHero != null){
+            SelectedHero.Select();
+        }
+
         Menu_Manager.instance.showUnit(Hero);
     }
 
@@ -56,6 +66,10 @@ public class Unit_Manager : MonoBehaviour
     {
         //create unit and set to selected hero 
         SelectedCardInHand = C;
+
+        if(SelectedHero != null){
+            SelectedHero.DeSelect();
+        }
 
         if(C.type == CardType.Unit){
             SelectedHero = Unit_Prefab;

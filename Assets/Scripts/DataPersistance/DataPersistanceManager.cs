@@ -11,6 +11,7 @@ public class DataPersistanceManager : MonoBehaviour
     [SerializeField] private string fileName;
     [SerializeField] public CardIDTable idTable;
     [SerializeField] public MapIDTable mapIDTable;
+    [SerializeField] public StoryTracker _sTracker;
 
     private PlayerData playerData;
 
@@ -33,10 +34,16 @@ public class DataPersistanceManager : MonoBehaviour
     }
 
     public void NewGame(string playerName){
-        this.playerData = new PlayerData(playerName);
-        this.playerData._deckContents = new List<int>();
-        this.playerData._decks = new List<string>();
-        this.playerData._cardInventory = new List<int>();
+        
+        foreach(StoryEvent s in _sTracker.events){
+            s.completed = false;
+        }
+
+        playerData = new PlayerData(playerName);
+        playerData._deckContents = new List<int>();
+        playerData._decks = new List<string>();
+        playerData._cardInventory = new List<int>();
+        playerData._storyEventsCompleted = new List<int>();
 
 
         this.playerData.AddDeck(_starterDeck);
@@ -55,6 +62,8 @@ public class DataPersistanceManager : MonoBehaviour
             NewGame("NewPlayer");
         }
 
+        _sTracker.SetEventState(playerData._storyEventsCompleted);
+
         foreach(IDataPersistance dpObject in dataPersistanceObjects){
             dpObject.LoadData(playerData);
         }
@@ -62,6 +71,11 @@ public class DataPersistanceManager : MonoBehaviour
     }
 
     public void SaveGame(){
+
+        foreach(int i in _sTracker.GetEventState()){
+            playerData.SetEventCompleted(i);
+        }
+
         //TD pass data to other scripts so they can update it
         foreach(IDataPersistance dpObject in dataPersistanceObjects){
             dpObject.SaveData(ref playerData);

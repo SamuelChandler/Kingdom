@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0ae76b5a4512e488865136dbaecdf2, type: 3}
+  m_Name: GolemGuardian
+  m_EditorClassIdentifier: 
+  image: {fileID: -419425613, guid: 3e8abb5153ccb804e8e91b09652eac89, type: 3}
+  name: Golem Guardian
+  inspirationCost: 6
+  description: 
+  type: 1
+  Faction: 0
+  health: 7
+  attack: 7
+  speed: 2
+  _leader: 0
+  _swift: 0
+  OnDeath: {fileID: 0}
+  OnPlay: {fileID: 0}
+  OnAttack: {fileID: 0}
+  OnEndTurn: {fileID: 0}
+  OnStartOfTurn: {fileID: 0}

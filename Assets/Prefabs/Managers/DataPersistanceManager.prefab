@@ -47,4 +47,5 @@ MonoBehaviour:
   fileName: Player Data
   idTable: {fileID: 11400000, guid: 524729f2df3c1c2479425881f84e7eb4, type: 2}
   mapIDTable: {fileID: 11400000, guid: ef97980c8cc1596418a5fce1e5087b6c, type: 2}
+  _sTracker: {fileID: 11400000, guid: 9502328d5d848284ab78400ee4c98afb, type: 2}
   _starterDeck: {fileID: 11400000, guid: af7d0c62920dd35419ea2d1c0952e189, type: 2}

@@ -129,6 +129,31 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         return null;
     }
 
+    public int GetDistanceBetweenTiles(Tile src,Tile dst){
+         
+        //determine the change in the x and y axis
+        int x_change = Mathf.Abs(src.x - dst.x);
+        int y_change = Mathf.Abs(src.y - dst.y);
+
+        int total_change  = x_change + y_change;
+
+        return total_change;
+
+    }
+    
+    public Tile GetTileAtPosition(Tile src, Vector2 offset)
+    {
+
+        Vector2 position = new Vector2(src.x + offset.x, src.y + offset.y);
+
+        if(_tiles.TryGetValue(position, out Tile tile))
+        {
+            return tile;
+        }
+
+        return null;
+    }
+
     //returns a Unit for a given v2 position
     public BaseUnit GetUnitAtPosition(Vector2 position)
     {
@@ -368,13 +393,13 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             _EnemyStructures.Add(summonded_Structure);
 
             if(summonded_Structure._structure.OnSummon != null){
-                summonded_Structure._structure.OnSummon.ActivateEffect(summonded_Structure);
+                    summonded_Structure._structure.OnSummon.ActivateEffect(summonded_Structure);
             }
 
             return;
         }
         else if(s.structure.Faction == Faction.Neutral){
-            _neutralS._structure = s.structure;;
+            _neutralS._structure = s.structure;
 
             //create and set unit to tile
             var summonded_Structure = Instantiate(_neutralS);
@@ -476,8 +501,13 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
         }
 
+
+        if(unit.unit.Faction == Faction.Hero){
+            Unit_Manager.instance.SetSelectedHero((BaseHero)null);
+        }
+        
         destTile.setUnit(unit);
-        Unit_Manager.instance.SetSelectedHero((BaseHero)null);
+        
 
         //remove movment token
         unit.isAbleToMove = false;
@@ -603,6 +633,20 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         return false;
     }
 
+    public bool removeNeutralStructure(NeutralStructure n){
+        if(_NeutralStructures.Contains(n)){
+            _NeutralStructures.Remove(n);
+
+            if(_NeutralStructures.Count <= 0 ){
+                Game_Manager.instance.ResolveNoNeutralStructures();
+            }
+
+            return true;
+        }
+
+        return false;
+    }
+
     public bool removeAllyStructure(AllyStructure allyStructure){
         if(_AllyStructures.Contains(allyStructure)){
             _AllyStructures.Remove(allyStructure);
@@ -633,6 +677,10 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         foreach(Structure s in _NeutralStructures){
             s.ActivateEndOfTurnEffects();
         }
+
+        foreach(BaseEnemy be in _enemies){
+            be.ActivateEndOfTurnEffects();
+        }
     }
 
     public void ActivateAllyStructureEndOfTurnEffects(){
@@ -642,6 +690,10 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
         foreach(Structure s in _NeutralStructures){
             s.ActivateEndOfTurnEffects();
+        }
+
+        foreach(BaseHero bh in _heroes){
+            bh.ActivateEndOfTurnEffects();
         }
     }
 
@@ -672,6 +724,110 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         return tiles[rand];
 
     }
+
+    public void ShowUnitActionTiles(BaseUnit baseUnit){
+
+        int width = 0;
+        
+        if(!baseUnit.isAbleToMove){
+            ShowAttackIndicatorOnly(baseUnit);
+            return;
+        }
+
+        for(int j = baseUnit.unit.speed+1; j >= -baseUnit.unit.speed-1;j--){
+
+            for(int i = width; i >= -width; i--){
+                Vector2 offset = new Vector2(i,j);
+                Tile cTile = GetTileAtPosition(baseUnit.OccupiedTile,offset);
+
+                if(cTile != null){
+                    if(cTile.OccupiedStructure == null && cTile.OccupiedUnit == null){
+                        cTile.SetMoveIndicator();
+                    }else{
+                        if(cTile.OccupiedStructure != null){
+                            if(cTile.OccupiedStructure._structure.Faction == Faction.Enemy){
+                                if(baseUnit.isAbleToAttack){cTile.SetAttackIndicator();}
+                            }
+                        }
+                        else if(cTile.OccupiedUnit != null){
+                            if(cTile.OccupiedUnit.unit.Faction == Faction.Enemy){
+                                if(baseUnit.isAbleToAttack){cTile.SetAttackIndicator();}  
+                            }
+                        }
+                    }
+
+                    int dist = GetDistanceBetweenTiles(baseUnit.OccupiedTile,cTile);
+
+                    if( dist > baseUnit.unit.speed){
+                        if(baseUnit.isAbleToAttack){cTile.SetAttackIndicator();}
+                        else{cTile.ClearTile();}
+                    }
+                }
+
+                
+
+            }
+            
+            if(j>0){
+                width++;
+            }else{
+                width--;
+            }
+            
+        }
+    }
+
+    public void ShowAttackIndicatorOnly(BaseUnit baseUnit){
+        if(!baseUnit.isAbleToAttack){
+            return;
+        }
+
+        for(int i = 1; i >= -1; i--){
+            for(int j = 1; j >= -1; j--){
+
+                Vector2 offset = new Vector2(i,j);
+                Tile cTile = GetTileAtPosition(baseUnit.OccupiedTile,offset);
+
+                if(cTile != null){
+                    if(cTile.OccupiedUnit != null){
+                        if(cTile.OccupiedUnit.unit.Faction == Faction.Enemy || cTile.OccupiedUnit.unit.Faction == Faction.Neutral){
+                            cTile.SetAttackIndicator();
+                        }
+                    }else if(cTile.OccupiedStructure != null){
+                        if(cTile.OccupiedStructure._structure.Faction == Faction.Enemy || cTile.OccupiedStructure._structure.Faction == Faction.Neutral){
+                            cTile.SetAttackIndicator();
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    public void UnShowMovmentTiles(Tile src, int speed){
+        int width = 0;
+
+        for(int j = speed+1; j >= -speed-1;j--){
+
+            for(int i = width; i >= -width; i--){
+                Vector2 offset = new Vector2(i,j);
+                Tile cTile = GetTileAtPosition(src,offset);
+
+                if(cTile != null){
+                    cTile.ClearTile();
+                }
+
+            }
+            
+            if(j>0){
+                width++;
+            }else{
+                width--;
+            }
+            
+        }
+    }
+
 
     public Card GetRewardCard(){
         return _map.reward;

@@ -23,11 +23,28 @@ public class Fightable_NPC : NPC, ITalkable
         {
             choicePoints.Add(item._choicePos, item);
         }
+
+        
     }
+
+    new void Update()
+    {
+        base.Update();
+
+        if(DataPersistanceManager.instance._sTracker.events[_dialogText.LastWordsEvent].completed){
+            LastWords();
+        }
+    }
+
 
     public override void Interact()
     {
         Talk(_dialogText);
+    }
+
+    public void LastWords(){
+        Debug.Log("destroying npc");
+        Destroy(gameObject);
     }
 
     public void Talk(DialogText dialogText)

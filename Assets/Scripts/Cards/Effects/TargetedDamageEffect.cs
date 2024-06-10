@@ -19,7 +19,15 @@ public class TargetedDamageEffect: TargetedEffect{
         }else if(t.OccupiedUnit != null){
             t.OccupiedUnit.TakeDamage(DamageAmount);
         }
+    }
 
-        Debug.Log("Target Damage effect resolved");
+    public override void ActivateEffect(BaseUnit unit)
+    {
+        unit.TakeDamage(DamageAmount);
+    }
+
+    public override void ActivateEffect(Structure s)
+    {
+        s.TakeDamage(DamageAmount);
     }
 }

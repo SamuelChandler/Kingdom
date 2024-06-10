@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [Serializable]
-[CreateAssetMenu(fileName = "Structure_Unit_Spawner",menuName = "Effect/Structure Unit Spawner")]
+[CreateAssetMenu(fileName = "Spawning_Effects",menuName = "Effect/Structure Unit Spawner")]
 public class SpawnerEffect: Effect{
 
     public int _roundsForEachSpawn;

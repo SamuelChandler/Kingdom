@@ -29,6 +29,8 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
 
     private List<Spawner> spawners;
 
+    private bool TimeLimit;
+
     private void Awake()
     {
         instance = this;
@@ -42,6 +44,12 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
     {
         //start of game menu manager updates with game info
         Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
+        
+        if(Board_Manager.instance._map._levelType == LevelType.ClearAllNeutralEnemiesInTimeLimit){
+            TimeLimit = true;
+        }else{
+            TimeLimit = false;
+        }
 
         ChangeState(GameState.GenerateMap);
     }
@@ -53,20 +61,25 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         switch (newState)
         {
             case GameState.GenerateMap:
+                Debug.Log("Generating Map");
                 Board_Manager.instance.generateGrid();
                 Board_Manager.instance.SpawnMapStructures();
                 SetSpawners();
                 break;
             case GameState.SpawnHero:
+                Debug.Log("Spawning Hero");
                 Board_Manager.instance.SpawnLeader((ScriptableUnit)deck._leader);
                 PlayerPregameActions();
                 ChangeState(GameState.SpawnEnemies);
                 break;
             case GameState.SpawnEnemies:
+                Debug.Log("Spawning Enemies");
                 Board_Manager.instance.SpawnBoss();
                 Unit_Manager.instance.SpawnEnemies();
+                OnEnemySpawn();
                 break;
             case GameState.HeroesTurn:
+                Debug.Log("Player Turn");
                 StartPlayerTurn();
                 break;
             case GameState.EnemiesTurn:
@@ -81,6 +94,13 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState),newState,null);
+        }
+    }
+
+    public void OnEnemySpawn(){
+        if(Board_Manager.instance._map._levelType == LevelType.DefeatBoss){
+            string BossName = Board_Manager.instance._map._boss.enemy.name;
+            Menu_Manager.instance.showGameGoal("Defeat: " + BossName);
         }
     }
     
@@ -101,6 +121,12 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
                 Tile destTile = Board_Manager.instance.GetTileAtPosition(dest);
                 Board_Manager.instance.SpawnUnit(destTile, s.unit);
             }
+        }
+    }
+
+    public void ResolveNoNeutralStructures(){
+        if(Board_Manager.instance._map._levelType == LevelType.ClearAllNeutralEnemiesInTimeLimit){
+            ChangeState(GameState.GameWin);
         }
     }
 
@@ -164,20 +190,6 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
                 Menu_Manager.instance.SetMessenger("there is not a target in this location");
                 return false;   
             }
-
-            if(t.OccupiedStructure != null){
-                if(t.OccupiedStructure._structure.Faction != s.TargetFaction){
-                    Menu_Manager.instance.SetMessenger("Cannot target this unit with this spell");
-                    return false;
-                }
-            }
-
-             if(t.OccupiedUnit != null){
-                if(t.OccupiedUnit.unit.Faction != s.TargetFaction){
-                    Menu_Manager.instance.SetMessenger("Cannot target this unit with this spell");
-                    return false;
-                }
-            }
         }
         
         return true;
@@ -209,10 +221,10 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
     {
         //increase turn number
         _turn++;
-        Debug.Log("Level: "+ _turn.ToString());
 
         //check if in survival mode and if the player has won the game
         SurvivalTurnCheck();
+        TimeLimitCheck();
         
         //increase and refresh inspiration
         IncreaseInspirationLimit();
@@ -220,14 +232,28 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         CurrentInspiration = CurrentMaxInspiration;
         Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
         Event_Manager.instance.refresh();
-        //Debug.Log("Player has Started the Turn");
+
+    }
+
+    public void TimeLimitCheck(){
+        if(!TimeLimit){return;}
+
+        string goalString = "Turns Left = " + (Board_Manager.instance._map._turns - _turn +1).ToString();
+        Menu_Manager.instance.showGameGoal(goalString);
+
+        if(Board_Manager.instance._map._turns < _turn){
+            ChangeState(GameState.GameLoss);
+        }
     }
 
     public void SurvivalTurnCheck(){
         //do nothing if it is not a survival map
         if(Board_Manager.instance._map._levelType != LevelType.Survive){return;}
 
-        if(Board_Manager.instance._map._survivalTurns < _turn){
+        string goalString = "Turns Left to Survive = " + (Board_Manager.instance._map._turns - _turn +1).ToString();
+        Menu_Manager.instance.showGameGoal(goalString);
+
+        if(Board_Manager.instance._map._turns < _turn){
             ChangeState(GameState.GameWin);
         }
     }
@@ -251,10 +277,9 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
 
     public void SaveData(ref PlayerData playerData)
     {
-        int addedID = DataPersistanceManager.instance.idTable.getID(Board_Manager.instance.GetRewardCard());
         if(GameWin){
-            Debug.Log(DataPersistanceManager.instance.idTable.getCard(addedID).name + " Added To inventory");
-            playerData._cardInventory.Add(addedID);
+            playerData.AddCardToInventory(Board_Manager.instance.GetRewardCard());
+            playerData.SetEventCompleted(Board_Manager.instance._map.onWinEvent);
         }
     }
 

@@ -44,7 +44,7 @@ MonoBehaviour:
   _leader:
     unit: {fileID: 0}
     loc: {x: 0, y: 3}
-  _survivalTurns: 7
+  _turns: 7
   _spawners:
   - posLocations:
     - {x: 9, y: 0}
@@ -56,3 +56,4 @@ MonoBehaviour:
     unit: {fileID: 11400000, guid: cd3cf4ed434a34b44ab040024539c0a0, type: 2}
     turnsForSpawnToOccur: 1
   reward: {fileID: 11400000, guid: efce00e8f2468224184ebf2fa094fe43, type: 2}
+  onWinEvent: 1

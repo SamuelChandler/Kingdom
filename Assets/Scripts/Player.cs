@@ -80,7 +80,14 @@ public class Player : MonoBehaviour, IDataPersistance
         SetDirection(movement);
 
         if(Keyboard.current.escapeKey.wasPressedThisFrame){
-            _pauseMenu.PauseGame();
+            if (!_pauseMenu.isPaused)
+            {
+                _pauseMenu.PauseGame();
+            }
+            else if (_pauseMenu.isPaused)
+            {
+                _pauseMenu.ContinueGame();
+            }
         }
 
     }

@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject DeckView;
 
     public Deck SelectedDeck;
+    public bool isPaused = false;
 
 
     void Awake(){
@@ -43,12 +44,22 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void PauseGame(){
-        gameObject.SetActive(true);
-        Time.timeScale = 0;
+        if (!isPaused)
+        {
+            isPaused = true;
+            AudioManager.instance.Play("Pause");
+            gameObject.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     public void ContinueGame(){
-        gameObject.SetActive(false);
-        Time.timeScale = 1;
+        if (isPaused)
+        {
+            isPaused = false;
+            AudioManager.instance.Play("UnPause");
+            gameObject.SetActive(false);
+            Time.timeScale = 1;
+        }
     }
 }

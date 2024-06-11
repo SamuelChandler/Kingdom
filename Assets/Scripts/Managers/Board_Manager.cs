@@ -144,6 +144,10 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     public Tile GetTileAtPosition(Tile src, Vector2 offset)
     {
 
+        if(src == null){
+            return null;
+        }
+
         Vector2 position = new Vector2(src.x + offset.x, src.y + offset.y);
 
         if(_tiles.TryGetValue(position, out Tile tile))

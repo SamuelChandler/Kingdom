@@ -1380,12 +1380,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
       propertyPath: sounds.Array.size
+<<<<<<< Updated upstream
       value: 3
+=======
+      value: 2
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
       propertyPath: sounds.Array.data[0].clip
       value: 
+<<<<<<< Updated upstream
       objectReference: {fileID: 8300000, guid: 2f83faf04c49436408796b275d2f14c3, type: 3}
+=======
+      objectReference: {fileID: 8300000, guid: 1ce8fcd2619a6e142b65c90d092f0b17, type: 3}
+>>>>>>> Stashed changes
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
       propertyPath: sounds.Array.data[0].loop
       value: 1
@@ -1407,6 +1415,7 @@ PrefabInstance:
       value: Pause
       objectReference: {fileID: 0}
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
+<<<<<<< Updated upstream
       propertyPath: sounds.Array.data[2].clip
       value: 
       objectReference: {fileID: 8300000, guid: bb2b3ee4f39ba4148bc5d5379e660370, type: 3}
@@ -1415,6 +1424,8 @@ PrefabInstance:
       value: UnPause
       objectReference: {fileID: 0}
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
+=======
+>>>>>>> Stashed changes
       propertyPath: sounds.Array.data[0].pitch
       value: 1
       objectReference: {fileID: 0}
@@ -1423,10 +1434,13 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
+<<<<<<< Updated upstream
       propertyPath: sounds.Array.data[2].pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
+=======
+>>>>>>> Stashed changes
       propertyPath: sounds.Array.data[0].volume
       value: 1
       objectReference: {fileID: 0}
@@ -1434,10 +1448,13 @@ PrefabInstance:
       propertyPath: sounds.Array.data[1].volume
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
       propertyPath: sounds.Array.data[2].volume
       value: 1
       objectReference: {fileID: 0}
+=======
+>>>>>>> Stashed changes
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

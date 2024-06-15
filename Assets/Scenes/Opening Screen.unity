@@ -1380,7 +1380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
       propertyPath: sounds.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
       propertyPath: sounds.Array.data[0].clip
@@ -1407,6 +1407,14 @@ PrefabInstance:
       value: Pause
       objectReference: {fileID: 0}
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: bb2b3ee4f39ba4148bc5d5379e660370, type: 3}
+    - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
+      propertyPath: sounds.Array.data[2].name
+      value: UnPause
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
       propertyPath: sounds.Array.data[0].pitch
       value: 1
       objectReference: {fileID: 0}
@@ -1415,11 +1423,19 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
+      propertyPath: sounds.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
       propertyPath: sounds.Array.data[0].volume
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
       propertyPath: sounds.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
+      propertyPath: sounds.Array.data[2].volume
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

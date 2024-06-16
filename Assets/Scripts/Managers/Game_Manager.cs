@@ -208,6 +208,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
     //called to end the turn of the player
     public void EndPlayerTurn()
     {   
+        Board_Manager.instance.ClearBoardIndicators();
         Board_Manager.instance.ActivateAllyStructureEndOfTurnEffects();
         instance.ChangeState(GameState.EnemiesTurn);
     }

@@ -74,6 +74,7 @@ public class Unit_Manager : MonoBehaviour
         if(C.type == CardType.Unit){
             SelectedHero = Unit_Prefab;
             SelectedHero.unit = (ScriptableUnit)C;
+            Board_Manager.instance.ShowSummonableTiles(C);
             
         }
         

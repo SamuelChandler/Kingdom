@@ -197,6 +197,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
                 summonded_Hero.unit.OnPlay.ActivateEffect(summonded_Hero);
             }
 
+            ClearBoardIndicators();
             Unit_Manager.instance.SelectedHero = null;
             Menu_Manager.instance.CurrentSelectedSelector = null;
         }
@@ -277,6 +278,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
                 summonded_Hero.unit.OnPlay.ActivateEffect(summonded_Hero);
             }
 
+            ClearBoardIndicators();
             Unit_Manager.instance.SelectedHero = null;
             Menu_Manager.instance.CurrentSelectedSelector = null;
         }
@@ -781,6 +783,16 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         }
     }
 
+    //goes through each hero and shows there summonable area tiles
+    public void ShowSummonableTiles(Card card){
+
+
+        foreach(BaseHero hero in _heroes){
+            Debug.Log("Checking" + hero.name);
+            ShowSummonIndicator(hero);
+        }
+    }
+
     public void ShowAttackIndicatorOnly(BaseUnit baseUnit){
         if(!baseUnit.isAbleToAttack){
             return;
@@ -805,6 +817,32 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
                 }
 
             }
+        }
+    }
+
+    // shows the summonable locations surrounding this hero unit
+    public void ShowSummonIndicator(BaseHero hero){
+        for(int i = 1; i >= -1; i--){
+            for(int j = 1; j >= -1; j--){
+
+                Vector2 offset = new Vector2(i,j);
+                Tile cTile = GetTileAtPosition(hero.OccupiedTile,offset);
+
+                if(cTile != null){
+                    if(cTile.OccupiedUnit == null && cTile.OccupiedStructure == null){
+                        cTile.SetMoveIndicator();   
+                    }
+                }
+
+            }
+        }
+    }
+
+    //clears all the indicators on the board
+    public void ClearBoardIndicators(){
+        foreach(Vector2 tLocation in _tiles.Keys){
+            Tile tile = GetTileAtPosition(tLocation);
+            tile.ClearTile();
         }
     }
 

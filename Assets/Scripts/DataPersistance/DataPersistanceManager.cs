@@ -85,6 +85,30 @@ public class DataPersistanceManager : MonoBehaviour
         dataHandler.Save(playerData);
     }
 
+    public void SuperGame(string playerName){
+        foreach(StoryEvent s in _sTracker.events){
+            s.completed = false;
+        }
+
+        playerData = new PlayerData(playerName);
+        playerData._deckContents = new List<int>();
+        playerData._decks = new List<string>();
+        playerData._cardInventory = new List<int>();
+        playerData._storyEventsCompleted = new List<int>();
+
+
+        this.playerData.AddDeck(_starterDeck);
+        this.playerData.AddDeckToInventory(_starterDeck);
+
+        //add all cards to inventory
+        foreach(Card card in idTable.getAllCards()){
+            this.playerData.AddCardToInventory(card);
+        }
+
+        this.playerData.SelectedDeck = _starterDeck.name;
+        playerData.MapLocation = new Vector2(0f,0f);
+    }
+
     private void Start(){
         this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
         this.dataPersistanceObjects = FindAllDataPersistenceObjects();

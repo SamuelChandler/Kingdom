@@ -45,8 +45,7 @@ public class PlayerData
     }
 
     public void AddCardToInventory(Card c){
-        //check if card is already in inventory
-
+        
         int id = DataPersistanceManager.instance.idTable.getID(c);
 
         if(_cardInventory.Contains(id)){

@@ -21,4 +21,8 @@ public class CardIDTable : ScriptableObject
     public Card getCard(int i){
         return IdTable[i];
     }
+
+    public Card[] getAllCards(){
+        return IdTable;
+    }
 }

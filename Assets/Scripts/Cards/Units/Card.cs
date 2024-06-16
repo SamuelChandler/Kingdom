@@ -14,6 +14,7 @@ public class Card : ScriptableObject
     //Cost 
     public int inspirationCost;
 
+    [TextArea(5,10)]
     public string description; 
     public CardType type;
   

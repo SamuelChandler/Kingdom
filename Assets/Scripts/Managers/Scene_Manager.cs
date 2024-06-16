@@ -61,6 +61,12 @@ public class Scene_Manager : MonoBehaviour
         SceneManager.LoadScene(OverWorld);
     }
 
+    public void StartSuperGame(){
+        DataPersistanceManager.instance.SuperGame("NewPlayer");
+        DataPersistanceManager.instance.SaveGame();
+        SceneManager.LoadScene(OverWorld);
+    }
+
     public void goToOverWorldFromDeckBuilder(){
         PlayerPrefs.SetString("FromDeckbuiler","Yes");
         SceneManager.LoadScene(OverWorld);

@@ -14,8 +14,6 @@ public class Player : MonoBehaviour, IDataPersistance
 
     public Rigidbody2D rb;
 
-
-    float movX,movY;
     private Vector2 movement;
 
     [SerializeField]
@@ -46,13 +44,12 @@ public class Player : MonoBehaviour, IDataPersistance
     // Update is called once per frame
     void Update()
     {
-        movX = Input.GetAxisRaw("Horizontal");
-        movY = Input.GetAxisRaw("Vertical");
-        movement = new Vector2(movX,movY);
+        
+        movement = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
 
         //setting animator variables
-        animator.SetFloat("xMovement",movX);
-        animator.SetFloat("yMovement", movY);
+        animator.SetFloat("xMovement",movement.normalized.x);
+        animator.SetFloat("yMovement", movement.y);
         animator.SetFloat("Speed",movement.sqrMagnitude);
 
 

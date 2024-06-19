@@ -9,6 +9,9 @@ public abstract class Tile : MonoBehaviour
 {
     public string tileName;
     [SerializeField] protected SpriteRenderer _renderer;
+
+    [SerializeField] protected Sprite[] _possibleSprites;
+
     [SerializeField] protected GameObject _highlight;
 
     [SerializeField] protected GameObject _attackIndicator;
@@ -26,6 +29,7 @@ public abstract class Tile : MonoBehaviour
         _highlight.SetActive(false);
         _attackIndicator.SetActive(false);
         _moveIndicator.SetActive(false);
+        _renderer.sprite = getRandomSprite();
 
         x = a; y = b;
 
@@ -217,6 +221,11 @@ public abstract class Tile : MonoBehaviour
         if(OccupiedUnit != null){
             Menu_Manager.instance.showUnit(OccupiedUnit.unit);
         }
+    }
+
+    protected Sprite getRandomSprite(){
+        int index = UnityEngine.Random.Range(0,_possibleSprites.Length);
+        return _possibleSprites[index];
     }
 }
 

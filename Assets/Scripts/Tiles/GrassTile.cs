@@ -7,6 +7,8 @@ public class GrassTile : Tile
 
     [SerializeField] private Color _baseColor, _offsetColor;
 
+    
+
 
     public override void Init(int a, int b)
     {
@@ -15,5 +17,9 @@ public class GrassTile : Tile
         _attackIndicator.SetActive(false);
         _moveIndicator.SetActive(false);
 
+        _renderer.sprite = getRandomSprite();
+
     }
+
+
 }

@@ -52,7 +52,7 @@ public class BaseHero : BaseUnit
 
         isAbleToAttack = false;
 
-        enemy.TakeDamage(this.unit.attack);
+        enemy.TakeDamage(this.currentAttack);
   
         return true;
     }
@@ -82,7 +82,7 @@ public class BaseHero : BaseUnit
 
         isAbleToAttack = false;
 
-        enemy.TakeDamage(this.unit.attack);
+        enemy.TakeDamage(this.currentAttack);
   
         return true;
     }

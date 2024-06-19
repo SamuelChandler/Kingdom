@@ -148,6 +148,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Flower
   _renderer: {fileID: 7083851374388391367}
+  _possibleSprites:
+  - {fileID: 3371299827572154641, guid: 815f6abac42476e4cbc5882860926889, type: 3}
+  - {fileID: 3003854788165892750, guid: 815f6abac42476e4cbc5882860926889, type: 3}
+  - {fileID: 8165391071788229832, guid: 815f6abac42476e4cbc5882860926889, type: 3}
+  - {fileID: -5392167762966500256, guid: 815f6abac42476e4cbc5882860926889, type: 3}
+  - {fileID: 8324579692504803210, guid: 815f6abac42476e4cbc5882860926889, type: 3}
+  - {fileID: 7173953775543702484, guid: 815f6abac42476e4cbc5882860926889, type: 3}
+  - {fileID: 6966043469223633217, guid: 815f6abac42476e4cbc5882860926889, type: 3}
+  - {fileID: 2125345705235514382, guid: 815f6abac42476e4cbc5882860926889, type: 3}
   _highlight: {fileID: 898074623937503316}
   _attackIndicator: {fileID: 4117991818530003401}
   _moveIndicator: {fileID: 6777912711963125659}

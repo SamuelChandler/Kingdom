@@ -14,6 +14,8 @@ public class Player : MonoBehaviour, IDataPersistance
 
     public Rigidbody2D rb;
 
+
+    float movX,movY;
     private Vector2 movement;
 
     [SerializeField]
@@ -41,43 +43,18 @@ public class Player : MonoBehaviour, IDataPersistance
         _pauseMenu.ShowDecks(data.SelectedDeck);
     }
 
-    public void SetDirection(Vector2 movmentVector){
-
-        float x = Math.Abs(movmentVector.normalized.x);
-        float y = Math.Abs(movmentVector.normalized.y);
-
-        if(y ==0 && x ==0){
-            animator.SetInteger("GoState",0);
-            return;
-        }
-
-        if(x >= y){
-            if(movmentVector.x > 0){
-                animator.SetInteger("GoState",3);
-                return;
-            }else{
-                animator.SetInteger("GoState",4);
-                return;
-            }
-        }else{
-            if(movmentVector.y > 0){
-                animator.SetInteger("GoState",2);
-                return;
-            }else{
-                animator.SetInteger("GoState",1);
-                return;
-            }
-        }
-
-    }
-
     // Update is called once per frame
     void Update()
     {
+        movX = Input.GetAxisRaw("Horizontal");
+        movY = Input.GetAxisRaw("Vertical");
+        movement = new Vector2(movX,movY);
 
-        movement = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
+        //setting animator variables
+        animator.SetFloat("xMovement",movX);
+        animator.SetFloat("yMovement", movY);
+        animator.SetFloat("Speed",movement.sqrMagnitude);
 
-        SetDirection(movement);
 
         if(Keyboard.current.escapeKey.wasPressedThisFrame){
             if (!_pauseMenu.isPaused)

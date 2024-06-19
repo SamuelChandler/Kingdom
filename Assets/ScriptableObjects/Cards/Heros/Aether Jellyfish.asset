@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Aether Jellyfish
   inspirationCost: 2
   description: 'On Death: Draw a Card'
-  type: 0
+  type: 1
   Faction: 0
   health: 1
   attack: 1

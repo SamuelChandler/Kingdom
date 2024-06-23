@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -65,5 +66,10 @@ public class PauseMenu : MonoBehaviour
             gameObject.SetActive(false);
             Time.timeScale = 1;
         }
+    }
+
+    public void QuitGame(){
+        DataPersistanceManager.instance.SaveGame();
+        Application.Quit();
     }
 }

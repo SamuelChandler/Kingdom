@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -24,6 +26,10 @@ public class Title : MonoBehaviour
         _titletext.GetComponent<TextMeshProUGUI>().text = titletextbox.GetComponent<TMP_InputField>().text;
         DeckBuilder.instance.SetTitle(titletextbox.GetComponent<TMP_InputField>().text);
   
+    }
+
+    public void setTitleDisplay(String title){
+        _titletext.GetComponent<TextMeshProUGUI>().text = title;
     }
     
 }

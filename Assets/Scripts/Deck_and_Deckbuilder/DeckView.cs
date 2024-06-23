@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -66,5 +67,9 @@ public class DeckView : MonoBehaviour
         //set the leader card to the leader entry
         leaderEntry.SetEntry(argCard);
 
+    }
+
+    public void SetTitleDisplay(String titleText){
+        title.setTitleDisplay(titleText);
     }
 }

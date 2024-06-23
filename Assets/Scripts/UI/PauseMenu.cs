@@ -20,6 +20,10 @@ public class PauseMenu : MonoBehaviour
 
     public void ShowDecks(string selectedname){
 
+        if(selectedname == null){
+            selectedname = Player.instance.SelectedDeck.name;
+        }
+
         //set view to active and get the list of decks
         DeckView.SetActive(true);
         List<Deck> decksToShow = Player.instance.data.GetAllDecks();

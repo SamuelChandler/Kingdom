@@ -31,6 +31,10 @@ public class DataPersistanceManager : MonoBehaviour
         }
 
         instance = this;
+
+        this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
+        this.dataPersistanceObjects = FindAllDataPersistenceObjects();
+        LoadGame();
     }
 
     public void NewGame(string playerName){
@@ -107,12 +111,6 @@ public class DataPersistanceManager : MonoBehaviour
 
         this.playerData.SelectedDeck = _starterDeck.name;
         playerData.MapLocation = new Vector2(0f,0f);
-    }
-
-    private void Start(){
-        this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
-        this.dataPersistanceObjects = FindAllDataPersistenceObjects();
-        LoadGame();
     }
 
     private List<IDataPersistance> FindAllDataPersistenceObjects()

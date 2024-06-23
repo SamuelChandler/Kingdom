@@ -82,10 +82,13 @@ public class DeckBuilder : MonoBehaviour,IDataPersistance
         //if deck is new do not populate the deck
         if(deckToBeEdited == null){
             CreateNewDeck();
+            _dWindow.SetTitleDisplay("");
+
         }else{ //else load deck from file and load into editor
             Debug.Log("Deck To Be Edited: " + deckToBeEdited);
             EditExistingDeck(playerData.GetDeck(deckToBeEdited));
             oldDeckName = deckToBeEdited;
+            _dWindow.SetTitleDisplay(deckToBeEdited);
         }
 
         PlayerPrefs.SetString("DeckToBeEdited",null);

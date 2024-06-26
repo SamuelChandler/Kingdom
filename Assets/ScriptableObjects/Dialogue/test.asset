@@ -10,16 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d48c8c2a0043ca140b0459e7a27e30a0, type: 3}
-  m_Name: Bee
+  m_Name: test
   m_EditorClassIdentifier: 
-  Name: Bee
-  _dialog:
-  - Paragraph: BZZZZ
-    isChoice: 0
-    _choiceOne: 
-    _choiceOnePtr: 0
-    _choiceTwo: 
-    _choiceTwoPtr: 0
-    map: {fileID: 0}
+  Name: 
+  Paragraphs: []
+  _choices: []
+  _maps: []
+  endPoints: 
   LastWordsEvent: 0
   LastWords: 

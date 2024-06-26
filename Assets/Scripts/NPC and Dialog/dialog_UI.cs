@@ -16,9 +16,9 @@ public class dialog_UI : MonoBehaviour
     [SerializeField] private float _typeSpeed  = 10f;
 
     //variables used in display Next Paragraph
-    private Queue<string> paragraphs = new Queue<string>();
+    private Queue<DialogSegment> paragraphs = new Queue<DialogSegment>();
     private bool conversationEnded;
-    private string p;
+    private DialogSegment p;
 
     public NPC currentlyTalkingNPC;
 
@@ -38,18 +38,6 @@ public class dialog_UI : MonoBehaviour
         _dialog.SetActive(false);
         _choices.SetActive(false);
     }
-
-    private void FixedUpdate()
-    {
-       
-    }
-    public void displayOneLiner(string name, string text)
-    {
-        _nameText.text = name;
-        typeDialogueCoroutine = StartCoroutine(TypeDialogText(text));
-         
-    }
-    
 
     //displays the next paragraph returns true on new text 
     //being created and false on completeing the previos text 
@@ -75,7 +63,7 @@ public class dialog_UI : MonoBehaviour
         //
         if (!isTyping && !c.Ended)
         {
-            p = dialog.Paragraphs[c.ConversationPointer];
+            p = dialog._dialog[c.ConversationPointer];
 
             typeDialogueCoroutine = StartCoroutine(TypeDialogText(p));
 
@@ -101,9 +89,9 @@ public class dialog_UI : MonoBehaviour
         _nameText.text = dialog.name;
 
         //add dialog text into queue
-        for (int i = 0; i < dialog.Paragraphs.Length; i++)
+        for (int i = 0; i < dialog._dialog.Length; i++)
         {
-            paragraphs.Enqueue(dialog.Paragraphs[i]);
+            paragraphs.Enqueue(dialog._dialog[i]);
         }
 
 
@@ -122,17 +110,17 @@ public class dialog_UI : MonoBehaviour
         _choices.SetActive(false);
     }
 
-    private IEnumerator TypeDialogText(string p)
+    private IEnumerator TypeDialogText(DialogSegment p)
     {
         isTyping = true;
 
         _dialogText.text = "";
 
-        string originalText = p;
+        string originalText = p.Paragraph;
         string displayedText = "";
         int alphaIndex = 0;
 
-        foreach (char x in p.ToCharArray())
+        foreach (char x in originalText.ToCharArray())
         {
             alphaIndex++;
 
@@ -154,7 +142,7 @@ public class dialog_UI : MonoBehaviour
         StopCoroutine(typeDialogueCoroutine);
 
         //finish displaying dialog
-        _dialogText.text = p;
+        _dialogText.text = p.Paragraph;
 
         //update is typing 
         isTyping = false;

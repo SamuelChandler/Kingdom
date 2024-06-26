@@ -6,8 +6,6 @@ public class Fightable_NPC : NPC, ITalkable
 {
     [SerializeField] private DialogText _dialogText;
 
-    private Dictionary<int,choice> choicePoints;
-
     private ConversationStats convoStats;
 
     
@@ -15,15 +13,8 @@ public class Fightable_NPC : NPC, ITalkable
 
     private void Awake(){
         //set convorsation stats
-        convoStats = new ConversationStats(false,true,0,_dialogText.Paragraphs.Length);
-        choicePoints = new Dictionary<int, choice>();
-
-        //add all choices into the choice dictionary
-        foreach (choice item in _dialogText._choices)
-        {
-            choicePoints.Add(item._choicePos, item);
-        }
-
+        convoStats = new ConversationStats(false,true,0,_dialogText._dialog.Length);
+        
         
     }
 
@@ -51,25 +42,33 @@ public class Fightable_NPC : NPC, ITalkable
     {   
 
         if(convoStats.Ended == true){
-            convoStats = new ConversationStats(false,true,0,_dialogText.Paragraphs.Length);
+            convoStats = new ConversationStats(false,true,0,convoStats.DialogLength);
         }
 
         dialog_UI.instance.currentlyTalkingNPC = this;
         convoStats = dialog_UI.instance.DisplayNextParagraph(_dialogText,convoStats);
 
-        //check if the current dialog point is a dialog point
-        if(choicePoints.ContainsKey(convoStats.ConversationPointer) && convoStats.ReadyForNextParagraph){
-            //stop reading 
-            convoStats.ReadyForNextParagraph = false;
-            choice temp = choicePoints[convoStats.ConversationPointer];
-            dialog_UI.instance.DisplayChoices(temp._choiceOne,temp._choiceTwo);
+        //if the convorsation has ended then 
+        if(convoStats.hasConversationEnded()){
+            convoStats.ReadyToEnd = true;
+        }else{
+            //check if the current dialog point is a choice point
+            if(_dialogText._dialog[convoStats.ConversationPointer].isChoice && convoStats.ReadyForNextParagraph){
+                //stop reading 
+                convoStats.ReadyForNextParagraph = false;
+                DialogSegment temp = _dialogText._dialog[convoStats.ConversationPointer];
+                dialog_UI.instance.DisplayChoices(temp._choiceOne,temp._choiceTwo);
+            }
         }
         
+        
+        //if the dialog UI is ready move and display next paragraph
         if(convoStats.ReadyForNextParagraph){
             convoStats.ConversationPointer++;
             convoStats.ReadyForNextParagraph = false;
         }
 
+        //if the convorsation has ended then 
         if(convoStats.hasConversationEnded()){
             convoStats.ReadyToEnd = true;
         }
@@ -80,28 +79,38 @@ public class Fightable_NPC : NPC, ITalkable
         Debug.Log("resolving choice");
 
         if(c){
-            if(choicePoints[convoStats.ConversationPointer]._choiceOneResult > 0){
-                convoStats.ConversationPointer = choicePoints[convoStats.ConversationPointer]._choiceOneResult;
+            if(_dialogText._dialog[convoStats.ConversationPointer]._choiceOnePtr > 0){
+                
+                //if out of dialog bounds the conversation should end
+                if(_dialogText._dialog[convoStats.ConversationPointer]._choiceOnePtr >= _dialogText._dialog.Length){
+                    dialog_UI.instance.EndConversation();
+                }
+
+                convoStats.ConversationPointer = _dialogText._dialog[convoStats.ConversationPointer]._choiceOnePtr;
                 convoStats.ReadyForNextParagraph = true;
                 Talk(_dialogText);
             }else{
-                StartFight(choicePoints[convoStats.ConversationPointer]._choiceOneResult);
+                StartFight(_dialogText._dialog[convoStats.ConversationPointer].map);
             }
         }else{
-            if(choicePoints[convoStats.ConversationPointer]._choiceTwoResult > 0){
-                convoStats.ConversationPointer = choicePoints[convoStats.ConversationPointer]._choiceTwoResult;
+            if(_dialogText._dialog[convoStats.ConversationPointer]._choiceTwoPtr > 0){
+                
+                //if out of dialog bounds the conversation should end
+                if(_dialogText._dialog[convoStats.ConversationPointer]._choiceTwoPtr >= _dialogText._dialog.Length){
+                    dialog_UI.instance.EndConversation();
+                }
+
+                convoStats.ConversationPointer = _dialogText._dialog[convoStats.ConversationPointer]._choiceTwoPtr;
                 convoStats.ReadyForNextParagraph = true;
                 Talk(_dialogText);
             }else{
-                StartFight(choicePoints[convoStats.ConversationPointer]._choiceTwoResult);
+                StartFight(_dialogText._dialog[convoStats.ConversationPointer].map);
             }
         }
     }
 
-    public void StartFight(int BattleNum){
-        Debug.Log(BattleNum * -1);
-        ScriptableMap battleMap = _dialogText._maps[(BattleNum * -1)-1];
-        Scene_Manager.instance.GoToBattle(battleMap);
+    public void StartFight(ScriptableMap map){
+        Scene_Manager.instance.GoToBattle(map);
     }
 
     public override void StopInteracting()
@@ -109,7 +118,7 @@ public class Fightable_NPC : NPC, ITalkable
         if(convoStats.ConversationPointer == 0){return;}
 
         dialog_UI.instance.EndConversation();
-        convoStats = new ConversationStats(false,true,0,_dialogText.Paragraphs.Length);
+        convoStats = new ConversationStats(false,true,0,_dialogText._dialog.Length);
         
     }
 }
@@ -119,7 +128,6 @@ public class ConversationStats{
     public int ConversationPointer;
     public bool ReadyForNextParagraph;
     public int DialogLength;
-
     public bool Ended;
 
     public ConversationStats(bool a, bool b, int c, int d){

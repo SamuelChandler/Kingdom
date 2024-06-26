@@ -9,38 +9,34 @@ public class DialogText : ScriptableObject
 {
     public string Name;
 
-    [TextArea(5,10)]
-    public string[] Paragraphs;
-
-    public choice[] _choices;
-
-    [SerializeField] public ScriptableMap[] _maps;
-
-    [SerializeField] public int[] endPoints;
+    public DialogSegment[] _dialog;
 
     [SerializeField] public int LastWordsEvent;
 
     [TextArea(5,10)]
     [SerializeField] public string LastWords;
 
-
-
 }
 
 [Serializable]
-public class choice{
+public class DialogSegment{
 
-    //the location of the choice in dialog
-    public int _choicePos;
+    [TextArea(5,10)]
+    public String Paragraph;
+
+    //determines if there is a choice in this segment of dialog
+    public bool isChoice;
 
     //2 choices that can be chosen
     public string _choiceOne;
 
     //for result 0 will do nothing and on -1 a fight will be initiated
-    public int _choiceOneResult;
+    public int _choiceOnePtr;
 
     public string _choiceTwo;
 
-    public int _choiceTwoResult;
+    public int _choiceTwoPtr;
+
+    public ScriptableMap map;
 
 }

@@ -13,18 +13,20 @@ MonoBehaviour:
   m_Name: Boar
   m_EditorClassIdentifier: 
   Name: Boar
-  Paragraphs:
-  - The boar notices your presence
-  - The Boar takes a step forward
-  - You Run Away from the Boar
-  _choices:
-  - _choicePos: 1
-    _choiceOne: Run
-    _choiceOneResult: 2
-    _choiceTwo: 'Calm The Boar '
-    _choiceTwoResult: -1
-  _maps:
-  - {fileID: 11400000, guid: 17d26cda3753ffd4b875fbef40c9fbca, type: 2}
-  endPoints: 02000000
+  _dialog:
+  - Paragraph: A boar runs at you
+    isChoice: 0
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
+  - Paragraph: 'What do you do? '
+    isChoice: 1
+    _choiceOne: Fight
+    _choiceOnePtr: 3
+    _choiceTwo: Run
+    _choiceTwoPtr: -1
+    map: {fileID: 11400000, guid: 17d26cda3753ffd4b875fbef40c9fbca, type: 2}
   LastWordsEvent: 1
   LastWords: 

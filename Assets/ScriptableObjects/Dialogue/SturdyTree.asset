@@ -12,18 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48c8c2a0043ca140b0459e7a27e30a0, type: 3}
   m_Name: SturdyTree
   m_EditorClassIdentifier: 
-  Name: 
-  Paragraphs:
-  - The Tree Stands Tall and unwaivering
-  - You Leave The Tree Alone for now
-  _choices:
-  - _choicePos: 0
-    _choiceOne: Attempt to remove the tree
-    _choiceOneResult: -1
-    _choiceTwo: Flee from the tree
-    _choiceTwoResult: 1
-  _maps:
-  - {fileID: 11400000, guid: 0629a2711f4450a49b752c88f546779b, type: 2}
-  endPoints: 
+  Name: Tree
+  _dialog:
+  - Paragraph: Tree
+    isChoice: 0
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
   LastWordsEvent: 2
   LastWords: 

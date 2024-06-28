@@ -11,12 +11,13 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject DeckView;
 
     public Deck SelectedDeck;
-    public bool isPaused = false;
+    public bool isPaused;
 
 
     void Awake(){
         gameObject.SetActive(false);
         DeckView.SetActive(false);
+        isPaused = false;
     }
 
     public void ShowDecks(string selectedname){

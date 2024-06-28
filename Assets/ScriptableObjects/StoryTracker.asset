@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   events:
   - completed: 0
+    desc: Defualt Never Complete
+  - completed: 0
     desc: Defeated Hivemind battle
   - completed: 0
     desc: 'Defeated Boar fight '

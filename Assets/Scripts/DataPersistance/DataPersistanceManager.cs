@@ -78,6 +78,7 @@ public class DataPersistanceManager : MonoBehaviour
 
         foreach(int i in _sTracker.GetEventState()){
             playerData.SetEventCompleted(i);
+            Debug.Log(i);
         }
 
         //TD pass data to other scripts so they can update it

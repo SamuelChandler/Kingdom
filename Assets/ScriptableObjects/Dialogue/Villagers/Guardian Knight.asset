@@ -13,13 +13,43 @@ MonoBehaviour:
   m_Name: Guardian Knight
   m_EditorClassIdentifier: 
   Name: Guardian Knight
-  Paragraphs:
-  - Welcome
-  - Have you come to challange the Tower?
-  - 'You''ve come to the right place '
-  - Procede further if you wish to test your mettle!
-  _choices: []
-  _maps: []
-  endPoints: 
+  _dialog:
+  - Paragraph: So You Wish to enter the Wizard Trial Ayyyyyy
+    isChoice: 0
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
+  - Paragraph: Well you seem to be missing a familiar
+    isChoice: 0
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
+  - Paragraph: You should really get one if you want to do well in the exam
+    isChoice: 0
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
+  - Paragraph: 'Lucky for you there is a trader that came into town recently with
+      familiars available for sale '
+    isChoice: 0
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
+  - Paragraph: Hes just north of here you should talk to him before attempting the
+      exam
+    isChoice: 0
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
   LastWordsEvent: 0
   LastWords: 

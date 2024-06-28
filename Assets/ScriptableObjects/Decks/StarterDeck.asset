@@ -33,4 +33,4 @@ MonoBehaviour:
     amount: 2
   - card: {fileID: 11400000, guid: 85e2d3eb799647e48ac2d14999bb269d, type: 2}
     amount: 2
-  DeckName: Starter
+  DeckName: StarterDeck

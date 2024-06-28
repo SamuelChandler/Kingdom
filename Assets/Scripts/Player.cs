@@ -38,7 +38,7 @@ public class Player : MonoBehaviour, IDataPersistance
     public void SetSelectedDeck(Deck d){
         SelectedDeck = d;
         data.SelectedDeck = d.name;
-        _pauseMenu.ShowDecks(data.SelectedDeck);
+        _pauseMenu.ShowDecks(d.name);
     }
 
     // Update is called once per frame
@@ -84,7 +84,7 @@ public class Player : MonoBehaviour, IDataPersistance
         PlayerName = playerData.PlayerName;
 
         if(PlayerPrefs.GetString("FromDeckbuiler") == "Yes"){
-            _pauseMenu.PauseGame();
+            //_pauseMenu.PauseGame();
             _pauseMenu.ShowDecks(data.SelectedDeck);
             PlayerPrefs.SetString("FromDeckbuiler","No");
         }

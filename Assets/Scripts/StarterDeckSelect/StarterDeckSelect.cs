@@ -2,19 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
+
 
 public class StarterDeckSelect : MonoBehaviour
 {   
     //starter decks
-    [SerializeField]
-    public Deck windDeck;
+    public ScriptableDeck windDeck;
+    public ScriptableDeck plantDeck;
+    public ScriptableDeck fireDeck;
 
-    [SerializeField]
-    protected Deck plantDeck;
+    public ScriptableDeck SelectedDeck;
 
-    [SerializeField]
-    protected Deck FireDeck;
+    public Color greyedColor;
+    public Color ActiveColor;
 
     //selection indicators for the decks
     [SerializeField]
@@ -28,4 +29,34 @@ public class StarterDeckSelect : MonoBehaviour
 
     [SerializeField]
     protected Button continueButton;
+
+    public void Start(){
+        GreyOutContinueButton();
+    }
+
+    public void SelectWindDeck(){
+        SelectedDeck = windDeck;
+        ActivateContinueButton();
+        
+    }
+
+    public void SelectPlantDeck(){
+        SelectedDeck = plantDeck;
+        ActivateContinueButton();
+    }
+
+    public void SelectFireDeck(){
+        SelectedDeck = fireDeck;
+        ActivateContinueButton();
+    }
+
+    public void GreyOutContinueButton(){
+        continueButton.interactable = false;
+        continueButton.GetComponent<Image>().color = greyedColor;
+    }
+
+    public void ActivateContinueButton(){
+        continueButton.interactable = true;
+        continueButton.GetComponent<Image>().color = ActiveColor;
+    }
 }

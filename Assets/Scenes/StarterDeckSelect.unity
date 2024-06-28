@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 157263828}
   - component: {fileID: 157263827}
   - component: {fileID: 157263826}
+  - component: {fileID: 157263829}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -215,6 +216,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &157263829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157263825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1 &288700564
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +461,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 543615548}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2092655352}
+        m_TargetAssemblyTypeName: StarterDeckSelect, Assembly-CSharp
+        m_MethodName: SelectWindDeck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &543615548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,7 +669,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 682692172}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2092655352}
+        m_TargetAssemblyTypeName: StarterDeckSelect, Assembly-CSharp
+        m_MethodName: SelectPlantDeck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &682692172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1108,7 +1177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1706,7 +1775,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2032467017}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2092655352}
+        m_TargetAssemblyTypeName: StarterDeckSelect, Assembly-CSharp
+        m_MethodName: SelectFireDeck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2032467017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1835,6 +1916,7 @@ GameObject:
   - component: {fileID: 2092655350}
   - component: {fileID: 2092655349}
   - component: {fileID: 2092655348}
+  - component: {fileID: 2092655352}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1928,6 +2010,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2092655352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092655347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6cdcb0e93515c3439bb75c89eb785d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  windDeck: {fileID: 11400000, guid: 12b9aa279d1f3ab42bb03e074dfd90e5, type: 2}
+  plantDeck: {fileID: 11400000, guid: a0ab1c7305b41cd41a81a1ee32557861, type: 2}
+  fireDeck: {fileID: 11400000, guid: 4af01a5cd9f2c624982aff291c44403b, type: 2}
+  SelectedDeck: {fileID: 0}
+  greyedColor: {r: 0.3584906, g: 0.33988965, b: 0.33988965, a: 0}
+  ActiveColor: {r: 0.18431373, g: 0.47450984, b: 0.227451, a: 1}
+  Wind_Selector: {fileID: 964593520}
+  Plant_Selector: {fileID: 735756767}
+  Fire_Selector: {fileID: 555238589}
+  continueButton: {fileID: 1269311162}
 --- !u!1 &2130640748
 GameObject:
   m_ObjectHideFlags: 0

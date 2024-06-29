@@ -71,8 +71,4 @@ public class Scene_Manager : MonoBehaviour
         PlayerPrefs.SetString("FromDeckbuiler","Yes");
         SceneManager.LoadScene(OverWorld);
     }
-
-
-
-    
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -32,22 +33,39 @@ public class StarterDeckSelect : MonoBehaviour
 
     public void Start(){
         GreyOutContinueButton();
+
+        Wind_Selector.color = Color.clear;
+        Plant_Selector.color = Color.clear;
+        Fire_Selector.color = Color.clear;
+
     }
 
     public void SelectWindDeck(){
         SelectedDeck = windDeck;
         ActivateContinueButton();
+
+        Wind_Selector.color = Color.white;
+        Plant_Selector.color = Color.clear;
+        Fire_Selector.color = Color.clear;
         
     }
 
     public void SelectPlantDeck(){
         SelectedDeck = plantDeck;
         ActivateContinueButton();
+
+        Wind_Selector.color = Color.clear;
+        Plant_Selector.color = Color.white;
+        Fire_Selector.color = Color.clear;
     }
 
     public void SelectFireDeck(){
         SelectedDeck = fireDeck;
         ActivateContinueButton();
+
+        Wind_Selector.color = Color.clear;
+        Plant_Selector.color = Color.clear;
+        Fire_Selector.color = Color.white;
     }
 
     public void GreyOutContinueButton(){
@@ -58,5 +76,11 @@ public class StarterDeckSelect : MonoBehaviour
     public void ActivateContinueButton(){
         continueButton.interactable = true;
         continueButton.GetComponent<Image>().color = ActiveColor;
+    }
+
+    public void Continue(){
+        DataPersistanceManager.instance.playerData.AddStarterDeck(SelectedDeck);
+        DataPersistanceManager.instance.SaveGame();
+        Scene_Manager.instance.GoToOverworld();
     }
 }

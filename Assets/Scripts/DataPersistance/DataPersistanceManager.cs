@@ -13,7 +13,7 @@ public class DataPersistanceManager : MonoBehaviour
     [SerializeField] public MapIDTable mapIDTable;
     [SerializeField] public StoryTracker _sTracker;
 
-    private PlayerData playerData;
+    public PlayerData playerData;
 
     private List<IDataPersistance> dataPersistanceObjects;
     public ScriptableDeck _starterDeck;

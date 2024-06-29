@@ -17,6 +17,8 @@ public class Scene_Manager : MonoBehaviour
 
     private int Deck_Builder_index = 4;
 
+    private int StarterSelect = 5;
+
     public static Scene_Manager instance;
 
 
@@ -70,5 +72,10 @@ public class Scene_Manager : MonoBehaviour
     public void goToOverWorldFromDeckBuilder(){
         PlayerPrefs.SetString("FromDeckbuiler","Yes");
         SceneManager.LoadScene(OverWorld);
+    }
+
+    public void GoToStarterSelect(){
+        DataPersistanceManager.instance.SaveGame();
+        SceneManager.LoadScene(StarterSelect);
     }
 }

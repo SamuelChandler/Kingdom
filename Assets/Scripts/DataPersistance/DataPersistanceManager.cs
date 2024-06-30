@@ -78,7 +78,7 @@ public class DataPersistanceManager : MonoBehaviour
 
         foreach(int i in _sTracker.GetEventState()){
             playerData.SetEventCompleted(i);
-            Debug.Log(i);
+            //Debug.Log(i);
         }
 
         //TD pass data to other scripts so they can update it
@@ -112,6 +112,16 @@ public class DataPersistanceManager : MonoBehaviour
 
         this.playerData.SelectedDeck = _starterDeck.name;
         playerData.MapLocation = new Vector2(0f,0f);
+    }
+
+    public void SetEventCompleted(int i, bool b){
+
+        if(_sTracker.events.Length < i){
+            Debug.Log("Event Not in Table");
+            return;
+        }
+
+        _sTracker.events[i].completed = b;
     }
 
     private List<IDataPersistance> FindAllDataPersistenceObjects()

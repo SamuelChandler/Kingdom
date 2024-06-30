@@ -21,3 +21,5 @@ MonoBehaviour:
     desc: 'Defeated Boar fight '
   - completed: 0
     desc: Defeated Sturdy Tree
+  - completed: 0
+    desc: Starter Has Been Selected

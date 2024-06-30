@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DeckBuilder.unity
     guid: 0d3d30db59ebb20409064c2960fdc70b
+  - enabled: 1
+    path: Assets/Scenes/StarterDeckSelect.unity
+    guid: ac074f973aba67846aa41b72c1ff8662
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 1b810d138ee9a3d4aa449494eb590dc2, type: 2}

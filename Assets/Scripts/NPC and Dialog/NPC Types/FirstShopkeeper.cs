@@ -21,8 +21,17 @@ public class FirstShopkeeper : NPC, ITalkable
 
 
     public override void Interact()
-    {
-        Talk(_dialogText);
+    {   
+        if(convoStats.ConversationPointer == 0){
+            //change the dialog to the appropriate text based on game events
+            List<int>eventList = new List<int>();
+            eventList = DataPersistanceManager.instance._sTracker.GetEventState();
+            _dialogText = _dialogText.getNextDialogText(eventList);
+            convoStats = new ConversationStats(false,true,0,_dialogText._dialog.Length);
+        }
+        
+
+        Talk();
     }
 
     public override void ResolveChoice(bool c)
@@ -39,7 +48,7 @@ public class FirstShopkeeper : NPC, ITalkable
 
                 convoStats.ConversationPointer = _dialogText._dialog[convoStats.ConversationPointer]._choiceOnePtr;
                 convoStats.ReadyForNextParagraph = true;
-                Talk(_dialogText);
+                Talk();
             }else if(_dialogText._dialog[convoStats.ConversationPointer]._choiceOnePtr == -1){
                 Scene_Manager.instance.GoToStarterSelect();
             }else{
@@ -55,7 +64,7 @@ public class FirstShopkeeper : NPC, ITalkable
 
                 convoStats.ConversationPointer = _dialogText._dialog[convoStats.ConversationPointer]._choiceTwoPtr;
                 convoStats.ReadyForNextParagraph = true;
-                Talk(_dialogText);
+                Talk();
             }else if(_dialogText._dialog[convoStats.ConversationPointer]._choiceOnePtr == -1){
                 Scene_Manager.instance.GoToStarterSelect();
             }else{
@@ -72,8 +81,9 @@ public class FirstShopkeeper : NPC, ITalkable
         convoStats = new ConversationStats(false,true,0,_dialogText._dialog.Length);
     }
 
-    public void Talk(DialogText dialogText)
+    public void Talk()
     {
+
         if(convoStats.Ended == true){
             convoStats = new ConversationStats(false,true,0,convoStats.DialogLength);
         }

@@ -16,6 +16,22 @@ public class DialogText : ScriptableObject
     [TextArea(5,10)]
     [SerializeField] public string LastWords;
 
+    public NextDialog[] nextDialogs;
+
+    public DialogText getNextDialogText(List<int> events){
+
+        if(nextDialogs.Length == 0){
+            return this;
+        }
+
+        foreach(NextDialog nextDialog in nextDialogs){
+            if(events.Contains(nextDialog.eventId)){
+                return nextDialog.targetDialogItem.getNextDialogText(events);
+            }
+        }
+
+        return this;
+    }
 }
 
 [Serializable]
@@ -39,4 +55,10 @@ public class DialogSegment{
 
     public ScriptableMap map;
 
+}
+
+[Serializable]
+public class NextDialog{
+    public DialogText targetDialogItem;
+    public int eventId;
 }

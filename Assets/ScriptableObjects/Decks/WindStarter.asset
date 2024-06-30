@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44d2933f923a6e94da11a1984a9a6f63, type: 3}
-  m_Name: StarterDeck
+  m_Name: WindStarter
   m_EditorClassIdentifier: 
   deck:
   - card: {fileID: 11400000, guid: 2cd9a42261fbab34e93e4469e518a4ee, type: 2}

@@ -43,6 +43,23 @@ public class PlayerData
         }
     }
 
+    public void AddStarterDeck(ScriptableDeck d){
+        foreach(CardAndAmount c in d.deck){
+            for(int i = 0; i < c.amount; i++){
+                _deckContents.Add(DataPersistanceManager.instance.idTable.getID(c.card));
+                _decks.Add(d.name);
+            }
+
+            if(!(InIventory(c.card))){
+                AddCardToInventory(c.card);
+            }
+        }
+
+        if(SelectedDeck == null){
+            SelectedDeck = d.name;
+        }
+    }
+
     public void AddCardToInventory(Card c){
         
         int id = DataPersistanceManager.instance.idTable.getID(c);
@@ -160,5 +177,12 @@ public class PlayerData
         return res;
     }
 
-
+    public bool InIventory(Card c){
+        foreach(int i in _cardInventory){
+            if(c == DataPersistanceManager.instance.idTable.getCard(i)){
+                return true;
+            }
+        }
+        return false;
+    }
 }

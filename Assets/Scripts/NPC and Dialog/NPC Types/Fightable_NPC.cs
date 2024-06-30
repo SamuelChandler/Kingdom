@@ -8,9 +8,6 @@ public class Fightable_NPC : NPC, ITalkable
 
     private ConversationStats convoStats;
 
-    
-
-
     private void Awake(){
         //set convorsation stats
         convoStats = new ConversationStats(false,true,0,_dialogText._dialog.Length);
@@ -21,16 +18,20 @@ public class Fightable_NPC : NPC, ITalkable
     new void Update()
     {
         base.Update();
-
-        if(DataPersistanceManager.instance._sTracker.events[_dialogText.LastWordsEvent].completed){
-            LastWords();
-        }
     }
 
 
     public override void Interact()
-    {
-        Talk(_dialogText);
+    {   
+        if(convoStats.ConversationPointer == 0){
+            //change the dialog to the appropriate text based on game events
+            List<int>eventList = new List<int>();
+            eventList = DataPersistanceManager.instance._sTracker.GetEventState();
+            _dialogText = _dialogText.getNextDialogText(eventList);
+            convoStats = new ConversationStats(false,true,0,_dialogText._dialog.Length);
+        }
+
+        Talk();
     }
 
     public void LastWords(){
@@ -38,8 +39,8 @@ public class Fightable_NPC : NPC, ITalkable
         Destroy(gameObject);
     }
 
-    public void Talk(DialogText dialogText)
-    {   
+    public void Talk()
+    {
 
         if(convoStats.Ended == true){
             convoStats = new ConversationStats(false,true,0,convoStats.DialogLength);
@@ -84,11 +85,12 @@ public class Fightable_NPC : NPC, ITalkable
                 //if out of dialog bounds the conversation should end
                 if(_dialogText._dialog[convoStats.ConversationPointer]._choiceOnePtr >= _dialogText._dialog.Length){
                     dialog_UI.instance.EndConversation();
+                    return;
                 }
 
                 convoStats.ConversationPointer = _dialogText._dialog[convoStats.ConversationPointer]._choiceOnePtr;
                 convoStats.ReadyForNextParagraph = true;
-                Talk(_dialogText);
+                Talk();
             }else{
                 StartFight(_dialogText._dialog[convoStats.ConversationPointer].map);
             }
@@ -98,11 +100,12 @@ public class Fightable_NPC : NPC, ITalkable
                 //if out of dialog bounds the conversation should end
                 if(_dialogText._dialog[convoStats.ConversationPointer]._choiceTwoPtr >= _dialogText._dialog.Length){
                     dialog_UI.instance.EndConversation();
+                    return;
                 }
 
                 convoStats.ConversationPointer = _dialogText._dialog[convoStats.ConversationPointer]._choiceTwoPtr;
                 convoStats.ReadyForNextParagraph = true;
-                Talk(_dialogText);
+                Talk();
             }else{
                 StartFight(_dialogText._dialog[convoStats.ConversationPointer].map);
             }

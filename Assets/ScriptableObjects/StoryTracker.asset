@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   events:
   - completed: 0
+    desc: Defualt Never Complete
+  - completed: 0
     desc: Defeated Hivemind battle
   - completed: 0
     desc: 'Defeated Boar fight '
   - completed: 0
     desc: Defeated Sturdy Tree
+  - completed: 0
+    desc: Starter Has Been Selected

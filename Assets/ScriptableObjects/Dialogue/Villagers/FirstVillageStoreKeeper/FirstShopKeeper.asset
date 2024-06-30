@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48c8c2a0043ca140b0459e7a27e30a0, type: 3}
+  m_Name: FirstShopKeeper
+  m_EditorClassIdentifier: 
+  Name: Shop Keeper
+  _dialog:
+  - Paragraph: Afternoon Welcome to my shop what can I do for you today?
+    isChoice: 1
+    _choiceOne: Familiars
+    _choiceOnePtr: -1
+    _choiceTwo: Nothing
+    _choiceTwoPtr: 1
+    map: {fileID: 0}
+  - Paragraph: Sure thing come by whenever you want to stop window shopping
+    isChoice: 0
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
+  LastWordsEvent: 0
+  LastWords: 
+  nextDialogs:
+  - targetDialogItem: {fileID: 11400000, guid: 037d40c5b4a8d95498f36da265d876fd, type: 2}
+    eventId: 4

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-[System.Serializable]
+[Serializable]
 [CreateAssetMenu(fileName = "New Map", menuName = "Scriptable Map/Map")]
 public class ScriptableMap : ScriptableObject
 {

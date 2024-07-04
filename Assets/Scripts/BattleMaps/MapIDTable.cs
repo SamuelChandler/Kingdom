@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[CreateAssetMenu(fileName = "MapIDTable",menuName = "Scriptable Map/IdTable")]
+[CreateAssetMenu(fileName = "MapIdTable",menuName = "Scriptable Map/IdTable")]
 public class MapIDTable : ScriptableObject
 {
     [SerializeField] ScriptableMap[] IdTable;

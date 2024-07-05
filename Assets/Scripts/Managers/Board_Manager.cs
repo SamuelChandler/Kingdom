@@ -786,9 +786,8 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     //goes through each hero and shows there summonable area tiles
     public void ShowSummonableTiles(Card card){
 
-
         foreach(BaseHero hero in _heroes){
-            Debug.Log("Checking" + hero.name);
+            //Debug.Log("Checking" + hero.name);
             ShowSummonIndicator(hero);
         }
     }

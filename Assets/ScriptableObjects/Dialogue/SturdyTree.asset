@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48c8c2a0043ca140b0459e7a27e30a0, type: 3}
   m_Name: SturdyTree
   m_EditorClassIdentifier: 
-  Name: Tree
+  Name: Sturdy Tree
   _dialog:
-  - Paragraph: Tree
-    isChoice: 0
-    _choiceOne: 
-    _choiceOnePtr: 0
-    _choiceTwo: 
-    _choiceTwoPtr: 0
-    map: {fileID: 0}
+  - Paragraph: The Tree Stands Unwaivering in Opposition of the People
+    isChoice: 1
+    _choiceOne: 'Take it Down '
+    _choiceOnePtr: -1
+    _choiceTwo: Leave it Alone
+    _choiceTwoPtr: 2
+    map: {fileID: 11400000, guid: 0629a2711f4450a49b752c88f546779b, type: 2}
   LastWordsEvent: 2
   LastWords: 
+  nextDialogs: []

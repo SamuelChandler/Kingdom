@@ -49,7 +49,7 @@ public class BaseUnit : MonoBehaviour
         attack.text = unit.attack.ToString();
         health.text = currentHealth.ToString();
 
-        Event_Manager.OnRefresh += Refresh;
+        
 
     }
 

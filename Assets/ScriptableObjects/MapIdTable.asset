@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6af81173c1487f844820dc2679d1b937, type: 3}
   m_Name: MapIdTable
   m_EditorClassIdentifier: 
-  IdTable: []
+  IdTable:
+  - {fileID: 11400000, guid: 17d26cda3753ffd4b875fbef40c9fbca, type: 2}
+  - {fileID: 11400000, guid: c618d6a595ac3fe4a8f779ca35b8f8b4, type: 2}
+  - {fileID: 11400000, guid: 0629a2711f4450a49b752c88f546779b, type: 2}

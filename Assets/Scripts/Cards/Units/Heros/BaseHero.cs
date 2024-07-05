@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class BaseHero : BaseUnit
 {
+
+    public override void Awake(){
+        base.Awake();
+        Event_Manager.OnRefresh += Refresh;
+    }
+
     public bool Attack(BaseEnemy enemy)
     {
         if (enemy == null||!this.isAbleToAttack) return false;
@@ -96,4 +102,15 @@ public class BaseHero : BaseUnit
         Board_Manager.instance.RemoveHero(this);
     }
 
+    void Refresh()
+    {
+        isAbleToMove=true;
+        isAbleToAttack=true;
+        turnCounter++;
+
+        if(unit.OnStartOfTurn != null){
+            unit.OnStartOfTurn.ActivateEffect(this);
+        }
+        
+    }
 }

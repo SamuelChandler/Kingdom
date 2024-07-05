@@ -15,6 +15,11 @@ public class BaseEnemy : BaseUnit
     }
 
     public void Refresh(){
+        
+        isAbleToMove=true;
+        isAbleToAttack=true;
+        turnCounter++;
+
         if(unit.OnStartOfTurn != null){
             unit.OnStartOfTurn.ActivateEffect(this);
         }

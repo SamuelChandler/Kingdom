@@ -5,6 +5,7 @@ using UnityEngine;
 public class NeutralStructure : Structure
 {
     public override void removeStructure(){
+        ClearBuff();
         Board_Manager.instance.removeNeutralStructure(this);
     }
 }

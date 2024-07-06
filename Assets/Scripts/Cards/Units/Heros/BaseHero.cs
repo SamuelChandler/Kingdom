@@ -8,6 +8,9 @@ public class BaseHero : BaseUnit
     public override void Awake(){
         base.Awake();
         Event_Manager.OnRefresh += Refresh;
+        
+        currentAttack += Board_Manager.instance.allyAttackBuff;
+        UpdateAttackAndHealthDisplay();
     }
 
     public bool Attack(BaseEnemy enemy)

@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d0ae76b5a4512e488865136dbaecdf2, type: 3}
-  m_Name: GroveGuardian
+  m_Name: ThunderBull
   m_EditorClassIdentifier: 
-  image: {fileID: -6778875974583490539, guid: 27bf6eab009353742800c7152c2eb269, type: 3}
-  name: Grove Guadian
-  inspirationCost: 3
-  description: 'Start of Turn: get +1/+1'
+  image: {fileID: -883040627351765446, guid: 0a57602b31b642945a00d244c6d08594, type: 3}
+  name: Thunder Bull
+  inspirationCost: 5
+  description: Swift
   type: 1
-  Faction: 1
-  health: 4
-  attack: 4
+  Faction: 0
+  health: 2
+  attack: 6
   speed: 2
   _leader: 0
-  _swift: 0
+  _swift: 1
   OnDeath: {fileID: 0}
   OnPlay: {fileID: 0}
   OnAttack: {fileID: 0}
   OnEndTurn: {fileID: 0}
-  OnStartOfTurn: {fileID: 11400000, guid: 71a9e8f791ca4e7488469fa13c75d23f, type: 2}
+  OnStartOfTurn: {fileID: 0}

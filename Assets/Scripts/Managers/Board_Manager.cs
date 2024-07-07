@@ -32,8 +32,8 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     public List<BaseHero> _heroes = new List<BaseHero>();
     public List<BaseEnemy> _enemies = new List<BaseEnemy>();
     public List<Structure> _AllyStructures = new List<Structure>();
-    private List<Structure> _EnemyStructures = new List<Structure>();
-    private List<Structure> _NeutralStructures = new List<Structure>();
+    public List<Structure> _EnemyStructures = new List<Structure>();
+    public List<Structure> _NeutralStructures = new List<Structure>();
 
     public int allyAttackBuff;
     public int enemyAttackBuff;
@@ -525,6 +525,12 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
         //remove movment token
         unit.isAbleToMove = false;
+
+        //Activate movment Effect
+        if(unit.unit.afterMoving != null){
+            unit.unit.afterMoving.ActivateEffect(unit);
+        }
+        
     }
 
     public List<BaseHero> getHerosInCircleArea(Vector2 pos, int radius)

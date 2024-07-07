@@ -29,6 +29,8 @@ public class ScriptableUnit : Card
 
     public Effect OnStartOfTurn;
 
+    public Effect afterMoving;
+
     
 }
 

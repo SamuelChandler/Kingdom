@@ -32,6 +32,8 @@ public class Structure : MonoBehaviour
         health.text = currentHealth.ToString();
         turnCounter = 0;
 
+        SetBuffs();
+
         Event_Manager.OnRefresh += Refresh;
     }
 
@@ -52,6 +54,35 @@ public class Structure : MonoBehaviour
 
     public void UpdateHealthDisplay(){
         health.text = currentHealth.ToString();
+    }
+
+    public void SetBuffs(){
+        if(_structure.Faction == Faction.Hero){
+            Board_Manager.instance.allyAttackBuff += _structure.allyAttackBoost;
+        }
+        else if(_structure.Faction == Faction.Enemy){
+            Board_Manager.instance.enemyAttackBuff += _structure.allyAttackBoost;
+        }else{
+            Board_Manager.instance.allyAttackBuff += _structure.allyAttackBoost;
+            Board_Manager.instance.enemyAttackBuff += _structure.allyAttackBoost;
+        }
+        Board_Manager.instance.ClearFieldBuffs();
+        Board_Manager.instance.ApplyFieldBuffs();
+    }
+
+    public void ClearBuff(){
+        if(_structure.Faction == Faction.Hero){
+            Board_Manager.instance.allyAttackBuff -= _structure.allyAttackBoost;
+        }
+        else if(_structure.Faction == Faction.Enemy){
+            Board_Manager.instance.enemyAttackBuff -= _structure.allyAttackBoost;
+        }else{
+            Board_Manager.instance.allyAttackBuff -= _structure.allyAttackBoost;
+            Board_Manager.instance.enemyAttackBuff -= _structure.allyAttackBoost;
+        }
+
+        Board_Manager.instance.ClearFieldBuffs();
+        Board_Manager.instance.ApplyFieldBuffs();
     }
 
     public void TakeDamage(int d){
@@ -75,6 +106,8 @@ public class Structure : MonoBehaviour
 
         }
     }
+
+    
 
     public virtual void removeStructure(){}
 

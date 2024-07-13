@@ -32,12 +32,20 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     public List<BaseHero> _heroes = new List<BaseHero>();
     public List<BaseEnemy> _enemies = new List<BaseEnemy>();
     public List<Structure> _AllyStructures = new List<Structure>();
-    private List<Structure> _EnemyStructures = new List<Structure>();
-    private List<Structure> _NeutralStructures = new List<Structure>();
+    public List<Structure> _EnemyStructures = new List<Structure>();
+    public List<Structure> _NeutralStructures = new List<Structure>();
+
+    public int allyAttackBuff;
+    public int enemyAttackBuff;
+
 
     private void Awake()
     {
         instance = this;
+
+        //clear field buffs
+        allyAttackBuff = 0;
+        enemyAttackBuff = 0;
     }
 
     //generates grid for the game , creates tiles 
@@ -517,6 +525,12 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
         //remove movment token
         unit.isAbleToMove = false;
+
+        //Activate movment Effect
+        if(unit.unit.afterMoving != null){
+            unit.unit.afterMoving.ActivateEffect(unit);
+        }
+        
     }
 
     public List<BaseHero> getHerosInCircleArea(Vector2 pos, int radius)
@@ -786,9 +800,8 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     //goes through each hero and shows there summonable area tiles
     public void ShowSummonableTiles(Card card){
 
-
         foreach(BaseHero hero in _heroes){
-            Debug.Log("Checking" + hero.name);
+            //Debug.Log("Checking" + hero.name);
             ShowSummonIndicator(hero);
         }
     }
@@ -869,6 +882,32 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             
         }
     }
+
+    public void ApplyFieldBuffs(){
+        foreach(BaseHero bh in _heroes){
+            bh.currentAttack += allyAttackBuff;
+            bh.UpdateAttackAndHealthDisplay();
+        }
+
+        foreach(BaseEnemy be in _enemies){
+            be.currentAttack += enemyAttackBuff;
+            be.UpdateAttackAndHealthDisplay();
+        }
+    }
+
+    public void ClearFieldBuffs(){
+        foreach(BaseHero bh in _heroes){
+            bh.currentAttack = bh.unit.attack;
+            bh.UpdateAttackAndHealthDisplay();
+        }
+
+        foreach(BaseEnemy be in _enemies){
+            be.currentAttack = be.unit.attack;
+            be.UpdateAttackAndHealthDisplay();
+        }
+    }
+
+
 
 
     public Card GetRewardCard(){

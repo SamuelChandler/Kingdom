@@ -15,22 +15,18 @@ MonoBehaviour:
   deck:
   - card: {fileID: 11400000, guid: 779cef35626e62d4f8b39d6b8509e252, type: 2}
     amount: 1
-  - card: {fileID: 11400000, guid: 25797eca0d896ce4db3dd95c9c1c6091, type: 2}
+  - card: {fileID: 11400000, guid: da9666b027dd918438d659161477b537, type: 2}
     amount: 3
-  - card: {fileID: 11400000, guid: 99611d2e63e7f81468a79fdcdd0bc7e8, type: 2}
-    amount: 2
-  - card: {fileID: 11400000, guid: 22a4d42ce3bfa3f479aaf85c11383c2f, type: 2}
-    amount: 2
+  - card: {fileID: 11400000, guid: f9694b6187251d649b7fcbf1ede34ac1, type: 2}
+    amount: 3
+  - card: {fileID: 11400000, guid: 1e860980a598b954196a8aa02d35cbbd, type: 2}
+    amount: 3
+  - card: {fileID: 11400000, guid: 45ad9b86eb3cc2c42b1d7b7251f60ff9, type: 2}
+    amount: 3
+  - card: {fileID: 11400000, guid: 15b5383b197d1e74c9ae36d94f5676bf, type: 2}
+    amount: 3
+  - card: {fileID: 11400000, guid: 85e2d3eb799647e48ac2d14999bb269d, type: 2}
+    amount: 3
   - card: {fileID: 11400000, guid: 847d8d0628220014ebc4321b8b7d02a5, type: 2}
     amount: 2
-  - card: {fileID: 11400000, guid: f9694b6187251d649b7fcbf1ede34ac1, type: 2}
-    amount: 2
-  - card: {fileID: 11400000, guid: 15b5383b197d1e74c9ae36d94f5676bf, type: 2}
-    amount: 2
-  - card: {fileID: 11400000, guid: 1bb9d30ee869c80478f2ad62f70a4a01, type: 2}
-    amount: 2
-  - card: {fileID: 11400000, guid: da9666b027dd918438d659161477b537, type: 2}
-    amount: 2
-  - card: {fileID: 11400000, guid: 85e2d3eb799647e48ac2d14999bb269d, type: 2}
-    amount: 2
-  DeckName: StarterDeck
+  DeckName: Aggressive Flame

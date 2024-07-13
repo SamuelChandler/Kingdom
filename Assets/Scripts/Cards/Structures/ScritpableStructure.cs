@@ -21,6 +21,8 @@ public class ScriptableStructure : Card
     public Effect WhenDestroyed;
 
     public Effect OnSummon;
+
+    public int allyAttackBoost;
     
 }
 

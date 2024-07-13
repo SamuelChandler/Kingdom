@@ -15,12 +15,14 @@ MonoBehaviour:
   image: {fileID: 5935503609261454885, guid: 0575ec31d4e173d4fa0cd3c3bd8d87e9, type: 3}
   name: Storm Djinn
   inspirationCost: 0
-  description: 
+  description: 'After Moving: Deal 1 to surrounding enemies
+
+    Speed +1'
   type: 0
   Faction: 0
   health: 20
-  attack: 2
-  speed: 2
+  attack: 0
+  speed: 3
   _leader: 1
   _swift: 0
   OnDeath: {fileID: 0}
@@ -28,3 +30,4 @@ MonoBehaviour:
   OnAttack: {fileID: 0}
   OnEndTurn: {fileID: 0}
   OnStartOfTurn: {fileID: 0}
+  afterMoving: {fileID: 11400000, guid: 0bf2348a41212a84caef4ee94ca55603, type: 2}

@@ -15,22 +15,18 @@ MonoBehaviour:
   deck:
   - card: {fileID: 11400000, guid: 2cd9a42261fbab34e93e4469e518a4ee, type: 2}
     amount: 1
+  - card: {fileID: 11400000, guid: 45040a6c9ee322b4cbb4189babe4076a, type: 2}
+    amount: 3
+  - card: {fileID: 11400000, guid: 8611f813736724240ac15e1fdad57156, type: 2}
+    amount: 3
   - card: {fileID: 11400000, guid: 25797eca0d896ce4db3dd95c9c1c6091, type: 2}
     amount: 3
-  - card: {fileID: 11400000, guid: 99611d2e63e7f81468a79fdcdd0bc7e8, type: 2}
-    amount: 2
-  - card: {fileID: 11400000, guid: 22a4d42ce3bfa3f479aaf85c11383c2f, type: 2}
-    amount: 2
-  - card: {fileID: 11400000, guid: 847d8d0628220014ebc4321b8b7d02a5, type: 2}
-    amount: 2
-  - card: {fileID: 11400000, guid: f9694b6187251d649b7fcbf1ede34ac1, type: 2}
-    amount: 2
+  - card: {fileID: 11400000, guid: aa13c16f0012b204aa06c98980ac713e, type: 2}
+    amount: 3
   - card: {fileID: 11400000, guid: 15b5383b197d1e74c9ae36d94f5676bf, type: 2}
-    amount: 2
-  - card: {fileID: 11400000, guid: 1bb9d30ee869c80478f2ad62f70a4a01, type: 2}
-    amount: 2
+    amount: 3
+  - card: {fileID: 11400000, guid: 7c7e4ac8d557592429157d8f6bdc30a6, type: 2}
+    amount: 3
   - card: {fileID: 11400000, guid: da9666b027dd918438d659161477b537, type: 2}
-    amount: 2
-  - card: {fileID: 11400000, guid: 85e2d3eb799647e48ac2d14999bb269d, type: 2}
-    amount: 2
-  DeckName: StarterDeck
+    amount: 3
+  DeckName: Swift Storm

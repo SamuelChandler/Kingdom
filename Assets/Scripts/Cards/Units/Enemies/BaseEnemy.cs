@@ -12,9 +12,17 @@ public class BaseEnemy : BaseUnit
     public override void Awake(){
         base.Awake();
         uAI.e = this;
+
+        currentAttack += Board_Manager.instance.enemyAttackBuff;
+        UpdateAttackAndHealthDisplay();
     }
 
     public void Refresh(){
+        
+        isAbleToMove=true;
+        isAbleToAttack=true;
+        turnCounter++;
+
         if(unit.OnStartOfTurn != null){
             unit.OnStartOfTurn.ActivateEffect(this);
         }

@@ -20,7 +20,8 @@ public class DialogText : ScriptableObject
 
     public DialogText getNextDialogText(List<int> events){
 
-        if(nextDialogs.Length == 0){
+        if(nextDialogs == null){
+            Debug.Log("No New Dialog Loaded");
             return this;
         }
 

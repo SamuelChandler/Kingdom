@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private PauseMenuDeckSlot[] deckSlots;
 
     [SerializeField] private GameObject DeckView;
+    [SerializeField] private GameObject SettingsView;
 
     public Deck SelectedDeck;
     public bool isPaused;
@@ -16,15 +17,20 @@ public class PauseMenu : MonoBehaviour
 
     void Awake(){
         gameObject.SetActive(false);
-        DeckView.SetActive(false);
+
+        ClearSubview();
+        
         isPaused = false;
     }
 
     public void ShowDecks(string selectedname){
 
-        if(selectedname == null){
+        if(selectedname== ""){
             selectedname = Player.instance.SelectedDeck.name;
         }
+
+
+        ClearSubview();
 
         //set view to active and get the list of decks
         DeckView.SetActive(true);
@@ -47,6 +53,20 @@ public class PauseMenu : MonoBehaviour
             }
 
         }
+    }
+
+    public void ShowSettings(){
+
+        ClearSubview();
+
+        SettingsView.SetActive(true);
+    }
+
+
+    // Clears all the subviews in the current 
+    public void ClearSubview(){
+        DeckView.SetActive(false);
+        SettingsView.SetActive(false);
     }
 
     public void PauseGame(){

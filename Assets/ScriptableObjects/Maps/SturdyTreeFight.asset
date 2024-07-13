@@ -33,7 +33,9 @@ MonoBehaviour:
   t3: {fileID: 0}
   t4: {fileID: 0}
   t5: {fileID: 0}
-  enemies: []
+  enemies:
+  - enemy: {fileID: 11400000, guid: 5f09bfd90e90faf4a9e4c82f36086103, type: 2}
+    loc: {x: 4, y: 4}
   structures:
   - structure: {fileID: 11400000, guid: 62ec31e85e16d964e8bcaa3362bb0e33, type: 2}
     loc: {x: 1, y: 1}

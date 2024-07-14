@@ -34,7 +34,13 @@ public class PauseMenu : MonoBehaviour
 
         //set view to active and get the list of decks
         DeckView.SetActive(true);
-        List<Deck> decksToShow = Player.instance.data.GetAllDecks();
+
+        List<Deck> decksToShow = new List<Deck>();
+
+        if(Player.instance.data != null){
+            decksToShow = Player.instance.data.GetAllDecks();
+        }
+        
 
         //Set each view to the deck selected 
         for(int i = 0 ; i < deckSlots.Length; i++){

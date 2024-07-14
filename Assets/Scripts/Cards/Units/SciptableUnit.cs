@@ -31,6 +31,8 @@ public class ScriptableUnit : Card
 
     public Effect afterMoving;
 
+    public Effect OnAllyDeath;
+
     
 }
 

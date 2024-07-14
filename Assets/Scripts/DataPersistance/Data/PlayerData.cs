@@ -129,8 +129,8 @@ public class PlayerData
         List<Deck> res = new List<Deck>();
         Dictionary<string,List<Card>> decks = new Dictionary<string, List<Card>>();
         int i = 0;
-        Debug.Log("Number in contents: "+_deckContents.Count);
-        Debug.Log("Number in decks: "+_decks.Count);
+        //Debug.Log("Number in contents: "+_deckContents.Count);
+        //Debug.Log("Number in decks: "+_decks.Count);
 
         while(i < _decks.Count){
             

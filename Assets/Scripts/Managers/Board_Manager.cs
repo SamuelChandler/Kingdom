@@ -337,10 +337,13 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
                 Menu_Manager.instance.CurrentSelectedSelector = null;
                 
                 _AllyStructures.Add(summonded_Structure);
+                ClearBoardIndicators();
 
+                //trigger on summon if needed 
                 if(summonded_Structure._structure.OnSummon != null){
                     summonded_Structure._structure.OnSummon.ActivateEffect(summonded_Structure);
                 }
+
                 return;
             }
 

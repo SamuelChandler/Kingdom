@@ -77,6 +77,10 @@ public class Unit_Manager : MonoBehaviour
             Board_Manager.instance.ShowSummonableTiles(C);
             
         }
+
+        if(C.type == CardType.Structure){
+            Board_Manager.instance.ShowSummonableTiles(C);
+        }
         
         Menu_Manager.instance.showCard(C);
     }

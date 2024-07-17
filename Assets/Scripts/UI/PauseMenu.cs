@@ -37,7 +37,7 @@ public class PauseMenu : MonoBehaviour
 
         List<Deck> decksToShow = new List<Deck>();
 
-        if(Player.instance.data != null){
+        if(Player.instance != null){
             decksToShow = Player.instance.data.GetAllDecks();
         }
         

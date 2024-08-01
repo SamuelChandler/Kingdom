@@ -112,6 +112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DoorIndicator: {fileID: 5181602706798550718}
   INTERACT_DISTANCE: 2
+  nextDoor: {fileID: 0}
+  _teleportOffset: {x: 0, y: -2, z: 0}
 --- !u!1 &5181602706798550718
 GameObject:
   m_ObjectHideFlags: 0

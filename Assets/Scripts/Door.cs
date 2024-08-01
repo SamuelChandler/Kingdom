@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,12 +13,30 @@ public class Door : MonoBehaviour, IInteractable
 
     [SerializeField] private float INTERACT_DISTANCE = 5f;
 
+    [SerializeField] private Door nextDoor;
+
+    [SerializeField] private Vector3 _teleportOffset;
+
+    [SerializeField] private GameObject _myCamera;
+
     public void Interact()
     {
         Debug.Log(name + " has been interacted with");
+
+        _myCamera.SetActive(false);
+
+        nextDoor.TeleportPlayerToMe();
+
     }
 
-    
+    public void TeleportPlayerToMe(){
+        
+        Vector3 dest = transform.position + _teleportOffset;
+
+        _myCamera.SetActive(true);
+
+        Player.instance.TeleportPlayer(dest);
+    }
 
     // Start is called before the first frame update
     void Start()

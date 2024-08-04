@@ -17,13 +17,11 @@ public class Door : MonoBehaviour, IInteractable
 
     [SerializeField] private Vector3 _teleportOffset;
 
-    [SerializeField] private GameObject _myCamera;
+    [SerializeField] private Transform CameraDestinationTarget;
 
     public void Interact()
     {
         Debug.Log(name + " has been interacted with");
-
-        _myCamera.SetActive(false);
 
         nextDoor.TeleportPlayerToMe();
 
@@ -33,7 +31,7 @@ public class Door : MonoBehaviour, IInteractable
         
         Vector3 dest = transform.position + _teleportOffset;
 
-        _myCamera.SetActive(true);
+        VirtualCameraController.instance.SetTarget(CameraDestinationTarget);
 
         Player.instance.TeleportPlayer(dest);
     }

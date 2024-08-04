@@ -1,24 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class VirtualCameraController : MonoBehaviour
 {
 
-    float priority;
+    public static VirtualCameraController instance;
 
     CinemachineVirtualCamera Vcamera;
-    // Start is called before the first frame update
+    CinemachineConfiner confider;
+
+    [SerializeField] PolygonCollider2D _boundingShape;
+    
+    void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
         Vcamera = GetComponent<CinemachineVirtualCamera>();
+        confider = GetComponent<CinemachineConfiner>();
+        
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        priority = transform.position.x - Player.instance.transform.position.x; 
-        Vcamera.Priority = (int)priority;
+    public void SetTarget(Transform target){
+
+        if(target == null){
+            Debug.Log("Targeting Player Now");
+            Vcamera.Follow = Player.instance.transform;
+            confider.m_BoundingShape2D = _boundingShape;
+            return;
+        }
+
+        Vcamera.Follow = target;
+        confider.m_BoundingShape2D = null;
     }
 }

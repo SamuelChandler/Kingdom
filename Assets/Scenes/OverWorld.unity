@@ -38196,6 +38196,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boundingShape: {fileID: 424015392}
+  CameraTargets:
+  - {fileID: 127754581}
+  - {fileID: 741492579}
 --- !u!1 &1203293126
 GameObject:
   m_ObjectHideFlags: 0

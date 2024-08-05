@@ -44,14 +44,20 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
     {
         //start of game menu manager updates with game info
         Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
-        
+    }
+
+    public void StartGame(){
+
+        //determine if a time limit for turns is instituted
         if(Board_Manager.instance._map._levelType == LevelType.ClearAllNeutralEnemiesInTimeLimit){
             TimeLimit = true;
         }else{
             TimeLimit = false;
         }
 
+        //Start Generating the Map
         ChangeState(GameState.GenerateMap);
+
     }
 
     //used to change the state of the game 

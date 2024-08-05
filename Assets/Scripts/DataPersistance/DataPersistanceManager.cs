@@ -76,6 +76,11 @@ public class DataPersistanceManager : MonoBehaviour
             dpObject.LoadData(playerData);
         }
 
+        //check if Game Manager Exists and trigger the start of the game if it does
+        if(Game_Manager.instance != null){
+            Game_Manager.instance.StartGame();
+        }
+
     }
 
     public void SaveGame(){

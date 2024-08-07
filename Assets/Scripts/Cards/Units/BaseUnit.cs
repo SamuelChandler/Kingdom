@@ -9,6 +9,8 @@ public class BaseUnit : MonoBehaviour
 {
     public Tile OccupiedTile;
     public ScriptableUnit unit;
+
+    //animation and art Stuff
     public SpriteRenderer spriteRenderer;
 
     [SerializeField] private TextMeshProUGUI attack, health;
@@ -16,6 +18,8 @@ public class BaseUnit : MonoBehaviour
     [SerializeField]  Material SelectedMaterial;
 
     [SerializeField] Material defualtMaterial;
+
+    Animator animator;
 
     public bool isAbleToMove;
     public bool isAbleToAttack;
@@ -26,10 +30,18 @@ public class BaseUnit : MonoBehaviour
 
     public int turnCounter;
 
+    public bool isMoving;
+
+
     public virtual void Awake()
     {
 
          GetComponent<Renderer>().material = defualtMaterial; 
+         animator = GetComponent<Animator>();
+
+         if(unit.animatorController != null){
+            animator.runtimeAnimatorController = unit.animatorController;
+         }
 
         spriteRenderer.sprite = unit.image;
         currentHealth = unit.health;
@@ -49,6 +61,15 @@ public class BaseUnit : MonoBehaviour
         attack.text = unit.attack.ToString();
         health.text = currentHealth.ToString();
 
+    }
+
+    void Update(){
+
+        if(animator.runtimeAnimatorController == null){
+            return;
+        }
+        //update the animator
+        animator.SetBool("isMoving",isMoving);
     }
 
 

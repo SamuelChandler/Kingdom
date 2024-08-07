@@ -483,7 +483,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
         int total_change  = x_change + y_change;
 
-
+        //determine closest tile to destination tile and move
         while((total_change > unit.unit.speed || destTile.OccupiedUnit != null || destTile.OccupiedStructure != null) && destTile != sourceTile)
         {
             //check x and move one closer
@@ -522,6 +522,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         if(unit.unit.Faction == Faction.Hero){
             Unit_Manager.instance.SetSelectedHero((BaseHero)null);
         }
+        
         
         destTile.setUnit(unit);
         

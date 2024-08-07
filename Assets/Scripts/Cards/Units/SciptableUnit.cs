@@ -33,6 +33,8 @@ public class ScriptableUnit : Card
 
     public Effect OnAllyDeath;
 
+    public RuntimeAnimatorController animatorController;
+
     
 }
 

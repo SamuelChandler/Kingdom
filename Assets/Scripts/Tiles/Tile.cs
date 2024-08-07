@@ -104,17 +104,29 @@ public abstract class Tile : MonoBehaviour
         
     }
 
+    //called to move the location of a unit to a destination vector 2
     IEnumerator MoveUnitToPos(Vector2 dest, BaseUnit unit){
+
+        //set movement vars
         float timeElapsed = 0;
         Vector2 start = unit.transform.position;
         float dur = Game_Manager.MoveDuration;
 
+        //tell the unit it is now moving 
+        unit.isMoving = true;
+
+        //move the Unit
         while(timeElapsed < dur){
             unit.transform.position = Vector2.Lerp(start,dest,timeElapsed/dur);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
+
+        //set the location to the destination of the movement
         unit.transform.position = dest;
+
+        //tell unit that it is no longer moving
+        unit.isMoving = false;
     }
 
     //helper to get unit. might be more complicated later

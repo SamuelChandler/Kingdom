@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2216078567971078873}
   - component: {fileID: 8681758162586962013}
   - component: {fileID: 3274533661099625066}
+  - component: {fileID: -17625345041848468}
   m_Layer: 0
   m_Name: Enemy Unit Prefab
   m_TagString: Untagged
@@ -113,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OccupiedTile: {fileID: 0}
-  unit: {fileID: 11400000, guid: 786966014d5d4f944a8d95263f3e3a74, type: 2}
+  unit: {fileID: 11400000, guid: 5f09bfd90e90faf4a9e4c82f36086103, type: 2}
   spriteRenderer: {fileID: 2216078567971078873}
   attack: {fileID: 415745895536302369}
   health: {fileID: 3207627085579696872}
@@ -125,7 +126,29 @@ MonoBehaviour:
   currentMaxHealth: 0
   currentAttack: 0
   turnCounter: 0
+  isMoving: 0
   uAI: {fileID: 8681758162586962013}
+--- !u!95 &-17625345041848468
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828814552749650596}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1451157680133172598
 GameObject:
   m_ObjectHideFlags: 0

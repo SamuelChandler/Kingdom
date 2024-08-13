@@ -30,7 +30,9 @@ public class BaseUnit : MonoBehaviour
 
     public int turnCounter;
 
+    //used in animation
     public bool isMoving;
+    public bool isAttacking;
 
 
     public virtual void Awake()
@@ -65,11 +67,14 @@ public class BaseUnit : MonoBehaviour
 
     void Update(){
 
+        //check if there is an animator
         if(animator.runtimeAnimatorController == null){
             return;
         }
+
         //update the animator
         animator.SetBool("isMoving",isMoving);
+        animator.SetBool("isAttacking",isAttacking);
     }
 
 
@@ -82,8 +87,9 @@ public class BaseUnit : MonoBehaviour
         if(unit.OnStartOfTurn != null){
             unit.OnStartOfTurn.ActivateEffect(this);
         }
-        
     }
+
+    
 
     public void ActivateEndOfTurnEffects(){
         if(unit.OnEndTurn != null){

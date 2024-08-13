@@ -29,9 +29,9 @@ public class BaseEnemy : BaseUnit
     }
 
     public bool Attack(BaseHero hero)
-    {
+    {   
+        //verfiy hero exists 
         if (hero == null) return false;
-
 
         //check if enemy is within one space
         if (Mathf.Abs(this.OccupiedTile.x - hero.OccupiedTile.x) > 1 || Mathf.Abs(this.OccupiedTile.y - hero.OccupiedTile.y) > 1)
@@ -39,14 +39,29 @@ public class BaseEnemy : BaseUnit
             return false;
         }
 
-        hero.TakeDamage(currentAttack);
+        StartCoroutine(PlayAttackAnimation());
 
         if(unit.OnAttack != null){
             Debug.Log("Attack Trigger");
             unit.OnAttack.ActivateEffect(this);
         }
 
+        hero.TakeDamage(currentAttack);
+
         return true;
+    }
+
+    IEnumerator PlayAttackAnimation(){
+
+        float dur = Game_Manager.AttackDuration;
+
+        //tell the unit it is now moving 
+        isAttacking = true;
+
+        yield return new WaitForSeconds(dur);
+
+        //tell unit that it is no longer moving
+        isAttacking = false;
     }
 
     public override void removeUnit()

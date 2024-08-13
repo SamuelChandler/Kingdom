@@ -129,7 +129,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 10
-      y: 10
+      y: 310
       width: 34
       height: 32
     spriteID: 54cc1316ef8bbbc469624be1121db682
@@ -140,18 +140,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 10, y: 10}
+    uvTransform: {x: 10, y: 310}
   - name: Ally StormDjinn_Frame_1
     originalName: 
-    pivot: {x: 0.5294118, y: 0.59375}
+    pivot: {x: 0.47619048, y: 0.54285717}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 10
-      y: 62
-      width: 34
-      height: 32
+      x: 173
+      y: 58
+      width: 21
+      height: 35
     spriteID: d8ea072749ac00e4192b8d0a2e39619a
     spriteBone: []
     spriteOutline: []
@@ -160,18 +160,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 10, y: 62}
+    uvTransform: {x: 173, y: 58}
   - name: Ally StormDjinn_Frame_2
     originalName: 
-    pivot: {x: 0.5294118, y: 0.59375}
+    pivot: {x: 0.5263158, y: 0.54285717}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 10
-      y: 114
-      width: 34
-      height: 32
+      x: 173
+      y: 168
+      width: 19
+      height: 35
     spriteID: 2bdc66a882a0f8044839e75319ff7947
     spriteBone: []
     spriteOutline: []
@@ -180,18 +180,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 10, y: 114}
+    uvTransform: {x: 173, y: 168}
   - name: Ally StormDjinn_Frame_3
     originalName: 
-    pivot: {x: 0.5588235, y: 0.59375}
+    pivot: {x: 0.5263158, y: 0.54285717}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 10
-      y: 166
-      width: 34
-      height: 32
+      x: 173
+      y: 223
+      width: 19
+      height: 35
     spriteID: b592fd4ab88a00242bc68cfe9f166d3a
     spriteBone: []
     spriteOutline: []
@@ -200,18 +200,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 10, y: 166}
+    uvTransform: {x: 173, y: 223}
   - name: Ally StormDjinn_Frame_4
     originalName: 
-    pivot: {x: 0.5588235, y: 0.59375}
+    pivot: {x: 0.5263158, y: 0.54285717}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 10
-      y: 218
-      width: 34
-      height: 32
+      x: 173
+      y: 278
+      width: 19
+      height: 35
     spriteID: 8a5a783d323ca0e46b1774468d656377
     spriteBone: []
     spriteOutline: []
@@ -220,18 +220,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 10, y: 218}
+    uvTransform: {x: 173, y: 278}
   - name: Ally StormDjinn_Frame_5
     originalName: 
-    pivot: {x: 0.5294118, y: 0.59375}
+    pivot: {x: 0.5, y: 0.54285717}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 10
-      y: 270
-      width: 34
-      height: 32
+      x: 173
+      y: 113
+      width: 20
+      height: 35
     spriteID: 2b593d8c582a98b4483488a03ee42071
     spriteBone: []
     spriteOutline: []
@@ -240,18 +240,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 10, y: 270}
+    uvTransform: {x: 173, y: 113}
   - name: Ally StormDjinn_Frame_6
     originalName: 
-    pivot: {x: 0.5294118, y: 0.59375}
+    pivot: {x: 0.5263158, y: 0.54285717}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 10
-      y: 322
-      width: 34
-      height: 32
+      x: 173
+      y: 333
+      width: 19
+      height: 35
     spriteID: ced54ef61e33bcb4181b6727168706b5
     spriteBone: []
     spriteOutline: []
@@ -260,18 +260,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 10, y: 322}
+    uvTransform: {x: 173, y: 333}
   - name: Ally StormDjinn_Frame_7
     originalName: 
-    pivot: {x: 0.4117647, y: 0.59375}
+    pivot: {x: 0.5263158, y: 0.54285717}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 10
-      y: 374
-      width: 34
-      height: 32
+      x: 173
+      y: 388
+      width: 19
+      height: 35
     spriteID: b08f4a809fd2cd34ba5a017d4e26cfa3
     spriteBone: []
     spriteOutline: []
@@ -280,18 +280,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 10, y: 374}
+    uvTransform: {x: 173, y: 388}
   - name: Ally StormDjinn_Frame_8
     originalName: 
-    pivot: {x: 0.4117647, y: 0.59375}
+    pivot: {x: 0.5, y: 0.475}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 10
-      y: 426
-      width: 34
-      height: 32
+      y: 250
+      width: 30
+      height: 40
     spriteID: 68026096ddb1be14abc87bafe5d8fd91
     spriteBone: []
     spriteOutline: []
@@ -300,18 +300,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 10, y: 426}
+    uvTransform: {x: 10, y: 250}
   - name: Ally StormDjinn_Frame_9
     originalName: 
-    pivot: {x: 0.38235295, y: 0.59375}
+    pivot: {x: 0.516129, y: 0.475}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 64
-      y: 10
-      width: 34
-      height: 32
+      x: 10
+      y: 190
+      width: 31
+      height: 40
     spriteID: eb9102a720eceb84882c2bbc46dfddb3
     spriteBone: []
     spriteOutline: []
@@ -320,18 +320,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 64, y: 10}
+    uvTransform: {x: 10, y: 190}
   - name: Ally StormDjinn_Frame_10
     originalName: 
-    pivot: {x: 0.38235295, y: 0.59375}
+    pivot: {x: 0.4571429, y: 0.475}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 64
-      y: 62
-      width: 34
-      height: 32
+      x: 10
+      y: 10
+      width: 35
+      height: 40
     spriteID: 244a271e4ebbe9c4ab4acd6cde9cfa92
     spriteBone: []
     spriteOutline: []
@@ -340,18 +340,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 64, y: 62}
+    uvTransform: {x: 10, y: 10}
   - name: Ally StormDjinn_Frame_11
     originalName: 
-    pivot: {x: 0.38235295, y: 0.59375}
+    pivot: {x: 0.4571429, y: 0.475}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 64
-      y: 114
-      width: 34
-      height: 32
+      x: 10
+      y: 70
+      width: 35
+      height: 40
     spriteID: a55d61b060ed3ee4386fc35ffeabd8f5
     spriteBone: []
     spriteOutline: []
@@ -360,18 +360,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 64, y: 114}
+    uvTransform: {x: 10, y: 70}
   - name: Ally StormDjinn_Frame_12
     originalName: 
-    pivot: {x: 0.38235295, y: 0.59375}
+    pivot: {x: 0.44117647, y: 0.475}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 64
-      y: 166
+      x: 10
+      y: 130
       width: 34
-      height: 32
+      height: 40
     spriteID: 9c062dbfde6caf64081feed3248e570d
     spriteBone: []
     spriteOutline: []
@@ -380,16 +380,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 64, y: 166}
+    uvTransform: {x: 10, y: 130}
   - name: Ally StormDjinn_Frame_13
     originalName: 
-    pivot: {x: 0.4117647, y: 0.59375}
+    pivot: {x: 0.44117647, y: 0.59375}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 64
-      y: 218
+      x: 10
+      y: 362
       width: 34
       height: 32
     spriteID: 978f4da029cb8ac46bceb99b6de85db6
@@ -400,18 +400,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 64, y: 218}
+    uvTransform: {x: 10, y: 362}
   - name: Ally StormDjinn_Frame_14
     originalName: 
-    pivot: {x: 0.38235295, y: 0.6333333}
+    pivot: {x: 0.5294118, y: 0.59375}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 169
-      y: 10
+      x: 10
+      y: 414
       width: 34
-      height: 30
+      height: 32
     spriteID: 15b7160c5aa27c04c8c2c29d4ce64396
     spriteBone: []
     spriteOutline: []
@@ -420,18 +420,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 169, y: 10}
+    uvTransform: {x: 10, y: 414}
   - name: Ally StormDjinn_Frame_15
     originalName: 
-    pivot: {x: 0.38235295, y: 0.6551724}
+    pivot: {x: 0.5294118, y: 0.59375}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 169
-      y: 110
+      x: 10
+      y: 466
       width: 34
-      height: 29
+      height: 32
     spriteID: e454bb2211f54734fad6f298c30bf789
     spriteBone: []
     spriteOutline: []
@@ -440,18 +440,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 169, y: 110}
+    uvTransform: {x: 10, y: 466}
   - name: Ally StormDjinn_Frame_16
     originalName: 
-    pivot: {x: 0.38235295, y: 0.6551724}
+    pivot: {x: 0.5588235, y: 0.59375}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 169
-      y: 159
+      x: 65
+      y: 10
       width: 34
-      height: 29
+      height: 32
     spriteID: 19e61f5974f265644b370e53f3ddc639
     spriteBone: []
     spriteOutline: []
@@ -460,18 +460,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 169, y: 159}
+    uvTransform: {x: 65, y: 10}
   - name: Ally StormDjinn_Frame_17
     originalName: 
-    pivot: {x: 0.4117647, y: 0.67857146}
+    pivot: {x: 0.5588235, y: 0.59375}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 169
-      y: 208
+      x: 65
+      y: 62
       width: 34
-      height: 28
+      height: 32
     spriteID: dc5646e8c508b1f44a29ba7d20de7221
     spriteBone: []
     spriteOutline: []
@@ -480,18 +480,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 169, y: 208}
+    uvTransform: {x: 65, y: 62}
   - name: Ally StormDjinn_Frame_18
     originalName: 
-    pivot: {x: 0.4117647, y: 0.67857146}
+    pivot: {x: 0.5294118, y: 0.59375}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 169
-      y: 256
+      x: 65
+      y: 114
       width: 34
-      height: 28
+      height: 32
     spriteID: 039c90c96b3fcf84e9b48e911aec7cbd
     spriteBone: []
     spriteOutline: []
@@ -500,18 +500,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 169, y: 256}
+    uvTransform: {x: 65, y: 114}
   - name: Ally StormDjinn_Frame_19
     originalName: 
-    pivot: {x: 0.4117647, y: 0.67857146}
+    pivot: {x: 0.5294118, y: 0.59375}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 169
-      y: 304
+      x: 65
+      y: 166
       width: 34
-      height: 28
+      height: 32
     spriteID: f85617d025b70254ab2110f8c25bf538
     spriteBone: []
     spriteOutline: []
@@ -520,18 +520,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 169, y: 304}
+    uvTransform: {x: 65, y: 166}
   - name: Ally StormDjinn_Frame_20
     originalName: 
-    pivot: {x: 0.4117647, y: 0.67857146}
+    pivot: {x: 0.4117647, y: 0.59375}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 169
-      y: 352
+      x: 65
+      y: 218
       width: 34
-      height: 28
+      height: 32
     spriteID: 74fda443150e38c4982c1dba691a8051
     spriteBone: []
     spriteOutline: []
@@ -540,18 +540,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 169, y: 352}
+    uvTransform: {x: 65, y: 218}
   - name: Ally StormDjinn_Frame_21
     originalName: 
-    pivot: {x: 0.38235295, y: 0.6333333}
+    pivot: {x: 0.4117647, y: 0.59375}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 169
-      y: 60
+      x: 65
+      y: 270
       width: 34
-      height: 30
+      height: 32
     spriteID: c70fda0c44e53d0418c1a1327a297219
     spriteBone: []
     spriteOutline: []
@@ -560,18 +560,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 169, y: 60}
+    uvTransform: {x: 65, y: 270}
   - name: Ally StormDjinn_Frame_22
     originalName: 
-    pivot: {x: 0.50000006, y: 0.4193548}
+    pivot: {x: 0.38235295, y: 0.59375}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 64
-      y: 426
+      x: 65
+      y: 322
       width: 34
-      height: 31
+      height: 32
     spriteID: 236abde6d069f614391bc3343cdcec07
     spriteBone: []
     spriteOutline: []
@@ -580,16 +580,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 64, y: 426}
+    uvTransform: {x: 65, y: 322}
   - name: Ally StormDjinn_Frame_23
     originalName: 
-    pivot: {x: 0.5294118, y: 0.59375}
+    pivot: {x: 0.38235295, y: 0.59375}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 64
-      y: 270
+      x: 65
+      y: 374
       width: 34
       height: 32
     spriteID: e869317f8870c3d4bb9980ce7beefa2a
@@ -600,18 +600,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 64, y: 270}
+    uvTransform: {x: 65, y: 374}
   - name: Ally StormDjinn_Frame_24
     originalName: 
-    pivot: {x: 0.73913044, y: 0.475}
+    pivot: {x: 0.38235295, y: 0.59375}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 169
-      y: 458
-      width: 23
-      height: 40
+      x: 65
+      y: 426
+      width: 34
+      height: 32
     spriteID: 5d44ddd695f1282449fdfbdbc958fff1
     spriteBone: []
     spriteOutline: []
@@ -620,18 +620,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 169, y: 458}
+    uvTransform: {x: 65, y: 426}
   - name: Ally StormDjinn_Frame_25
     originalName: 
-    pivot: {x: 0.73913044, y: 0.475}
+    pivot: {x: 0.38235295, y: 0.59375}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 214
-      y: 400
-      width: 23
-      height: 40
+      x: 119
+      y: 10
+      width: 34
+      height: 32
     spriteID: e488b371986caf749a225049a54bcac0
     spriteBone: []
     spriteOutline: []
@@ -640,18 +640,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 214, y: 400}
+    uvTransform: {x: 119, y: 10}
   - name: Ally StormDjinn_Frame_26
     originalName: 
-    pivot: {x: 0.73913044, y: 0.475}
+    pivot: {x: 0.4117647, y: 0.59375}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 214
-      y: 460
-      width: 23
-      height: 40
+      x: 119
+      y: 62
+      width: 34
+      height: 32
     spriteID: 6411a84d582841f409c7f7f2421f0639
     spriteBone: []
     spriteOutline: []
@@ -660,18 +660,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 214, y: 460}
+    uvTransform: {x: 119, y: 62}
   - name: Ally StormDjinn_Frame_27
     originalName: 
-    pivot: {x: 0.71999997, y: 0.5}
+    pivot: {x: 0.38235295, y: 0.6333333}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 169
-      y: 400
-      width: 25
-      height: 38
+      x: 119
+      y: 166
+      width: 34
+      height: 30
     spriteID: 3d39c6252f0466247aac051e74383e2e
     spriteBone: []
     spriteOutline: []
@@ -680,18 +680,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 169, y: 400}
+    uvTransform: {x: 119, y: 166}
   - name: Ally StormDjinn_Frame_28
     originalName: 
-    pivot: {x: 0.6451613, y: 0.57575756}
+    pivot: {x: 0.38235295, y: 0.6551724}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 118
-      y: 10
-      width: 31
-      height: 33
+      x: 119
+      y: 266
+      width: 34
+      height: 29
     spriteID: 1a1a2b203330e7e4ea78b723ae05f8c0
     spriteBone: []
     spriteOutline: []
@@ -700,18 +700,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 118, y: 10}
+    uvTransform: {x: 119, y: 266}
   - name: Ally StormDjinn_Frame_29
     originalName: 
-    pivot: {x: 0.6296296, y: 0.59375}
+    pivot: {x: 0.38235295, y: 0.6551724}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 118
-      y: 63
-      width: 27
-      height: 32
+      x: 119
+      y: 315
+      width: 34
+      height: 29
     spriteID: 4daf96a5da53f4941a44e3605324a8a5
     spriteBone: []
     spriteOutline: []
@@ -720,18 +720,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 118, y: 63}
+    uvTransform: {x: 119, y: 315}
   - name: Ally StormDjinn_Frame_30
     originalName: 
-    pivot: {x: 0.5294118, y: 0.59375}
+    pivot: {x: 0.4117647, y: 0.67857146}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 64
-      y: 322
+      x: 119
+      y: 364
       width: 34
-      height: 32
+      height: 28
     spriteID: d9a201cadb9c37a42a05d9f3b2fb66cd
     spriteBone: []
     spriteOutline: []
@@ -740,18 +740,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 64, y: 322}
+    uvTransform: {x: 119, y: 364}
   - name: Ally StormDjinn_Frame_31
     originalName: 
-    pivot: {x: 0.5294118, y: 0.59375}
+    pivot: {x: 0.4117647, y: 0.67857146}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 64
-      y: 374
+      x: 119
+      y: 412
       width: 34
-      height: 32
+      height: 28
     spriteID: afe221efe4f60474689e66b1d5ef4555
     spriteBone: []
     spriteOutline: []
@@ -760,7 +760,87 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 64, y: 374}
+    uvTransform: {x: 119, y: 412}
+  - name: Ally StormDjinn_Frame_19
+    originalName: 
+    pivot: {x: 0.4117647, y: 0.67857146}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 119
+      y: 460
+      width: 34
+      height: 28
+    spriteID: 4524e9d6d20293a47aed5e3519c625da
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 119, y: 460}
+  - name: Ally StormDjinn_Frame_20
+    originalName: 
+    pivot: {x: 0.4117647, y: 0.67857146}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 173
+      y: 10
+      width: 34
+      height: 28
+    spriteID: 2cfb892d5f8412e45aca5078e1a38578
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 173, y: 10}
+  - name: Ally StormDjinn_Frame_21
+    originalName: 
+    pivot: {x: 0.38235295, y: 0.6333333}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 119
+      y: 216
+      width: 34
+      height: 30
+    spriteID: 9fc7c08e3bb94844c9ea3e00688c816e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 119, y: 216}
+  - name: Ally StormDjinn_Frame_22
+    originalName: 
+    pivot: {x: 0.44117647, y: 0.59375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 119
+      y: 114
+      width: 34
+      height: 32
+    spriteID: e3d73cc7f2ac8d34383ee741a6ccb465
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 119, y: 114}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -770,6 +850,110 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
+    - name: Ally StormDjinn_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 5
+        y: 1
+        width: 33
+        height: 31
+      spriteId: 54cc1316ef8bbbc469624be1121db682
+    - name: Ally StormDjinn_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 10
+        y: 1
+        width: 20
+        height: 34
+      spriteId: d8ea072749ac00e4192b8d0a2e39619a
+    - name: Ally StormDjinn_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 10
+        y: 1
+        width: 18
+        height: 34
+      spriteId: 2bdc66a882a0f8044839e75319ff7947
+    - name: Ally StormDjinn_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 10
+        y: 1
+        width: 18
+        height: 34
+      spriteId: b592fd4ab88a00242bc68cfe9f166d3a
+    - name: Ally StormDjinn_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 10
+        y: 1
+        width: 18
+        height: 34
+      spriteId: 8a5a783d323ca0e46b1774468d656377
+    - name: Ally StormDjinn_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: 10
+        y: 1
+        width: 19
+        height: 34
+      spriteId: 2b593d8c582a98b4483488a03ee42071
+    - name: Ally StormDjinn_Frame_29
+      frameIndex: 29
+      cellRect:
+        x: 10
+        y: 1
+        width: 18
+        height: 34
+      spriteId: ced54ef61e33bcb4181b6727168706b5
+    - name: Ally StormDjinn_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: 10
+        y: 1
+        width: 18
+        height: 34
+      spriteId: b08f4a809fd2cd34ba5a017d4e26cfa3
+    - name: Ally StormDjinn_Frame_31
+      frameIndex: 31
+      cellRect:
+        x: 5
+        y: 1
+        width: 29
+        height: 39
+      spriteId: 68026096ddb1be14abc87bafe5d8fd91
+    - name: Ally StormDjinn_Frame_32
+      frameIndex: 32
+      cellRect:
+        x: 4
+        y: 1
+        width: 30
+        height: 39
+      spriteId: eb9102a720eceb84882c2bbc46dfddb3
+    - name: Ally StormDjinn_Frame_33
+      frameIndex: 33
+      cellRect:
+        x: 4
+        y: 1
+        width: 34
+        height: 39
+      spriteId: 244a271e4ebbe9c4ab4acd6cde9cfa92
+    - name: Ally StormDjinn_Frame_34
+      frameIndex: 34
+      cellRect:
+        x: 4
+        y: 1
+        width: 34
+        height: 39
+      spriteId: a55d61b060ed3ee4386fc35ffeabd8f5
+    - name: Ally StormDjinn_Frame_35
+      frameIndex: 35
+      cellRect:
+        x: 5
+        y: 1
+        width: 33
+        height: 39
+      spriteId: 9c062dbfde6caf64081feed3248e570d
     - name: Ally StormDjinn_Frame_0
       frameIndex: 0
       cellRect:
@@ -777,7 +961,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 31
-      spriteId: 54cc1316ef8bbbc469624be1121db682
+      spriteId: 978f4da029cb8ac46bceb99b6de85db6
     - name: Ally StormDjinn_Frame_1
       frameIndex: 1
       cellRect:
@@ -785,7 +969,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 31
-      spriteId: d8ea072749ac00e4192b8d0a2e39619a
+      spriteId: 15b7160c5aa27c04c8c2c29d4ce64396
     - name: Ally StormDjinn_Frame_2
       frameIndex: 2
       cellRect:
@@ -793,7 +977,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 31
-      spriteId: 2bdc66a882a0f8044839e75319ff7947
+      spriteId: e454bb2211f54734fad6f298c30bf789
     - name: Ally StormDjinn_Frame_3
       frameIndex: 3
       cellRect:
@@ -801,7 +985,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 31
-      spriteId: b592fd4ab88a00242bc68cfe9f166d3a
+      spriteId: 19e61f5974f265644b370e53f3ddc639
     - name: Ally StormDjinn_Frame_4
       frameIndex: 4
       cellRect:
@@ -809,7 +993,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 31
-      spriteId: 8a5a783d323ca0e46b1774468d656377
+      spriteId: dc5646e8c508b1f44a29ba7d20de7221
     - name: Ally StormDjinn_Frame_5
       frameIndex: 5
       cellRect:
@@ -817,7 +1001,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 31
-      spriteId: 2b593d8c582a98b4483488a03ee42071
+      spriteId: 039c90c96b3fcf84e9b48e911aec7cbd
     - name: Ally StormDjinn_Frame_6
       frameIndex: 6
       cellRect:
@@ -825,7 +1009,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 31
-      spriteId: ced54ef61e33bcb4181b6727168706b5
+      spriteId: f85617d025b70254ab2110f8c25bf538
     - name: Ally StormDjinn_Frame_7
       frameIndex: 7
       cellRect:
@@ -833,7 +1017,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 31
-      spriteId: b08f4a809fd2cd34ba5a017d4e26cfa3
+      spriteId: 74fda443150e38c4982c1dba691a8051
     - name: Ally StormDjinn_Frame_8
       frameIndex: 8
       cellRect:
@@ -841,7 +1025,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 31
-      spriteId: 68026096ddb1be14abc87bafe5d8fd91
+      spriteId: c70fda0c44e53d0418c1a1327a297219
     - name: Ally StormDjinn_Frame_9
       frameIndex: 9
       cellRect:
@@ -849,7 +1033,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 31
-      spriteId: eb9102a720eceb84882c2bbc46dfddb3
+      spriteId: 236abde6d069f614391bc3343cdcec07
     - name: Ally StormDjinn_Frame_10
       frameIndex: 10
       cellRect:
@@ -857,7 +1041,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 31
-      spriteId: 244a271e4ebbe9c4ab4acd6cde9cfa92
+      spriteId: e869317f8870c3d4bb9980ce7beefa2a
     - name: Ally StormDjinn_Frame_11
       frameIndex: 11
       cellRect:
@@ -865,7 +1049,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 31
-      spriteId: a55d61b060ed3ee4386fc35ffeabd8f5
+      spriteId: 5d44ddd695f1282449fdfbdbc958fff1
     - name: Ally StormDjinn_Frame_12
       frameIndex: 12
       cellRect:
@@ -873,7 +1057,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 31
-      spriteId: 9c062dbfde6caf64081feed3248e570d
+      spriteId: e488b371986caf749a225049a54bcac0
     - name: Ally StormDjinn_Frame_13
       frameIndex: 13
       cellRect:
@@ -881,7 +1065,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 31
-      spriteId: 978f4da029cb8ac46bceb99b6de85db6
+      spriteId: 6411a84d582841f409c7f7f2421f0639
     - name: Ally StormDjinn_Frame_14
       frameIndex: 14
       cellRect:
@@ -889,7 +1073,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 29
-      spriteId: 15b7160c5aa27c04c8c2c29d4ce64396
+      spriteId: 3d39c6252f0466247aac051e74383e2e
     - name: Ally StormDjinn_Frame_15
       frameIndex: 15
       cellRect:
@@ -897,7 +1081,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 28
-      spriteId: e454bb2211f54734fad6f298c30bf789
+      spriteId: 1a1a2b203330e7e4ea78b723ae05f8c0
     - name: Ally StormDjinn_Frame_16
       frameIndex: 16
       cellRect:
@@ -905,7 +1089,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 28
-      spriteId: 19e61f5974f265644b370e53f3ddc639
+      spriteId: 4daf96a5da53f4941a44e3605324a8a5
     - name: Ally StormDjinn_Frame_17
       frameIndex: 17
       cellRect:
@@ -913,7 +1097,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 27
-      spriteId: dc5646e8c508b1f44a29ba7d20de7221
+      spriteId: d9a201cadb9c37a42a05d9f3b2fb66cd
     - name: Ally StormDjinn_Frame_18
       frameIndex: 18
       cellRect:
@@ -921,7 +1105,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 27
-      spriteId: 039c90c96b3fcf84e9b48e911aec7cbd
+      spriteId: afe221efe4f60474689e66b1d5ef4555
     - name: Ally StormDjinn_Frame_19
       frameIndex: 19
       cellRect:
@@ -929,7 +1113,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 27
-      spriteId: f85617d025b70254ab2110f8c25bf538
+      spriteId: 4524e9d6d20293a47aed5e3519c625da
     - name: Ally StormDjinn_Frame_20
       frameIndex: 20
       cellRect:
@@ -937,7 +1121,7 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 27
-      spriteId: 74fda443150e38c4982c1dba691a8051
+      spriteId: 2cfb892d5f8412e45aca5078e1a38578
     - name: Ally StormDjinn_Frame_21
       frameIndex: 21
       cellRect:
@@ -945,87 +1129,15 @@ ScriptedImporter:
         y: 1
         width: 33
         height: 29
-      spriteId: c70fda0c44e53d0418c1a1327a297219
+      spriteId: 9fc7c08e3bb94844c9ea3e00688c816e
     - name: Ally StormDjinn_Frame_22
       frameIndex: 22
       cellRect:
-        x: 3
-        y: 7
-        width: 33
-        height: 30
-      spriteId: 236abde6d069f614391bc3343cdcec07
-    - name: Ally StormDjinn_Frame_23
-      frameIndex: 23
-      cellRect:
-        x: 2
+        x: 5
         y: 1
         width: 33
         height: 31
-      spriteId: e869317f8870c3d4bb9980ce7beefa2a
-    - name: Ally StormDjinn_Frame_24
-      frameIndex: 24
-      cellRect:
-        x: 3
-        y: 1
-        width: 22
-        height: 39
-      spriteId: 5d44ddd695f1282449fdfbdbc958fff1
-    - name: Ally StormDjinn_Frame_25
-      frameIndex: 25
-      cellRect:
-        x: 3
-        y: 1
-        width: 22
-        height: 39
-      spriteId: e488b371986caf749a225049a54bcac0
-    - name: Ally StormDjinn_Frame_26
-      frameIndex: 26
-      cellRect:
-        x: 3
-        y: 1
-        width: 22
-        height: 39
-      spriteId: 6411a84d582841f409c7f7f2421f0639
-    - name: Ally StormDjinn_Frame_27
-      frameIndex: 27
-      cellRect:
-        x: 2
-        y: 1
-        width: 24
-        height: 37
-      spriteId: 3d39c6252f0466247aac051e74383e2e
-    - name: Ally StormDjinn_Frame_28
-      frameIndex: 28
-      cellRect:
-        x: 0
-        y: 1
-        width: 30
-        height: 32
-      spriteId: 1a1a2b203330e7e4ea78b723ae05f8c0
-    - name: Ally StormDjinn_Frame_29
-      frameIndex: 29
-      cellRect:
-        x: 3
-        y: 1
-        width: 26
-        height: 31
-      spriteId: 4daf96a5da53f4941a44e3605324a8a5
-    - name: Ally StormDjinn_Frame_30
-      frameIndex: 30
-      cellRect:
-        x: 2
-        y: 1
-        width: 33
-        height: 31
-      spriteId: d9a201cadb9c37a42a05d9f3b2fb66cd
-    - name: Ally StormDjinn_Frame_31
-      frameIndex: 31
-      cellRect:
-        x: 2
-        y: 1
-        width: 33
-        height: 31
-      spriteId: afe221efe4f60474689e66b1d5ef4555
+      spriteId: e3d73cc7f2ac8d34383ee741a6ccb465
     linkedCells: []
     parentIndex: -1
   platformSettings:

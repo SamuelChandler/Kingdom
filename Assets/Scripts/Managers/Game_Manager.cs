@@ -10,6 +10,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
     private int Level;
 
     [SerializeField] public static float MoveDuration = 0.5f;
+    [SerializeField] public static float AttackDuration = 0.5f;
 
     public EnemyAI eAI;
 

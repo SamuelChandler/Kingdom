@@ -71,6 +71,10 @@ public class Player : MonoBehaviour, IDataPersistance
         rb.MovePosition(rb.position + (movement.normalized * moveSpeed * Time.fixedDeltaTime));
     }
 
+    public void TeleportPlayer(Vector3 newPosition){
+        transform.position = newPosition;
+    }
+    
     public void LoadData(PlayerData playerData)
     {
         this.data._decks = playerData._decks;

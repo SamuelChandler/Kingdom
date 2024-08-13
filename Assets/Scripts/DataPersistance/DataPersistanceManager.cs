@@ -34,6 +34,10 @@ public class DataPersistanceManager : MonoBehaviour
 
         this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
         this.dataPersistanceObjects = FindAllDataPersistenceObjects();
+        
+    }
+
+    private void Start(){
         LoadGame();
     }
 
@@ -70,6 +74,11 @@ public class DataPersistanceManager : MonoBehaviour
 
         foreach(IDataPersistance dpObject in dataPersistanceObjects){
             dpObject.LoadData(playerData);
+        }
+
+        //check if Game Manager Exists and trigger the start of the game if it does
+        if(Game_Manager.instance != null){
+            Game_Manager.instance.StartGame();
         }
 
     }

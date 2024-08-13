@@ -23,6 +23,8 @@ public class BaseHero : BaseUnit
             Menu_Manager.instance.SetMessenger("Attack was out of Range");
             return false;
         }
+
+        StartCoroutine(PlayAttackAnimation());
         
         if(unit.OnAttack != null){
             Debug.Log("Attack Trigger");
@@ -54,6 +56,8 @@ public class BaseHero : BaseUnit
             return false;
         }
 
+        StartCoroutine(PlayAttackAnimation());
+
         if(unit.OnAttack != null){
             Debug.Log("Attack Trigger");
             unit.OnAttack.ActivateEffect(this);
@@ -84,6 +88,8 @@ public class BaseHero : BaseUnit
             return false;
         }
 
+        StartCoroutine(PlayAttackAnimation());
+
         if(unit.OnAttack != null){
             Debug.Log("Attack Trigger");
             unit.OnAttack.ActivateEffect(this);
@@ -91,9 +97,22 @@ public class BaseHero : BaseUnit
 
         isAbleToAttack = false;
 
-        enemy.TakeDamage(this.currentAttack);
+        enemy.TakeDamage(currentAttack);
   
         return true;
+    }
+
+    IEnumerator PlayAttackAnimation(){
+
+        float dur = Game_Manager.AttackDuration;
+
+        //tell the unit it is now moving 
+        isAttacking = true;
+
+        yield return new WaitForSeconds(dur);
+
+        //tell unit that it is no longer moving
+        isAttacking = false;
     }
 
     public override void removeUnit()

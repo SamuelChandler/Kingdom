@@ -1853,6 +1853,10 @@ MonoBehaviour:
   _heroes: []
   _enemies: []
   _AllyStructures: []
+  _EnemyStructures: []
+  _NeutralStructures: []
+  allyAttackBuff: 0
+  enemyAttackBuff: 0
 --- !u!4 &2104909210
 Transform:
   m_ObjectHideFlags: 0

@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: f46948ebc8aa1654e9cbc4fc5fd66736, type: 3}
   m_Name: Bolt
   m_EditorClassIdentifier: Assembly-CSharp::TargetedDamageEffect
-  EffectName: 2 damage bolt
-  Etype: 0
+  EffectName: Bolt
   targetedFaction: 1
   numberTargets: 1
   DamageAmount: 2

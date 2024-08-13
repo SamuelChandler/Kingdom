@@ -20,6 +20,9 @@ public class PlayerData
 
    public Vector2 MapLocation;
 
+   //Camera Information
+   public int CameraTarget;
+
 
     public PlayerData(string name){
         PlayerName = name;

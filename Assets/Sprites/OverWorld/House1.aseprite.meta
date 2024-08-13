@@ -142,18 +142,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
   spriteSheetImportData:
-  - name: House1_Upper1
+  - name: House Door
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 79
-      y: 41
-      width: 44
-      height: 25
-    spriteID: 0f6b196b21061a44ab0c6120182f72bf
+      x: 91
+      y: 5
+      width: 21
+      height: 35
+    spriteID: c9ec00c2d3bc9ba4a94fde81a7fbe4fe
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -162,27 +162,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: House1_Upper2
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 53
-      width: 119
-      height: 56
-    spriteID: c062c12e2888bee4a980ec5cc27e6c45
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: House1_base
+  - name: House1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -193,7 +173,7 @@ ScriptedImporter:
       y: 4
       width: 119
       height: 105
-    spriteID: 4c5ec65d5584c8043b437081ced2af81
+    spriteID: 8d5ff59b3326e9e42a42c2f88761ff34
     spriteBone: []
     spriteOutline: []
     vertices: []

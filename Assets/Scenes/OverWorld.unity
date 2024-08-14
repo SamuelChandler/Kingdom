@@ -40830,11 +40830,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7642603343107233500, guid: 71fa283b331d7ae47b562b7dad8edc29, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.384075
+      value: 9.361
       objectReference: {fileID: 0}
     - target: {fileID: 7642603343107233500, guid: 71fa283b331d7ae47b562b7dad8edc29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8188477
+      value: -3.183
       objectReference: {fileID: 0}
     - target: {fileID: 7642603343107233500, guid: 71fa283b331d7ae47b562b7dad8edc29, type: 3}
       propertyPath: m_LocalPosition.z
@@ -40904,6 +40904,14 @@ PrefabInstance:
     - target: {fileID: 5520669643027625822, guid: 38d2dbe3a071eea4d8a306018ef729be, type: 3}
       propertyPath: m_Name
       value: chair2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931753467813202194, guid: 38d2dbe3a071eea4d8a306018ef729be, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931753467813202194, guid: 38d2dbe3a071eea4d8a306018ef729be, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1505980195
       objectReference: {fileID: 0}
     - target: {fileID: 7234409171160389910, guid: 38d2dbe3a071eea4d8a306018ef729be, type: 3}
       propertyPath: m_LocalPosition.x

@@ -752,43 +752,54 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     public void ShowUnitActionTiles(BaseUnit baseUnit){
 
         int width = 0;
+        int farthestTileDistance = baseUnit.unit.speed+2;
         
+        //only show the attack indicator if the unit is unable to move
         if(!baseUnit.isAbleToMove){
             ShowAttackIndicatorOnly(baseUnit);
             return;
         }
 
-        for(int j = baseUnit.unit.speed+1; j >= -baseUnit.unit.speed-1;j--){
+        //traverse each surrounding tile based on unit speed and attack range (2 by defualt)
+        for(int j = farthestTileDistance; j >= -farthestTileDistance;j--){
 
             for(int i = width; i >= -width; i--){
                 Vector2 offset = new Vector2(i,j);
                 Tile cTile = GetTileAtPosition(baseUnit.OccupiedTile,offset);
 
-                if(cTile != null){
-                    if(cTile.OccupiedStructure == null && cTile.OccupiedUnit == null){
-                        cTile.SetMoveIndicator();
-                    }else{
-                        if(cTile.OccupiedStructure != null){
-                            if(cTile.OccupiedStructure._structure.Faction == Faction.Enemy){
-                                if(baseUnit.isAbleToAttack){cTile.SetAttackIndicator();}
-                            }
-                        }
-                        else if(cTile.OccupiedUnit != null){
-                            if(cTile.OccupiedUnit.unit.Faction == Faction.Enemy){
-                                if(baseUnit.isAbleToAttack){cTile.SetAttackIndicator();}  
-                            }
+                if(cTile == null){
+                    continue;
+                }
+                
+                //set movement if no one is occupying otherwise set attack indicator 
+                if(cTile.OccupiedStructure == null && cTile.OccupiedUnit == null){
+                    cTile.SetMoveIndicator();
+                }else{
+                    if(cTile.OccupiedStructure != null){
+                        if(cTile.OccupiedStructure._structure.Faction == Faction.Enemy){
+                            if(baseUnit.isAbleToAttack){cTile.SetAttackIndicator();}
                         }
                     }
-
-                    int dist = GetDistanceBetweenTiles(baseUnit.OccupiedTile,cTile);
-
-                    if( dist > baseUnit.unit.speed){
-                        if(baseUnit.isAbleToAttack){cTile.SetAttackIndicator();}
-                        else{cTile.ClearTile();}
+                    else if(cTile.OccupiedUnit != null){
+                        if(cTile.OccupiedUnit.unit.Faction == Faction.Enemy){
+                            if(baseUnit.isAbleToAttack){cTile.SetAttackIndicator();}  
+                        }
                     }
                 }
 
-                
+                int dist = GetDistanceBetweenTiles(baseUnit.OccupiedTile,cTile);
+
+                //if the attack is out of movement range set to attack indicator
+                if( dist > baseUnit.unit.speed){
+                    if(baseUnit.isAbleToAttack){cTile.SetAttackIndicator();}
+                    else{cTile.ClearTile();}
+                }
+
+                //determine if one of 4 corners and clear that tile if it is
+                if((Mathf.Abs(i) == farthestTileDistance && j == 0) || (Mathf.Abs(j) == farthestTileDistance && i == 0)){
+                    cTile.ClearTile();
+                }
+
 
             }
             
@@ -863,30 +874,6 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         }
     }
 
-    public void UnShowMovmentTiles(Tile src, int speed){
-        int width = 0;
-
-        for(int j = speed+1; j >= -speed-1;j--){
-
-            for(int i = width; i >= -width; i--){
-                Vector2 offset = new Vector2(i,j);
-                Tile cTile = GetTileAtPosition(src,offset);
-
-                if(cTile != null){
-                    cTile.ClearTile();
-                }
-
-            }
-            
-            if(j>0){
-                width++;
-            }else{
-                width--;
-            }
-            
-        }
-    }
-
     public void ApplyFieldBuffs(){
         foreach(BaseHero bh in _heroes){
             bh.currentAttack += allyAttackBuff;
@@ -910,9 +897,6 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             be.UpdateAttackAndHealthDisplay();
         }
     }
-
-
-
 
     public Card GetRewardCard(){
         return _map.reward;

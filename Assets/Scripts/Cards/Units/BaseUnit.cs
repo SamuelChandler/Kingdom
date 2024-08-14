@@ -137,7 +137,7 @@ public class BaseUnit : MonoBehaviour
 
     public void DeSelect(){
         GetComponent<Renderer>().material = defualtMaterial; 
-        Board_Manager.instance.UnShowMovmentTiles(OccupiedTile,unit.speed);
+        Board_Manager.instance.ClearBoardIndicators();
     }
 
     public virtual void removeUnit(){}

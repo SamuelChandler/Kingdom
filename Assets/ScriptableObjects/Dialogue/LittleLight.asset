@@ -10,24 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d48c8c2a0043ca140b0459e7a27e30a0, type: 3}
-  m_Name: Boar
+  m_Name: LittleLight
   m_EditorClassIdentifier: 
-  Name: Boar
+  Name: Little Lite
   _dialog:
-  - Paragraph: A boar runs at you
-    isChoice: 0
-    _choiceOne: 
-    _choiceOnePtr: 0
-    _choiceTwo: 
-    _choiceTwoPtr: 0
-    map: {fileID: 0}
-  - Paragraph: 'What do you do? '
+  - Paragraph: The Little Light seems to be setting furnature on fire and enjoying
+      itself
     isChoice: 1
-    _choiceOne: Run
-    _choiceOnePtr: 2
-    _choiceTwo: Fight
-    _choiceTwoPtr: -1
-    map: {fileID: 11400000, guid: 17d26cda3753ffd4b875fbef40c9fbca, type: 2}
-  LastWordsEvent: 2
+    _choiceOne: Try to scare off the little light
+    _choiceOnePtr: -1
+    _choiceTwo: Let the Little Light Have Its Fun
+    _choiceTwoPtr: 1
+    map: {fileID: 11400000, guid: ff7ac236eaff1484690a3905831c2ae8, type: 2}
+  LastWordsEvent: 5
   LastWords: 
   nextDialogs: []

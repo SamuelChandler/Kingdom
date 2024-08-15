@@ -128,8 +128,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 84
-      y: 4
+      x: 4
+      y: 40
       width: 31
       height: 28
     spriteID: 913b5eb27b133a149a0560bb3e08ef09
@@ -140,7 +140,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 84, y: 4}
+    uvTransform: {x: 4, y: 40}
   - name: Ally Predation_Frame_1
     originalName: 
     pivot: {x: 0.58064514, y: -0.14285715}
@@ -149,7 +149,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 40
+      y: 76
       width: 31
       height: 28
     spriteID: c337a399533bcf04baaf16c950057e53
@@ -160,7 +160,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 40}
+    uvTransform: {x: 4, y: 76}
   - name: Ally Predation_Frame_2
     originalName: 
     pivot: {x: 0.5625, y: -0.14285715}
@@ -183,15 +183,15 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Ally Predation_Frame_3
     originalName: 
-    pivot: {x: 0.5625, y: -0.14285715}
+    pivot: {x: 0.5483871, y: -0.15384616}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 44
-      y: 4
-      width: 32
-      height: 28
+      y: 38
+      width: 31
+      height: 26
     spriteID: 10444b87705f6d04c8a0fa9f3823043a
     spriteBone: []
     spriteOutline: []
@@ -200,18 +200,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 44, y: 4}
+    uvTransform: {x: 44, y: 38}
   - name: Ally Predation_Frame_4
     originalName: 
-    pivot: {x: 0.58064514, y: -0.14285715}
+    pivot: {x: 0.5625, y: -0.15384616}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 43
-      y: 40
-      width: 31
-      height: 28
+      x: 4
+      y: 220
+      width: 32
+      height: 26
     spriteID: c9d47ffc7367230488cd630c8b7d2f2e
     spriteBone: []
     spriteOutline: []
@@ -220,18 +220,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 43, y: 40}
+    uvTransform: {x: 4, y: 220}
   - name: Ally Predation_Frame_5
     originalName: 
-    pivot: {x: 0.58064514, y: -0.14285715}
+    pivot: {x: 0.5625, y: -0.15384616}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 82
-      y: 40
-      width: 31
-      height: 28
+      x: 44
+      y: 4
+      width: 32
+      height: 26
     spriteID: 6d62062f5955ad64c9a2a44407399290
     spriteBone: []
     spriteOutline: []
@@ -240,16 +240,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 82, y: 40}
+    uvTransform: {x: 44, y: 4}
   - name: Ally Predation_Frame_6
     originalName: 
-    pivot: {x: 0.58064514, y: -0.14285715}
+    pivot: {x: 0.5483871, y: -0.14285715}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 76
+      y: 112
       width: 31
       height: 28
     spriteID: 1cf13120245d84f4b8886aa2d78b65f5
@@ -260,7 +260,67 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 76}
+    uvTransform: {x: 4, y: 112}
+  - name: Ally Predation_Frame_7
+    originalName: 
+    pivot: {x: 0.53571427, y: -0.14285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 72
+      width: 28
+      height: 28
+    spriteID: 8b418fb1d6b33f4489e9aa3d67d0249f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 72}
+  - name: Ally Predation_Frame_8
+    originalName: 
+    pivot: {x: 0.58064514, y: -0.14285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 148
+      width: 31
+      height: 28
+    spriteID: 4f4b2302e8c14c445bc09b4db2e3d11b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 148}
+  - name: Ally Predation_Frame_9
+    originalName: 
+    pivot: {x: 0.58064514, y: -0.14285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 184
+      width: 31
+      height: 28
+    spriteID: 97a3a8ccfd39ca2459350cdef8ce325c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 184}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -297,35 +357,59 @@ ScriptedImporter:
     - name: Ally Predation_Frame_3
       frameIndex: 3
       cellRect:
-        x: 2
+        x: 3
         y: 4
-        width: 32
-        height: 28
+        width: 31
+        height: 26
       spriteId: 10444b87705f6d04c8a0fa9f3823043a
     - name: Ally Predation_Frame_4
       frameIndex: 4
       cellRect:
         x: 2
         y: 4
-        width: 31
-        height: 28
+        width: 32
+        height: 26
       spriteId: c9d47ffc7367230488cd630c8b7d2f2e
     - name: Ally Predation_Frame_5
       frameIndex: 5
       cellRect:
         x: 2
         y: 4
-        width: 31
-        height: 28
+        width: 32
+        height: 26
       spriteId: 6d62062f5955ad64c9a2a44407399290
     - name: Ally Predation_Frame_6
       frameIndex: 6
+      cellRect:
+        x: 3
+        y: 4
+        width: 31
+        height: 28
+      spriteId: 1cf13120245d84f4b8886aa2d78b65f5
+    - name: Ally Predation_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 5
+        y: 4
+        width: 28
+        height: 28
+      spriteId: 8b418fb1d6b33f4489e9aa3d67d0249f
+    - name: Ally Predation_Frame_8
+      frameIndex: 8
       cellRect:
         x: 2
         y: 4
         width: 31
         height: 28
-      spriteId: 1cf13120245d84f4b8886aa2d78b65f5
+      spriteId: 4f4b2302e8c14c445bc09b4db2e3d11b
+    - name: Ally Predation_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 2
+        y: 4
+        width: 31
+        height: 28
+      spriteId: 97a3a8ccfd39ca2459350cdef8ce325c
     linkedCells: []
     parentIndex: -1
   platformSettings: []

@@ -57,9 +57,10 @@ public class DamageSurrounding: Effect{
 
     public override void ActivateEffect(BaseUnit u){
         if(u.unit.Faction == Faction.Hero){
-
+            
             //for each enemy, check distance and apply damage accourdingly
-            foreach(BaseEnemy e in Board_Manager.instance._enemies){
+            BaseEnemy[] possibleEnemies = Board_Manager.instance._enemies.ToArray();
+            foreach(BaseEnemy e in possibleEnemies){
                 bool withinOne = Board_Manager.instance.WithinOne(e.OccupiedTile,u.OccupiedTile);
                 if(withinOne){
                     e.TakeDamage(_damageAmount);
@@ -67,7 +68,8 @@ public class DamageSurrounding: Effect{
             }
 
             //for each enemy structure, check distance and apply damage accourdingly
-            foreach(EnemyStructure e in Board_Manager.instance._EnemyStructures){
+            Structure[] possibleEnemyStruts = Board_Manager.instance._EnemyStructures.ToArray();
+            foreach(EnemyStructure e in possibleEnemyStruts){
                  bool withinOne = Board_Manager.instance.WithinOne(e.OccupiedTiles[0,0],u.OccupiedTile);
                 if(withinOne){
                     e.TakeDamage(_damageAmount);
@@ -78,7 +80,8 @@ public class DamageSurrounding: Effect{
         }else if(u.unit.Faction == Faction.Enemy){
 
             //for each enemy, check distance and apply damage accourdingly
-            foreach(BaseHero h in Board_Manager.instance._heroes){
+            BaseHero[] possibleHeros = Board_Manager.instance._heroes.ToArray();
+            foreach(BaseHero h in possibleHeros){
                 bool withinOne = Board_Manager.instance.WithinOne(h.OccupiedTile,u.OccupiedTile);
                 if(withinOne){
                     h.TakeDamage(_damageAmount);
@@ -86,7 +89,8 @@ public class DamageSurrounding: Effect{
             }
 
             //for each enemy structure, check distance and apply damage accourdingly
-            foreach(AllyStructure h in Board_Manager.instance._AllyStructures){
+            Structure[] possibleAllyStructs = Board_Manager.instance._AllyStructures.ToArray();
+            foreach(AllyStructure h in possibleAllyStructs){
                 bool withinOne = Board_Manager.instance.WithinOne(h.OccupiedTiles[0,0],u.OccupiedTile);
                 if(withinOne){
                     h.TakeDamage(_damageAmount);

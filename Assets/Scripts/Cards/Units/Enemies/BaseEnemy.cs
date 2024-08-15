@@ -73,6 +73,5 @@ public class BaseEnemy : BaseUnit
         
         Board_Manager.instance.RemoveEnemy(this);
 
-
     }
 }

@@ -643,7 +643,11 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     public bool RemoveEnemy(BaseEnemy e){
 
         if(_enemies.Contains(e)){
+            
             _enemies.Remove(e);
+
+            Game_Manager.instance.CheckEnemyClearCondition();
+
             return true;
         }
         return false;
@@ -651,7 +655,11 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
     public bool removeEnemyStructure(EnemyStructure e){
         if(_EnemyStructures.Contains(e)){
+            
             _EnemyStructures.Remove(e);
+
+            Game_Manager.instance.CheckEnemyClearCondition();
+
             return true;
         }
         return false;

@@ -50,7 +50,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
     public void StartGame(){
 
         //determine if a time limit for turns is instituted
-        if(Board_Manager.instance._map._levelType == LevelType.ClearAllNeutralEnemiesInTimeLimit){
+        if(Board_Manager.instance._map._turns > 0){
             TimeLimit = true;
         }else{
             TimeLimit = false;
@@ -310,6 +310,21 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         GameWin = false;
         Menu_Manager.instance.showLossScreen();
         DataPersistanceManager.instance.SaveGame();
+    }
+
+    internal void CheckEnemyClearCondition()
+    {
+        //do nothing if it is not a map that cares about 
+        if(Board_Manager.instance._map._levelType != LevelType.ClearEnemies){return;}
+
+        //do nothing if an enemy unit still exists 
+        if(Board_Manager.instance._enemies.Count != 0){return;}
+
+        //do nothing if an enemy structure still exists
+        if(Board_Manager.instance._EnemyStructures.Count != 0){return;}
+
+        //passed All checks resolve Win 
+        ResolveGameWin();
     }
 }
 

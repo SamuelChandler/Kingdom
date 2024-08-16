@@ -910,6 +910,23 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         return _map.reward;
     }
 
+    public void TileEndOfTurnEffects(){
+
+        List<ITileEndTurnEffect> EndOfTurnEffects = FindAllTilesWithEndOfTurnEffects();
+
+        foreach(ITileEndTurnEffect dpObject in EndOfTurnEffects){
+            dpObject.EndTurnEffect();
+        }
+    }
+
+    private List<ITileEndTurnEffect> FindAllTilesWithEndOfTurnEffects()
+    {
+        IEnumerable<ITileEndTurnEffect> dataPersistanceObjects = FindObjectsOfType<MonoBehaviour>()
+            .OfType<ITileEndTurnEffect>();
+
+        return new List<ITileEndTurnEffect>(dataPersistanceObjects);
+    }
+
     public void LoadData(PlayerData playerData)
     {
 

@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ac5d555e1b33844a0e18a14326c594, type: 3}
+  m_Name: FurnaceMiteFight
+  m_EditorClassIdentifier: 
+  height: 7
+  width: 7
+  MapTiles: '1211111
+
+    1111211
+
+    1211211
+
+    1221111
+
+    1111221
+
+    2111221
+
+    1111121'
+  emptyTile: {fileID: -634359257596650371, guid: d43519453b7c80c4f959e2b4baaa4c9e, type: 3}
+  t1: {fileID: 4514571189537591133, guid: db668b28047b5e34ebf8c10820df6990, type: 3}
+  t2: {fileID: 8661591216078393106, guid: eb6b224903d1c4f4e807537fcc1e28fd, type: 3}
+  t3: {fileID: 0}
+  t4: {fileID: 0}
+  t5: {fileID: 0}
+  enemies:
+  - enemy: {fileID: 11400000, guid: 80d6758e803f8054f9be588a7b39479d, type: 2}
+    loc: {x: 3, y: 3}
+  - enemy: {fileID: 11400000, guid: 98945bf71c5030043b80223a37452c46, type: 2}
+    loc: {x: 5, y: 5}
+  - enemy: {fileID: 11400000, guid: 80d6758e803f8054f9be588a7b39479d, type: 2}
+    loc: {x: 3, y: 6}
+  - enemy: {fileID: 11400000, guid: 98945bf71c5030043b80223a37452c46, type: 2}
+    loc: {x: 6, y: 6}
+  - enemy: {fileID: 11400000, guid: 80d6758e803f8054f9be588a7b39479d, type: 2}
+    loc: {x: 7, y: 7}
+  structures: []
+  _levelType: 0
+  _boss:
+    enemy: {fileID: 0}
+    loc: {x: 0, y: 0}
+  _leader:
+    unit: {fileID: 0}
+    loc: {x: 0, y: 4}
+  _turns: 0
+  _spawners: []
+  reward: {fileID: 11400000, guid: 3b163bd384cacf3488a9bb4c5ab3dbe6, type: 2}
+  onWinEvent: 6

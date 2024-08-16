@@ -21,7 +21,11 @@ MonoBehaviour:
     desc: 'Defeated Boar fight '
   - completed: 0
     desc: Defeated Sturdy Tree
-  - completed: 0
+  - completed: 1
     desc: Starter Has Been Selected
-  - completed: 0
+  - completed: 1
     desc: Little Lite 1 Defeated
+  - completed: 0
+    desc: Furnace Mite Defeated
+  - completed: 0
+    desc: Furnace Geist Defeated

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d0ae76b5a4512e488865136dbaecdf2, type: 3}
-  m_Name: FurnaceGeist
+  m_Name: FurnaceMite
   m_EditorClassIdentifier: 
-  image: {fileID: -1983345146548954742, guid: 702d54f8f6810e648bde8e597749b7ef, type: 3}
-  name: Furnace Giest
+  image: {fileID: 5983465991428235801, guid: 8a42fa8d326bbf04dae34189dc6fa499, type: 3}
+  name: Furnace Mite
   inspirationCost: 2
-  description: 'End of Turn: Deal 1 damage To each opponent on a Flame Tile '
+  description: 'After Moving: Transform My Previous Tile Into A Flame Tile'
   type: 1
-  Faction: 0
-  health: 4
+  Faction: 1
+  health: 3
   attack: 1
   speed: 2
   _leader: 0

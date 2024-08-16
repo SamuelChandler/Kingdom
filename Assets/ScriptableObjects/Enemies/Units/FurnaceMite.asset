@@ -15,7 +15,7 @@ MonoBehaviour:
   image: {fileID: 5983465991428235801, guid: 8a42fa8d326bbf04dae34189dc6fa499, type: 3}
   name: Furnace Mite
   inspirationCost: 2
-  description: 'After Moving: Transform My Previous Tile Into A Flame Tile'
+  description: 'Before Moving: Set My Tile on Fire!!!'
   type: 1
   Faction: 1
   health: 5
@@ -28,6 +28,7 @@ MonoBehaviour:
   OnAttack: {fileID: 0}
   OnEndTurn: {fileID: 0}
   OnStartOfTurn: {fileID: 0}
+  beforeMoving: {fileID: 11400000, guid: 7990895b5fb2fed49a080bf4e1331c85, type: 2}
   afterMoving: {fileID: 0}
   OnAllyDeath: {fileID: 0}
   animatorController: {fileID: 0}

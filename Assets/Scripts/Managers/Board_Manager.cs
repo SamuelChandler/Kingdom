@@ -82,6 +82,35 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         Game_Manager.instance.ChangeState(GameState.SpawnHero);
     }
 
+    public void SwapTiles(Tile newTile,Tile OccupiedTile){
+        Debug.Log("Swapping Tiles, " + newTile.name + " and " + OccupiedTile.name);
+
+        Structure occupyingStuct = OccupiedTile.OccupiedStructure;
+        BaseUnit occupyingUnit = OccupiedTile.OccupiedUnit;
+
+        int x = OccupiedTile.x;
+        int y = OccupiedTile.y;
+
+        var spawnedTile = Instantiate(newTile, new Vector3(Tilesize * x, Tilesize * -y), Quaternion.identity);
+        spawnedTile.name = $"Tile {x} {y}";
+        spawnedTile.Init(x, y);
+        _tiles[new Vector2(x, y)] = spawnedTile;
+
+        if(occupyingUnit != null){
+            _tiles[new Vector2(x, y)].OccupiedUnit = occupyingUnit;
+            occupyingUnit.OccupiedTile = spawnedTile;
+        }
+
+        if(occupyingStuct != null){
+            _tiles[new Vector2(x, y)].OccupiedStructure = occupyingStuct;
+            occupyingStuct.OccupiedTiles[0,0] = spawnedTile;
+
+        }
+
+        Destroy(OccupiedTile.GameObject());
+        
+    }
+
     public void SpawnLeader(ScriptableUnit leader){
         Tile destTile = GetTileAtPosition(_map._leader.loc);
 
@@ -522,10 +551,13 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         if(unit.unit.Faction == Faction.Hero){
             Unit_Manager.instance.SetSelectedHero((BaseHero)null);
         }
-        
+
+        //Activate Before movement Effect
+        if(unit.unit.beforeMoving != null){
+            unit.unit.beforeMoving.ActivateEffect(unit);
+        }
         
         destTile.setUnit(unit);
-        
 
         //remove movment token
         unit.isAbleToMove = false;
@@ -926,6 +958,8 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
         return new List<ITileEndTurnEffect>(dataPersistanceObjects);
     }
+
+    
 
     public void LoadData(PlayerData playerData)
     {

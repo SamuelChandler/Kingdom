@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FlameTile : Tile, ITileEndTurnEffect
@@ -26,10 +27,12 @@ public class FlameTile : Tile, ITileEndTurnEffect
     public void EndTurnEffect()
     {
         if(OccupiedUnit != null){
+            Debug.Log(OccupiedUnit.unit.name + " was burned by " + name);
             OccupiedUnit.TakeDamage(DamageAmount);
         }
 
         if(OccupiedStructure != null){
+            Debug.Log(OccupiedStructure._structure.name + " was burned");
             OccupiedStructure.TakeDamage(DamageAmount);
         }
     }

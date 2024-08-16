@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5189793958213283478
 Transform:
   m_ObjectHideFlags: 0
@@ -116,10 +116,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlameTile
       objectReference: {fileID: 0}
+    - target: {fileID: 3136251411227949753, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172439750072396845, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: tileName
+      value: Flame Tile
+      objectReference: {fileID: 0}
     - target: {fileID: 3172439750072396845, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
       propertyPath: _highlight
       value: 
       objectReference: {fileID: 5538690771260505390}
+    - target: {fileID: 3172439750072396845, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: _possibleSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 3288915331251678126, guid: d032912867dffde41bafe0811974da43, type: 3}
     - target: {fileID: 3202668672930484636, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -158,6 +170,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3202668672930484636, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5525850790554993899, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5553256529938033025, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
@@ -200,7 +216,8 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3172439750072396845, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
     m_RemovedGameObjects:
     - {fileID: 2222145622871065380, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
     m_AddedGameObjects:

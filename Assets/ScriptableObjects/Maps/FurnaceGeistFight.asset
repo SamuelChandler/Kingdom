@@ -46,7 +46,7 @@ MonoBehaviour:
   _levelType: 1
   _boss:
     enemy: {fileID: 11400000, guid: 7eea1750f97662646bd9ff034e8aa99a, type: 2}
-    loc: {x: 4, y: 8}
+    loc: {x: 7, y: 4}
   _leader:
     unit: {fileID: 0}
     loc: {x: 0, y: 4}

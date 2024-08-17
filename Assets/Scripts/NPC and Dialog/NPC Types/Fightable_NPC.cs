@@ -12,7 +12,6 @@ public class Fightable_NPC : NPC, ITalkable
         //set convorsation stats
         convoStats = new ConversationStats(false,true,0,_dialogText._dialog.Length);
         
-        
     }
 
     new void Update()

@@ -27,7 +27,7 @@ public class EnemyAI : MonoBehaviour
     {
         foreach (var e in Board_Manager.instance._enemies)
         {   
-            Debug.Log(e.unit.name);
+            //Debug.Log(e.unit.name);
             e.uAI.TakeTurn();
         }
     }

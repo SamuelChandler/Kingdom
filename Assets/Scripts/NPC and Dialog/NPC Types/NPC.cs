@@ -12,9 +12,13 @@ public abstract class NPC : MonoBehaviour, IInteractable
 
     [SerializeField] private float INTERACT_DISTANCE = 5f;
 
+    [SerializeField] private int _despawnEvent;
+
     private void Start()
     {
         _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        
+        
     }
 
     protected void Update()
@@ -44,6 +48,11 @@ public abstract class NPC : MonoBehaviour, IInteractable
             //turn on sprite
             _interactSprite.gameObject.SetActive(true);
         }
+
+        //check if despawn event completed and despawn if it is
+        if(DataPersistanceManager.instance.CheckEvent(_despawnEvent)){
+            Destroy(gameObject);
+        }
     }
 
     public abstract void Interact();
@@ -51,6 +60,7 @@ public abstract class NPC : MonoBehaviour, IInteractable
     public abstract void StopInteracting();
 
     public abstract void ResolveChoice(bool c);
+
     private bool IsWithinInteractDistance()
     {
         if (Vector2.Distance(_playerTransform.position, transform.position) < INTERACT_DISTANCE)

@@ -213,6 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactSprite: {fileID: 8038981602709236478}
   INTERACT_DISTANCE: 2
+  _despawnEvent: 6
   _dialogText: {fileID: 11400000, guid: e2dbff36f3fb13b4492a68c116fe3e55, type: 2}
 --- !u!70 &8288022691614133631
 CapsuleCollider2D:

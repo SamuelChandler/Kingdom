@@ -330,7 +330,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         if(Board_Manager.instance._EnemyStructures.Count != 0){return;}
 
         //passed All checks resolve Win 
-        ResolveGameWin();
+        ChangeState(GameState.GameWin);
     }
 }
 

@@ -148,7 +148,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5751440572450589062, guid: 1f035e7fbe98deb4a832d9aa506d6e4f, type: 3}
       propertyPath: m_Name
-      value: Furnace Mite
+      value: Furnace Geist
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548399014018550044, guid: 1f035e7fbe98deb4a832d9aa506d6e4f, type: 3}
+      propertyPath: _despawnEvent
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8536179728669430423, guid: 1f035e7fbe98deb4a832d9aa506d6e4f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -244,6 +248,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2003959211039486034, guid: 441a73ed99bd3614c900b153ba58970f, type: 3}
   m_PrefabInstance: {fileID: 3007693853658855101}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &324496672 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8536179728669430423, guid: 954ef6f10adf70f459209b8724dfba59, type: 3}
+  m_PrefabInstance: {fileID: 1665907238}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &332642729
 PrefabInstance:
@@ -38969,6 +38978,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -1505980195
       objectReference: {fileID: 0}
+    - target: {fileID: 6548399014018550044, guid: 1e7bfa6170ffb8c4c85c6aa824555474, type: 3}
+      propertyPath: _despawnEvent
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8038981602709236478, guid: 1e7bfa6170ffb8c4c85c6aa824555474, type: 3}
       propertyPath: m_SortingLayer
       value: 2
@@ -39346,6 +39359,7 @@ Transform:
   - {fileID: 2114866977}
   - {fileID: 1661164344}
   - {fileID: 1204886572}
+  - {fileID: 324496672}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1661164344 stripped
@@ -39359,23 +39373,27 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1658386529}
     m_Modifications:
     - target: {fileID: 5751440572450589062, guid: 954ef6f10adf70f459209b8724dfba59, type: 3}
       propertyPath: m_Name
-      value: Furnace Geist
+      value: Furnace Mite
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548399014018550044, guid: 954ef6f10adf70f459209b8724dfba59, type: 3}
+      propertyPath: _despawnEvent
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8536179728669430423, guid: 954ef6f10adf70f459209b8724dfba59, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -42.919395
+      value: -47.91712
       objectReference: {fileID: 0}
     - target: {fileID: 8536179728669430423, guid: 954ef6f10adf70f459209b8724dfba59, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 31.451136
+      value: 30.800879
       objectReference: {fileID: 0}
     - target: {fileID: 8536179728669430423, guid: 954ef6f10adf70f459209b8724dfba59, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.08037498
       objectReference: {fileID: 0}
     - target: {fileID: 8536179728669430423, guid: 954ef6f10adf70f459209b8724dfba59, type: 3}
       propertyPath: m_LocalRotation.w
@@ -39383,15 +39401,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8536179728669430423, guid: 954ef6f10adf70f459209b8724dfba59, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8536179728669430423, guid: 954ef6f10adf70f459209b8724dfba59, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8536179728669430423, guid: 954ef6f10adf70f459209b8724dfba59, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8536179728669430423, guid: 954ef6f10adf70f459209b8724dfba59, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -40372,6 +40390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactSprite: {fileID: 1448378817}
   INTERACT_DISTANCE: 2
+  _despawnEvent: 0
   _dialogText: {fileID: 11400000, guid: 9f87e38a1c8eff2469a9448a262b3937, type: 2}
 --- !u!50 &2114866980
 Rigidbody2D:
@@ -41516,4 +41535,3 @@ SceneRoots:
   - {fileID: 429827609}
   - {fileID: 1543711408}
   - {fileID: 2105522147}
-  - {fileID: 1665907238}

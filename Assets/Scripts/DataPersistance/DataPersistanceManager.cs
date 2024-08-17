@@ -133,6 +133,9 @@ public class DataPersistanceManager : MonoBehaviour
         _sTracker.events[i].completed = b;
     }
 
+    public bool CheckEvent(int id){
+        return _sTracker.events[id].completed;
+    }
     private List<IDataPersistance> FindAllDataPersistenceObjects()
     {
         IEnumerable<IDataPersistance> dataPersistanceObjects = FindObjectsOfType<MonoBehaviour>()

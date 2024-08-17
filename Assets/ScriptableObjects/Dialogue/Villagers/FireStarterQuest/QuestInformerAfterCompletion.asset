@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d48c8c2a0043ca140b0459e7a27e30a0, type: 3}
-  m_Name: FirstShopKeeper
+  m_Name: QuestInformerAfterCompletion
   m_EditorClassIdentifier: 
-  Name: Shop Keeper
+  Name: Richard
   _dialog:
-  - Paragraph: Afternoon Welcome to my shop what can I do for you today?
-    isChoice: 1
-    _choiceOne: Familiars
-    _choiceOnePtr: -1
-    _choiceTwo: Nothing
-    _choiceTwoPtr: 1
+  - Paragraph: Oh! You cleared out all the fire creatures!
+    isChoice: 0
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
     map: {fileID: 0}
-  - Paragraph: Sure thing come by whenever you want to stop window shopping
+  - Paragraph: Thank You So much for your help
     isChoice: 0
     _choiceOne: 
     _choiceOnePtr: 0
@@ -30,6 +30,4 @@ MonoBehaviour:
     map: {fileID: 0}
   LastWordsEvent: 0
   LastWords: 
-  nextDialogs:
-  - targetDialogItem: {fileID: 11400000, guid: 037d40c5b4a8d95498f36da265d876fd, type: 2}
-    eventIds: 04000000
+  nextDialogs: []

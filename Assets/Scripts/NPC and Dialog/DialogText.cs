@@ -26,9 +26,20 @@ public class DialogText : ScriptableObject
         }
 
         foreach(NextDialog nextDialog in nextDialogs){
-            if(events.Contains(nextDialog.eventId)){
+
+            bool completed = true;
+
+            foreach( int x in nextDialog.eventIds){
+                if(!events.Contains(x)){
+                    completed = false;
+                }
+            }
+
+            if(completed){
                 return nextDialog.targetDialogItem.getNextDialogText(events);
             }
+            
+            
         }
 
         return this;
@@ -61,5 +72,5 @@ public class DialogSegment{
 [Serializable]
 public class NextDialog{
     public DialogText targetDialogItem;
-    public int eventId;
+    public int[] eventIds;
 }

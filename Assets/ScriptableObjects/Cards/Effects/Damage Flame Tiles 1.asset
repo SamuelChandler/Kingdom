@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3baaea7f7ab2e534484d94345dbf1a84, type: 3}
-  m_Name: SetMyTileToFire
+  m_Script: {fileID: 11500000, guid: 40efc34cd7b8ff54697b2e0a39ec2582, type: 3}
+  m_Name: Damage Flame Tiles 1
   m_EditorClassIdentifier: 
-  EffectName: Tile to Fire
-  tile: {fileID: 8661591216078393106, guid: eb6b224903d1c4f4e807537fcc1e28fd, type: 3}
+  EffectName: Damage Flame Tiles
+  DamageAmount: 1

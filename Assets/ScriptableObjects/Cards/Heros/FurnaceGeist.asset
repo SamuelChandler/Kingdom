@@ -26,8 +26,9 @@ MonoBehaviour:
   OnDeath: {fileID: 0}
   OnPlay: {fileID: 0}
   OnAttack: {fileID: 0}
-  OnEndTurn: {fileID: 0}
+  OnEndTurn: {fileID: 11400000, guid: 1fbff4ab670377646b6c88d8b4c6feee, type: 2}
   OnStartOfTurn: {fileID: 0}
+  beforeMoving: {fileID: 0}
   afterMoving: {fileID: 0}
   OnAllyDeath: {fileID: 0}
   animatorController: {fileID: 0}

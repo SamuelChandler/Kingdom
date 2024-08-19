@@ -30,7 +30,7 @@ public class BaseEnemy : BaseUnit
 
     public bool Attack(BaseHero hero)
     {   
-        //verfiy hero exists 
+        //verify hero exists 
         if (hero == null) return false;
 
         //check if enemy is within one space

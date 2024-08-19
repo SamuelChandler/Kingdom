@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OccupiedTile: {fileID: 0}
-  unit: {fileID: 11400000, guid: 25797eca0d896ce4db3dd95c9c1c6091, type: 2}
+  unit: {fileID: 11400000, guid: 673b42d6a3d9c7648b158f8417de012b, type: 2}
   spriteRenderer: {fileID: 2216078567971078873}
   attack: {fileID: 3622923866107887960}
   health: {fileID: 4268145055172470545}

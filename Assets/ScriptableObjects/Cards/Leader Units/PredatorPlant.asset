@@ -19,7 +19,7 @@ MonoBehaviour:
   type: 0
   Faction: 0
   health: 20
-  attack: 2
+  attack: 5
   speed: 2
   _leader: 1
   _swift: 0
@@ -27,7 +27,8 @@ MonoBehaviour:
   OnPlay: {fileID: 0}
   OnAttack: {fileID: 0}
   OnEndTurn: {fileID: 0}
-  OnStartOfTurn: {fileID: 0}
+  OnStartOfTurn: {fileID: 11400000, guid: e46640bf062a2a841918ede89ea120bd, type: 2}
+  beforeMoving: {fileID: 0}
   afterMoving: {fileID: 0}
   OnAllyDeath: {fileID: 0}
   animatorController: {fileID: 9100000, guid: 62766c0f3c5c87d41847b1dda8cdbe6c, type: 2}

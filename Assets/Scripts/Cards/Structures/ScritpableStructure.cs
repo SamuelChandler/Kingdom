@@ -22,6 +22,8 @@ public class ScriptableStructure : Card
 
     public Effect OnSummon;
 
+    public Effect OnAllyDeath;
+
     public int allyAttackBoost;
     
 }

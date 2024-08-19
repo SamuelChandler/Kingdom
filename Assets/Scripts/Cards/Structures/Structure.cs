@@ -35,6 +35,10 @@ public class Structure : MonoBehaviour
         SetBuffs();
 
         Event_Manager.OnRefresh += Refresh;
+
+        if(_structure.Faction == Faction.Hero && _structure.OnAllyDeath != null){
+            Event_Manager.onAllyDeath += _structure.OnAllyDeath.ActivateEffect;
+        }
     }
 
     public void Refresh(){

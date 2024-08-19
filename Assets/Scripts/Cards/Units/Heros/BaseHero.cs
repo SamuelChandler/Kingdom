@@ -8,6 +8,10 @@ public class BaseHero : BaseUnit
     public override void Awake(){
         base.Awake();
         Event_Manager.OnRefresh += Refresh;
+
+        if(unit.OnAllyDeath != null){
+            Event_Manager.onAllyDeath += unit.OnAllyDeath.ActivateEffect;
+        }
         
         currentAttack += Board_Manager.instance.allyAttackBuff;
         UpdateAttackAndHealthDisplay();
@@ -120,6 +124,8 @@ public class BaseHero : BaseUnit
         if(unit.OnDeath != null){
             unit.OnDeath.ActivateEffect(this);
         }
+
+        Event_Manager.instance.AllyDeath(this);
 
         Board_Manager.instance.RemoveHero(this);
     }

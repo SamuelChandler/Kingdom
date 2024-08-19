@@ -37,7 +37,7 @@ public class BaseHero : BaseUnit
 
         this.isAbleToAttack = false;
 
-        enemy.TakeDamage(currentAttack);
+        StartCoroutine(DelayThenDamage(enemy,currentAttack));
         
         return true;
     }
@@ -69,7 +69,7 @@ public class BaseHero : BaseUnit
 
         isAbleToAttack = false;
 
-        enemy.TakeDamage(this.currentAttack);
+        StartCoroutine(DelayThenDamage(enemy,currentAttack));
   
         return true;
     }
@@ -101,9 +101,32 @@ public class BaseHero : BaseUnit
 
         isAbleToAttack = false;
 
-        enemy.TakeDamage(currentAttack);
+        
+        StartCoroutine(DelayThenDamage(enemy,currentAttack));
   
         return true;
+    }
+
+    IEnumerator DelayThenDamage(NeutralStructure structure, int attack){
+
+        yield return new WaitForSeconds(Game_Manager.AttackDuration);
+
+        structure.TakeDamage(attack);
+
+    }
+
+    IEnumerator DelayThenDamage(EnemyStructure structure, int attack){
+
+        yield return new WaitForSeconds(Game_Manager.AttackDuration);
+
+        structure.TakeDamage(attack);
+
+    }
+
+    IEnumerator DelayThenDamage(BaseEnemy enemy, int attack){
+        yield return new WaitForSeconds(Game_Manager.AttackDuration);
+
+        enemy.TakeDamage(attack);
     }
 
     IEnumerator PlayAttackAnimation(){

@@ -99,9 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoorIndicator: {fileID: 2543302662811644602}
-  INTERACT_DISTANCE: 2
+  INTERACT_DISTANCE: 1
   nextDoor: {fileID: 0}
   _teleportOffset: {x: 2, y: 0, z: 0}
+  CameraDestinationTarget: {fileID: 0}
 --- !u!1 &2543302662811644602
 GameObject:
   m_ObjectHideFlags: 0

@@ -129,7 +129,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 173
+      y: 4
       width: 18
       height: 32
     spriteID: fb4b078684ad3be4fb6999eb14932aeb
@@ -140,18 +140,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 173}
+    uvTransform: {x: 4, y: 4}
   - name: Ally Cursed Idol_Frame_1
     originalName: 
-    pivot: {x: 0.42857143, y: -0.121212125}
+    pivot: {x: 0.38888893, y: -0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
+      x: 30
       y: 4
-      width: 21
-      height: 33
+      width: 18
+      height: 32
     spriteID: 6959c017c7b9f7747b76635ef86d355f
     spriteBone: []
     spriteOutline: []
@@ -160,18 +160,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 30, y: 4}
   - name: Ally Cursed Idol_Frame_2
     originalName: 
-    pivot: {x: 0.2631579, y: -0.11428572}
+    pivot: {x: 0.38888893, y: -0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 45
-      width: 19
-      height: 35
+      x: 56
+      y: 4
+      width: 18
+      height: 32
     spriteID: 639081c598a6e284ebaf455e7bc712a6
     spriteBone: []
     spriteOutline: []
@@ -180,18 +180,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 45}
+    uvTransform: {x: 56, y: 4}
   - name: Ally Cursed Idol_Frame_3
     originalName: 
-    pivot: {x: 0.29411766, y: -0.11764707}
+    pivot: {x: 0.38888893, y: -0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 131
-      width: 17
-      height: 34
+      x: 82
+      y: 4
+      width: 18
+      height: 32
     spriteID: 4ca1fc54cf9a21a4f8dc55bb82e231cc
     spriteBone: []
     spriteOutline: []
@@ -200,18 +200,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 131}
+    uvTransform: {x: 82, y: 4}
   - name: Ally Cursed Idol_Frame_4
     originalName: 
-    pivot: {x: 0.79999995, y: -0.11428572}
+    pivot: {x: 0.38888893, y: -0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 92
-      y: 198
-      width: 10
-      height: 35
+      x: 108
+      y: 4
+      width: 18
+      height: 32
     spriteID: 71c5d0aa5e9e02048be903cc1f3abad6
     spriteBone: []
     spriteOutline: []
@@ -220,18 +220,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 92, y: 198}
+    uvTransform: {x: 108, y: 4}
   - name: Ally Cursed Idol_Frame_5
     originalName: 
-    pivot: {x: 0.79999995, y: -0.11428572}
+    pivot: {x: 0.38888893, y: -0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 110
-      y: 198
-      width: 10
-      height: 35
+      x: 134
+      y: 4
+      width: 18
+      height: 32
     spriteID: d191985faace6ae40b05876bf77f2117
     spriteBone: []
     spriteOutline: []
@@ -240,18 +240,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 110, y: 198}
+    uvTransform: {x: 134, y: 4}
   - name: Ally Cursed Idol_Frame_6
     originalName: 
-    pivot: {x: 0.57142854, y: -0.11764707}
+    pivot: {x: 0.38888893, y: -0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 92
-      y: 78
-      width: 14
-      height: 34
+      x: 160
+      y: 4
+      width: 18
+      height: 32
     spriteID: 4510330298f64034eb88cfd586063249
     spriteBone: []
     spriteOutline: []
@@ -260,18 +260,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 92, y: 78}
+    uvTransform: {x: 160, y: 4}
   - name: Ally Cursed Idol_Frame_7
     originalName: 
-    pivot: {x: 0.3913043, y: -0.15384616}
+    pivot: {x: 0.38888893, y: -0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 33
-      y: 37
-      width: 23
-      height: 26
+      x: 186
+      y: 4
+      width: 18
+      height: 32
     spriteID: abd6d063badab5b488c5c6bfe371956c
     spriteBone: []
     spriteOutline: []
@@ -280,18 +280,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 33, y: 37}
+    uvTransform: {x: 186, y: 4}
   - name: Ally Cursed Idol_Frame_8
     originalName: 
-    pivot: {x: 0.35999998, y: -0.22222224}
+    pivot: {x: 0.38888893, y: -0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 33
-      y: 231
-      width: 25
-      height: 18
+      x: 212
+      y: 4
+      width: 18
+      height: 32
     spriteID: bdeb3d97b9a50264fb3fae47829f3ff3
     spriteBone: []
     spriteOutline: []
@@ -300,18 +300,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 33, y: 231}
+    uvTransform: {x: 212, y: 4}
   - name: Ally Cursed Idol_Frame_9
     originalName: 
-    pivot: {x: 0.3913043, y: -0.22222224}
+    pivot: {x: 0.38888893, y: -0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 92
-      y: 146
-      width: 23
-      height: 18
+      x: 4
+      y: 44
+      width: 18
+      height: 32
     spriteID: ddbe1d0b9fa00264b8c2ed2d161d3d9c
     spriteBone: []
     spriteOutline: []
@@ -320,18 +320,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 92, y: 146}
+    uvTransform: {x: 4, y: 44}
   - name: Ally Cursed Idol_Frame_10
     originalName: 
-    pivot: {x: 0.3913043, y: -0.22222224}
+    pivot: {x: 0.38888893, y: -0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 92
-      y: 172
-      width: 23
-      height: 18
+      x: 30
+      y: 44
+      width: 18
+      height: 32
     spriteID: 867f5b969ca41d047bbf118e78b37cd7
     spriteBone: []
     spriteOutline: []
@@ -340,18 +340,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 92, y: 172}
+    uvTransform: {x: 30, y: 44}
   - name: Ally Cursed Idol_Frame_11
     originalName: 
-    pivot: {x: 0.34615386, y: -0.22222224}
+    pivot: {x: 0.38888893, y: -0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 92
-      y: 120
-      width: 26
-      height: 18
+      x: 56
+      y: 44
+      width: 18
+      height: 32
     spriteID: f88799b11f53c234f95d4da4fcf40934
     spriteBone: []
     spriteOutline: []
@@ -360,18 +360,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 92, y: 120}
+    uvTransform: {x: 56, y: 44}
   - name: Ally Cursed Idol_Frame_12
     originalName: 
-    pivot: {x: 0.35999998, y: -0.16000001}
+    pivot: {x: 0.38888893, y: -0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 33
-      y: 4
-      width: 25
-      height: 25
+      x: 82
+      y: 44
+      width: 18
+      height: 32
     spriteID: 95d248b66d318b441a3579d77f546640
     spriteBone: []
     spriteOutline: []
@@ -380,18 +380,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 33, y: 4}
+    uvTransform: {x: 82, y: 44}
   - name: Ally Cursed Idol_Frame_13
     originalName: 
-    pivot: {x: 0.2777778, y: -0.11428572}
+    pivot: {x: 0.38888893, y: -0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 88
+      x: 108
+      y: 44
       width: 18
-      height: 35
+      height: 32
     spriteID: 00c02aeea853d03469e7ed9afb2f3486
     spriteBone: []
     spriteOutline: []
@@ -400,7 +400,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 88}
+    uvTransform: {x: 108, y: 44}
   - name: Ally Cursed Idol_Frame_14
     originalName: 
     pivot: {x: 0.38888893, y: -0.125}
@@ -408,8 +408,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 213
+      x: 134
+      y: 44
       width: 18
       height: 32
     spriteID: 2accbc1a87236f348b475120fe0c1a5e
@@ -420,7 +420,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 213}
+    uvTransform: {x: 134, y: 44}
   - name: Ally Cursed Idol_Frame_15
     originalName: 
     pivot: {x: 0.38888893, y: -0.125}
@@ -428,8 +428,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 33
-      y: 71
+      x: 160
+      y: 44
       width: 18
       height: 32
     spriteID: 411c424587a645945a559ff2d9c2ff83
@@ -440,7 +440,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 33, y: 71}
+    uvTransform: {x: 160, y: 44}
   - name: Ally Cursed Idol_Frame_16
     originalName: 
     pivot: {x: 0.38888893, y: -0.125}
@@ -448,8 +448,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 33
-      y: 111
+      x: 186
+      y: 44
       width: 18
       height: 32
     spriteID: d7830e2de33879e4aacbde04b648d9df
@@ -460,7 +460,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 33, y: 111}
+    uvTransform: {x: 186, y: 44}
   - name: Ally Cursed Idol_Frame_17
     originalName: 
     pivot: {x: 0.38888893, y: -0.125}
@@ -468,8 +468,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 33
-      y: 151
+      x: 212
+      y: 44
       width: 18
       height: 32
     spriteID: 9ba4600c1e90c6848aefa58ef15e44ff
@@ -480,7 +480,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 33, y: 151}
+    uvTransform: {x: 212, y: 44}
   - name: Ally Cursed Idol_Frame_18
     originalName: 
     pivot: {x: 0.38888893, y: -0.13333334}
@@ -488,8 +488,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 66
-      y: 124
+      x: 108
+      y: 84
       width: 18
       height: 30
     spriteID: a98ef7287874a244a9939fe39101b515
@@ -500,7 +500,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 66, y: 124}
+    uvTransform: {x: 108, y: 84}
   - name: Ally Cursed Idol_Frame_19
     originalName: 
     pivot: {x: 0.38888893, y: -0.13793103}
@@ -508,8 +508,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 66
-      y: 200
+      x: 160
+      y: 84
       width: 18
       height: 29
     spriteID: 5775df1b5ed395a47a46eb8d69139c3a
@@ -520,7 +520,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 66, y: 200}
+    uvTransform: {x: 160, y: 84}
   - name: Ally Cursed Idol_Frame_20
     originalName: 
     pivot: {x: 0.38888893, y: -0.13793103}
@@ -528,8 +528,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 92
-      y: 4
+      x: 186
+      y: 84
       width: 18
       height: 29
     spriteID: 89435e2624878044a87624217a482503
@@ -540,7 +540,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 92, y: 4}
+    uvTransform: {x: 186, y: 84}
   - name: Ally Cursed Idol_Frame_21
     originalName: 
     pivot: {x: 0.38888893, y: -0.13793103}
@@ -548,8 +548,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 92
-      y: 41
+      x: 212
+      y: 84
       width: 18
       height: 29
     spriteID: 27e46f421ad76da4ca6d7b6962d61235
@@ -560,7 +560,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 92, y: 41}
+    uvTransform: {x: 212, y: 84}
   - name: Ally Cursed Idol_Frame_22
     originalName: 
     pivot: {x: 0.38888893, y: -0.13333334}
@@ -568,8 +568,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 66
-      y: 162
+      x: 134
+      y: 84
       width: 18
       height: 30
     spriteID: bf14ace7ce7dde74a91d76d586f6b87e
@@ -580,7 +580,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 66, y: 162}
+    uvTransform: {x: 134, y: 84}
   - name: Ally Cursed Idol_Frame_23
     originalName: 
     pivot: {x: 0.38888893, y: -0.125}
@@ -588,8 +588,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 33
-      y: 191
+      x: 4
+      y: 84
       width: 18
       height: 32
     spriteID: 8ba721c2a72d49f49b5aec501eafbf4c
@@ -600,7 +600,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 33, y: 191}
+    uvTransform: {x: 4, y: 84}
   - name: Ally Cursed Idol_Frame_24
     originalName: 
     pivot: {x: 0.38888893, y: -0.125}
@@ -608,8 +608,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 66
-      y: 4
+      x: 30
+      y: 84
       width: 18
       height: 32
     spriteID: cad5ec9fe3e12b949837839eaf79d4c1
@@ -620,7 +620,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 66, y: 4}
+    uvTransform: {x: 30, y: 84}
   - name: Ally Cursed Idol_Frame_25
     originalName: 
     pivot: {x: 0.38888893, y: -0.125}
@@ -628,8 +628,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 66
-      y: 44
+      x: 56
+      y: 84
       width: 18
       height: 32
     spriteID: 2f157dd27f7406a4693315e4931b87cb
@@ -640,7 +640,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 66, y: 44}
+    uvTransform: {x: 56, y: 84}
   - name: Ally Cursed Idol_Frame_26
     originalName: 
     pivot: {x: 0.38888893, y: -0.125}
@@ -648,7 +648,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 66
+      x: 82
       y: 84
       width: 18
       height: 32
@@ -660,7 +660,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 66, y: 84}
+    uvTransform: {x: 82, y: 84}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -681,106 +681,106 @@ ScriptedImporter:
     - name: Ally Cursed Idol_Frame_1
       frameIndex: 1
       cellRect:
-        x: 11
+        x: 13
         y: 4
-        width: 21
-        height: 33
+        width: 18
+        height: 32
       spriteId: 6959c017c7b9f7747b76635ef86d355f
     - name: Ally Cursed Idol_Frame_2
       frameIndex: 2
       cellRect:
-        x: 15
+        x: 13
         y: 4
-        width: 19
-        height: 35
+        width: 18
+        height: 32
       spriteId: 639081c598a6e284ebaf455e7bc712a6
     - name: Ally Cursed Idol_Frame_3
       frameIndex: 3
       cellRect:
-        x: 15
+        x: 13
         y: 4
-        width: 17
-        height: 34
+        width: 18
+        height: 32
       spriteId: 4ca1fc54cf9a21a4f8dc55bb82e231cc
     - name: Ally Cursed Idol_Frame_4
       frameIndex: 4
       cellRect:
-        x: 12
+        x: 13
         y: 4
-        width: 10
-        height: 35
+        width: 18
+        height: 32
       spriteId: 71c5d0aa5e9e02048be903cc1f3abad6
     - name: Ally Cursed Idol_Frame_5
       frameIndex: 5
       cellRect:
-        x: 12
+        x: 13
         y: 4
-        width: 10
-        height: 35
+        width: 18
+        height: 32
       spriteId: d191985faace6ae40b05876bf77f2117
     - name: Ally Cursed Idol_Frame_6
       frameIndex: 6
       cellRect:
-        x: 12
+        x: 13
         y: 4
-        width: 14
-        height: 34
+        width: 18
+        height: 32
       spriteId: 4510330298f64034eb88cfd586063249
     - name: Ally Cursed Idol_Frame_7
       frameIndex: 7
       cellRect:
-        x: 11
+        x: 13
         y: 4
-        width: 23
-        height: 26
+        width: 18
+        height: 32
       spriteId: abd6d063badab5b488c5c6bfe371956c
     - name: Ally Cursed Idol_Frame_8
       frameIndex: 8
       cellRect:
-        x: 11
+        x: 13
         y: 4
-        width: 25
-        height: 18
+        width: 18
+        height: 32
       spriteId: bdeb3d97b9a50264fb3fae47829f3ff3
     - name: Ally Cursed Idol_Frame_9
       frameIndex: 9
       cellRect:
-        x: 11
+        x: 13
         y: 4
-        width: 23
-        height: 18
+        width: 18
+        height: 32
       spriteId: ddbe1d0b9fa00264b8c2ed2d161d3d9c
     - name: Ally Cursed Idol_Frame_10
       frameIndex: 10
       cellRect:
-        x: 11
+        x: 13
         y: 4
-        width: 23
-        height: 18
+        width: 18
+        height: 32
       spriteId: 867f5b969ca41d047bbf118e78b37cd7
     - name: Ally Cursed Idol_Frame_11
       frameIndex: 11
       cellRect:
-        x: 11
+        x: 13
         y: 4
-        width: 26
-        height: 18
+        width: 18
+        height: 32
       spriteId: f88799b11f53c234f95d4da4fcf40934
     - name: Ally Cursed Idol_Frame_12
       frameIndex: 12
       cellRect:
-        x: 11
+        x: 13
         y: 4
-        width: 25
-        height: 25
+        width: 18
+        height: 32
       spriteId: 95d248b66d318b441a3579d77f546640
     - name: Ally Cursed Idol_Frame_13
       frameIndex: 13
       cellRect:
-        x: 15
+        x: 13
         y: 4
         width: 18
-        height: 35
+        height: 32
       spriteId: 00c02aeea853d03469e7ed9afb2f3486
     - name: Ally Cursed Idol_Frame_14
       frameIndex: 14

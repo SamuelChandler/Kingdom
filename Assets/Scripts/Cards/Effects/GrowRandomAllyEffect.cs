@@ -65,7 +65,7 @@ public class GrowRandomAllyEffect: Effect{
                 unit = Board_Manager.instance._heroes[target];
 
                 //should only be two if only the leader and the triggered unit is on the field and should not resolve if that is the case
-                if(Board_Manager.instance._heroes.Count == 2){
+                if(Board_Manager.instance._heroes.Count <= 2){
                     return;
                 }
             }

@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 217572019866986504}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0315, y: 0.0144, z: 0}
-  m_LocalScale: {x: 0.7060935, y: 0.6853043, z: 1}
+  m_LocalPosition: {x: 0.015, y: -0.1064, z: 0}
+  m_LocalScale: {x: 0.79915667, y: 0.92687404, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8536179728669430423}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 6548399014018550044}
   - component: {fileID: 8288022691614133631}
   m_Layer: 0
-  m_Name: Bee
+  m_Name: BeeHive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,7 +161,7 @@ SpriteRenderer:
   m_SortingLayerID: 318461885
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1583630752, guid: 559ffbc08e84c754bb335b6889a75ab8, type: 3}
+  m_Sprite: {fileID: -465612688, guid: e6394e7f1c3ece84b917fb083db18fe0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -213,8 +213,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactSprite: {fileID: 8038981602709236478}
   INTERACT_DISTANCE: 2
-  _despawnEvent: 6
-  _dialogText: {fileID: 11400000, guid: 7459a16a60b921041948c05d401cdb71, type: 2}
+  _despawnEvent: 10
+  _dialogText: {fileID: 11400000, guid: e39665067c1d0be4d81ecff6e61535e1, type: 2}
 --- !u!70 &8288022691614133631
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -247,6 +247,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.038596034, y: 0.027160056}
-  m_Size: {x: 0.63406944, y: 0.6232303}
-  m_Direction: 1
+  m_Offset: {x: 0.014454126, y: -0.09934315}
+  m_Size: {x: 0.6999574, y: 0.87624854}
+  m_Direction: 0

@@ -12,10 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0ae76b5a4512e488865136dbaecdf2, type: 3}
   m_Name: Elite_Bee
   m_EditorClassIdentifier: 
-  Faction: 1
   image: {fileID: -284088876, guid: 417f25c8d1f66154087c6394d58ecda7, type: 3}
   name: Queen Bee
   inspirationCost: 4
+  description: 
+  type: 1
+  Faction: 1
   health: 8
   attack: 2
   speed: 2
+  _leader: 0
+  _swift: 0
+  OnDeath: {fileID: 0}
+  OnPlay: {fileID: 0}
+  OnAttack: {fileID: 0}
+  OnEndTurn: {fileID: 0}
+  OnStartOfTurn: {fileID: 0}
+  beforeMoving: {fileID: 0}
+  afterMoving: {fileID: 0}
+  OnAllyDeath: {fileID: 0}
+  animatorController: {fileID: 0}

@@ -11,7 +11,6 @@ public class SetMyTileToNewTile: Effect{
     [SerializeField] private Tile tile;
 
     public override void ActivateEffect(BaseUnit u){
-        Board_Manager.instance.SwapTiles(tile,u.OccupiedTile); 
-
+        Board_Manager.instance.SwapTiles(tile,u.OccupiedTile);
     }
 }

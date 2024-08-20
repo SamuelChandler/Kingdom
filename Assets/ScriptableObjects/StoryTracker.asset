@@ -23,9 +23,15 @@ MonoBehaviour:
     desc: Defeated Sturdy Tree
   - completed: 1
     desc: Starter Has Been Selected
-  - completed: 1
+  - completed: 0
     desc: Little Lite 1 Defeated
   - completed: 0
     desc: Furnace Mite Defeated
   - completed: 0
     desc: Furnace Geist Defeated
+  - completed: 0
+    desc: Bee 1 Defeated
+  - completed: 0
+    desc: Bee 2 Defeated
+  - completed: 0
+    desc: Bee Hive Defeated

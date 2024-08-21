@@ -14,6 +14,8 @@ public class Menu_Manager : MonoBehaviour
 
     [SerializeField] private GameObject _displayCardObject, _tileInfo, _GameGoal, _messanger;
 
+    [SerializeField] private TextMeshProUGUI _tileName, _tileDesc;
+
     [SerializeField] private WinScreen _winScreen;
     [SerializeField] private LossScreen _lossScreen;
 
@@ -90,7 +92,8 @@ public class Menu_Manager : MonoBehaviour
         }
 
         //display name of tile if selected
-        _tileInfo.GetComponentInChildren<TextMeshProUGUI>().text = tile.tileName;
+        _tileName.text = tile.tileName;
+        _tileDesc.text = tile.tileDesc;
         _tileInfo.SetActive(true);
     }
 

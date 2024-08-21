@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 public abstract class Tile : MonoBehaviour
 {
     public string tileName;
+    public string tileDesc;
     [SerializeField] protected SpriteRenderer _renderer;
 
     [SerializeField] protected Sprite[] _possibleSprites;

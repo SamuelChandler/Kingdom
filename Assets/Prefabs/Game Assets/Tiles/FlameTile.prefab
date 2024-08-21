@@ -247,6 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileName: Flame Tile
+  tileDesc: Deals 1 Damage at the end of the turn
   _renderer: {fileID: 7083851374388391367}
   _possibleSprites:
   - {fileID: 3288915331251678126, guid: d032912867dffde41bafe0811974da43, type: 3}

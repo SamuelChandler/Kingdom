@@ -66,12 +66,14 @@ public class BaseEnemy : BaseUnit
 
     public override void removeUnit()
     {
+        
+        Board_Manager.instance.RemoveEnemy(this);
 
         if(unit.OnDeath != null){
             unit.OnDeath.ActivateEffect(this);
         }
         
-        Board_Manager.instance.RemoveEnemy(this);
+        
 
     }
 }

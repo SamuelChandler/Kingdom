@@ -144,13 +144,15 @@ public class BaseHero : BaseUnit
 
     public override void removeUnit()
     {
+        Board_Manager.instance.RemoveHero(this);
+        
         if(unit.OnDeath != null){
             unit.OnDeath.ActivateEffect(this);
         }
 
         Event_Manager.instance.AllyDeath(this);
 
-        Board_Manager.instance.RemoveHero(this);
+        
     }
 
     void Refresh()

@@ -25,6 +25,8 @@ public class PauseMenu : MonoBehaviour
 
     public void ShowDecks(string selectedname){
 
+        
+
         if(selectedname== ""){
             selectedname = Player.instance.SelectedDeck.name;
         }

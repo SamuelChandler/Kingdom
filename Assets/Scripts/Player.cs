@@ -88,7 +88,7 @@ public class Player : MonoBehaviour, IDataPersistance
         PlayerName = playerData.PlayerName;
 
         if(PlayerPrefs.GetString("FromDeckbuiler") == "Yes"){
-            //_pauseMenu.PauseGame();
+            _pauseMenu.PauseGame();
             _pauseMenu.ShowDecks(data.SelectedDeck);
             PlayerPrefs.SetString("FromDeckbuiler","No");
         }

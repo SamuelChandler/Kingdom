@@ -169,17 +169,12 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
             return false;
         }
 
-        foreach (BaseHero a in Board_Manager.instance._heroes){
+        foreach (BoardObject a in Board_Manager.instance.allyBoardObjects){
             if(Board_Manager.instance.WithinOne(a.OccupiedTile,dest)){
                 return true;
             }
         }
 
-        foreach(AllyStructure s in Board_Manager.instance._AllyStructures){
-            if(Board_Manager.instance.WithinOne(s.OccupiedTile,dest)){
-                return true;
-            }
-        }
         Menu_Manager.instance.SetMessenger("cannot summon here");
         return false;
     }

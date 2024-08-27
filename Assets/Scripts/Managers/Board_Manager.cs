@@ -29,6 +29,9 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     public EnemyStructure _enemyS;
     public NeutralStructure _neutralS;
 
+    public List<BoardObject> allyBoardObjects = new List<BoardObject>();
+    public List<BoardObject> enemyBoardObjects = new List<BoardObject>();
+
     public List<BaseHero> _heroes = new List<BaseHero>();
     public List<BaseEnemy> _enemies = new List<BaseEnemy>();
     public List<Structure> _AllyStructures = new List<Structure>();
@@ -124,6 +127,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         destTile.setUnit(summonded_Hero);
 
         _heroes.Add(summonded_Hero);
+        allyBoardObjects.Add(summonded_Hero);
     }
 
     public void SpawnBoss(){
@@ -147,6 +151,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         destTile.setUnit(summonded_Enemy);
 
         _enemies.Add(summonded_Enemy);
+        enemyBoardObjects.Add(summonded_Enemy);
     }
     //returns a tile for a givem v2 positon
     public Tile GetTileAtPosition(Vector2 position)
@@ -222,6 +227,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             destTile.setUnit(summonded_Hero);
 
             _heroes.Add(summonded_Hero);
+            allyBoardObjects.Add(summonded_Hero);
 
             if(summonded_Hero.unit.OnPlay != null){
                 summonded_Hero.unit.OnPlay.ActivateEffect(summonded_Hero);
@@ -256,6 +262,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             destTile.setUnit(summonded_Hero);
 
             _heroes.Add(summonded_Hero);
+            allyBoardObjects.Add(summonded_Hero);
         }
 
         else if (unit.Faction == Faction.Enemy)
@@ -267,6 +274,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             destTile.setUnit(summonded_Enemy);
 
             _enemies.Add(summonded_Enemy);
+            enemyBoardObjects.Add(summonded_Enemy);
 
         }
     }
@@ -274,7 +282,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     //Attempts to summon a unit to a dest Tile based on a scriptable unit
     public void SummonUnit(Tile destTile, ScriptableUnit unit)
     {
-
+        //do nothing if destination and unit are not defined 
         if (destTile == null)
         {
             Debug.Log("Dest Tile does not exist");
@@ -286,6 +294,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             return;
         }
 
+        
         if (unit.Faction == Faction.Hero)
         {
             Hero_Prefab.unit = unit;
@@ -303,6 +312,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             destTile.setUnit(summonded_Hero);
 
             _heroes.Add(summonded_Hero);
+            allyBoardObjects.Add(summonded_Hero);
 
             if(summonded_Hero.unit.OnPlay != null){
                 summonded_Hero.unit.OnPlay.ActivateEffect(summonded_Hero);
@@ -322,6 +332,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             destTile.setUnit(summonded_Enemy);
 
             _enemies.Add(summonded_Enemy);
+            enemyBoardObjects.Add(summonded_Enemy);
 
         }
     }
@@ -359,6 +370,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             Menu_Manager.instance.CurrentSelectedSelector = null;
                 
             _AllyStructures.Add(summonded_Structure);
+            allyBoardObjects.Add(summonded_Structure);
             ClearBoardIndicators();
 
             //trigger on summon if needed 
@@ -373,11 +385,12 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             _enemyS._structure = s.structure;
 
             //create and set unit to tile
-            var summonded_Structure = Instantiate(_enemyS);
+            var summoned_Structure = Instantiate(_enemyS);
 
-            summonded_Structure.OccupiedTile = GetTileAtPosition(s.loc).setStructure(summonded_Structure);
-            summonded_Structure.OccupiedTile.setStructure(summonded_Structure);
-            _EnemyStructures.Add(summonded_Structure);
+            summoned_Structure.OccupiedTile = GetTileAtPosition(s.loc).setStructure(summoned_Structure);
+            summoned_Structure.OccupiedTile.setStructure(summoned_Structure);
+            _EnemyStructures.Add(summoned_Structure);
+            enemyBoardObjects.Add(summoned_Structure);
             return;
 
         }
@@ -518,9 +531,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             }else if(distance <= range){
                 r.Add(h);
             }
-
         }
-
         return r;
     }
 
@@ -579,6 +590,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
         if(_heroes.Contains(h)){
             _heroes.Remove(h);
+            allyBoardObjects.Remove(h);
             return true;
         }
         return false;
@@ -590,6 +602,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         if(_enemies.Contains(e)){
             
             _enemies.Remove(e);
+            enemyBoardObjects.Remove(e);
 
             Game_Manager.instance.CheckEnemyClearCondition();
 
@@ -602,6 +615,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         if(_EnemyStructures.Contains(e)){
             
             _EnemyStructures.Remove(e);
+            enemyBoardObjects.Remove(e);
 
             Game_Manager.instance.CheckEnemyClearCondition();
 
@@ -627,6 +641,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     public bool removeAllyStructure(AllyStructure allyStructure){
         if(_AllyStructures.Contains(allyStructure)){
             _AllyStructures.Remove(allyStructure);
+            allyBoardObjects.Remove(allyStructure);
             return true;
         }
         return false;
@@ -761,9 +776,9 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     //goes through each hero and shows there summonable area tiles
     public void ShowSummonableTiles(Card card){
 
-        foreach(BaseHero hero in _heroes){
+        foreach(BoardObject obj in allyBoardObjects){
             //Debug.Log("Checking" + hero.name);
-            ShowSummonIndicator(hero);
+            ShowSummonIndicator(obj);
         }
     }
 
@@ -790,12 +805,12 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     }
 
     // shows the summonable locations surrounding this hero unit
-    public void ShowSummonIndicator(BaseHero hero){
+    public void ShowSummonIndicator(BoardObject obj){
         for(int i = 1; i >= -1; i--){
             for(int j = 1; j >= -1; j--){
 
                 Vector2 offset = new Vector2(i,j);
-                Tile cTile = GetTileAtPosition(hero.OccupiedTile,offset);
+                Tile cTile = GetTileAtPosition(obj.OccupiedTile,offset);
 
                 if(cTile != null){
                     if(cTile.OccupiedObject == null){

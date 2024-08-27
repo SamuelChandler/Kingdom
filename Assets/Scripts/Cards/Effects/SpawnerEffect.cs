@@ -13,7 +13,7 @@ public class SpawnerEffect: Effect{
     public ScriptableUnit _spawn;
 
     public override void ActivateEffect(Structure s){
-        Tile dest = Board_Manager.instance.GetRandAdjactentFreeTile(s.OccupiedTiles[0,0]);
+        Tile dest = Board_Manager.instance.GetRandAdjactentFreeTile(s.OccupiedTile);
         
         if(dest == null){
             Debug.Log("No Available Tiles for the spawn");

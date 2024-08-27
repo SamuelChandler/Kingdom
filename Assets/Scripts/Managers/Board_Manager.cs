@@ -103,7 +103,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
         if(occupyingStuct != null){
             _tiles[new Vector2(x, y)].OccupiedStructure = occupyingStuct;
-            occupyingStuct.OccupiedTiles[0,0] = spawnedTile;
+            occupyingStuct.OccupiedTile = spawnedTile;
 
         }
 
@@ -356,54 +356,24 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             //create and set unit to tile
             var summonded_Structure = Instantiate(_allyS);
 
-            if((s.structure.width == 0|| s.structure.width ==1) && (s.structure.height == 0||s.structure.height == 1)){
-                summonded_Structure.OccupiedTiles = new Tile[1,1];
-                summonded_Structure.OccupiedTiles[0,0] = GetTileAtPosition(s.loc).setStructure(summonded_Structure);;
+           
+            summonded_Structure.OccupiedTile = GetTileAtPosition(s.loc).setStructure(summonded_Structure);
+            summonded_Structure.OccupiedTile.setStructure(summonded_Structure);
                 
-                //remove unit from hand and clear related UI
-                Menu_Manager.instance.CurrentSelectedSelector.ClearCard();
-                Unit_Manager.instance.SelectedCardInHand = null;
-                Menu_Manager.instance.CurrentSelectedSelector = null;
-                
-                _AllyStructures.Add(summonded_Structure);
-                ClearBoardIndicators();
-
-                //trigger on summon if needed 
-                if(summonded_Structure._structure.OnSummon != null){
-                    summonded_Structure._structure.OnSummon.ActivateEffect(summonded_Structure);
-                }
-
-                return;
-            }
-
-            //set to all tiles for the size of the structure
-            summonded_Structure.OccupiedTiles = new Tile[s.structure.width,s.structure.height];
-            
-            for(int i = 0; i < s.structure.width;i++){
-                for(int j =0; j < s.structure.height; j++){
-                    summonded_Structure.OccupiedTiles[i,j] = GetTileAtPosition(new Vector2(s.loc.x+i, s.loc.y+j)).setStructure(summonded_Structure);
-                }
-            }
-
-            //set postion based on the middle of oposite tiles 
-            float x = summonded_Structure.OccupiedTiles[0,0].transform.position.x + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.x - summonded_Structure.OccupiedTiles[0,0].transform.position.x)/2);
-            float y = summonded_Structure.OccupiedTiles[0,0].transform.position.y + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.y - summonded_Structure.OccupiedTiles[0,0].transform.position.y)/2);
-            summonded_Structure.transform.position = new Vector3(x,y,0.0f);
-  
-            _AllyStructures.Add(summonded_Structure);
-
             //remove unit from hand and clear related UI
             Menu_Manager.instance.CurrentSelectedSelector.ClearCard();
             Unit_Manager.instance.SelectedCardInHand = null;
             Menu_Manager.instance.CurrentSelectedSelector = null;
+                
+            _AllyStructures.Add(summonded_Structure);
+            ClearBoardIndicators();
 
+            //trigger on summon if needed 
             if(summonded_Structure._structure.OnSummon != null){
-                    summonded_Structure._structure.OnSummon.ActivateEffect(summonded_Structure);
+                summonded_Structure._structure.OnSummon.ActivateEffect(summonded_Structure);
             }
-            
-            return;
 
-            
+            return;        
 
         }
         else if(s.structure.Faction == Faction.Enemy){
@@ -412,37 +382,11 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             //create and set unit to tile
             var summonded_Structure = Instantiate(_enemyS);
 
-
-            if((s.structure.width == 0|| s.structure.width ==1) && (s.structure.height == 0||s.structure.height == 1)){
-                summonded_Structure.OccupiedTiles = new Tile[1,1];
-                summonded_Structure.OccupiedTiles[0,0] = GetTileAtPosition(s.loc).setStructure(summonded_Structure);
-                _EnemyStructures.Add(summonded_Structure);
-                return;
-            }
-
-            //set to all tiles for the size of the structure
-            summonded_Structure.OccupiedTiles = new Tile[s.structure.width,s.structure.height];
-
-            for(int i = 0; i < s.structure.width;i++){
-                for(int j =0; j < s.structure.height; j++){
-                    summonded_Structure.OccupiedTiles[i,j] = GetTileAtPosition(new Vector2(s.loc.x+i, s.loc.y+j)).setStructure(summonded_Structure);
-                }
-            }
-
-            
-
-            //set postion based on the middle of oposite tiles 
-            float x = summonded_Structure.OccupiedTiles[0,0].transform.position.x + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.x - summonded_Structure.OccupiedTiles[0,0].transform.position.x)/2);
-            float y = summonded_Structure.OccupiedTiles[0,0].transform.position.y + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.y - summonded_Structure.OccupiedTiles[0,0].transform.position.y)/2);
-            summonded_Structure.transform.position = new Vector3(x,y,0.0f);
-
+            summonded_Structure.OccupiedTile = GetTileAtPosition(s.loc).setStructure(summonded_Structure);
+            summonded_Structure.OccupiedTile.setStructure(summonded_Structure);
             _EnemyStructures.Add(summonded_Structure);
-
-            if(summonded_Structure._structure.OnSummon != null){
-                    summonded_Structure._structure.OnSummon.ActivateEffect(summonded_Structure);
-            }
-
             return;
+
         }
         else if(s.structure.Faction == Faction.Neutral){
             _neutralS._structure = s.structure;
@@ -450,33 +394,9 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             //create and set unit to tile
             var summonded_Structure = Instantiate(_neutralS);
 
-
-            if((s.structure.width == 0|| s.structure.width ==1) && (s.structure.height == 0||s.structure.height == 1)){
-                summonded_Structure.OccupiedTiles = new Tile[1,1];
-                summonded_Structure.OccupiedTiles[0,0] = GetTileAtPosition(s.loc).setStructure(summonded_Structure);
-                _NeutralStructures.Add(summonded_Structure);
-                return;
-            }
-
-            //set to all tiles for the size of the structure
-            summonded_Structure.OccupiedTiles = new Tile[s.structure.width,s.structure.height];
-
-            for(int i = 0; i < s.structure.width;i++){
-                for(int j =0; j < s.structure.height; j++){
-                    summonded_Structure.OccupiedTiles[i,j] = GetTileAtPosition(new Vector2(s.loc.x+i, s.loc.y+j)).setStructure(summonded_Structure);
-                }
-            }
-
-            //set postion based on the middle of oposite tiles 
-            float x = summonded_Structure.OccupiedTiles[0,0].transform.position.x + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.x - summonded_Structure.OccupiedTiles[0,0].transform.position.x)/2);
-            float y = summonded_Structure.OccupiedTiles[0,0].transform.position.y + ((summonded_Structure.OccupiedTiles[s.structure.width-1,s.structure.height-1].transform.position.y - summonded_Structure.OccupiedTiles[0,0].transform.position.y)/2);
-            summonded_Structure.transform.position = new Vector3(x,y,0.0f);
-
+            summonded_Structure.OccupiedTile = GetTileAtPosition(s.loc).setStructure(summonded_Structure);
+            summonded_Structure.OccupiedTile.setStructure(summonded_Structure);
             _NeutralStructures.Add(summonded_Structure);
-
-            if(summonded_Structure._structure.OnSummon != null){
-                summonded_Structure._structure.OnSummon.ActivateEffect(summonded_Structure);
-            }
             return;
         }
 

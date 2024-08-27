@@ -176,7 +176,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         }
 
         foreach(AllyStructure s in Board_Manager.instance._AllyStructures){
-            if(Board_Manager.instance.WithinOne(s.OccupiedTiles[0,0],dest)){
+            if(Board_Manager.instance.WithinOne(s.OccupiedTile,dest)){
                 return true;
             }
         }

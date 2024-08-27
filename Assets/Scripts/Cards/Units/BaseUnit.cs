@@ -5,9 +5,9 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BaseUnit : MonoBehaviour
+public class BaseUnit : BoardObject
 {
-    public Tile OccupiedTile;
+    
     public ScriptableUnit unit;
 
     //animation and art Stuff

@@ -4,10 +4,8 @@ using UnityEngine;
 using TMPro;
 
 //base class for all structure types 
-public class Structure : MonoBehaviour
+public class Structure : BoardObject
 {
-    [SerializeField]
-    public Tile[,] OccupiedTiles;
 
     [SerializeField]
     public ScriptableStructure _structure;
@@ -23,9 +21,14 @@ public class Structure : MonoBehaviour
 
     public int turnCounter;
 
+    
+
 
     private void Awake()
     {
+        card = _structure;
+        faction = _structure.Faction;
+
         spriteRenderer.sprite = _structure.image;
         currentHealth = _structure.health;
         currentMaxHealth = currentHealth;
@@ -89,7 +92,7 @@ public class Structure : MonoBehaviour
         Board_Manager.instance.ApplyFieldBuffs();
     }
 
-    public void TakeDamage(int d){
+    override public void TakeDamage(int d){
         currentHealth = currentHealth-d;
 
         UpdateHealthDisplay();
@@ -101,9 +104,8 @@ public class Structure : MonoBehaviour
                 _structure.WhenDestroyed.ActivateEffect(this);
             }
 
-            foreach(Tile t in OccupiedTiles){
-                t.OccupiedUnit = null;
-            }
+            OccupiedTile.OccupiedObject = null;
+
             removeStructure();
 
             Destroy(gameObject);

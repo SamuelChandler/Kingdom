@@ -25,19 +25,11 @@ public class DamageFlameTiles: Effect{
         foreach (FlameTile x in flameTiles){
             
             //check if enemy unit and deal damage if true
-            if(x.OccupiedUnit == null){
+            if(x.OccupiedObject == null){
                 //do nothing
             }
-            else if(x.OccupiedUnit.unit.Faction == Faction.Enemy){
-                x.OccupiedUnit.TakeDamage(DamageAmount);
-            }
-
-            //check if enemy structure and damage if true
-            if(x.OccupiedStructure == null){
-                //do nothing 
-            }
-            else if (x.OccupiedStructure._structure.Faction == Faction.Enemy){
-                x.OccupiedStructure.TakeDamage(DamageAmount);
+            else if(x.OccupiedObject.faction == Faction.Enemy){
+                x.OccupiedObject.TakeDamage(DamageAmount);
             }
         }
     }
@@ -47,19 +39,11 @@ public class DamageFlameTiles: Effect{
         foreach (FlameTile x in flameTiles){
             
             //check if enemy unit and deal damage if true
-            if(x.OccupiedUnit == null){
+            if(x.OccupiedObject == null){
                 //do nothing
             }
-            else if(x.OccupiedUnit.unit.Faction == Faction.Hero){
-                x.OccupiedUnit.TakeDamage(DamageAmount);
-            }
-
-            //check if enemy structure and damage if true
-            if(x.OccupiedStructure == null){
-                //do nothing 
-            }
-            else if (x.OccupiedStructure._structure.Faction == Faction.Hero){
-                x.OccupiedStructure.TakeDamage(DamageAmount);
+            else if(x.OccupiedObject.faction == Faction.Hero){
+                x.OccupiedObject.TakeDamage(DamageAmount);
             }
         }
     }

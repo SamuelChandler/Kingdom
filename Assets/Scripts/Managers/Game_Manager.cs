@@ -169,17 +169,12 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
             return false;
         }
 
-        foreach (BaseHero a in Board_Manager.instance._heroes){
+        foreach (BoardObject a in Board_Manager.instance.allyBoardObjects){
             if(Board_Manager.instance.WithinOne(a.OccupiedTile,dest)){
                 return true;
             }
         }
 
-        foreach(AllyStructure s in Board_Manager.instance._AllyStructures){
-            if(Board_Manager.instance.WithinOne(s.OccupiedTiles[0,0],dest)){
-                return true;
-            }
-        }
         Menu_Manager.instance.SetMessenger("cannot summon here");
         return false;
     }
@@ -193,7 +188,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
 
         if(t != null){
             //if the tile is null then the spell does not target one tile 
-            if(t.OccupiedStructure == null && t.OccupiedUnit == null){
+            if(t.OccupiedObject == null){
                 Menu_Manager.instance.SetMessenger("there is not a target in this location");
                 return false;   
             }

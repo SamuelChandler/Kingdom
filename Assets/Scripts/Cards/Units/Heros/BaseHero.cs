@@ -48,12 +48,13 @@ public class BaseHero : BaseUnit
         bool inRange = false;
         
         //check if enemy is within one space
-        foreach (Tile t in enemy.OccupiedTiles){
-            if(Mathf.Abs(this.OccupiedTile.x - t.x) <= 1 && Mathf.Abs(this.OccupiedTile.y - t.y) <= 1)
-            {
-                inRange = true;
-            }
+
+        if(Mathf.Abs(this.OccupiedTile.x - enemy.OccupiedTile.x) <= 1 && Mathf.Abs(this.OccupiedTile.y - enemy.OccupiedTile.y) <= 1)
+        {
+            inRange = true;
         }
+        
+
         if(inRange == false)
         {
             Menu_Manager.instance.SetMessenger("Attack was out of Range");
@@ -80,12 +81,13 @@ public class BaseHero : BaseUnit
         bool inRange = false;
         
         //check if enemy is within one space
-        foreach (Tile t in enemy.OccupiedTiles){
-            if(Mathf.Abs(OccupiedTile.x - t.x) <= 1 && Mathf.Abs(this.OccupiedTile.y - t.y) <= 1)
-            {
-                inRange = true;
-            }
+        Tile t = enemy.OccupiedTile;
+        
+        if(Mathf.Abs(OccupiedTile.x - t.x) <= 1 && Mathf.Abs(this.OccupiedTile.y - t.y) <= 1)
+        {
+            inRange = true;
         }
+        
         if(inRange == false)
         {
             Menu_Manager.instance.SetMessenger("Attack was out of Range");

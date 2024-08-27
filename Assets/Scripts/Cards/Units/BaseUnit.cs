@@ -5,9 +5,9 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BaseUnit : MonoBehaviour
+public class BaseUnit : BoardObject
 {
-    public Tile OccupiedTile;
+    
     public ScriptableUnit unit;
 
     //animation and art Stuff
@@ -34,9 +34,11 @@ public class BaseUnit : MonoBehaviour
     public bool isMoving;
     public bool isAttacking;
 
-
     public virtual void Awake()
     {
+
+        card = unit;
+        faction = unit.Faction;
 
          GetComponent<Renderer>().material = defualtMaterial; 
          animator = GetComponent<Animator>();
@@ -104,14 +106,14 @@ public class BaseUnit : MonoBehaviour
 
     }
 
-    public void TakeDamage(int d){
+    override public void TakeDamage(int d){
         currentHealth = currentHealth-d;
         UpdateAttackAndHealthDisplay();
 
         if (currentHealth <= 0)
         {
             
-            OccupiedTile.OccupiedUnit = null;
+            OccupiedTile.OccupiedObject = null;
             removeUnit();
             Destroy(gameObject);
 

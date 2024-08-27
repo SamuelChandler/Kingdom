@@ -8,4 +8,8 @@ public class BoardObject : MonoBehaviour
 {
     public Tile OccupiedTile;
     public Faction faction;
+
+    public Card card;
+
+    public virtual void TakeDamage(int d){}
 }

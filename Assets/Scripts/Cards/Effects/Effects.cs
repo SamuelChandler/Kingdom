@@ -18,6 +18,11 @@ public class Effect: ScriptableObject{
         throw new NotImplementedException();
     }
 
+    public virtual void ActivateEffect(BoardObject obj)
+    {
+        throw new NotImplementedException();
+    }
+
     public virtual void ActivateEffect(Spell spell)
     {
         throw new NotImplementedException();

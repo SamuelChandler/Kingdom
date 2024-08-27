@@ -193,7 +193,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
 
         if(t != null){
             //if the tile is null then the spell does not target one tile 
-            if(t.OccupiedStructure == null && t.OccupiedUnit == null){
+            if(t.OccupiedObject == null){
                 Menu_Manager.instance.SetMessenger("there is not a target in this location");
                 return false;   
             }

@@ -14,10 +14,8 @@ public class TargetedDamageEffect: TargetedEffect{
     public override void ActivateEffect(Tile t){
         
      
-        if(t.OccupiedStructure != null){
-            t.OccupiedStructure.TakeDamage(DamageAmount);
-        }else if(t.OccupiedUnit != null){
-            t.OccupiedUnit.TakeDamage(DamageAmount);
+        if(t.OccupiedObject != null){
+            t.OccupiedObject.TakeDamage(DamageAmount);
         }
     }
 
@@ -29,5 +27,10 @@ public class TargetedDamageEffect: TargetedEffect{
     public override void ActivateEffect(Structure s)
     {
         s.TakeDamage(DamageAmount);
+    }
+
+    public override void ActivateEffect(BoardObject obj)
+    {
+        obj.TakeDamage(DamageAmount);
     }
 }

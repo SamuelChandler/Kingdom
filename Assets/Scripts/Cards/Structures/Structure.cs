@@ -26,6 +26,9 @@ public class Structure : BoardObject
 
     private void Awake()
     {
+        card = _structure;
+        faction = _structure.Faction;
+
         spriteRenderer.sprite = _structure.image;
         currentHealth = _structure.health;
         currentMaxHealth = currentHealth;
@@ -89,7 +92,7 @@ public class Structure : BoardObject
         Board_Manager.instance.ApplyFieldBuffs();
     }
 
-    public void TakeDamage(int d){
+    override public void TakeDamage(int d){
         currentHealth = currentHealth-d;
 
         UpdateHealthDisplay();
@@ -101,7 +104,7 @@ public class Structure : BoardObject
                 _structure.WhenDestroyed.ActivateEffect(this);
             }
 
-            OccupiedTile.OccupiedStructure = null;
+            OccupiedTile.OccupiedObject = null;
 
             removeStructure();
 

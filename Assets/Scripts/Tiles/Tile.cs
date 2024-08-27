@@ -21,9 +21,8 @@ public abstract class Tile : MonoBehaviour
     [SerializeField] private bool _isWalkable;
     public int x, y;
 
-    public BaseUnit OccupiedUnit;
-    public Structure OccupiedStructure;
-    public bool Walkable => (_isWalkable && OccupiedUnit == null && OccupiedStructure == null);
+    public BoardObject OccupiedObject;
+    public bool Walkable => (_isWalkable && OccupiedObject == null);
 
     public virtual void Init(int a,int b)
     {
@@ -78,7 +77,7 @@ public abstract class Tile : MonoBehaviour
 
     public Tile setStructure(Structure structure){
         structure.transform.position = transform.position;
-        OccupiedStructure = structure;
+        OccupiedObject = structure;
         return this;
     }
 
@@ -88,17 +87,17 @@ public abstract class Tile : MonoBehaviour
         //removes unit from the tile it was on logically, if it is ocuppying a tile
         if (unit.OccupiedTile != null)
         {
-            unit.OccupiedTile.OccupiedUnit = null;
+            unit.OccupiedTile.OccupiedObject = null;
         }
 
         //sets unit to the selected tiles position. also sets references to each other
         if(unit.OccupiedTile != null){
-            OccupiedUnit = unit; 
+            OccupiedObject = unit; 
             unit.OccupiedTile = this;
             StartCoroutine(MoveUnitToPos(transform.position,unit));
 
         }else{
-            OccupiedUnit = unit; 
+            OccupiedObject = unit; 
             unit.OccupiedTile = this;
             unit.transform.position = transform.position;
         }
@@ -131,9 +130,9 @@ public abstract class Tile : MonoBehaviour
     }
 
     //helper to get unit. might be more complicated later
-    public BaseUnit getUnit()
+    public BoardObject getUnit()
     {
-        return OccupiedUnit;
+        return OccupiedObject;
     }
 
     //events if the mouse button is pressed on a tile
@@ -152,25 +151,28 @@ public abstract class Tile : MonoBehaviour
 
 
         //if tile is not empty
-        if (OccupiedUnit != null)
+        if ((BaseUnit)OccupiedObject != null)
         {
+            BaseUnit OccupiedUnit = (BaseUnit)OccupiedObject;
             //if a hero character set it as the selected hero. If an enemy, and a hero is selected destroy the enemy 
-            if (OccupiedUnit.unit.Faction == Faction.Hero) Unit_Manager.instance.SetSelectedHero((BaseHero)OccupiedUnit);
+            if (OccupiedUnit.faction == Faction.Hero) Unit_Manager.instance.SetSelectedHero((BaseHero)OccupiedUnit);
             else
             {
                 if (Unit_Manager.instance.SelectedHero != null)
                 {
-                    var enemy = (BaseEnemy)OccupiedUnit;
+                    var enemy = (BaseEnemy)OccupiedObject;
                     Unit_Manager.instance.SelectedHero.Attack(enemy);
                     Unit_Manager.instance.SetSelectedHero((BaseHero)null);
                 }
                 else{
-                    Menu_Manager.instance.showUnit(OccupiedUnit.unit);
+                    Menu_Manager.instance.showCard(OccupiedUnit.card);
                 }
             }
         }
-        else if(OccupiedStructure != null){
+        else if((Structure)OccupiedObject != null){
             //when there is a structure in the space
+
+            Structure OccupiedStructure = (Structure)OccupiedObject;
 
             //check if a hero is selected
             if (Unit_Manager.instance.SelectedHero != null){
@@ -231,8 +233,8 @@ public abstract class Tile : MonoBehaviour
 
         if (Game_Manager.instance.GameState != GameState.HeroesTurn) return;
 
-        if(OccupiedUnit != null){
-            Menu_Manager.instance.showUnit(OccupiedUnit.unit);
+        if(OccupiedObject != null){
+            Menu_Manager.instance.showCard(OccupiedObject.card);
         }
     }
 

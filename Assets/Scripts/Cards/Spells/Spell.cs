@@ -31,10 +31,8 @@ public class Spell : Card
     }
 
     public void resolveEffect(Effect e, Tile t){
-        if (t.OccupiedStructure != null){   
-            e.ActivateEffect(t.OccupiedStructure);
-        }else if(t.OccupiedUnit != null){
-            e.ActivateEffect(t.OccupiedUnit);
+        if (t.OccupiedObject != null){   
+            e.ActivateEffect(t.OccupiedObject);
         }
     }
 

@@ -85,8 +85,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     public void SwapTiles(Tile newTile,Tile OccupiedTile){
         Debug.Log("Swapping Tiles, " + newTile.name + " and " + OccupiedTile.name);
 
-        Structure occupyingStuct = OccupiedTile.OccupiedStructure;
-        BaseUnit occupyingUnit = OccupiedTile.OccupiedUnit;
+        BoardObject occupyingObject = OccupiedTile.OccupiedObject;
 
         int x = OccupiedTile.x;
         int y = OccupiedTile.y;
@@ -96,15 +95,9 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         spawnedTile.Init(x, y);
         _tiles[new Vector2(x, y)] = spawnedTile;
 
-        if(occupyingUnit != null){
-            _tiles[new Vector2(x, y)].OccupiedUnit = occupyingUnit;
-            occupyingUnit.OccupiedTile = spawnedTile;
-        }
-
-        if(occupyingStuct != null){
-            _tiles[new Vector2(x, y)].OccupiedStructure = occupyingStuct;
-            occupyingStuct.OccupiedTile = spawnedTile;
-
+        if(occupyingObject != null){
+            _tiles[new Vector2(x, y)].OccupiedObject = occupyingObject;
+            occupyingObject.OccupiedTile = spawnedTile;
         }
 
         Destroy(OccupiedTile.GameObject());
@@ -196,14 +189,14 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     }
 
     //returns a Unit for a given v2 position
-    public BaseUnit GetUnitAtPosition(Vector2 position)
+    public BoardObject GetObjectAtPosition(Vector2 position)
     {
         //checks if tile exists
         if (_tiles.TryGetValue(position,out Tile tile))
         {
-            if (tile.OccupiedUnit != null)
+            if (tile.OccupiedObject != null)
             {
-                return tile.OccupiedUnit;
+                return tile.OccupiedObject;
             }
         }
 
@@ -433,7 +426,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         int total_change  = x_change + y_change;
 
         //determine closest tile to destination tile and move
-        while((total_change > unit.unit.speed || destTile.OccupiedUnit != null || destTile.OccupiedStructure != null) && destTile != sourceTile)
+        while((total_change > unit.unit.speed || destTile.OccupiedObject != null) && destTile != sourceTile)
         {
             //check x and move one closer
             if(destTile.x > sourceTile.x){
@@ -448,7 +441,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
             total_change  = x_change + y_change;
 
-            if((total_change > unit.unit.speed|| destTile.OccupiedUnit != null || destTile.OccupiedStructure != null) && destTile != sourceTile){
+            if((total_change > unit.unit.speed|| destTile.OccupiedObject != null ) && destTile != sourceTile){
                 //check y and move one closer
                 if(destTile.y > sourceTile.y){
                     destTile = GetTileAtPosition(new Vector2(destTile.x,destTile.y-1));
@@ -557,7 +550,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         for(int i = -1; i < 2; i++){
             for(int j = -1; j < 2; j++){
                 if(GetTileAtPosition(new Vector2(dst.x + i, dst.y + j))==null){ }
-                else if (GetTileAtPosition(new Vector2(dst.x + i, dst.y + j)).OccupiedUnit == null){
+                else if (GetTileAtPosition(new Vector2(dst.x + i, dst.y + j)).OccupiedObject == null){
                     posibilities.Add(GetTileAtPosition(new Vector2(dst.x + i, dst.y + j)));
                 }
             }
@@ -732,17 +725,12 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
                 }
                 
                 //set movement if no one is occupying otherwise set attack indicator 
-                if(cTile.OccupiedStructure == null && cTile.OccupiedUnit == null){
+                if(cTile.OccupiedObject == null){
                     cTile.SetMoveIndicator();
                 }else{
-                    if(cTile.OccupiedStructure != null){
-                        if(cTile.OccupiedStructure._structure.Faction == Faction.Enemy){
-                            if(baseUnit.isAbleToAttack){cTile.SetAttackIndicator();}
-                        }
-                    }
-                    else if(cTile.OccupiedUnit != null){
-                        if(cTile.OccupiedUnit.unit.Faction == Faction.Enemy){
-                            if(baseUnit.isAbleToAttack){cTile.SetAttackIndicator();}  
+                    if(cTile.OccupiedObject != null){
+                        if(cTile.OccupiedObject.faction == Faction.Enemy && baseUnit.isAbleToAttack){
+                            cTile.SetAttackIndicator();
                         }
                     }
                 }
@@ -759,8 +747,6 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
                 if((Mathf.Abs(i) == farthestTileDistance && j == 0) || (Mathf.Abs(j) == farthestTileDistance && i == 0)){
                     cTile.ClearTile();
                 }
-
-
             }
             
             if(j>0){
@@ -793,17 +779,12 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
                 Tile cTile = GetTileAtPosition(baseUnit.OccupiedTile,offset);
 
                 if(cTile != null){
-                    if(cTile.OccupiedUnit != null){
-                        if(cTile.OccupiedUnit.unit.Faction == Faction.Enemy || cTile.OccupiedUnit.unit.Faction == Faction.Neutral){
-                            cTile.SetAttackIndicator();
-                        }
-                    }else if(cTile.OccupiedStructure != null){
-                        if(cTile.OccupiedStructure._structure.Faction == Faction.Enemy || cTile.OccupiedStructure._structure.Faction == Faction.Neutral){
+                    if(cTile.OccupiedObject != null){
+                        if(cTile.OccupiedObject.faction == Faction.Enemy || cTile.OccupiedObject.faction == Faction.Neutral){
                             cTile.SetAttackIndicator();
                         }
                     }
                 }
-
             }
         }
     }
@@ -817,7 +798,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
                 Tile cTile = GetTileAtPosition(hero.OccupiedTile,offset);
 
                 if(cTile != null){
-                    if(cTile.OccupiedUnit == null && cTile.OccupiedStructure == null){
+                    if(cTile.OccupiedObject == null){
                         cTile.SetMoveIndicator();   
                     }
                 }

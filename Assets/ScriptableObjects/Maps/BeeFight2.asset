@@ -24,7 +24,7 @@ MonoBehaviour:
 
     12111121'
   emptyTile: {fileID: -634359257596650371, guid: d43519453b7c80c4f959e2b4baaa4c9e, type: 3}
-  t1: {fileID: -634359257596650371, guid: ed744768e5affe94f8c3b43391331046, type: 3}
+  t1: {fileID: 4514571189537591133, guid: ed744768e5affe94f8c3b43391331046, type: 3}
   t2: {fileID: -634359257596650371, guid: de1c94dcba5e99341a26622ade00ca1f, type: 3}
   t3: {fileID: 8990336916624386182, guid: 06a5dcea328524345b15e5046d02fd56, type: 3}
   t4: {fileID: 0}

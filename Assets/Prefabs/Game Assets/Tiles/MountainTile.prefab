@@ -148,7 +148,8 @@ PrefabInstance:
       propertyPath: m_AdaptiveModeThreshold
       value: 0.467
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3172439750072396845, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -194,12 +195,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileName: Mountain
+  tileDesc: 
   _renderer: {fileID: 4266912305498247311}
+  _possibleSprites: []
   _highlight: {fileID: 6129224773843295516}
   _attackIndicator: {fileID: 6944533944416101505}
   _moveIndicator: {fileID: 537618145440488147}
   _isWalkable: 0
   x: 0
   y: 0
-  OccupiedUnit: {fileID: 0}
-  OccupiedStructure: {fileID: 0}
+  OccupiedObject: {fileID: 0}

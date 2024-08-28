@@ -151,7 +151,7 @@ public abstract class Tile : MonoBehaviour
 
 
         //if tile is not empty
-        if ((BaseUnit)OccupiedObject != null)
+        if (OccupiedObject is BaseUnit )
         {
             BaseUnit OccupiedUnit = (BaseUnit)OccupiedObject;
             //if a hero character set it as the selected hero. If an enemy, and a hero is selected destroy the enemy 
@@ -169,7 +169,7 @@ public abstract class Tile : MonoBehaviour
                 }
             }
         }
-        else if((Structure)OccupiedObject != null){
+        else if(OccupiedObject is Structure){
             //when there is a structure in the space
 
             Structure OccupiedStructure = (Structure)OccupiedObject;

@@ -413,7 +413,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         Debug.Log("Spawning Enemies");
         foreach (EnemyAndPoint item in _map.enemies)
         {
-            SummonUnit(GetTileAtPosition(item.loc), item.enemy);
+            SpawnUnit(GetTileAtPosition(item.loc), item.enemy);
         }
     }
 
@@ -437,6 +437,24 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         int y_change = Mathf.Abs(sourceTile.y - destTile.y);
 
         int total_change  = x_change + y_change;
+
+        // if(total_change > unit.unit.speed){
+        //     Unit_Manager.instance.SetSelectedHero((BaseHero)null);
+        //     Debug.Log("Unit Cannot Move that far");
+        //     return;
+        // }
+
+        // if(destTile.OccupiedObject != null){
+        //     Unit_Manager.instance.SetSelectedHero((BaseHero)null);
+        //     Debug.Log("Unit Cannot Move To an Occupied Tile");
+        //     return;
+        // }
+
+        // if(destTile == sourceTile){
+        //     return;
+        // }
+
+        
 
         //determine closest tile to destination tile and move
         while((total_change > unit.unit.speed || destTile.OccupiedObject != null) && destTile != sourceTile)
@@ -469,12 +487,10 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
                 total_change  = x_change + y_change;
            
             }
-
-
         }
 
 
-        if(unit.unit.Faction == Faction.Hero){
+        if(unit.faction == Faction.Hero){
             Unit_Manager.instance.SetSelectedHero((BaseHero)null);
         }
 

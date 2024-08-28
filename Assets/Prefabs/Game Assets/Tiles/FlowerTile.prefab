@@ -116,7 +116,8 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3172439750072396845, guid: d7785c7dfc9a4694598b9d19c2f8b2d9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -147,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileName: Flower
+  tileDesc: 
   _renderer: {fileID: 7083851374388391367}
   _possibleSprites:
   - {fileID: 3371299827572154641, guid: 815f6abac42476e4cbc5882860926889, type: 3}
@@ -163,8 +165,7 @@ MonoBehaviour:
   _isWalkable: 1
   x: 0
   y: 0
-  OccupiedUnit: {fileID: 0}
-  OccupiedStructure: {fileID: 0}
+  OccupiedObject: {fileID: 0}
   _baseColor: {r: 1, g: 1, b: 1, a: 1}
   _offsetColor: {r: 0.7981043, g: 0.8018868, b: 0.79844815, a: 1}
 --- !u!1 &4117991818530003401 stripped

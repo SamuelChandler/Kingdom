@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class HeroCardFrame : MonoBehaviour
 {
@@ -11,8 +12,20 @@ public class HeroCardFrame : MonoBehaviour
     [SerializeField] private Image _backgroundImage;
 
     [SerializeField] private Sprite spellBG,unitBG,structureBG;
+
+    public void setInvisible(){
+        unitName.text = null;
+        _backgroundImage.sprite = unitBG;
+        cost.text = null;
+        health.text =null;
+        attack.text = null;
+        unitImage.sprite = null;
+        unitImage.color = new Color(unitImage.color.r,unitImage.color.g,unitImage.color.b,0);
+        description.text = null;
+    }
     
     public void setCard(BaseHero h){
+        unitImage.color = new Color(unitImage.color.r,unitImage.color.g,unitImage.color.b,1);
         unitName.text = h.unit.name;
         _backgroundImage.sprite = unitBG;
         cost.text = h.unit.inspirationCost.ToString();
@@ -24,6 +37,7 @@ public class HeroCardFrame : MonoBehaviour
     }
 
     public void setCard(ScriptableUnit h){ 
+        unitImage.color = new Color(unitImage.color.r,unitImage.color.g,unitImage.color.b,1);
         unitName.text = h.name;
         _backgroundImage.sprite = unitBG;
         cost.text = h.inspirationCost.ToString();
@@ -35,6 +49,7 @@ public class HeroCardFrame : MonoBehaviour
     }
 
     public void setCard(Spell s){
+        unitImage.color = new Color(unitImage.color.r,unitImage.color.g,unitImage.color.b,1);
         unitName.text = s.name;
         _backgroundImage.sprite = spellBG;
         cost.text = s.inspirationCost.ToString();
@@ -55,6 +70,10 @@ public class HeroCardFrame : MonoBehaviour
     }
 
     public void setCard(Card c){
+
+        if(c == null){
+            setInvisible();
+        }
 
         if(c.type == CardType.Unit || c.type == CardType.Leader){
             setCard((ScriptableUnit)c);

@@ -9,6 +9,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private PauseMenuDeckSlot[] deckSlots;
 
     [SerializeField] private GameObject DeckView;
+    [SerializeField] private GameObject CardView;
+    [SerializeField] private CardViewScreen CV;
     [SerializeField] private GameObject SettingsView;
 
     public Deck SelectedDeck;
@@ -63,6 +65,13 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    public void ShowCardView(){
+        ClearSubview();
+        CardView.SetActive(true);
+        CV.SetCards(DataPersistanceManager.instance.playerData.GetInventory());
+        CV.ShowCards();
+    }
+
     public void ShowSettings(){
 
         ClearSubview();
@@ -75,6 +84,7 @@ public class PauseMenu : MonoBehaviour
     public void ClearSubview(){
         DeckView.SetActive(false);
         SettingsView.SetActive(false);
+        CardView.SetActive(false);
     }
 
     public void PauseGame(){

@@ -570,6 +570,25 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         return r;
     }
 
+    public BoardObject getClosestAlly(Vector2 pos){
+        BoardObject r = null;
+        float LowestDistance = float.MaxValue;
+
+        foreach (BoardObject h in allyBoardObjects)
+        {
+            
+            float x_change = Mathf.Abs(pos.x - h.OccupiedTile.x);
+            float y_change = Mathf.Abs(pos.y - h.OccupiedTile.y);
+            float distance = x_change + y_change;
+
+            if(distance < LowestDistance){
+                r = h;
+                LowestDistance = distance;
+            }
+        }
+        return r;
+    }
+
     public Tile FindNearestEmptyTile(Tile src, Tile dst){
         //get all adjacent Tiles of dst that are empty
         List<Tile> posibilities = new List<Tile>();

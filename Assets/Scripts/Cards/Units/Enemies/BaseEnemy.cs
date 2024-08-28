@@ -28,13 +28,13 @@ public class BaseEnemy : BaseUnit
         }
     }
 
-    public bool Attack(BaseHero hero)
+    public bool Attack(BoardObject allyObj)
     {   
         //verify hero exists 
-        if (hero == null) return false;
+        if (allyObj == null) return false;
 
         //check if enemy is within one space
-        if (Mathf.Abs(this.OccupiedTile.x - hero.OccupiedTile.x) > 1 || Mathf.Abs(this.OccupiedTile.y - hero.OccupiedTile.y) > 1)
+        if (Mathf.Abs(this.OccupiedTile.x - allyObj.OccupiedTile.x) > 1 || Mathf.Abs(this.OccupiedTile.y - allyObj.OccupiedTile.y) > 1)
         {
             return false;
         }
@@ -46,7 +46,7 @@ public class BaseEnemy : BaseUnit
             unit.OnAttack.ActivateEffect(this);
         }
 
-        hero.TakeDamage(currentAttack);
+        allyObj.TakeDamage(currentAttack);
 
         return true;
     }

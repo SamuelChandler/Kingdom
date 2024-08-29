@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject DeckView;
     [SerializeField] private GameObject CardView;
     [SerializeField] private CardViewScreen CV;
+    [SerializeField] private GameObject InventoryView;
     [SerializeField] private GameObject SettingsView;
 
     public Deck SelectedDeck;
@@ -79,11 +80,18 @@ public class PauseMenu : MonoBehaviour
         SettingsView.SetActive(true);
     }
 
+    public void ShowInventory(){
+        ClearSubview();
+
+        InventoryView.SetActive(true);
+    }
+
 
     // Clears all the subviews in the current 
     public void ClearSubview(){
         DeckView.SetActive(false);
         SettingsView.SetActive(false);
+        InventoryView.SetActive(false);
         CardView.SetActive(false);
     }
 

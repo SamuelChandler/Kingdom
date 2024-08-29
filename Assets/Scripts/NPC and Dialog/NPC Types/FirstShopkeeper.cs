@@ -91,7 +91,7 @@ public class FirstShopkeeper : NPC, ITalkable
         convoStats = dialog_UI.instance.DisplayNextParagraph(_dialogText,convoStats);
 
         //if the convorsation has ended then 
-        if(convoStats.hasConversationEnded()){
+        if(convoStats.hasConversationEnded(_dialogText)){
             convoStats.ReadyToEnd = true;
         }else{
             //check if the current dialog point is a choice point
@@ -111,7 +111,7 @@ public class FirstShopkeeper : NPC, ITalkable
         }
 
         //if the convorsation has ended then 
-        if(convoStats.hasConversationEnded()){
+        if(convoStats.hasConversationEnded(_dialogText)){
             convoStats.ReadyToEnd = true;
         }
     }

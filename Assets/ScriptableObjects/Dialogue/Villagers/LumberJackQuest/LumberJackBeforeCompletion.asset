@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48c8c2a0043ca140b0459e7a27e30a0, type: 3}
+  m_Name: LumberJackBeforeCompletion
+  m_EditorClassIdentifier: 
+  Name: Andy
+  _dialog:
+  - Paragraph: UGH!
+    isChoice: 0
+    isEnding: 0
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
+  - Paragraph: I cant work with these damn forest creatures stopping me
+    isChoice: 0
+    isEnding: 0
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
+  - Paragraph: Hey wait your a wizard Right???
+    isChoice: 0
+    isEnding: 0
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
+  - Paragraph: I can promise to make it worth your while!
+    isChoice: 0
+    isEnding: 0
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
+  - Paragraph: If you can clear out the forest Spirits in the area they inhabbit,
+      then I can get back to work again!
+    isChoice: 0
+    isEnding: 0
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
+  - Paragraph: I found a stash a while back and there was a spell inside it
+    isChoice: 0
+    isEnding: 0
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
+  - Paragraph: 'So you help me and I help you. What do you say? '
+    isChoice: 1
+    isEnding: 0
+    _choiceOne: Yes
+    _choiceOnePtr: 7
+    _choiceTwo: No
+    _choiceTwoPtr: 8
+    map: {fileID: 0}
+  - Paragraph: 'Nice Just go around town and find the 2 tree''s that seem especially
+      sturdy. Thats were the creatures are hiding. '
+    isChoice: 0
+    isEnding: 1
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
+  - Paragraph: Alrigh well If you change your mind let me know
+    isChoice: 0
+    isEnding: 1
+    _choiceOne: Yes
+    _choiceOnePtr: 0
+    _choiceTwo: No
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
+  LastWordsEvent: 0
+  LastWords: 
+  nextDialogs:
+  - targetDialogItem: {fileID: 11400000, guid: 49b230acf5ac69d4bb3063d54de6d5f3, type: 2}
+    eventIds: 0b0000000c000000

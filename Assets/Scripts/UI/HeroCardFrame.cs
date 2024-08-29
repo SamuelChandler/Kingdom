@@ -60,6 +60,7 @@ public class HeroCardFrame : MonoBehaviour
     }
 
     public void setCard(ScriptableStructure s){
+        unitImage.color = new Color(unitImage.color.r,unitImage.color.g,unitImage.color.b,1);
         unitName.text = s.name;
         _backgroundImage.sprite = structureBG;
         cost.text = s.inspirationCost.ToString();

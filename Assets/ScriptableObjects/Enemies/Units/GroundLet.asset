@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0ae76b5a4512e488865136dbaecdf2, type: 3}
+  m_Name: GroundLet
+  m_EditorClassIdentifier: 
+  image: {fileID: -463150991801125296, guid: 4d9e71f7b2e2f0846a849e52120dc411, type: 3}
+  name: Groundlet
+  inspirationCost: 3
+  description: Speed -1
+  type: 1
+  Faction: 1
+  health: 4
+  attack: 4
+  speed: 1
+  _leader: 0
+  _swift: 0
+  OnDeath: {fileID: 0}
+  OnPlay: {fileID: 0}
+  OnAttack: {fileID: 0}
+  OnEndTurn: {fileID: 0}
+  OnStartOfTurn: {fileID: 0}
+  beforeMoving: {fileID: 0}
+  afterMoving: {fileID: 0}
+  OnAllyDeath: {fileID: 0}
+  animatorController: {fileID: 0}

@@ -49,7 +49,7 @@ public class Fightable_NPC : NPC, ITalkable
         convoStats = dialog_UI.instance.DisplayNextParagraph(_dialogText,convoStats);
 
         //if the convorsation has ended then 
-        if(convoStats.hasConversationEnded()){
+        if(convoStats.hasConversationEnded(_dialogText)){
             convoStats.ReadyToEnd = true;
         }else{
             //check if the current dialog point is a choice point
@@ -69,7 +69,7 @@ public class Fightable_NPC : NPC, ITalkable
         }
 
         //if the convorsation has ended then 
-        if(convoStats.hasConversationEnded()){
+        if(convoStats.hasConversationEnded(_dialogText)){
             convoStats.ReadyToEnd = true;
         }
     }
@@ -140,10 +140,15 @@ public class ConversationStats{
         Ended = false;
     }
 
-    public bool hasConversationEnded(){
+    public bool hasConversationEnded(DialogText dialog){
         if(ConversationPointer >= DialogLength){
             return true;
         }
+
+        if(dialog._dialog[ConversationPointer].isEnding){
+            return true;
+        }
+
         return false;
     }
 }

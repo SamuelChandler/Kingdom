@@ -17,7 +17,7 @@ MonoBehaviour:
   inspirationCost: 0
   description: 'A Tall Stading Tree '
   type: 3
-  Faction: 1
+  Faction: 2
   height: 1
   width: 1
   health: 6
@@ -25,4 +25,5 @@ MonoBehaviour:
   StartOfTurn: {fileID: 0}
   WhenDestroyed: {fileID: 0}
   OnSummon: {fileID: 0}
+  OnAllyDeath: {fileID: 0}
   allyAttackBoost: 0

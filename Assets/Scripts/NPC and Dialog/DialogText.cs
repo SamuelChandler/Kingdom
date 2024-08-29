@@ -55,6 +55,8 @@ public class DialogSegment{
     //determines if there is a choice in this segment of dialog
     public bool isChoice;
 
+    public bool isEnding;
+
     //2 choices that can be chosen
     public string _choiceOne;
 

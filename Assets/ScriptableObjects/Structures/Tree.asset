@@ -17,7 +17,7 @@ MonoBehaviour:
   inspirationCost: 0
   description: 'A Tall Stading Tree '
   type: 3
-  Faction: 2
+  Faction: 1
   height: 1
   width: 1
   health: 6

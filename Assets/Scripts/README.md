@@ -1,4 +1,5 @@
-# Memory Palace
+# Bestia, A Tale of Man and Monsters
+
 
 ### Art Credit
 Cainos

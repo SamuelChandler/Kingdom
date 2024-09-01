@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48c8c2a0043ca140b0459e7a27e30a0, type: 3}
+  m_Name: Intro
+  m_EditorClassIdentifier: 
+  Name: Clair
+  _dialog:
+  - Paragraph: Ah Welcome!
+    isChoice: 0
+    isEnding: 0
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
+  - Paragraph: You must be the applicant for the Familiar License
+    isChoice: 0
+    isEnding: 0
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
+  - Paragraph: 'For the exam, you will have to defeat the 3 Watchers of the tower
+      and accent to the top of the tower. '
+    isChoice: 0
+    isEnding: 0
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
+  - Paragraph: 'This is to ensure you are strong enough to take on official missions
+      from the Union and other organizations. '
+    isChoice: 0
+    isEnding: 0
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
+  - Paragraph: 'Are you prepared to start the first test? '
+    isChoice: 1
+    isEnding: 0
+    _choiceOne: Yes I am Ready
+    _choiceOnePtr: -1
+    _choiceTwo: No
+    _choiceTwoPtr: 5
+    map: {fileID: 11400000, guid: 524f9e5d9190e3449add9ad7aec69b84, type: 2}
+  - Paragraph: Understandable, come back when you are fully prepared
+    isChoice: 0
+    isEnding: 1
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
+  LastWordsEvent: 0
+  LastWords: 
+  nextDialogs: []

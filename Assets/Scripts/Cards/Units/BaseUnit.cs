@@ -28,6 +28,8 @@ public class BaseUnit : BoardObject
     public int currentMaxHealth;
     public int currentAttack;
 
+    public int currentSpeed;
+
     public int turnCounter;
 
     //used in animation
@@ -51,6 +53,7 @@ public class BaseUnit : BoardObject
         currentHealth = unit.health;
         currentMaxHealth = currentHealth;
         currentAttack = unit.attack;
+        currentSpeed = unit.speed;
         turnCounter = 0;
 
         if(unit._swift){

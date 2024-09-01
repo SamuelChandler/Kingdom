@@ -35,6 +35,14 @@ public abstract class Tile : MonoBehaviour
 
     }
 
+    public virtual void ApplyTileEffect(BoardObject boardObject){
+        return;
+    }
+
+    public virtual void UnApplyTileEffect(BoardObject boardObject){
+        return;
+    }
+
     //hover effect
     private void OnMouseEnter()
     {
@@ -74,7 +82,6 @@ public abstract class Tile : MonoBehaviour
         _moveIndicator.SetActive(false);
     }
 
-
     public Tile setStructure(Structure structure){
         structure.transform.position = transform.position;
         OccupiedObject = structure;
@@ -87,6 +94,8 @@ public abstract class Tile : MonoBehaviour
         //removes unit from the tile it was on logically, if it is ocuppying a tile
         if (unit.OccupiedTile != null)
         {
+            
+            unit.OccupiedTile.UnApplyTileEffect(unit);
             unit.OccupiedTile.OccupiedObject = null;
         }
 
@@ -94,11 +103,17 @@ public abstract class Tile : MonoBehaviour
         if(unit.OccupiedTile != null){
             OccupiedObject = unit; 
             unit.OccupiedTile = this;
+
+            ApplyTileEffect(unit);
+
             StartCoroutine(MoveUnitToPos(transform.position,unit));
 
-        }else{
+        }else{ //usually in the case of summoning and spawning
             OccupiedObject = unit; 
             unit.OccupiedTile = this;
+
+            ApplyTileEffect(unit);
+
             unit.transform.position = transform.position;
         }
         

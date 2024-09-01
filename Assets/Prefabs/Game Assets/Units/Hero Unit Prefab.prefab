@@ -358,7 +358,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OccupiedTile: {fileID: 0}
-  unit: {fileID: 11400000, guid: 3b163bd384cacf3488a9bb4c5ab3dbe6, type: 2}
+  faction: 0
+  card: {fileID: 0}
+  unit: {fileID: 11400000, guid: aa13c16f0012b204aa06c98980ac713e, type: 2}
   spriteRenderer: {fileID: 2216078567971078873}
   attack: {fileID: 3622923866107887960}
   health: {fileID: 4268145055172470545}
@@ -369,6 +371,7 @@ MonoBehaviour:
   currentHealth: 0
   currentMaxHealth: 0
   currentAttack: 0
+  currentSpeed: 0
   turnCounter: 0
   isMoving: 0
   isAttacking: 0

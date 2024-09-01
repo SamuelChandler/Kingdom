@@ -438,7 +438,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
         int total_change  = x_change + y_change;
 
-        // if(total_change > unit.unit.speed){
+        // if(total_change > unit.currentSpeed){
         //     Unit_Manager.instance.SetSelectedHero((BaseHero)null);
         //     Debug.Log("Unit Cannot Move that far");
         //     return;
@@ -457,7 +457,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         
 
         //determine closest tile to destination tile and move
-        while((total_change > unit.unit.speed || destTile.OccupiedObject != null) && destTile != sourceTile)
+        while((total_change > unit.currentSpeed || destTile.OccupiedObject != null) && destTile != sourceTile)
         {
             //check x and move one closer
             if(destTile.x > sourceTile.x){
@@ -472,7 +472,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
             total_change  = x_change + y_change;
 
-            if((total_change > unit.unit.speed|| destTile.OccupiedObject != null ) && destTile != sourceTile){
+            if((total_change > unit.currentSpeed|| destTile.OccupiedObject != null ) && destTile != sourceTile){
                 //check y and move one closer
                 if(destTile.y > sourceTile.y){
                     destTile = GetTileAtPosition(new Vector2(destTile.x,destTile.y-1));
@@ -755,7 +755,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     public void ShowUnitActionTiles(BaseUnit baseUnit){
 
         int width = 0;
-        int farthestTileDistance = baseUnit.unit.speed+2;
+        int farthestTileDistance = baseUnit.currentSpeed +2;
         
         //only show the attack indicator if the unit is unable to move
         if(!baseUnit.isAbleToMove){
@@ -788,7 +788,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
                 int dist = GetDistanceBetweenTiles(baseUnit.OccupiedTile,cTile);
 
                 //if the attack is out of movement range set to attack indicator
-                if( dist > baseUnit.unit.speed){
+                if( dist > baseUnit.currentSpeed){
                     if(baseUnit.isAbleToAttack){cTile.SetAttackIndicator();}
                     else{cTile.ClearTile();}
                 }

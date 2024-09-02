@@ -82,10 +82,20 @@ public abstract class Tile : MonoBehaviour
         _moveIndicator.SetActive(false);
     }
 
-    public Tile setStructure(Structure structure){
+    public void SetObject(BoardObject obj){
+
+        if(obj is BaseUnit){
+            setUnit((BaseUnit)obj);
+        }else if(obj is Structure){
+            setStructure((Structure)obj);
+        }
+    }
+
+    public void setStructure(Structure structure){
         structure.transform.position = transform.position;
         OccupiedObject = structure;
-        return this;
+        structure.OccupiedTile = this;
+        return;
     }
 
     //sets a unit to be occupying a tile 
@@ -142,6 +152,7 @@ public abstract class Tile : MonoBehaviour
 
         //tell unit that it is no longer moving
         unit.isMoving = false;
+        unit.wasMoving = true;
     }
 
     //helper to get unit. might be more complicated later

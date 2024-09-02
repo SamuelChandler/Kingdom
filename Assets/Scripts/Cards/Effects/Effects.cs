@@ -10,12 +10,12 @@ public class Effect: ScriptableObject{
 
     public virtual void ActivateEffect(Structure structure)
     {
-        throw new NotImplementedException();
+        ActivateEffect((BoardObject)structure);
     }
 
     public virtual void ActivateEffect(BaseUnit unit)
     {
-        throw new NotImplementedException();
+        ActivateEffect((BoardObject)unit);
     }
 
     public virtual void ActivateEffect(BoardObject obj)

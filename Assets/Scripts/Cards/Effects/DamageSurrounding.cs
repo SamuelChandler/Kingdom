@@ -23,7 +23,7 @@ public class DamageSurrounding: Effect{
     public override void ActivateEffect(BoardObject obj){
         if(obj.faction == Faction.Hero){
 
-            //for each enemy, check distance and apply damage accourdingly
+            //for each enemy, check distance and apply damage accordingly
             BoardObject[] possibleEnemies = Board_Manager.instance.enemyBoardObjects.ToArray();
             foreach(BoardObject e in possibleEnemies){
                 bool withinOne = Board_Manager.instance.WithinOne(e.OccupiedTile,obj.OccupiedTile);
@@ -34,7 +34,7 @@ public class DamageSurrounding: Effect{
 
         }else if(obj.faction == Faction.Enemy){
 
-            //for each enemy, check distance and apply damage accourdingly
+            //for each enemy, check distance and apply damage accordingly
             BoardObject[] possibleHeros = Board_Manager.instance.allyBoardObjects.ToArray();
             foreach(BoardObject h in possibleHeros){
                 bool withinOne = Board_Manager.instance.WithinOne(h.OccupiedTile,obj.OccupiedTile);

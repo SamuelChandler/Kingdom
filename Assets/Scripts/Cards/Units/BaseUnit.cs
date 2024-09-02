@@ -34,6 +34,7 @@ public class BaseUnit : BoardObject
 
     //used in animation
     public bool isMoving;
+    public bool wasMoving;
     public bool isAttacking;
 
     public virtual void Awake()
@@ -75,6 +76,15 @@ public class BaseUnit : BoardObject
         //check if there is an animator
         if(animator.runtimeAnimatorController == null){
             return;
+        }
+
+        if(wasMoving == true){
+            //activate after movement effect 
+            if(unit.afterMoving != null){
+                unit.afterMoving.ActivateEffect(this);
+            }
+
+            wasMoving = false;
         }
 
         //update the animator

@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d12d9efe711c4949a74062288147ae4, type: 3}
+  m_Name: SetSurroundingToBubbles
+  m_EditorClassIdentifier: 
+  EffectName: Set Surrounding Tiles to Gum
+  tile: {fileID: 6752604884146455938, guid: adec74c78255fbe4591d351db86b1d1c, type: 3}

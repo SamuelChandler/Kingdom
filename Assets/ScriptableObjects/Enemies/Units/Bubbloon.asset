@@ -23,7 +23,7 @@ MonoBehaviour:
   speed: 2
   _leader: 0
   _swift: 0
-  OnDeath: {fileID: 0}
+  OnDeath: {fileID: 11400000, guid: 1cc701b441f8719498ec289a9da47aeb, type: 2}
   OnPlay: {fileID: 0}
   OnAttack: {fileID: 0}
   OnEndTurn: {fileID: 0}

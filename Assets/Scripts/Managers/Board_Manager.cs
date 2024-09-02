@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 
 public class Board_Manager : MonoBehaviour, IDataPersistance
@@ -99,8 +100,9 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         _tiles[new Vector2(x, y)] = spawnedTile;
 
         if(occupyingObject != null){
-            _tiles[new Vector2(x, y)].OccupiedObject = occupyingObject;
-            occupyingObject.OccupiedTile = spawnedTile;
+
+            _tiles[new Vector2(x, y)].SetObject(occupyingObject);
+             
         }
 
         Destroy(OccupiedTile.GameObject());
@@ -191,6 +193,36 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         }
 
         return null;
+    }
+
+    public Tile[] GetSurroundingTiles(Tile src){
+
+        //validate input 
+        if(src == null){
+            Debug.Log("Src Tile not provided");
+            return null;
+        }
+
+        List<Tile> ret = new List<Tile>();
+
+        //search through the 9 options
+        for(int i = -1; i < 2; i++){
+            for(int j = -1; j < 2; j++){
+
+                if(i == 0 &&  j==0){
+                    continue;
+                }
+
+                Vector2 position = new Vector2(src.x + i, src.y + j);
+
+                if(_tiles.TryGetValue(position, out Tile tile)){
+                    ret.Add(tile);
+                }
+            }
+        }
+
+
+        return ret.ToArray();
     }
 
     //returns a Unit for a given v2 position
@@ -361,8 +393,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             var summonded_Structure = Instantiate(_allyS);
 
            
-            summonded_Structure.OccupiedTile = GetTileAtPosition(s.loc).setStructure(summonded_Structure);
-            summonded_Structure.OccupiedTile.setStructure(summonded_Structure);
+            GetTileAtPosition(s.loc).setStructure(summonded_Structure);
                 
             //remove unit from hand and clear related UI
             Menu_Manager.instance.CurrentSelectedSelector.ClearCard();
@@ -387,8 +418,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             //create and set unit to tile
             var summoned_Structure = Instantiate(_enemyS);
 
-            summoned_Structure.OccupiedTile = GetTileAtPosition(s.loc).setStructure(summoned_Structure);
-            summoned_Structure.OccupiedTile.setStructure(summoned_Structure);
+            GetTileAtPosition(s.loc).setStructure(summoned_Structure);
             _EnemyStructures.Add(summoned_Structure);
             enemyBoardObjects.Add(summoned_Structure);
             return;
@@ -400,8 +430,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
             //create and set unit to tile
             var summonded_Structure = Instantiate(_neutralS);
 
-            summonded_Structure.OccupiedTile = GetTileAtPosition(s.loc).setStructure(summonded_Structure);
-            summonded_Structure.OccupiedTile.setStructure(summonded_Structure);
+            GetTileAtPosition(s.loc).setStructure(summonded_Structure);
             _NeutralStructures.Add(summonded_Structure);
             return;
         }
@@ -505,9 +534,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         unit.isAbleToMove = false;
 
         //Activate movment Effect
-        if(unit.unit.afterMoving != null){
-            unit.unit.afterMoving.ActivateEffect(unit);
-        }
+        
         
     }
 

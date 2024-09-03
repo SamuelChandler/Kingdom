@@ -22,6 +22,8 @@ public class GumTile : Tile
 
         _renderer.sprite = getRandomSprite();
 
+        tileType = TileType.Gum;
+
     }
 
     public override void ApplyTileEffect(BoardObject boardObject)

@@ -30,14 +30,14 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     public EnemyStructure _enemyS;
     public NeutralStructure _neutralS;
 
-    public List<BoardObject> allyBoardObjects = new List<BoardObject>();
-    public List<BoardObject> enemyBoardObjects = new List<BoardObject>();
+    public List<BoardObject> allyBoardObjects {get; set;} = new List<BoardObject>();
+    public List<BoardObject> enemyBoardObjects {get; set;} = new List<BoardObject>();
 
-    public List<BaseHero> _heroes = new List<BaseHero>();
-    public List<BaseEnemy> _enemies = new List<BaseEnemy>();
-    public List<Structure> _AllyStructures = new List<Structure>();
-    public List<Structure> _EnemyStructures = new List<Structure>();
-    public List<Structure> _NeutralStructures = new List<Structure>();
+    public List<BaseHero> _heroes {get; set;} = new List<BaseHero>();
+    public List<BaseEnemy> _enemies {get; set;}= new List<BaseEnemy>();
+    public List<Structure> _AllyStructures {get; set;} = new List<Structure>();
+    public List<Structure> _EnemyStructures {get; set;} = new List<Structure>();
+    public List<Structure> _NeutralStructures {get; set;} = new List<Structure>();
 
     public int allyAttackBuff;
     public int enemyAttackBuff;
@@ -223,6 +223,33 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
 
         return ret.ToArray();
+    }
+
+    public bool WithinOne(Tile s, Tile t){
+
+        float x_change = Mathf.Abs(s.x - t.x);
+        float y_change = Mathf.Abs(s.y - t.y);
+
+        if( x_change <= 1 && y_change <= 1){
+            return true;
+        }
+        else{
+            return false;
+
+        }
+    }
+
+    public List<Tile> getTilesOfType(TileType tileType){
+
+        List<Tile> ret = new List<Tile>();
+
+        foreach(Vector2 key in _tiles.Keys){
+            if(_tiles[key].tileType == tileType){
+                ret.Add(_tiles[key]);
+            }
+        }
+
+        return ret;
     }
 
     //returns a Unit for a given v2 position
@@ -538,6 +565,10 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         
     }
 
+    public BaseEnemy[] GetEnemyUnits(){
+        return _enemies.ToArray();
+    }
+
     public List<BaseHero> getHerosInCircleArea(Vector2 pos, int radius)
     {
         List<BaseHero> r = new List<BaseHero>();
@@ -709,19 +740,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         return false;
     }
 
-    public bool WithinOne(Tile s, Tile t){
-
-        float x_change = Mathf.Abs(s.x - t.x);
-        float y_change = Mathf.Abs(s.y - t.y);
-
-        if( x_change <= 1 && y_change <= 1){
-            return true;
-        }
-        else{
-            return false;
-
-        }
-    }
+    
 
     public void ActivateEnemyStructureEndOfTurnEffects(){
         foreach(Structure s in _EnemyStructures){

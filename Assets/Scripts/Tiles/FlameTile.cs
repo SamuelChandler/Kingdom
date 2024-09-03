@@ -22,6 +22,8 @@ public class FlameTile : Tile, ITileEndTurnEffect
 
         _renderer.sprite = getRandomSprite();
 
+        tileType = TileType.Flame;
+
     }
 
     public void EndTurnEffect()

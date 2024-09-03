@@ -15,7 +15,7 @@ MonoBehaviour:
   image: {fileID: -5096589791923392386, guid: d389987d24190c642a9eaca0b6d416ba, type: 3}
   name: Gum Grunt
   inspirationCost: 0
-  description: 'Start Of Turn: Summon A Bubbloon on a random empty Gum Tile.'
+  description: 'Start Of Turn: Summon 2 Bubbloon on random empty Gum Tiles.'
   type: 0
   Faction: 1
   health: 20
@@ -27,7 +27,7 @@ MonoBehaviour:
   OnPlay: {fileID: 0}
   OnAttack: {fileID: 0}
   OnEndTurn: {fileID: 0}
-  OnStartOfTurn: {fileID: 0}
+  OnStartOfTurn: {fileID: 11400000, guid: a792498d23be8bf4b95a57da88078a3c, type: 2}
   beforeMoving: {fileID: 0}
   afterMoving: {fileID: 0}
   OnAllyDeath: {fileID: 0}

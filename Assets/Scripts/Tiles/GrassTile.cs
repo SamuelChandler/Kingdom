@@ -18,6 +18,7 @@ public class GrassTile : Tile
         _moveIndicator.SetActive(false);
 
         _renderer.sprite = getRandomSprite();
+        tileType = TileType.grass;
 
     }
 

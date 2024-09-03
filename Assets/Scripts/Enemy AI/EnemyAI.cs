@@ -5,8 +5,12 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+    BaseEnemy[] e_units;
+
     public void StartTurn()
-    {
+    {   
+
+        e_units = Board_Manager.instance.GetEnemyUnits();
         //Debug.Log("AI has started Turn");
         StartOfTurn();
 
@@ -17,7 +21,7 @@ public class EnemyAI : MonoBehaviour
     }
 
     private void StartOfTurn(){
-        foreach (var e in Board_Manager.instance._enemies)
+        foreach (var e in e_units)
         {   
             e.uAI.StartOfTurnEffects();
         }
@@ -25,7 +29,7 @@ public class EnemyAI : MonoBehaviour
 
     private void UnitActions()
     {
-        foreach (var e in Board_Manager.instance._enemies)
+        foreach (var e in e_units)
         {   
             //Debug.Log(e.unit.name);
             e.uAI.TakeTurn();

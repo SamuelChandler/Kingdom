@@ -19,6 +19,8 @@ public abstract class Tile : MonoBehaviour
 
     [SerializeField] protected GameObject _moveIndicator;
     [SerializeField] private bool _isWalkable;
+
+    [SerializeField] public TileType tileType;
     public int x, y;
 
     public BoardObject OccupiedObject;
@@ -30,6 +32,8 @@ public abstract class Tile : MonoBehaviour
         _attackIndicator.SetActive(false);
         _moveIndicator.SetActive(false);
         _renderer.sprite = getRandomSprite();
+
+        tileType = TileType.normal;
 
         x = a; y = b;
 
@@ -268,5 +272,13 @@ public abstract class Tile : MonoBehaviour
         int index = UnityEngine.Random.Range(0,_possibleSprites.Length);
         return _possibleSprites[index];
     }
+}
+
+public enum TileType
+{
+    normal,
+    grass,
+    Flame,
+    Gum
 }
 

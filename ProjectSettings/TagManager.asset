@@ -57,3 +57,18 @@ TagManager:
   - name: BuildingHigher
     uniqueID: 1424678693
     locked: 0
+  - name: Board Unit
+    uniqueID: 4099738267
+    locked: 0
+  - name: Board UI 1
+    uniqueID: 938130659
+    locked: 0
+  - name: Board UI 2
+    uniqueID: 1163949749
+    locked: 0
+  - name: Board UI 3
+    uniqueID: 1614022937
+    locked: 0
+  - name: Board UI 4
+    uniqueID: 3573077357
+    locked: 0

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BaseUnit : BoardObject
 {
@@ -13,7 +14,9 @@ public class BaseUnit : BoardObject
     //animation and art Stuff
     public SpriteRenderer spriteRenderer;
 
-    [SerializeField] private TextMeshProUGUI attack, health;
+    [SerializeField] private TextMeshProUGUI attack;
+
+    [SerializeField] private Slider HealthBar;
 
     [SerializeField]  Material SelectedMaterial;
 
@@ -66,8 +69,7 @@ public class BaseUnit : BoardObject
         }
         
 
-        attack.text = unit.attack.ToString();
-        health.text = currentHealth.ToString();
+        UpdateAttackAndHealthDisplay();
 
     }
 
@@ -115,7 +117,7 @@ public class BaseUnit : BoardObject
 
     public void UpdateAttackAndHealthDisplay(){
         attack.text = currentAttack.ToString();
-        health.text = currentHealth.ToString();
+        HealthBar.value = (float)currentHealth/(float)currentMaxHealth;
 
         if(currentHealth <=0 ){
             Destroy(gameObject);

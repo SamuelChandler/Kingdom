@@ -15,22 +15,16 @@ public class TargetedDamageEffect: TargetedEffect{
         
      
         if(t.OccupiedObject != null){
-            t.OccupiedObject.TakeDamage(DamageAmount);
+            ActivateEffect(t.OccupiedObject);
         }
-    }
-
-    public override void ActivateEffect(BaseUnit unit)
-    {
-        unit.TakeDamage(DamageAmount);
-    }
-
-    public override void ActivateEffect(Structure s)
-    {
-        s.TakeDamage(DamageAmount);
     }
 
     public override void ActivateEffect(BoardObject obj)
     {
+
+        if(obj == null){return;}
+
         obj.TakeDamage(DamageAmount);
+        obj.PlayDamagedAnimationCoroutine(DamageAmount);
     }
 }

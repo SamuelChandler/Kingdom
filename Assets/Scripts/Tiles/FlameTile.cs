@@ -31,6 +31,7 @@ public class FlameTile : Tile, ITileEndTurnEffect
         if(OccupiedObject != null){
             Debug.Log(OccupiedObject.name + " was burned by " + name);
             OccupiedObject.TakeDamage(DamageAmount);
+            StartCoroutine(OccupiedObject.PlayDamagedAnimation(DamageAmount));
         }
     }
 }

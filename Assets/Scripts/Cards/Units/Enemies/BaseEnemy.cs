@@ -48,6 +48,8 @@ public class BaseEnemy : BaseUnit
 
         allyObj.TakeDamage(currentAttack);
 
+        StartCoroutine(allyObj.PlayDamagedAnimation(currentAttack));
+
         return true;
     }
 
@@ -72,8 +74,14 @@ public class BaseEnemy : BaseUnit
         if(unit.OnDeath != null){
             unit.OnDeath.ActivateEffect(this);
         }
-        
-        
 
+    }
+
+    public override IEnumerator PlayDamagedAnimation(int d)
+    {
+        float dur = Game_Manager.AttackDuration;
+        yield return new WaitForSeconds(dur);
+        
+        UpdateAttackAndHealthDisplay();
     }
 }

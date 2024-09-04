@@ -61,6 +61,7 @@ public class Structure : BoardObject
 
     public void UpdateHealthDisplay(){
         health.text = currentHealth.ToString();
+        if(currentHealth <=0 )Destroy(gameObject);
     }
 
     public void SetBuffs(){
@@ -95,8 +96,6 @@ public class Structure : BoardObject
     override public void TakeDamage(int d){
         currentHealth = currentHealth-d;
 
-        UpdateHealthDisplay();
-
         if (currentHealth <= 0)
         {
 
@@ -107,8 +106,6 @@ public class Structure : BoardObject
             OccupiedTile.OccupiedObject = null;
 
             removeStructure();
-
-            Destroy(gameObject);
 
         }
     }

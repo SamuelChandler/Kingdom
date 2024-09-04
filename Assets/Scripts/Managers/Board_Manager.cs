@@ -681,6 +681,8 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     //remove hero from list if it exists
     public bool RemoveHero(BaseHero h){
 
+        h.OccupiedTile.OccupiedObject = null;
+
         if(_heroes.Contains(h)){
             _heroes.Remove(h);
             allyBoardObjects.Remove(h);
@@ -692,6 +694,8 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     //remove hero from list if it exists
     public bool RemoveEnemy(BaseEnemy e){
 
+        e.OccupiedTile.OccupiedObject = null;
+
         if(_enemies.Contains(e)){
             
             _enemies.Remove(e);
@@ -701,10 +705,15 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
             return true;
         }
+
+        
         return false;
     }
 
     public bool removeEnemyStructure(EnemyStructure e){
+
+        e.OccupiedTile.OccupiedObject = null;
+
         if(_EnemyStructures.Contains(e)){
             
             _EnemyStructures.Remove(e);
@@ -718,6 +727,9 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     }
 
     public bool removeNeutralStructure(NeutralStructure n){
+
+        n.OccupiedTile.OccupiedObject = null;
+
         if(_NeutralStructures.Contains(n)){
             _NeutralStructures.Remove(n);
 
@@ -732,6 +744,9 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     }
 
     public bool removeAllyStructure(AllyStructure allyStructure){
+
+        allyStructure.OccupiedTile.OccupiedObject = null;
+
         if(_AllyStructures.Contains(allyStructure)){
             _AllyStructures.Remove(allyStructure);
             allyBoardObjects.Remove(allyStructure);

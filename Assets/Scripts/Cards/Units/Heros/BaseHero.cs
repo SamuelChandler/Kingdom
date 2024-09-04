@@ -17,9 +17,11 @@ public class BaseHero : BaseUnit
         UpdateAttackAndHealthDisplay();
     }
 
-    public bool Attack(BaseEnemy enemy)
+    public bool Attack(BoardObject enemy)
     {
         if (enemy == null||!this.isAbleToAttack) return false;
+
+        if (enemy.faction == Faction.Hero) return false;
 
         //check if enemy is within one space
         if(Mathf.Abs(this.OccupiedTile.x - enemy.OccupiedTile.x) > 1|| Mathf.Abs(this.OccupiedTile.y - enemy.OccupiedTile.y) > 1)
@@ -37,99 +39,13 @@ public class BaseHero : BaseUnit
 
         this.isAbleToAttack = false;
 
-        StartCoroutine(DelayThenDamage(enemy,currentAttack));
+        enemy.TakeDamage(currentAttack);
+
+        StartCoroutine(enemy.PlayDamagedAnimation(currentAttack));
         
         return true;
     }
 
-    public bool Attack(EnemyStructure enemy){
-        if (enemy == null||!this.isAbleToAttack) return false;
-
-        bool inRange = false;
-        
-        //check if enemy is within one space
-
-        if(Mathf.Abs(this.OccupiedTile.x - enemy.OccupiedTile.x) <= 1 && Mathf.Abs(this.OccupiedTile.y - enemy.OccupiedTile.y) <= 1)
-        {
-            inRange = true;
-        }
-        
-
-        if(inRange == false)
-        {
-            Menu_Manager.instance.SetMessenger("Attack was out of Range");
-            return false;
-        }
-
-        StartCoroutine(PlayAttackAnimation());
-
-        if(unit.OnAttack != null){
-            Debug.Log("Attack Trigger");
-            unit.OnAttack.ActivateEffect(this);
-        }
-
-        isAbleToAttack = false;
-
-        StartCoroutine(DelayThenDamage(enemy,currentAttack));
-  
-        return true;
-    }
-
-    public bool Attack(NeutralStructure enemy){
-        if (enemy == null||!this.isAbleToAttack) return false;
-
-        bool inRange = false;
-        
-        //check if enemy is within one space
-        Tile t = enemy.OccupiedTile;
-        
-        if(Mathf.Abs(OccupiedTile.x - t.x) <= 1 && Mathf.Abs(this.OccupiedTile.y - t.y) <= 1)
-        {
-            inRange = true;
-        }
-        
-        if(inRange == false)
-        {
-            Menu_Manager.instance.SetMessenger("Attack was out of Range");
-            return false;
-        }
-
-        StartCoroutine(PlayAttackAnimation());
-
-        if(unit.OnAttack != null){
-            Debug.Log("Attack Trigger");
-            unit.OnAttack.ActivateEffect(this);
-        }
-
-        isAbleToAttack = false;
-
-        
-        StartCoroutine(DelayThenDamage(enemy,currentAttack));
-  
-        return true;
-    }
-
-    IEnumerator DelayThenDamage(NeutralStructure structure, int attack){
-
-        yield return new WaitForSeconds(Game_Manager.AttackDuration);
-
-        structure.TakeDamage(attack);
-
-    }
-
-    IEnumerator DelayThenDamage(EnemyStructure structure, int attack){
-
-        yield return new WaitForSeconds(Game_Manager.AttackDuration);
-
-        structure.TakeDamage(attack);
-
-    }
-
-    IEnumerator DelayThenDamage(BaseEnemy enemy, int attack){
-        yield return new WaitForSeconds(Game_Manager.AttackDuration);
-
-        enemy.TakeDamage(attack);
-    }
 
     IEnumerator PlayAttackAnimation(){
 
@@ -167,5 +83,13 @@ public class BaseHero : BaseUnit
             unit.OnStartOfTurn.ActivateEffect(this);
         }
         
+    }
+
+    public override IEnumerator PlayDamagedAnimation(int d)
+    {
+        float dur = Game_Manager.AttackDuration;
+        yield return new WaitForSeconds(dur);
+
+        UpdateAttackAndHealthDisplay();
     }
 }

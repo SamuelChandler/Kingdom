@@ -374,6 +374,7 @@ MonoBehaviour:
   currentSpeed: 0
   turnCounter: 0
   isMoving: 0
+  wasMoving: 0
   isAttacking: 0
 --- !u!1 &3873494568955814715
 GameObject:

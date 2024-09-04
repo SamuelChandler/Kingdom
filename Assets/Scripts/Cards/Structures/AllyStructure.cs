@@ -8,4 +8,12 @@ public class AllyStructure : Structure
         ClearBuff();
         Board_Manager.instance.removeAllyStructure(this);
     }
+
+    public override IEnumerator PlayDamagedAnimation(int d)
+    {
+        float dur = Game_Manager.AttackDuration;
+        yield return new WaitForSeconds(dur);
+
+        UpdateHealthDisplay();
+    }
 }

@@ -8,4 +8,12 @@ public class EnemyStructure : Structure
         ClearBuff();
         Board_Manager.instance.removeEnemyStructure(this);
     }
+
+    public override IEnumerator PlayDamagedAnimation(int d)
+    {
+        float dur = Game_Manager.AttackDuration;
+        yield return new WaitForSeconds(dur);
+
+        UpdateHealthDisplay();
+    }
 }

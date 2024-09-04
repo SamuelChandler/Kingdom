@@ -117,19 +117,20 @@ public class BaseUnit : BoardObject
         attack.text = currentAttack.ToString();
         health.text = currentHealth.ToString();
 
+        if(currentHealth <=0 ){
+            Destroy(gameObject);
+        }
+
     }
 
     override public void TakeDamage(int d){
         currentHealth = currentHealth-d;
-        UpdateAttackAndHealthDisplay();
 
         if (currentHealth <= 0)
         {
-            
             OccupiedTile.OccupiedObject = null;
             removeUnit();
-            Destroy(gameObject);
-
+            
         }
     }
 

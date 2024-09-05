@@ -52,6 +52,21 @@ public abstract class Tile : MonoBehaviour
     {
         _highlight.SetActive(true);
         Menu_Manager.instance.showTileInfo(this);
+
+        if(Unit_Manager.instance.SelectedHero == null || OccupiedObject == null){
+            return;
+        }
+
+        BaseHero SelectedHero = Unit_Manager.instance.SelectedHero;
+
+        if(OccupiedObject.faction == SelectedHero.faction)return;
+            
+        if(SelectedHero.isAbleToAttack && Board_Manager.instance.WithinOne(SelectedHero.OccupiedTile,this)){  
+            OccupiedObject.ShowDamagePreview(SelectedHero.currentAttack);
+        }
+            
+            
+        
     }
 
     //removing hover effect
@@ -59,6 +74,11 @@ public abstract class Tile : MonoBehaviour
     { 
         _highlight.SetActive(false); 
         Menu_Manager.instance.showTileInfo(null);
+
+        if(OccupiedObject != null){
+            OccupiedObject.UpdateHealthDisplay();
+        }
+        
     }
 
     private void OnMouseOver(){
@@ -178,7 +198,6 @@ public abstract class Tile : MonoBehaviour
                 return;
             }
         }
-
 
         //if tile is not empty
         if (OccupiedObject is BaseUnit )

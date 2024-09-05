@@ -14,15 +14,7 @@ public class Structure : BoardObject
     [SerializeField]
     public SpriteRenderer spriteRenderer;
 
-    [SerializeField] private Slider HealthBar;
-
-    [SerializeField]
-    public int currentHealth;
-    public int currentMaxHealth;
-
     public int turnCounter;
-
-    
 
 
     private void Awake()
@@ -60,9 +52,9 @@ public class Structure : BoardObject
         }
     }
 
-    public void UpdateHealthDisplay(){
-        HealthBar.value = (float)currentHealth/(float)currentMaxHealth;
-        if(currentHealth <=0 )Destroy(gameObject);
+    
+    public void ReverseDamagePreview(){
+        UpdateHealthDisplay();
     }
 
     public void SetBuffs(){

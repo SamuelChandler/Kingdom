@@ -16,8 +16,6 @@ public class BaseUnit : BoardObject
 
     [SerializeField] private TextMeshProUGUI attack;
 
-    [SerializeField] private Slider HealthBar;
-
     [SerializeField]  Material SelectedMaterial;
 
     [SerializeField] Material defualtMaterial;
@@ -27,8 +25,6 @@ public class BaseUnit : BoardObject
     public bool isAbleToMove;
     public bool isAbleToAttack;
 
-    public int currentHealth;
-    public int currentMaxHealth;
     public int currentAttack;
 
     public int currentSpeed;
@@ -117,12 +113,12 @@ public class BaseUnit : BoardObject
 
     public void UpdateAttackAndHealthDisplay(){
         attack.text = currentAttack.ToString();
-        HealthBar.value = (float)currentHealth/(float)currentMaxHealth;
+        
+        UpdateHealthDisplay();
+    }
 
-        if(currentHealth <=0 ){
-            Destroy(gameObject);
-        }
-
+    public void ReverseDamagePreview(){
+        UpdateAttackAndHealthDisplay();
     }
 
     override public void TakeDamage(int d){

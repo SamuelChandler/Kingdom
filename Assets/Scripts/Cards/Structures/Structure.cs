@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 //base class for all structure types 
 public class Structure : BoardObject
@@ -13,7 +14,7 @@ public class Structure : BoardObject
     [SerializeField]
     public SpriteRenderer spriteRenderer;
 
-    [SerializeField] private TextMeshProUGUI health;
+    [SerializeField] private Slider HealthBar;
 
     [SerializeField]
     public int currentHealth;
@@ -32,7 +33,7 @@ public class Structure : BoardObject
         spriteRenderer.sprite = _structure.image;
         currentHealth = _structure.health;
         currentMaxHealth = currentHealth;
-        health.text = currentHealth.ToString();
+        HealthBar.value = 1;
         turnCounter = 0;
 
         SetBuffs();
@@ -60,7 +61,7 @@ public class Structure : BoardObject
     }
 
     public void UpdateHealthDisplay(){
-        health.text = currentHealth.ToString();
+        HealthBar.value = (float)currentHealth/(float)currentMaxHealth;
         if(currentHealth <=0 )Destroy(gameObject);
     }
 

@@ -71,6 +71,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
                 Debug.Log("Generating Map");
                 Board_Manager.instance.generateGrid();
                 Board_Manager.instance.SpawnMapStructures();
+                SetMusic();
                 SetSpawners();
                 break;
             case GameState.SpawnHero:
@@ -297,6 +298,17 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         ShuffleDeck();
         Draw(StartingHandSize-cardsDrawnPerTurn);
 
+    }
+
+    private void SetMusic()
+    {
+        bool eliteBattle = Board_Manager.instance._map.eliteBattle;
+
+        if(eliteBattle){
+            AudioManager.instance.Play("EliteBattleMusic");
+        }else{
+            AudioManager.instance.Play("BasicBattleMusic");
+        }
     }
 
     private void ResolveGameWin(){

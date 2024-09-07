@@ -35,6 +35,7 @@ public class Scene_Manager : MonoBehaviour
     //loads the overworld scene
     public void GoToOverworld(){
         SceneManager.LoadScene(OverWorld);
+        AudioManager.instance.Play("Music");
     }
 
     public void GoToBattle(ScriptableMap map){
@@ -71,7 +72,7 @@ public class Scene_Manager : MonoBehaviour
 
     public void goToOverWorldFromDeckBuilder(){
         PlayerPrefs.SetString("FromDeckbuiler","Yes");
-        SceneManager.LoadScene(OverWorld);
+        GoToOverworld();
     }
 
     public void GoToStarterSelect(){

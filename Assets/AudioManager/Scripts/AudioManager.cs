@@ -44,6 +44,16 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + "not found!");
             return;
         }
+
+        //stop all background music if the new sound is background music
+        if(s.type == SoundType.BackgroundMusic){
+            foreach(Sound sound in sounds){
+                if(sound.type == SoundType.BackgroundMusic){
+                    sound.source.Stop();
+                }
+            }
+        }
+
         s.source.Play();
         Debug.Log("Playing: " + name);
     }

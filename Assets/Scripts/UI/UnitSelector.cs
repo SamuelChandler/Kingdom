@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -49,6 +50,12 @@ public class UnitSelector : MonoBehaviour
     }
 
     public void SetCard(Card c){
+
+        if(c == null){
+            Debug.Log("Cannot Set A null Card");
+            return;
+        }
+
         held_card = c;
 
         if (held_card.image != null)

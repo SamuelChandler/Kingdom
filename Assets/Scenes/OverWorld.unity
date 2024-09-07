@@ -15651,6 +15651,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 0, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 46
+      m_TileSpriteIndex: 42
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 1, y: 0, z: 0}
     second:
       serializedVersion: 2
@@ -40455,7 +40465,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 00e90487b2eff654094ca2dbde810494, type: 2}
   - m_RefCount: 22
     m_Data: {fileID: 11400000, guid: 773cee9dcf4fa1e438c222c6bddf163d, type: 2}
-  - m_RefCount: 12
+  - m_RefCount: 13
     m_Data: {fileID: 11400000, guid: d6b2f8044c634fc43a1c7b500b85ac0b, type: 2}
   - m_RefCount: 157
     m_Data: {fileID: 11400000, guid: da1cf7d45af84ce4ea16dd76d5c329da, type: 2}
@@ -40788,7 +40798,7 @@ Tilemap:
     m_Data: {fileID: -1926305021287398687, guid: 815f6abac42476e4cbc5882860926889, type: 3}
   - m_RefCount: 10
     m_Data: {fileID: -7063950793185184340, guid: 815f6abac42476e4cbc5882860926889, type: 3}
-  - m_RefCount: 12
+  - m_RefCount: 13
     m_Data: {fileID: -8126362665844704723, guid: 815f6abac42476e4cbc5882860926889, type: 3}
   - m_RefCount: 22
     m_Data: {fileID: 5271934871018076253, guid: 815f6abac42476e4cbc5882860926889, type: 3}
@@ -40993,7 +41003,7 @@ Tilemap:
   - m_RefCount: 3
     m_Data: {fileID: 6081954019316206175, guid: 3ffa249f60465f546b77a1db4a8f2e94, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 3866
+  - m_RefCount: 3867
     m_Data:
       e00: 1
       e01: 0
@@ -41012,7 +41022,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 3866
+  - m_RefCount: 3867
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -43019,7 +43029,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
       propertyPath: sounds.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
       propertyPath: sounds.Array.data[0].clip
@@ -43032,6 +43042,10 @@ PrefabInstance:
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
       propertyPath: sounds.Array.data[0].name
       value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
+      propertyPath: sounds.Array.data[0].type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
       propertyPath: sounds.Array.data[1].clip
@@ -43050,6 +43064,38 @@ PrefabInstance:
       value: UnPause
       objectReference: {fileID: 0}
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
+      propertyPath: sounds.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 02d75af88d1c722469fd43a11158e672, type: 3}
+    - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
+      propertyPath: sounds.Array.data[3].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
+      propertyPath: sounds.Array.data[3].name
+      value: BasicBattleMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
+      propertyPath: sounds.Array.data[3].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
+      propertyPath: sounds.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: cf68b399846c7f140ae8b5b089bb9e29, type: 3}
+    - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
+      propertyPath: sounds.Array.data[4].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
+      propertyPath: sounds.Array.data[4].name
+      value: EliteBattleMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
+      propertyPath: sounds.Array.data[4].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
       propertyPath: sounds.Array.data[1].pitch
       value: 1
       objectReference: {fileID: 0}
@@ -43058,11 +43104,27 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
+      propertyPath: sounds.Array.data[3].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
+      propertyPath: sounds.Array.data[4].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
       propertyPath: sounds.Array.data[1].volume
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
       propertyPath: sounds.Array.data[2].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
+      propertyPath: sounds.Array.data[3].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7, type: 3}
+      propertyPath: sounds.Array.data[4].volume
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

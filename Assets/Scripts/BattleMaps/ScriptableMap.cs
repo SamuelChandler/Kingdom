@@ -44,6 +44,8 @@ public class ScriptableMap : ScriptableObject
 
     [SerializeField] public int onWinEvent;
 
+    [SerializeField] public bool eliteBattle;
+
 
     public Tile GetTile(char id)
     {

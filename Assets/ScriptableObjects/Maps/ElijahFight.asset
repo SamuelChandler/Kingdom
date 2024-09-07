@@ -37,17 +37,17 @@ MonoBehaviour:
   t3: {fileID: 3172439750072396845, guid: 63fb5d9822777de419eccbd9284ec38a, type: 3}
   t4: {fileID: 3172439750072396845, guid: 2a0fb742735754d439527f71d2ab4662, type: 3}
   t5: {fileID: 0}
-  enemies:
-  - enemy: {fileID: 11400000, guid: facebf210b73fd84b89b21156b4db535, type: 2}
-    loc: {x: 2, y: 2}
-  - enemy: {fileID: 11400000, guid: facebf210b73fd84b89b21156b4db535, type: 2}
-    loc: {x: 3, y: 3}
-  - enemy: {fileID: 11400000, guid: facebf210b73fd84b89b21156b4db535, type: 2}
-    loc: {x: 2, y: 4}
-  structures: []
+  enemies: []
+  structures:
+  - structure: {fileID: 11400000, guid: d2f9e312883727e46964737fcee89f3a, type: 2}
+    loc: {x: 7, y: 3}
+  - structure: {fileID: 11400000, guid: d2f9e312883727e46964737fcee89f3a, type: 2}
+    loc: {x: 3, y: 5}
+  - structure: {fileID: 11400000, guid: d2f9e312883727e46964737fcee89f3a, type: 2}
+    loc: {x: 3, y: 2}
   _levelType: 1
   _boss:
-    enemy: {fileID: 11400000, guid: 9b1b238e33f6e474bba062f306469863, type: 2}
+    enemy: {fileID: 11400000, guid: 981de79b4ed9c344c9d0f9aefd38ea63, type: 2}
     loc: {x: 6, y: 3}
   _leader:
     unit: {fileID: 0}
@@ -55,4 +55,4 @@ MonoBehaviour:
   _turns: 0
   _spawners: []
   reward: {fileID: 11400000, guid: d41dc3397b94d08419302077b2248625, type: 2}
-  onWinEvent: 12
+  onWinEvent: 14

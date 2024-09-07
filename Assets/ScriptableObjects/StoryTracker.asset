@@ -35,7 +35,11 @@ MonoBehaviour:
     desc: Bee 2 Defeated
   - completed: 1
     desc: Bee Hive Defeated
-  - completed: 0
+  - completed: 1
     desc: Tree 1 Cleared
-  - completed: 0
+  - completed: 1
     desc: Tree 2 Cleared
+  - completed: 1
+    desc: Clair Defeated
+  - completed: 1
+    desc: Elijah Defeated

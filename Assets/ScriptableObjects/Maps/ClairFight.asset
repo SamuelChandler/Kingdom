@@ -55,4 +55,4 @@ MonoBehaviour:
   _turns: 0
   _spawners: []
   reward: {fileID: 11400000, guid: d41dc3397b94d08419302077b2248625, type: 2}
-  onWinEvent: 12
+  onWinEvent: 13

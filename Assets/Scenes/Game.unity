@@ -1987,11 +1987,6 @@ MonoBehaviour:
   _allyS: {fileID: 6320511744291548585, guid: f35dc7c515ac704479d66315ee63eb3b, type: 3}
   _enemyS: {fileID: 8200517103873319548, guid: f0c72aedeade20544867978e8c684662, type: 3}
   _neutralS: {fileID: -8543341718320767285, guid: d8f6cfce9c4aeb84b97a234ea2200d1b, type: 3}
-  _heroes: []
-  _enemies: []
-  _AllyStructures: []
-  _EnemyStructures: []
-  _NeutralStructures: []
   allyAttackBuff: 0
   enemyAttackBuff: 0
 --- !u!4 &2104909210
@@ -2984,6 +2979,54 @@ PrefabInstance:
     - target: {fileID: 6172175176635355690, guid: 378b52678f269794699e089adbfce718, type: 3}
       propertyPath: m_RenderMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6982430104731022384, guid: 378b52678f269794699e089adbfce718, type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 6982430104731022384, guid: 378b52678f269794699e089adbfce718, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 811eb786a8429be40a89e20c72fe0793, type: 2}
+    - target: {fileID: 6982430104731022384, guid: 378b52678f269794699e089adbfce718, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1342626155448570984, guid: 811eb786a8429be40a89e20c72fe0793, type: 2}
+    - target: {fileID: 6982430104731022384, guid: 378b52678f269794699e089adbfce718, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6982430104731022384, guid: 378b52678f269794699e089adbfce718, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652629141039300219, guid: 378b52678f269794699e089adbfce718, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.6791041
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652629141039300219, guid: 378b52678f269794699e089adbfce718, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.3338148
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652629141039300219, guid: 378b52678f269794699e089adbfce718, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.31254175
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652629141039300219, guid: 378b52678f269794699e089adbfce718, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -0.9820862
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652629141039300219, guid: 378b52678f269794699e089adbfce718, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -1.9134007
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652629141039300219, guid: 378b52678f269794699e089adbfce718, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.57525635
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652629141039300219, guid: 378b52678f269794699e089adbfce718, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.043335
       objectReference: {fileID: 0}
     - target: {fileID: 9032957322259009263, guid: 378b52678f269794699e089adbfce718, type: 3}
       propertyPath: m_fontSize

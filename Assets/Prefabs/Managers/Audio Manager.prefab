@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339442198627193386}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1339442198627193387
 MonoBehaviour:
@@ -45,9 +45,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: Select
-    clip: {fileID: 8300000, guid: 236ab3ec8d0be874ab16550650c48a48, type: 3}
+  - name: Music
+    clip: {fileID: 8300000, guid: b1c9b598b9a925e49a108d203607661d, type: 3}
     volume: 1
     pitch: 1
+    blend: 0
+    loop: 1
+    type: 1
+    source: {fileID: 0}
+  - name: Pause
+    clip: {fileID: 8300000, guid: 3dd1d37a575bef540900b91a960f45f3, type: 3}
+    volume: 1
+    pitch: 1
+    blend: 0
     loop: 0
+    type: 0
+    source: {fileID: 0}
+  - name: UnPause
+    clip: {fileID: 8300000, guid: bb2b3ee4f39ba4148bc5d5379e660370, type: 3}
+    volume: 1
+    pitch: 1
+    blend: 0
+    loop: 0
+    type: 0
+    source: {fileID: 0}
+  - name: BasicBattleMusic
+    clip: {fileID: 8300000, guid: 02d75af88d1c722469fd43a11158e672, type: 3}
+    volume: 1
+    pitch: 1
+    blend: 0
+    loop: 1
+    type: 1
+    source: {fileID: 0}
+  - name: EliteBattleMusic
+    clip: {fileID: 8300000, guid: cf68b399846c7f140ae8b5b089bb9e29, type: 3}
+    volume: 1
+    pitch: 1
+    blend: 0
+    loop: 1
+    type: 1
     source: {fileID: 0}

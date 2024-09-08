@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -84,6 +85,14 @@ public class PauseMenu : MonoBehaviour
         ClearSubview();
 
         InventoryView.SetActive(true);
+    }
+
+    public void SetMusicVol(Slider s){
+        AudioManager.instance.SetMusicVol(s.value);
+    }
+
+    public void SetEffectVol(Slider s){
+        AudioManager.instance.SetSfxVol(s.value);
     }
 
 

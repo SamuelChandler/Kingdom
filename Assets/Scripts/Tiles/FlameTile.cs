@@ -10,8 +10,6 @@ public class FlameTile : Tile, ITileEndTurnEffect
 
     [SerializeField] private int DamageAmount;
 
-    
-
 
     public override void Init(int a, int b)
     {
@@ -29,9 +27,10 @@ public class FlameTile : Tile, ITileEndTurnEffect
     public void EndTurnEffect()
     {
         if(OccupiedObject != null){
-            Debug.Log(OccupiedObject.name + " was burned by " + name);
-            OccupiedObject.TakeDamage(DamageAmount);
+            Debug.Log(OccupiedObject.card.name + " was burned by " + name);
             StartCoroutine(OccupiedObject.PlayDamagedAnimation(DamageAmount));
+            OccupiedObject.TakeDamage(DamageAmount);
+            
         }
     }
 }

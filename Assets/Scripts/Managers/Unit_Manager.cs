@@ -79,6 +79,7 @@ public class Unit_Manager : MonoBehaviour
         }
 
         if(C.type == CardType.Structure){
+            SelectedHero = null;
             Board_Manager.instance.ShowSummonableTiles(C);
         }
         

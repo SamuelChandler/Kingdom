@@ -7,9 +7,16 @@ public class AudioManager : MonoBehaviour
     [NonReorderable] //Don't remove this or Element 0 will be buggy and small bc idfk
     public Sound[] sounds;
 
+    public Sound ActiveBackgroundMusic;
+
     // Start is called before the first frame update
 
     public static AudioManager instance;
+
+    private float MusicVolume = 1;
+
+    private float SFX_Volume = 1;
+
     void Awake()
     {
         if (instance == null)
@@ -45,6 +52,11 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        if(s == ActiveBackgroundMusic){
+            Debug.Log("Already Playing Song");
+            return;
+        }
+
         //stop all background music if the new sound is background music
         if(s.type == SoundType.BackgroundMusic){
             foreach(Sound sound in sounds){
@@ -54,7 +66,27 @@ public class AudioManager : MonoBehaviour
             }
         }
 
+        if(s.type == SoundType.BackgroundMusic){
+            ActiveBackgroundMusic = s;
+            s.source.volume = MusicVolume;
+        }else if( s.type == SoundType.SFX){
+            s.source.volume = SFX_Volume;
+        }
+
         s.source.Play();
         Debug.Log("Playing: " + name);
+    }
+
+    public void SetMusicVol(float val){
+        if(val >= 0 && val <= 1){
+            MusicVolume = val;
+        }
+        ActiveBackgroundMusic.source.volume  = val;
+    }
+
+    public void SetSfxVol(float val){
+        if(val >= 0 && val <= 1){
+            SFX_Volume = val;
+        }
     }
 }

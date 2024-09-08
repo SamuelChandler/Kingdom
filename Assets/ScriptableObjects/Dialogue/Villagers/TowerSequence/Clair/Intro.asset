@@ -66,4 +66,6 @@ MonoBehaviour:
     map: {fileID: 0}
   LastWordsEvent: 0
   LastWords: 
-  nextDialogs: []
+  nextDialogs:
+  - targetDialogItem: {fileID: 11400000, guid: 064aaa6c8b12dd24d94c24d205988a9c, type: 2}
+    eventIds: 0d000000

@@ -10,42 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d48c8c2a0043ca140b0459e7a27e30a0, type: 3}
-  m_Name: Guardian Knight
+  m_Name: Defeat
   m_EditorClassIdentifier: 
-  Name: Guardian Knight
+  Name: Clair
   _dialog:
-  - Paragraph: So You Wish to enter the Wizard Trial Ayyyyyy
+  - Paragraph: 'Very Well Done '
     isChoice: 0
+    isEnding: 0
     _choiceOne: 
     _choiceOnePtr: 0
     _choiceTwo: 
     _choiceTwoPtr: 0
     map: {fileID: 0}
-  - Paragraph: Well you seem to be missing a familiar
+  - Paragraph: Your strategy was quite something, I look forward to seeing you face
+      Elijah
     isChoice: 0
+    isEnding: 0
     _choiceOne: 
     _choiceOnePtr: 0
     _choiceTwo: 
     _choiceTwoPtr: 0
     map: {fileID: 0}
-  - Paragraph: You should really get one if you want to do well in the exam
+  - Paragraph: Head to the next floor to face the second test
     isChoice: 0
-    _choiceOne: 
-    _choiceOnePtr: 0
-    _choiceTwo: 
-    _choiceTwoPtr: 0
-    map: {fileID: 0}
-  - Paragraph: 'Lucky for you there is a trader that came into town recently with
-      familiars available for sale '
-    isChoice: 0
-    _choiceOne: 
-    _choiceOnePtr: 0
-    _choiceTwo: 
-    _choiceTwoPtr: 0
-    map: {fileID: 0}
-  - Paragraph: Hes just north of here you should talk to him before attempting the
-      exam
-    isChoice: 0
+    isEnding: 0
     _choiceOne: 
     _choiceOnePtr: 0
     _choiceTwo: 
@@ -53,3 +41,4 @@ MonoBehaviour:
     map: {fileID: 0}
   LastWordsEvent: 0
   LastWords: 
+  nextDialogs: []

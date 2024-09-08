@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d48c8c2a0043ca140b0459e7a27e30a0, type: 3}
-  m_Name: Intro
+  m_Name: Defeat
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Elijah
   _dialog:
-  - Paragraph: Ah you must have beaten Clair
+  - Paragraph: That was a good match
     isChoice: 0
     isEnding: 0
     _choiceOne: 
@@ -22,8 +22,7 @@ MonoBehaviour:
     _choiceTwo: 
     _choiceTwoPtr: 0
     map: {fileID: 0}
-  - Paragraph: 'I will be proctoring the second part of the test before your final
-      challange '
+  - Paragraph: Sadly this is the end of the demo
     isChoice: 0
     isEnding: 0
     _choiceOne: 
@@ -31,17 +30,19 @@ MonoBehaviour:
     _choiceTwo: 
     _choiceTwoPtr: 0
     map: {fileID: 0}
-  - Paragraph: 'Are You Prepared? '
-    isChoice: 1
-    isEnding: 0
-    _choiceOne: Yes
-    _choiceOnePtr: -1
-    _choiceTwo: No
-    _choiceTwoPtr: 4
-    map: {fileID: 11400000, guid: 250cbb14c708ece4593923db25c66579, type: 2}
-  - Paragraph: I Understand, The Road Ahead is Daunting
+  - Paragraph: 'Feel free and try the other surrounding events and scenerio''s if
+      you wish '
     isChoice: 0
-    isEnding: 1
+    isEnding: 0
+    _choiceOne: 
+    _choiceOnePtr: 0
+    _choiceTwo: 
+    _choiceTwoPtr: 0
+    map: {fileID: 0}
+  - Paragraph: "And Thank You For Playing! I look forward to adding more in the Future
+      \n-BlitzMK"
+    isChoice: 0
+    isEnding: 0
     _choiceOne: 
     _choiceOnePtr: 0
     _choiceTwo: 
@@ -49,6 +50,4 @@ MonoBehaviour:
     map: {fileID: 0}
   LastWordsEvent: 0
   LastWords: 
-  nextDialogs:
-  - targetDialogItem: {fileID: 11400000, guid: 0c5b81de0a018784d85854b3aa4d6b44, type: 2}
-    eventIds: 0e000000
+  nextDialogs: []

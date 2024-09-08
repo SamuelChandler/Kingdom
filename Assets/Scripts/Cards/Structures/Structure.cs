@@ -17,7 +17,7 @@ public class Structure : BoardObject
     public int turnCounter;
 
 
-    private void Awake()
+    protected virtual void Awake()
     {
         card = _structure;
         faction = _structure.Faction;
@@ -29,8 +29,6 @@ public class Structure : BoardObject
         turnCounter = 0;
 
         SetBuffs();
-
-        Event_Manager.OnRefresh += Refresh;
 
         if(_structure.Faction == Faction.Hero && _structure.OnAllyDeath != null){
             Event_Manager.onAllyDeath += _structure.OnAllyDeath.ActivateEffect;

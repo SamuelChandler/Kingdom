@@ -25,6 +25,11 @@ public class EnemyAI : MonoBehaviour
         {   
             e.uAI.StartOfTurnEffects();
         }
+
+        foreach (EnemyStructure e in Board_Manager.instance._EnemyStructures){
+            e.Refresh();
+        }
+
     }
 
     private void UnitActions()

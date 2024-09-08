@@ -31,4 +31,5 @@ MonoBehaviour:
   beforeMoving: {fileID: 0}
   afterMoving: {fileID: 0}
   OnAllyDeath: {fileID: 0}
+  OnDamaged: {fileID: 11400000, guid: b6c846f035f879f4993920dd89e947f8, type: 2}
   animatorController: {fileID: 0}

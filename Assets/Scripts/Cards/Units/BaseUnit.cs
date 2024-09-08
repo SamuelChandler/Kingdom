@@ -51,7 +51,7 @@ public class BaseUnit : BoardObject
 
         spriteRenderer.sprite = unit.image;
         currentHealth = unit.health;
-        currentMaxHealth = currentHealth;
+        currentMaxHealth = unit.health;
         currentAttack = unit.attack;
         currentSpeed = unit.speed;
         turnCounter = 0;
@@ -124,11 +124,14 @@ public class BaseUnit : BoardObject
     override public void TakeDamage(int d){
         currentHealth = currentHealth-d;
 
+        if(unit.OnDamaged != null){
+            unit.OnDamaged.ActivateEffect(this);
+        }
+
         if (currentHealth <= 0)
         {
             OccupiedTile.OccupiedObject = null;
             removeUnit();
-            
         }
     }
 

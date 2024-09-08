@@ -21,7 +21,7 @@ MonoBehaviour:
   health: 20
   attack: 2
   speed: 2
-  _leader: 0
+  _leader: 1
   _swift: 0
   OnDeath: {fileID: 0}
   OnPlay: {fileID: 0}
@@ -31,4 +31,5 @@ MonoBehaviour:
   beforeMoving: {fileID: 0}
   afterMoving: {fileID: 0}
   OnAllyDeath: {fileID: 0}
+  OnDamaged: {fileID: 0}
   animatorController: {fileID: 0}

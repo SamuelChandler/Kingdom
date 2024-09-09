@@ -387,8 +387,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Next
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 811eb786a8429be40a89e20c72fe0793, type: 2}
+  m_sharedMaterial: {fileID: -1342626155448570984, guid: 811eb786a8429be40a89e20c72fe0793, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64.8
+  m_fontSize: 65.5
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -849,8 +849,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Back
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 811eb786a8429be40a89e20c72fe0793, type: 2}
+  m_sharedMaterial: {fileID: -1342626155448570984, guid: 811eb786a8429be40a89e20c72fe0793, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -874,7 +874,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64.8
+  m_fontSize: 65.5
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1080,8 +1080,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Done
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 811eb786a8429be40a89e20c72fe0793, type: 2}
+  m_sharedMaterial: {fileID: -1342626155448570984, guid: 811eb786a8429be40a89e20c72fe0793, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1105,7 +1105,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 66.75
+  m_fontSize: 72
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1141,7 +1141,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -16.341576}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3461,8 +3461,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 811eb786a8429be40a89e20c72fe0793, type: 2}
+  m_sharedMaterial: {fileID: -1342626155448570984, guid: 811eb786a8429be40a89e20c72fe0793, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3486,10 +3486,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 68.2
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -3695,6 +3695,10 @@ PrefabInstance:
       value: GameCardDisplay
       objectReference: {fileID: 0}
     - target: {fileID: 5287843334483475498, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.14245605
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287843334483475498, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.07499695
       objectReference: {fileID: 0}
@@ -3716,7 +3720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8388702743030502988, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.22888179
+      value: -0.22888178
       objectReference: {fileID: 0}
     - target: {fileID: 8673967030009700715, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_fontSize
@@ -3929,6 +3933,10 @@ PrefabInstance:
       value: GameCardDisplay
       objectReference: {fileID: 0}
     - target: {fileID: 5287843334483475498, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.14245605
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287843334483475498, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.07499695
       objectReference: {fileID: 0}
@@ -3950,7 +3958,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8388702743030502988, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.22888179
+      value: -0.22888178
       objectReference: {fileID: 0}
     - target: {fileID: 8673967030009700715, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_fontSize
@@ -4029,8 +4037,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 811eb786a8429be40a89e20c72fe0793, type: 2}
+  m_sharedMaterial: {fileID: -1342626155448570984, guid: 811eb786a8429be40a89e20c72fe0793, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4054,12 +4062,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 200
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 200
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -4807,6 +4815,10 @@ PrefabInstance:
       value: GameCardDisplay
       objectReference: {fileID: 0}
     - target: {fileID: 5287843334483475498, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.14245605
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287843334483475498, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.07499695
       objectReference: {fileID: 0}
@@ -4828,7 +4840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8388702743030502988, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.22888179
+      value: -0.22888178
       objectReference: {fileID: 0}
     - target: {fileID: 8673967030009700715, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_fontSize
@@ -5196,6 +5208,10 @@ PrefabInstance:
       value: GameCardDisplay
       objectReference: {fileID: 0}
     - target: {fileID: 5287843334483475498, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.14245605
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287843334483475498, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.07499695
       objectReference: {fileID: 0}
@@ -5217,7 +5233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8388702743030502988, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.22888179
+      value: -0.22888178
       objectReference: {fileID: 0}
     - target: {fileID: 8673967030009700715, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_fontSize
@@ -5852,8 +5868,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Title
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 811eb786a8429be40a89e20c72fe0793, type: 2}
+  m_sharedMaterial: {fileID: -1342626155448570984, guid: 811eb786a8429be40a89e20c72fe0793, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5877,12 +5893,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 67.1
+  m_fontSize: 67.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 200
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -6710,6 +6726,10 @@ PrefabInstance:
       value: GameCardDisplay
       objectReference: {fileID: 0}
     - target: {fileID: 5287843334483475498, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.14245605
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287843334483475498, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.07499695
       objectReference: {fileID: 0}
@@ -6731,7 +6751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8388702743030502988, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.22888179
+      value: -0.22888178
       objectReference: {fileID: 0}
     - target: {fileID: 8673967030009700715, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_fontSize
@@ -6859,6 +6879,10 @@ PrefabInstance:
       value: GameCardDisplay
       objectReference: {fileID: 0}
     - target: {fileID: 5287843334483475498, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.14245605
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287843334483475498, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.07499695
       objectReference: {fileID: 0}
@@ -6880,7 +6904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8388702743030502988, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.22888179
+      value: -0.22888178
       objectReference: {fileID: 0}
     - target: {fileID: 8673967030009700715, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_fontSize
@@ -7165,8 +7189,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Save
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 811eb786a8429be40a89e20c72fe0793, type: 2}
+  m_sharedMaterial: {fileID: -1342626155448570984, guid: 811eb786a8429be40a89e20c72fe0793, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7190,7 +7214,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70.2
+  m_fontSize: 72
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7226,7 +7250,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -18.384209}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7855,8 +7879,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Info Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 811eb786a8429be40a89e20c72fe0793, type: 2}
+  m_sharedMaterial: {fileID: -1342626155448570984, guid: 811eb786a8429be40a89e20c72fe0793, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7880,7 +7904,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 66.7
+  m_fontSize: 67.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8130,8 +8154,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter Title...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 811eb786a8429be40a89e20c72fe0793, type: 2}
+  m_sharedMaterial: {fileID: -1342626155448570984, guid: 811eb786a8429be40a89e20c72fe0793, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8155,12 +8179,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 56.1
+  m_fontSize: 61.45
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 200
   m_fontStyle: 2
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -9128,6 +9152,10 @@ PrefabInstance:
       value: GameCardDisplay
       objectReference: {fileID: 0}
     - target: {fileID: 5287843334483475498, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.14245605
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287843334483475498, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.07499695
       objectReference: {fileID: 0}
@@ -9149,7 +9177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8388702743030502988, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.22888179
+      value: -0.22888178
       objectReference: {fileID: 0}
     - target: {fileID: 8673967030009700715, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_fontSize
@@ -9380,6 +9408,10 @@ PrefabInstance:
       value: GameCardDisplay
       objectReference: {fileID: 0}
     - target: {fileID: 5287843334483475498, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.14245605
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287843334483475498, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.07499695
       objectReference: {fileID: 0}
@@ -9401,7 +9433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8388702743030502988, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.22888179
+      value: -0.22888178
       objectReference: {fileID: 0}
     - target: {fileID: 8673967030009700715, guid: 3f0533fb60791e943888f141f4a9b752, type: 3}
       propertyPath: m_fontSize

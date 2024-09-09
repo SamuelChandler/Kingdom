@@ -18,16 +18,19 @@ public class SettingsView : MonoBehaviour
     }
 
     public void ShowVideoSettings(){
+        AudioManager.instance.Play("ButtonPress1");
         ClearScreens();
         _videoSettingsScreen.SetActive(true);
     }
 
     public void ShowGameplaySettings(){
+        AudioManager.instance.Play("ButtonPress1");
         ClearScreens();
         _gameplaySettingsScreen.SetActive(true);
     }
 
     public void ShowSoundSettings(){
+        AudioManager.instance.Play("ButtonPress1");
         ClearScreens();
         _soundSettingsScreen.SetActive(true);
     }

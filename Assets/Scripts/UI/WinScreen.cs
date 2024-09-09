@@ -19,6 +19,7 @@ public class WinScreen : MonoBehaviour
 
     //should return the user to the overworld saving of data is done before this point
     public void Continue(){
+        AudioManager.instance.Play("ButtonPress1");
         Scene_Manager.instance.GoToOverworld();
     }
 }

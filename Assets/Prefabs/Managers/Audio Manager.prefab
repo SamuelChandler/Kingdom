@@ -54,7 +54,7 @@ MonoBehaviour:
     type: 1
     source: {fileID: 0}
   - name: Pause
-    clip: {fileID: 8300000, guid: 3dd1d37a575bef540900b91a960f45f3, type: 3}
+    clip: {fileID: 8300000, guid: abadbd58e51a5574c8b62feff0b8d024, type: 3}
     volume: 1
     pitch: 1
     blend: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
     type: 0
     source: {fileID: 0}
   - name: UnPause
-    clip: {fileID: 8300000, guid: bb2b3ee4f39ba4148bc5d5379e660370, type: 3}
+    clip: {fileID: 8300000, guid: 24cd3f3dc476aca44955d35297bf0f3d, type: 3}
     volume: 1
     pitch: 1
     blend: 0
@@ -84,4 +84,29 @@ MonoBehaviour:
     blend: 0
     loop: 1
     type: 1
+    source: {fileID: 0}
+  - name: ButtonPress1
+    clip: {fileID: 8300000, guid: 236ab3ec8d0be874ab16550650c48a48, type: 3}
+    volume: 1
+    pitch: 1
+    blend: 0
+    loop: 0
+    type: 0
+    source: {fileID: 0}
+  - name: ButtonPress2
+    clip: {fileID: 8300000, guid: 1c04f68d46adfa04cbdc4cd8ab7ce0e5, type: 3}
+    volume: 1
+    pitch: 1
+    blend: 0
+    loop: 0
+    type: 0
+    source: {fileID: 0}
+  ActiveBackgroundMusic:
+    name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    blend: 0
+    loop: 0
+    type: 0
     source: {fileID: 0}

@@ -48,6 +48,7 @@ public class CardViewScreen : MonoBehaviour
     }
 
     public void NextPage(){
+        AudioManager.instance.Play("ButtonPress1");
         
         pageNumber++;
 
@@ -62,6 +63,7 @@ public class CardViewScreen : MonoBehaviour
     }
 
     public void PreviosPage(){
+        AudioManager.instance.Play("ButtonPress1");
         
         pageNumber--;
 

@@ -17,11 +17,13 @@ public class InventoryView : MonoBehaviour
     }
 
     public void ShowMaterials(){
+        AudioManager.instance.Play("ButtonPress1");
         ClearScreens();
         _materialsScreen.SetActive(true);
     }
 
     public void ShowKeyItems(){
+        AudioManager.instance.Play("ButtonPress1");
         ClearScreens();
         _keyItemScreen.SetActive(true);
     }

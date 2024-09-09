@@ -14,6 +14,7 @@ public class LossScreen : MonoBehaviour
     } 
 
     public void Continue(){
+        AudioManager.instance.Play("ButtonPress1");
         Scene_Manager.instance.GoToOverworld();
     
     }

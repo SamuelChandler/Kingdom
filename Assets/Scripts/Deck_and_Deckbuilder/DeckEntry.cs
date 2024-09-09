@@ -17,6 +17,7 @@ public class DeckEntry : MonoBehaviour, IPointerClickHandler
     TextMeshProUGUI Number;
 
     public void OnPointerClick(PointerEventData data){
+        AudioManager.instance.Play("ButtonPress1");
         DeckBuilder.instance.RemoveCardFromDeck(card);
         RemoveCard();
     } 

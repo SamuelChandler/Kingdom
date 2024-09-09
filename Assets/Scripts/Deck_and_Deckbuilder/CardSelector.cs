@@ -49,6 +49,7 @@ public class CardSelector : MonoBehaviour, IPointerClickHandler
         if(Amount == 0){
             return;
         }
+        AudioManager.instance.Play("ButtonPress1");
         DeckBuilder.instance.AddCardToDeck(_card);
     }
 

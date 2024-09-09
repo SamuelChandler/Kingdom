@@ -42,6 +42,7 @@ public class PauseMenuDeckSlot : MonoBehaviour
     }
 
     public void EditDeck(){
+        AudioManager.instance.Play("ButtonPress1");
         Debug.Log("Opening the deck editor");
         Scene_Manager.instance.GoToEditDeck(CurrentlyHeldDeck.name);
     }
@@ -54,11 +55,13 @@ public class PauseMenuDeckSlot : MonoBehaviour
             Player.instance.SetSelectedDeck(CurrentlyHeldDeck);
             SelectedFrame.SetActive(true);
             Debug.Log(Player.instance.data.SelectedDeck);
+            AudioManager.instance.Play("ButtonPress1");
         }
         
     }
 
     public void CreateDeck(){
+        AudioManager.instance.Play("ButtonPress1");
         Debug.Log("Creating Deck");
         Scene_Manager.instance.GoToCreatedeck();
     }

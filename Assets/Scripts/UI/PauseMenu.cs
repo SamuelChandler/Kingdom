@@ -29,8 +29,6 @@ public class PauseMenu : MonoBehaviour
 
     public void ShowDecks(string selectedname){
 
-        
-
         if(selectedname== ""){
             selectedname = Player.instance.SelectedDeck.name;
         }
@@ -65,26 +63,35 @@ public class PauseMenu : MonoBehaviour
             }
 
         }
+
+        
     }
 
     public void ShowCardView(){
+        AudioManager.instance.Play("ButtonPress2");
         ClearSubview();
         CardView.SetActive(true);
         CV.SetCards(DataPersistanceManager.instance.playerData.GetInventory());
         CV.ShowCards();
+        
     }
 
     public void ShowSettings(){
+        AudioManager.instance.Play("ButtonPress2");
 
         ClearSubview();
 
         SettingsView.SetActive(true);
+        
     }
 
     public void ShowInventory(){
+        AudioManager.instance.Play("ButtonPress2");
+
         ClearSubview();
 
         InventoryView.SetActive(true);
+        
     }
 
     public void SetMusicVol(Slider s){
@@ -93,6 +100,11 @@ public class PauseMenu : MonoBehaviour
 
     public void SetEffectVol(Slider s){
         AudioManager.instance.SetSfxVol(s.value);
+        AudioManager.instance.Play("ButtonPress1");
+    }
+
+    public void PlayButton2(){
+        AudioManager.instance.Play("ButtonPress2");
     }
 
 
@@ -125,6 +137,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void QuitGame(){
+        AudioManager.instance.Play("ButtonPress2");
         DataPersistanceManager.instance.SaveGame();
         Application.Quit();
     }

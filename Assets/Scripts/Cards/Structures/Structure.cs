@@ -99,6 +99,8 @@ public class Structure : BoardObject
             removeStructure();
 
         }
+
+        StartCoroutine(PlayDamagedAnimation(d));
     }
 
     

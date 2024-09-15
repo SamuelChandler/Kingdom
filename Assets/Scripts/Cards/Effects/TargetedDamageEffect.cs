@@ -25,6 +25,5 @@ public class TargetedDamageEffect: TargetedEffect{
         if(obj == null){return;}
 
         obj.TakeDamage(DamageAmount);
-        obj.PlayDamagedAnimationCoroutine(DamageAmount);
     }
 }

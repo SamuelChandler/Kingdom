@@ -31,7 +31,6 @@ public class DamageAllLeaders: Effect{
             }
 
             o.TakeDamage(_damageAmount);
-            o.PlayDamagedAnimationCoroutine(_damageAmount);
         }
 
         foreach(BaseEnemy o in Board_Manager.instance._enemies){
@@ -41,7 +40,6 @@ public class DamageAllLeaders: Effect{
             }
             
             o.TakeDamage(_damageAmount);
-            o.PlayDamagedAnimationCoroutine(_damageAmount);
         }
     }
 }

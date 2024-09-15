@@ -29,7 +29,6 @@ public class DamageSurrounding: Effect{
                 bool withinOne = Board_Manager.instance.WithinOne(e.OccupiedTile,obj.OccupiedTile);
                 if(withinOne){
                     e.TakeDamage(_damageAmount);
-                    e.PlayDamagedAnimationCoroutine(_damageAmount);
                 }
             }
 
@@ -41,7 +40,6 @@ public class DamageSurrounding: Effect{
                 bool withinOne = Board_Manager.instance.WithinOne(h.OccupiedTile,obj.OccupiedTile);
                 if(withinOne){
                     h.TakeDamage(_damageAmount);
-                    h.PlayDamagedAnimationCoroutine(_damageAmount);
                 }
             }
 

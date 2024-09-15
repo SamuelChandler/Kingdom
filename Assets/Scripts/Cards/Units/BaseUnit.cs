@@ -133,6 +133,8 @@ public class BaseUnit : BoardObject
             OccupiedTile.OccupiedObject = null;
             removeUnit();
         }
+
+        StartCoroutine(PlayDamagedAnimation(d));
     }
 
     public void Heal(int healAmount){
@@ -155,6 +157,38 @@ public class BaseUnit : BoardObject
     public void DeSelect(){
         GetComponent<Renderer>().material = defualtMaterial; 
         Board_Manager.instance.ClearBoardIndicators();
+    }
+
+    public override IEnumerator PlayDamagedAnimation(int d)
+    {   
+        
+        float dur = Game_Manager.AttackDuration;
+        
+
+        float newValue = (float)currentHealth/(float)currentMaxHealth;
+        
+        HealthBar.value = (float)(currentHealth+d)/(float)currentMaxHealth;
+
+        float dif = HealthBar.value - newValue;
+
+        
+
+
+        float TimeElapsed = 0;
+
+        while(TimeElapsed < dur){
+
+            
+            TimeElapsed += Time.deltaTime;
+
+            HealthBar.value = newValue + dif*(1-(TimeElapsed/dur));
+
+            yield return null;
+        }
+
+        RedBar.value = HealthBar.value;
+
+        UpdateAttackAndHealthDisplay();
     }
 
     public virtual void removeUnit(){}

@@ -26,8 +26,25 @@ public class BoardObject : MonoBehaviour
     public virtual IEnumerator PlayDamagedAnimation(int d){
 
         float dur = Game_Manager.AttackDuration;
-        yield return new WaitForSeconds(dur);
 
+        float newValue = (float)currentHealth/(float)currentMaxHealth;
+
+        float dif = HealthBar.value - newValue;
+
+        float TimeElapsed = 0;
+
+        while(TimeElapsed < dur){
+
+            TimeElapsed += Time.deltaTime;
+
+            HealthBar.value = newValue + dif*(1-(TimeElapsed/dur));
+
+            yield return null;
+        }
+
+        RedBar.value = HealthBar.value;
+
+        
     }
 
     public void PlayDamagedAnimationCoroutine(int d){
@@ -47,4 +64,5 @@ public class BoardObject : MonoBehaviour
 
         HealthBar.value = (float)ID_Health/(float)currentMaxHealth;
     }
+
 }

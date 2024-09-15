@@ -28,7 +28,6 @@ public class FlameTile : Tile, ITileEndTurnEffect
     {
         if(OccupiedObject != null){
             Debug.Log(OccupiedObject.card.name + " was burned by " + name);
-            StartCoroutine(OccupiedObject.PlayDamagedAnimation(DamageAmount));
             OccupiedObject.TakeDamage(DamageAmount);
             
         }

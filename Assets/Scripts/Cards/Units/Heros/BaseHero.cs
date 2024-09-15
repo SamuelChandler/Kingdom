@@ -40,12 +40,9 @@ public class BaseHero : BaseUnit
         this.isAbleToAttack = false;
 
         enemy.TakeDamage(currentAttack);
-
-        StartCoroutine(enemy.PlayDamagedAnimation(currentAttack));
         
         return true;
     }
-
 
     IEnumerator PlayAttackAnimation(){
 
@@ -87,11 +84,5 @@ public class BaseHero : BaseUnit
         
     }
 
-    public override IEnumerator PlayDamagedAnimation(int d)
-    {
-        float dur = Game_Manager.AttackDuration;
-        yield return new WaitForSeconds(dur);
-
-        UpdateAttackAndHealthDisplay();
-    }
+    
 }

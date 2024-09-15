@@ -163,7 +163,6 @@ public class BaseUnit : BoardObject
     {   
         
         float dur = Game_Manager.AttackDuration;
-        
 
         float newValue = (float)currentHealth/(float)currentMaxHealth;
         
@@ -171,15 +170,13 @@ public class BaseUnit : BoardObject
 
         float dif = HealthBar.value - newValue;
 
-        
-
-
         float TimeElapsed = 0;
 
         while(TimeElapsed < dur){
-
             
             TimeElapsed += Time.deltaTime;
+
+            RedBar.value = (float)(currentHealth+d)/(float)currentMaxHealth;
 
             HealthBar.value = newValue + dif*(1-(TimeElapsed/dur));
 

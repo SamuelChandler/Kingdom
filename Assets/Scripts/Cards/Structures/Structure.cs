@@ -103,6 +103,34 @@ public class Structure : BoardObject
         StartCoroutine(PlayDamagedAnimation(d));
     }
 
+    public override IEnumerator PlayDamagedAnimation(int d)
+    {
+        float dur = Game_Manager.AttackDuration;
+
+        float newValue = (float)currentHealth/(float)currentMaxHealth;
+
+        HealthBar.value = (float)(currentHealth+d)/(float)currentMaxHealth;
+
+        float dif = HealthBar.value - newValue;
+
+        float TimeElapsed = 0;
+
+        while(TimeElapsed < dur){
+
+            TimeElapsed += Time.deltaTime;
+
+            RedBar.value = (float)(currentHealth+d)/(float)currentMaxHealth;
+
+            HealthBar.value = newValue + dif*(1-(TimeElapsed/dur));
+
+            yield return null;
+        }
+
+        RedBar.value = HealthBar.value;
+
+        UpdateHealthDisplay();
+    }
+
     
 
     public virtual void removeStructure(){}

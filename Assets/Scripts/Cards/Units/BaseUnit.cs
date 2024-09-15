@@ -20,7 +20,7 @@ public class BaseUnit : BoardObject
 
     [SerializeField] Material defualtMaterial;
 
-    Animator animator;
+    protected Animator animator;
 
     public bool isAbleToMove;
     public bool isAbleToAttack;
@@ -87,7 +87,7 @@ public class BaseUnit : BoardObject
 
         //update the animator
         animator.SetBool("isMoving",isMoving);
-        animator.SetBool("isAttacking",isAttacking);
+        
     }
 
 

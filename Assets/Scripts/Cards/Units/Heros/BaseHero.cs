@@ -53,11 +53,13 @@ public class BaseHero : BaseUnit
 
         //tell the unit it is now moving 
         isAttacking = true;
+        animator.SetBool("isAttacking",isAttacking);
 
         yield return new WaitForSeconds(dur);
 
         //tell unit that it is no longer moving
         isAttacking = false;
+        animator.SetBool("isAttacking",isAttacking);
     }
 
     public override void removeUnit()

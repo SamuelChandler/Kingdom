@@ -25,10 +25,7 @@ public class UnitAI : MonoBehaviour
             //get closest Hero based on what is available
             if(possibleVulnerableTargets.Count > 0)target = getClosestHero(possibleVulnerableTargets);
             else if(possibleTargets.Count > 0)target = getClosestHero(possibleTargets);
-            else target = getClosestHero(boardObjects);
-            
-
-            
+            else target = getClosestHero(boardObjects);            
 
             //check if nearest hero exists
             if(target != null){

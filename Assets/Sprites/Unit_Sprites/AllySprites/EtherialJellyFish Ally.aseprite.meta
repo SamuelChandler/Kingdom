@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 64
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -75,7 +75,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -88,7 +88,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638619355025382000
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -123,12 +123,12 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: EtherialJellyFish Ally_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: -0.84}
+    pivot: {x: 0.5, y: 0.44}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 87
+      x: 173
       y: 4
       width: 18
       height: 25
@@ -140,18 +140,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 87, y: 4}
+    uvTransform: {x: 173, y: 4}
   - name: EtherialJellyFish Ally_Frame_1
     originalName: 
-    pivot: {x: 0.5, y: -0.84}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 87
-      y: 37
-      width: 18
-      height: 25
+      x: 57
+      y: 136
+      width: 20
+      height: 28
     spriteID: d0ba2fc40e1fa354cb311f00eb1777ac
     spriteBone: []
     spriteOutline: []
@@ -160,18 +160,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 87, y: 37}
+    uvTransform: {x: 57, y: 136}
   - name: EtherialJellyFish Ally_Frame_2
     originalName: 
-    pivot: {x: 0.5, y: -0.84}
+    pivot: {x: 0.8214286, y: 0.46428573}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 87
-      y: 70
-      width: 18
-      height: 25
+      x: 4
+      y: 60
+      width: 28
+      height: 28
     spriteID: a95361b6669c894409f80ea55656ad26
     spriteBone: []
     spriteOutline: []
@@ -180,18 +180,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 87, y: 70}
+    uvTransform: {x: 4, y: 60}
   - name: EtherialJellyFish Ally_Frame_3
     originalName: 
-    pivot: {x: 0.5, y: -0.84}
+    pivot: {x: 0.8846154, y: 0.39285716}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 87
-      y: 103
-      width: 18
-      height: 25
+      x: 4
+      y: 132
+      width: 26
+      height: 28
     spriteID: 2fbaa9a16c476ce4ba90a3b687b52430
     spriteBone: []
     spriteOutline: []
@@ -200,17 +200,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 87, y: 103}
+    uvTransform: {x: 4, y: 132}
   - name: EtherialJellyFish Ally_Frame_4
     originalName: 
-    pivot: {x: 0.5, y: -0.84}
+    pivot: {x: 0.91999996, y: 0.19999999}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 87
-      y: 136
-      width: 18
+      x: 4
+      y: 204
+      width: 25
       height: 25
     spriteID: 07dab17e32de15b4f8b389ff51c40f03
     spriteBone: []
@@ -220,17 +220,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 87, y: 136}
+    uvTransform: {x: 4, y: 204}
   - name: EtherialJellyFish Ally_Frame_5
     originalName: 
-    pivot: {x: 0.5, y: -0.84}
+    pivot: {x: 0.91999996, y: 0.19999999}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 87
-      y: 169
-      width: 18
+      x: 57
+      y: 4
+      width: 25
       height: 25
     spriteID: f3918efd48c6a174b8a026b161a54998
     spriteBone: []
@@ -240,17 +240,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 87, y: 169}
+    uvTransform: {x: 57, y: 4}
   - name: EtherialJellyFish Ally_Frame_6
     originalName: 
-    pivot: {x: 0.5, y: -0.84}
+    pivot: {x: 0.91999996, y: 0.19999999}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 87
-      y: 202
-      width: 18
+      x: 57
+      y: 37
+      width: 25
       height: 25
     spriteID: df4f3b02fcc88f34b99cd58f6f419982
     spriteBone: []
@@ -260,17 +260,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 87, y: 202}
+    uvTransform: {x: 57, y: 37}
   - name: EtherialJellyFish Ally_Frame_7
     originalName: 
-    pivot: {x: 0.5, y: -0.84}
+    pivot: {x: 0.91999996, y: 0.19999999}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 113
-      y: 4
-      width: 18
+      x: 57
+      y: 70
+      width: 25
       height: 25
     spriteID: b09ddddcc69e3344e8c44c05658ef833
     spriteBone: []
@@ -280,18 +280,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 113, y: 4}
+    uvTransform: {x: 57, y: 70}
   - name: EtherialJellyFish Ally_Frame_8
     originalName: 
-    pivot: {x: 0.5, y: -0.84}
+    pivot: {x: 0.51111114, y: 0.5833334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 113
-      y: 37
-      width: 18
-      height: 25
+      x: 4
+      y: 4
+      width: 45
+      height: 48
     spriteID: 67c74e0b085578641a3c427acf055c1f
     spriteBone: []
     spriteOutline: []
@@ -300,17 +300,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 113, y: 37}
+    uvTransform: {x: 4, y: 4}
   - name: EtherialJellyFish Ally_Frame_9
     originalName: 
-    pivot: {x: 0.5, y: -0.84}
+    pivot: {x: 0.91999996, y: 0.19999999}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 113
-      y: 70
-      width: 18
+      x: 57
+      y: 103
+      width: 25
       height: 25
     spriteID: ae584aedfaf11774b880fcd4adc6d265
     spriteBone: []
@@ -320,18 +320,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 113, y: 70}
+    uvTransform: {x: 57, y: 103}
   - name: EtherialJellyFish Ally_Frame_10
     originalName: 
-    pivot: {x: 0.5, y: -0.84}
+    pivot: {x: 0.8846154, y: 0.39285716}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 113
-      y: 103
-      width: 18
-      height: 25
+      x: 4
+      y: 168
+      width: 26
+      height: 28
     spriteID: e93157b41e9814d4b8a6f2fe61b84ba7
     spriteBone: []
     spriteOutline: []
@@ -340,18 +340,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 113, y: 103}
+    uvTransform: {x: 4, y: 168}
   - name: EtherialJellyFish Ally_Frame_11
     originalName: 
-    pivot: {x: 0.5, y: -0.84}
+    pivot: {x: 0.8214286, y: 0.46428573}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 113
-      y: 136
-      width: 18
-      height: 25
+      x: 4
+      y: 96
+      width: 28
+      height: 28
     spriteID: 105ecd61e04df7543925d339dc9df4d8
     spriteBone: []
     spriteOutline: []
@@ -360,18 +360,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 113, y: 136}
+    uvTransform: {x: 4, y: 96}
   - name: EtherialJellyFish Ally_Frame_12
     originalName: 
-    pivot: {x: 0.5, y: -0.84}
+    pivot: {x: 0.7, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 113
-      y: 169
-      width: 18
-      height: 25
+      x: 57
+      y: 172
+      width: 20
+      height: 28
     spriteID: 909892e34ee0e7a409f8afcbbb1c9801
     spriteBone: []
     spriteOutline: []
@@ -380,18 +380,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 113, y: 169}
+    uvTransform: {x: 57, y: 172}
   - name: EtherialJellyFish Ally_Frame_13
     originalName: 
-    pivot: {x: 0.5, y: -0.84}
+    pivot: {x: 0.625, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 113
-      y: 202
-      width: 18
-      height: 25
+      x: 148
+      y: 109
+      width: 16
+      height: 28
     spriteID: 7f5a177b45c6ea14aa7a8599be1f6efd
     spriteBone: []
     spriteOutline: []
@@ -400,16 +400,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 113, y: 202}
+    uvTransform: {x: 148, y: 109}
   - name: EtherialJellyFish Ally_Frame_14
     originalName: 
-    pivot: {x: 0.5, y: -0.84}
+    pivot: {x: 0.5, y: 0.44}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 139
-      y: 4
+      x: 173
+      y: 37
       width: 18
       height: 25
     spriteID: f870605a70c90e1468aa230269b9b65e
@@ -420,16 +420,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 139, y: 4}
+    uvTransform: {x: 173, y: 37}
   - name: EtherialJellyFish Ally_Frame_15
     originalName: 
-    pivot: {x: 0.5, y: -0.84}
+    pivot: {x: 0.5, y: 0.44}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 139
-      y: 37
+      x: 173
+      y: 70
       width: 18
       height: 25
     spriteID: c3cc77d80a4810443bd0422f1dbbd24c
@@ -440,16 +440,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 139, y: 37}
+    uvTransform: {x: 173, y: 70}
   - name: EtherialJellyFish Ally_Frame_16
     originalName: 
-    pivot: {x: 0.5, y: -0.84}
+    pivot: {x: 0.5, y: 0.44}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 139
-      y: 70
+      x: 173
+      y: 103
       width: 18
       height: 25
     spriteID: ac9085caa8e88c744b5ba1bed607a7e1
@@ -460,16 +460,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 139, y: 70}
+    uvTransform: {x: 173, y: 103}
   - name: EtherialJellyFish Ally_Frame_17
     originalName: 
-    pivot: {x: 0.5, y: -0.6428572}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 62
-      y: 144
+      x: 148
+      y: 145
       width: 16
       height: 28
     spriteID: 4b033d7de4799c144b3ab50837efd64c
@@ -480,16 +480,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 62, y: 144}
+    uvTransform: {x: 148, y: 145}
   - name: EtherialJellyFish Ally_Frame_18
     originalName: 
-    pivot: {x: 0.4117647, y: -0.7037037}
+    pivot: {x: 0.4117647, y: 0.4814815}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 33
-      y: 173
+      x: 119
+      y: 140
       width: 17
       height: 27
     spriteID: 3e855b5e6ae9bae4cb69a89501f9d38f
@@ -500,16 +500,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 33, y: 173}
+    uvTransform: {x: 119, y: 140}
   - name: EtherialJellyFish Ally_Frame_19
     originalName: 
-    pivot: {x: 0.42857143, y: -0.79999995}
+    pivot: {x: 0.42857143, y: 0.48}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 4
+      x: 57
+      y: 208
       width: 21
       height: 25
     spriteID: d9bf85dd25155d343851d7333e5ed3ab
@@ -520,16 +520,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 57, y: 208}
   - name: EtherialJellyFish Ally_Frame_20
     originalName: 
-    pivot: {x: 0.42857143, y: -0.79999995}
+    pivot: {x: 0.42857143, y: 0.48}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 37
+      x: 90
+      y: 4
       width: 21
       height: 25
     spriteID: 8695727af107eab4fa6ea581a1b3cd4b
@@ -540,16 +540,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 37}
+    uvTransform: {x: 90, y: 4}
   - name: EtherialJellyFish Ally_Frame_21
     originalName: 
-    pivot: {x: 0.42857143, y: -0.79999995}
+    pivot: {x: 0.42857143, y: 0.48}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 70
+      x: 90
+      y: 37
       width: 21
       height: 25
     spriteID: 40598e4ee1b8f3e449ee629db300c0b3
@@ -560,16 +560,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 70}
+    uvTransform: {x: 90, y: 37}
   - name: EtherialJellyFish Ally_Frame_22
     originalName: 
-    pivot: {x: 0.47058824, y: -0.6666667}
+    pivot: {x: 0.47058824, y: 0.5185185}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 33
-      y: 208
+      x: 119
+      y: 175
       width: 17
       height: 27
     spriteID: 43937389073b8c0408133da2fe7ce9a6
@@ -580,16 +580,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 33, y: 208}
+    uvTransform: {x: 119, y: 175}
   - name: EtherialJellyFish Ally_Frame_23
     originalName: 
-    pivot: {x: 0.5, y: -0.76}
+    pivot: {x: 0.5, y: 0.52}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 139
-      y: 103
+      x: 173
+      y: 136
       width: 18
       height: 25
     spriteID: 536023cb7bf925e49bef4471d28ed56b
@@ -600,16 +600,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 139, y: 103}
+    uvTransform: {x: 173, y: 136}
   - name: EtherialJellyFish Ally_Frame_24
     originalName: 
-    pivot: {x: 0.5, y: -0.76}
+    pivot: {x: 0.5, y: 0.52}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 139
-      y: 136
+      x: 173
+      y: 169
       width: 18
       height: 25
     spriteID: 779834d174f77cc448d98b0f9853d54b
@@ -620,16 +620,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 139, y: 136}
+    uvTransform: {x: 173, y: 169}
   - name: EtherialJellyFish Ally_Frame_25
     originalName: 
-    pivot: {x: 0.5294118, y: -0.76}
+    pivot: {x: 0.5294118, y: 0.52}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 165
-      y: 105
+      x: 199
+      y: 138
       width: 17
       height: 25
     spriteID: c9cc9dc23b86d084bb29310cdb048070
@@ -640,16 +640,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 165, y: 105}
+    uvTransform: {x: 199, y: 138}
   - name: EtherialJellyFish Ally_Frame_26
     originalName: 
-    pivot: {x: 0.4117647, y: -0.6296296}
+    pivot: {x: 0.4117647, y: 0.5555556}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 62
-      y: 4
+      x: 119
+      y: 210
       width: 17
       height: 27
     spriteID: c40cfcf30f4e1bc428582790afa59b61
@@ -660,16 +660,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 62, y: 4}
+    uvTransform: {x: 119, y: 210}
   - name: EtherialJellyFish Ally_Frame_27
     originalName: 
-    pivot: {x: 0.42857143, y: -0.79999995}
+    pivot: {x: 0.42857143, y: 0.48}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 103
+      x: 90
+      y: 70
       width: 21
       height: 25
     spriteID: 05a53abf247b85a4a844bf47b4a87cfa
@@ -680,16 +680,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 103}
+    uvTransform: {x: 90, y: 70}
   - name: EtherialJellyFish Ally_Frame_28
     originalName: 
-    pivot: {x: 0.42857143, y: -0.79999995}
+    pivot: {x: 0.42857143, y: 0.48}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 136
+      x: 90
+      y: 103
       width: 21
       height: 25
     spriteID: 28f1de792b6f7fb448c51c7a19525942
@@ -700,16 +700,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 136}
+    uvTransform: {x: 90, y: 103}
   - name: EtherialJellyFish Ally_Frame_29
     originalName: 
-    pivot: {x: 0.44444445, y: -0.6666667}
+    pivot: {x: 0.44444445, y: 0.5185185}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 33
-      y: 103
+      x: 119
+      y: 70
       width: 18
       height: 27
     spriteID: c272b8def2f0a4748b7fa6ae51d05db8
@@ -720,16 +720,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 33, y: 103}
+    uvTransform: {x: 119, y: 70}
   - name: EtherialJellyFish Ally_Frame_30
     originalName: 
-    pivot: {x: 0.4375, y: -0.6666667}
+    pivot: {x: 0.4375, y: 0.5185185}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 62
-      y: 216
+      x: 148
+      y: 217
       width: 16
       height: 27
     spriteID: 54790cfcc0294634f8a0f0b8c38a3cad
@@ -740,16 +740,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 62, y: 216}
+    uvTransform: {x: 148, y: 217}
   - name: EtherialJellyFish Ally_Frame_31
     originalName: 
-    pivot: {x: 0.5, y: -0.84}
+    pivot: {x: 0.5, y: 0.44}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 139
-      y: 169
+      x: 173
+      y: 202
       width: 18
       height: 25
     spriteID: ec374d605e4c52e4f835c729fcccfb7e
@@ -760,16 +760,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 139, y: 169}
+    uvTransform: {x: 173, y: 202}
   - name: EtherialJellyFish Ally_Frame_32
     originalName: 
-    pivot: {x: 0.5, y: -0.84}
+    pivot: {x: 0.5, y: 0.44}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 139
-      y: 202
+      x: 199
+      y: 4
       width: 18
       height: 25
     spriteID: 7da6f23fcdca7594689b85949d0585e8
@@ -780,16 +780,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 139, y: 202}
+    uvTransform: {x: 199, y: 4}
   - name: EtherialJellyFish Ally_Frame_33
     originalName: 
-    pivot: {x: 0.5, y: -0.6428572}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 62
-      y: 180
+      x: 148
+      y: 181
       width: 16
       height: 28
     spriteID: 32d2b91c758b2a94bbf85f77ea18e6e6
@@ -800,16 +800,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 62, y: 180}
+    uvTransform: {x: 148, y: 181}
   - name: EtherialJellyFish Ally_Frame_34
     originalName: 
-    pivot: {x: 0.4117647, y: -0.7037037}
+    pivot: {x: 0.4117647, y: 0.4814815}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 62
-      y: 39
+      x: 148
+      y: 4
       width: 17
       height: 27
     spriteID: 9b0dcc8c336a7c24faf1b1f13a8e9406
@@ -820,16 +820,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 62, y: 39}
+    uvTransform: {x: 148, y: 4}
   - name: EtherialJellyFish Ally_Frame_35
     originalName: 
-    pivot: {x: 0.42857143, y: -0.79999995}
+    pivot: {x: 0.42857143, y: 0.48}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 169
+      x: 90
+      y: 136
       width: 21
       height: 25
     spriteID: b29d439d8dfe81d408f545b96f9d62e0
@@ -840,16 +840,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 169}
+    uvTransform: {x: 90, y: 136}
   - name: EtherialJellyFish Ally_Frame_36
     originalName: 
-    pivot: {x: 0.42857143, y: -0.79999995}
+    pivot: {x: 0.42857143, y: 0.48}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 202
+      x: 90
+      y: 169
       width: 21
       height: 25
     spriteID: d01a845fe7ca9114f88951e20569db97
@@ -860,16 +860,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 202}
+    uvTransform: {x: 90, y: 169}
   - name: EtherialJellyFish Ally_Frame_37
     originalName: 
-    pivot: {x: 0.42857143, y: -0.79999995}
+    pivot: {x: 0.42857143, y: 0.48}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 33
-      y: 4
+      x: 90
+      y: 202
       width: 21
       height: 25
     spriteID: 4623d55a2e7ef864fa6c47e3a6422bb7
@@ -880,16 +880,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 33, y: 4}
+    uvTransform: {x: 90, y: 202}
   - name: EtherialJellyFish Ally_Frame_38
     originalName: 
-    pivot: {x: 0.47058824, y: -0.6666667}
+    pivot: {x: 0.47058824, y: 0.5185185}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 62
-      y: 74
+      x: 148
+      y: 39
       width: 17
       height: 27
     spriteID: fd5993cd6744fd6469c2f2147178fa57
@@ -900,16 +900,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 62, y: 74}
+    uvTransform: {x: 148, y: 39}
   - name: EtherialJellyFish Ally_Frame_39
     originalName: 
-    pivot: {x: 0.5, y: -0.76}
+    pivot: {x: 0.5, y: 0.52}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 165
-      y: 4
+      x: 199
+      y: 37
       width: 18
       height: 25
     spriteID: a7625da0bcf7f9f40a6c9fb2f352728e
@@ -920,16 +920,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 165, y: 4}
+    uvTransform: {x: 199, y: 37}
   - name: EtherialJellyFish Ally_Frame_40
     originalName: 
-    pivot: {x: 0.5, y: -0.76}
+    pivot: {x: 0.5, y: 0.52}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 165
-      y: 37
+      x: 199
+      y: 70
       width: 18
       height: 25
     spriteID: 8010fd8963294684b95297be80070a05
@@ -940,16 +940,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 165, y: 37}
+    uvTransform: {x: 199, y: 70}
   - name: EtherialJellyFish Ally_Frame_41
     originalName: 
-    pivot: {x: 0.5294118, y: -0.76}
+    pivot: {x: 0.5294118, y: 0.52}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 165
-      y: 138
+      x: 199
+      y: 171
       width: 17
       height: 25
     spriteID: 8d1067e4bc046fd48ac8b8cbb79eda53
@@ -960,16 +960,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 165, y: 138}
+    uvTransform: {x: 199, y: 171}
   - name: EtherialJellyFish Ally_Frame_42
     originalName: 
-    pivot: {x: 0.4117647, y: -0.6296296}
+    pivot: {x: 0.4117647, y: 0.5555556}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 62
-      y: 109
+      x: 148
+      y: 74
       width: 17
       height: 27
     spriteID: 7790d0773cc78054abcac2a922837d56
@@ -980,16 +980,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 62, y: 109}
+    uvTransform: {x: 148, y: 74}
   - name: EtherialJellyFish Ally_Frame_43
     originalName: 
-    pivot: {x: 0.42857143, y: -0.79999995}
+    pivot: {x: 0.42857143, y: 0.48}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 33
-      y: 37
+      x: 119
+      y: 4
       width: 21
       height: 25
     spriteID: 027651c2e9afe234987cef4c11ce6bcd
@@ -1000,16 +1000,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 33, y: 37}
+    uvTransform: {x: 119, y: 4}
   - name: EtherialJellyFish Ally_Frame_44
     originalName: 
-    pivot: {x: 0.42857143, y: -0.79999995}
+    pivot: {x: 0.42857143, y: 0.48}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 33
-      y: 70
+      x: 119
+      y: 37
       width: 21
       height: 25
     spriteID: 4de5dcccad8f220429a770a2b3f9b05d
@@ -1020,16 +1020,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 33, y: 70}
+    uvTransform: {x: 119, y: 37}
   - name: EtherialJellyFish Ally_Frame_45
     originalName: 
-    pivot: {x: 0.44444445, y: -0.6666667}
+    pivot: {x: 0.44444445, y: 0.5185185}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 33
-      y: 138
+      x: 119
+      y: 105
       width: 18
       height: 27
     spriteID: d5ff5f9e24a60d7469721221e8525071
@@ -1040,16 +1040,16 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 33, y: 138}
+    uvTransform: {x: 119, y: 105}
   - name: EtherialJellyFish Ally_Frame_46
     originalName: 
-    pivot: {x: 0.4375, y: -0.6666667}
+    pivot: {x: 0.4375, y: 0.5185185}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 165
-      y: 70
+      x: 199
+      y: 103
       width: 16
       height: 27
     spriteID: f6af81531eaf66345bad2f743fef051d
@@ -1060,7 +1060,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 165, y: 70}
+    uvTransform: {x: 199, y: 103}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -1081,106 +1081,106 @@ ScriptedImporter:
     - name: EtherialJellyFish Ally_Frame_1
       frameIndex: 1
       cellRect:
-        x: 23
-        y: 21
-        width: 18
-        height: 25
+        x: 22
+        y: 18
+        width: 20
+        height: 28
       spriteId: d0ba2fc40e1fa354cb311f00eb1777ac
     - name: EtherialJellyFish Ally_Frame_2
       frameIndex: 2
       cellRect:
-        x: 23
-        y: 21
-        width: 18
-        height: 25
+        x: 9
+        y: 19
+        width: 28
+        height: 28
       spriteId: a95361b6669c894409f80ea55656ad26
     - name: EtherialJellyFish Ally_Frame_3
       frameIndex: 3
       cellRect:
-        x: 23
+        x: 9
         y: 21
-        width: 18
-        height: 25
+        width: 26
+        height: 28
       spriteId: 2fbaa9a16c476ce4ba90a3b687b52430
     - name: EtherialJellyFish Ally_Frame_4
       frameIndex: 4
       cellRect:
-        x: 23
-        y: 21
-        width: 18
+        x: 9
+        y: 27
+        width: 25
         height: 25
       spriteId: 07dab17e32de15b4f8b389ff51c40f03
     - name: EtherialJellyFish Ally_Frame_5
       frameIndex: 5
       cellRect:
-        x: 23
-        y: 21
-        width: 18
+        x: 9
+        y: 27
+        width: 25
         height: 25
       spriteId: f3918efd48c6a174b8a026b161a54998
     - name: EtherialJellyFish Ally_Frame_6
       frameIndex: 6
       cellRect:
-        x: 23
-        y: 21
-        width: 18
+        x: 9
+        y: 27
+        width: 25
         height: 25
       spriteId: df4f3b02fcc88f34b99cd58f6f419982
     - name: EtherialJellyFish Ally_Frame_7
       frameIndex: 7
       cellRect:
-        x: 23
-        y: 21
-        width: 18
+        x: 9
+        y: 27
+        width: 25
         height: 25
       spriteId: b09ddddcc69e3344e8c44c05658ef833
     - name: EtherialJellyFish Ally_Frame_8
       frameIndex: 8
       cellRect:
-        x: 23
-        y: 21
-        width: 18
-        height: 25
+        x: 9
+        y: 4
+        width: 45
+        height: 48
       spriteId: 67c74e0b085578641a3c427acf055c1f
     - name: EtherialJellyFish Ally_Frame_9
       frameIndex: 9
       cellRect:
-        x: 23
-        y: 21
-        width: 18
+        x: 9
+        y: 27
+        width: 25
         height: 25
       spriteId: ae584aedfaf11774b880fcd4adc6d265
     - name: EtherialJellyFish Ally_Frame_10
       frameIndex: 10
       cellRect:
-        x: 23
+        x: 9
         y: 21
-        width: 18
-        height: 25
+        width: 26
+        height: 28
       spriteId: e93157b41e9814d4b8a6f2fe61b84ba7
     - name: EtherialJellyFish Ally_Frame_11
       frameIndex: 11
       cellRect:
-        x: 23
-        y: 21
-        width: 18
-        height: 25
+        x: 9
+        y: 19
+        width: 28
+        height: 28
       spriteId: 105ecd61e04df7543925d339dc9df4d8
     - name: EtherialJellyFish Ally_Frame_12
       frameIndex: 12
       cellRect:
-        x: 23
-        y: 21
-        width: 18
-        height: 25
+        x: 18
+        y: 18
+        width: 20
+        height: 28
       spriteId: 909892e34ee0e7a409f8afcbbb1c9801
     - name: EtherialJellyFish Ally_Frame_13
       frameIndex: 13
       cellRect:
-        x: 23
-        y: 21
-        width: 18
-        height: 25
+        x: 22
+        y: 18
+        width: 16
+        height: 28
       spriteId: 7f5a177b45c6ea14aa7a8599be1f6efd
     - name: EtherialJellyFish Ally_Frame_14
       frameIndex: 14
@@ -1448,7 +1448,55 @@ ScriptedImporter:
       spriteId: f6af81531eaf66345bad2f743fef051d
     linkedCells: []
     parentIndex: -1
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 

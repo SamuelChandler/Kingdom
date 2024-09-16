@@ -24,16 +24,49 @@ public class HeroCardFrame : MonoBehaviour
         description.text = null;
     }
     
-    public void setCard(BaseHero h){
+    public void setCard(BaseUnit h){
         unitImage.color = new Color(unitImage.color.r,unitImage.color.g,unitImage.color.b,1);
         unitName.text = h.unit.name;
         _backgroundImage.sprite = unitBG;
         cost.text = h.unit.inspirationCost.ToString();
-        health.text = h.unit.health.ToString();
-        attack.text = h.unit.attack.ToString();
+        health.text = h.currentHealth.ToString();
+
+        if(h.currentHealth == h.currentMaxHealth){
+            health.color = Color.black;
+        }else{
+            health.color = Color.red;
+        }
+
+        attack.text = h.currentAttack.ToString();
         unitImage.sprite = h.unit.image;
-        description.text = h.unit.description;
-        
+        description.text = h.unit.description;  
+    }
+
+    public void setCard(Structure s){
+        unitImage.color = new Color(unitImage.color.r,unitImage.color.g,unitImage.color.b,1);
+        unitName.text = s._structure.name;
+        _backgroundImage.sprite = structureBG;
+        cost.text = s._structure.inspirationCost.ToString();
+        health.text = s.currentHealth.ToString();
+
+        if(s.currentHealth == s.currentMaxHealth){
+            health.color = Color.black;
+        }else{
+            health.color = Color.red;
+        }
+
+        unitImage.sprite = s._structure.image;
+        description.text = s._structure.description;  
+    }
+
+    public void setCard(BoardObject obj){
+        if(obj.card.type == CardType.Unit || obj.card.type == CardType.Leader){
+            setCard((BaseUnit)obj);
+        }else if(obj.card.type == CardType.Structure){
+            setCard((Structure)obj);
+        }else{
+            Debug.Log("Card Type Not Found");
+        }
     }
 
     public void setCard(ScriptableUnit h){ 

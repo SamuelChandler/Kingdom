@@ -214,7 +214,7 @@ public abstract class Tile : MonoBehaviour
                     Unit_Manager.instance.SetSelectedHero((BaseHero)null);
                 }
                 else{
-                    Menu_Manager.instance.showCard(OccupiedUnit.card);
+                    Menu_Manager.instance.showUnit(OccupiedUnit);
                 }
             }
         }
@@ -238,10 +238,10 @@ public abstract class Tile : MonoBehaviour
                     Unit_Manager.instance.SetSelectedHero(null);
 
                 }else{
-                    Menu_Manager.instance.showCard(OccupiedStructure._structure);
+                    Menu_Manager.instance.showUnit(OccupiedStructure);
                 }  
             }else{
-                Menu_Manager.instance.showCard(OccupiedStructure._structure);
+                Menu_Manager.instance.showUnit(OccupiedStructure);
             }
 
         }
@@ -283,7 +283,7 @@ public abstract class Tile : MonoBehaviour
         if (Game_Manager.instance.GameState != GameState.HeroesTurn) return;
 
         if(OccupiedObject != null){
-            Menu_Manager.instance.showCard(OccupiedObject.card);
+            Menu_Manager.instance.showUnit(OccupiedObject);
         }
     }
 

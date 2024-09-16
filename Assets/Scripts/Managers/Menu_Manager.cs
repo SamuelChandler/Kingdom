@@ -98,30 +98,16 @@ public class Menu_Manager : MonoBehaviour
     }
 
     //displays the hero information when called. null clears window 
-    public void showUnit(BaseHero hero)
+    public void showUnit(BoardObject obj)
     {
         //toggle off 
-        if (hero == null)
+        if (obj == null)
         {
             _displayCardObject.SetActive(false);
             return;
         }
 
-        _displayCard.setCard(hero);
-        _displayCardObject.SetActive(true);
-    }
-
-    public void showUnit(ScriptableUnit unit)
-    {
-        //toggle off 
-        if (unit == null)
-        {
-            _displayCardObject.SetActive(false);
-            return;
-        }
-
-        //build text based on hero
-        _displayCard.setCard(unit);
+        _displayCard.setCard(obj);
         _displayCardObject.SetActive(true);
     }
 

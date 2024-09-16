@@ -940,12 +940,12 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
 
     public void ClearFieldBuffs(){
         foreach(BaseHero bh in _heroes){
-            bh.currentAttack = bh.unit.attack;
+            bh.currentAttack -= allyAttackBuff;
             bh.UpdateAttackAndHealthDisplay();
         }
 
         foreach(BaseEnemy be in _enemies){
-            be.currentAttack = be.unit.attack;
+            be.currentAttack -= enemyAttackBuff;
             be.UpdateAttackAndHealthDisplay();
         }
     }

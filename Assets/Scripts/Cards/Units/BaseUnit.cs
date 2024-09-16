@@ -22,13 +22,16 @@ public class BaseUnit : BoardObject
 
     protected Animator animator;
 
+    //unit action economy 
     public bool isAbleToMove;
     public bool isAbleToAttack;
 
+    //unit stats
     public int currentAttack;
 
     public int currentSpeed;
 
+    //unit internal logic
     public int turnCounter;
 
     //used in animation

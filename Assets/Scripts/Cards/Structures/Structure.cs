@@ -56,6 +56,13 @@ public class Structure : BoardObject
     }
 
     public void SetBuffs(){
+
+        Debug.Log("Setting Buff of " + _structure.name);
+
+        //clear Previos Buff
+        Board_Manager.instance.ClearFieldBuffs();
+
+        //update values 
         if(_structure.Faction == Faction.Hero){
             Board_Manager.instance.allyAttackBuff += _structure.allyAttackBoost;
         }
@@ -65,11 +72,17 @@ public class Structure : BoardObject
             Board_Manager.instance.allyAttackBuff += _structure.allyAttackBoost;
             Board_Manager.instance.enemyAttackBuff += _structure.allyAttackBoost;
         }
-        Board_Manager.instance.ClearFieldBuffs();
+
+        //update Units With New Buffs
         Board_Manager.instance.ApplyFieldBuffs();
     }
 
     public void ClearBuff(){
+
+        Debug.Log("Clearing Buff of " + _structure.name);
+
+        Board_Manager.instance.ClearFieldBuffs();
+
         if(_structure.Faction == Faction.Hero){
             Board_Manager.instance.allyAttackBuff -= _structure.allyAttackBoost;
         }
@@ -79,8 +92,7 @@ public class Structure : BoardObject
             Board_Manager.instance.allyAttackBuff -= _structure.allyAttackBoost;
             Board_Manager.instance.enemyAttackBuff -= _structure.allyAttackBoost;
         }
-
-        Board_Manager.instance.ClearFieldBuffs();
+        
         Board_Manager.instance.ApplyFieldBuffs();
     }
 

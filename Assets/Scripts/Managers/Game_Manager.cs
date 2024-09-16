@@ -234,6 +234,8 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
 
         //check if in survival mode and if the player has won the game
         SurvivalTurnCheck();
+
+        //check if the User has run out of Time 
         TimeLimitCheck();
         
         //increase and refresh inspiration
@@ -246,7 +248,12 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
     }
 
     public void TimeLimitCheck(){
+
+        //do nothing if there is not a time limit
         if(!TimeLimit){return;}
+
+        //do nothing if the type of Game Mode is survival
+        if(Board_Manager.instance._map._levelType == LevelType.Survive)return;
 
         string goalString = "Turns Left = " + (Board_Manager.instance._map._turns - _turn +1).ToString();
         Menu_Manager.instance.showGameGoal(goalString);

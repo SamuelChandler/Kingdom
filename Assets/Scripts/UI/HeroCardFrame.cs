@@ -73,9 +73,12 @@ public class HeroCardFrame : MonoBehaviour
         unitImage.color = new Color(unitImage.color.r,unitImage.color.g,unitImage.color.b,1);
         unitName.text = h.name;
         _backgroundImage.sprite = unitBG;
+        
         cost.text = h.inspirationCost.ToString();
+        health.color = Color.black;
         health.text = h.health.ToString();
         attack.text = h.attack.ToString();
+
         unitImage.sprite = h.image;
         description.text = h.description;
         
@@ -85,9 +88,11 @@ public class HeroCardFrame : MonoBehaviour
         unitImage.color = new Color(unitImage.color.r,unitImage.color.g,unitImage.color.b,1);
         unitName.text = s.name;
         _backgroundImage.sprite = spellBG;
+
         cost.text = s.inspirationCost.ToString();
         health.text = "";
         attack.text = "";
+
         unitImage.sprite = s.image;
         description.text = s.description;
     }
@@ -97,8 +102,11 @@ public class HeroCardFrame : MonoBehaviour
         unitName.text = s.name;
         _backgroundImage.sprite = structureBG;
         cost.text = s.inspirationCost.ToString();
+
+        health.color = Color.black;
         health.text = s.health.ToString();
         attack.text = "";
+
         unitImage.sprite = s.image;
         description.text = s.description;
     }

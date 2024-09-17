@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -136,9 +138,45 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    public void ChangeView(Int32 x){
+
+        switch (x){
+            case 0:
+                GoFullScreenMode();
+                break;
+            case 1: 
+                GoWindowedMode();
+                break;
+            case 2: 
+                GoWindowedBorderlessMode();
+                break;
+        }
+    }
+
+    public void GoWindowedMode(){
+        Screen.fullScreen = false;
+        return;
+    }
+
+    public void GoWindowedBorderlessMode(){
+        Screen.fullScreen = false;
+        return;
+    }
+
+    public void GoFullScreenMode(){
+        Screen.fullScreen = true;
+        return;
+    }
+
     public void QuitGame(){
         AudioManager.instance.Play("ButtonPress2");
         DataPersistanceManager.instance.SaveGame();
         Application.Quit();
     }
+}
+
+public enum WindowSelection{
+    fullScreen,
+    windowed,
+    borderlessWindowed
 }

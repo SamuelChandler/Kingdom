@@ -127,7 +127,7 @@ MonoBehaviour:
   RedBar: {fileID: 1788906314318687941}
   currentHealth: 0
   currentMaxHealth: 0
-  unit: {fileID: 11400000, guid: 99611d2e63e7f81468a79fdcdd0bc7e8, type: 2}
+  unit: {fileID: 11400000, guid: 847d8d0628220014ebc4321b8b7d02a5, type: 2}
   spriteRenderer: {fileID: 2216078567971078873}
   attack: {fileID: 6265774065761635598}
   SelectedMaterial: {fileID: -876546973899608171, guid: f6d2c8e46f279f046bab56c55f8b88b7, type: 3}

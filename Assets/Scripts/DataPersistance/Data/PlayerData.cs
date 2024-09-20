@@ -23,6 +23,9 @@ public class PlayerData
    //Camera Information
    public int CameraTarget;
 
+   public bool seenOverWorldTutorial;
+   public bool seenBattleTutorial;
+
 
     public PlayerData(string name){
         PlayerName = name;

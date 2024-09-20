@@ -58,6 +58,9 @@ public class DataPersistanceManager : MonoBehaviour
         this.playerData.AddDeckToInventory(_starterDeck);
         this.playerData.SelectedDeck = _starterDeck.name;
         playerData.MapLocation = new Vector2(0f,0f);
+
+        playerData.seenOverWorldTutorial = false;
+        playerData.seenBattleTutorial = false;
     }
 
     public void LoadGame(){

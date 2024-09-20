@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO.Enumeration;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -18,6 +19,9 @@ public class Player : MonoBehaviour, IDataPersistance
 
     [SerializeField]
     public PauseMenu _pauseMenu;
+
+    [SerializeField]
+    private GameObject _tutorial;
 
     public PlayerData data;
 
@@ -77,11 +81,7 @@ public class Player : MonoBehaviour, IDataPersistance
     
     public void LoadData(PlayerData playerData)
     {
-        this.data._decks = playerData._decks;
-        this.data._deckContents = playerData._deckContents;
-        this.data._cardInventory = playerData._cardInventory;
-        this.data.PlayerName = playerData.PlayerName;
-        this.data.SelectedDeck = playerData.SelectedDeck;
+        data = playerData;
         gameObject.transform.position = playerData.MapLocation;
 
         SetSelectedDeck(playerData.GetDeck(data.SelectedDeck));
@@ -92,6 +92,8 @@ public class Player : MonoBehaviour, IDataPersistance
             _pauseMenu.ShowDecks(data.SelectedDeck);
             PlayerPrefs.SetString("FromDeckbuiler","No");
         }
+
+        TutorialCheck();
 
     }
 
@@ -104,6 +106,18 @@ public class Player : MonoBehaviour, IDataPersistance
         playerData.SelectedDeck = data.SelectedDeck;
         playerData.CombatMap = data.CombatMap;
         playerData.MapLocation = (Vector2)gameObject.transform.position;
+        playerData.seenOverWorldTutorial = data.seenOverWorldTutorial;
+    }
+
+    //determines if the tutorial is needed and displays it if necessary
+    public void TutorialCheck(){
+        if(!data.seenOverWorldTutorial){
+            Debug.Log("Displaying overworld tutorial" + !data.seenOverWorldTutorial );
+            _tutorial.SetActive(true);
+            data.seenOverWorldTutorial =true;
+            return;
+        }
+        _tutorial.SetActive(false);
     }
 
     

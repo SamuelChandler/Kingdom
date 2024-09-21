@@ -7,7 +7,8 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
 {
     public static Game_Manager instance;
     public GameState GameState;
-    private int Level;
+    
+    public bool _seenBattleTutorial;
 
     [SerializeField] public static float MoveDuration = 0.5f;
     [SerializeField] public static float AttackDuration = 1f;
@@ -45,6 +46,11 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
     {
         //start of game menu manager updates with game info
         Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
+
+        if(!_seenBattleTutorial){
+            Menu_Manager.instance.setBattleTutorial(true);
+            _seenBattleTutorial = true;
+        }
     }
 
     public void StartGame(){
@@ -290,10 +296,15 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
     {
         deck = playerData.GetDeck(playerData.SelectedDeck);
         Debug.Log("Deck Being Loaded: "+deck.name);
+
+        _seenBattleTutorial = playerData.seenBattleTutorial;
     }
 
     public void SaveData(ref PlayerData playerData)
     {
+
+        playerData.seenBattleTutorial = _seenBattleTutorial;
+
         if(GameWin){
             playerData.AddCardToInventory(Board_Manager.instance.GetRewardCard());
             playerData.SetEventCompleted(Board_Manager.instance._map.onWinEvent);

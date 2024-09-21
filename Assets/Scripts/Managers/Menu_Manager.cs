@@ -18,7 +18,7 @@ public class Menu_Manager : MonoBehaviour
 
     [SerializeField] private WinScreen _winScreen;
     [SerializeField] private LossScreen _lossScreen;
-
+    [SerializeField] GameObject _battleTutorial;
 
     [SerializeField] private UnitSelector[] unitSelectors;
 
@@ -31,6 +31,8 @@ public class Menu_Manager : MonoBehaviour
     [SerializeField] float _displayTime;
     [SerializeField] float _fadeOutTime;
 
+    
+
     public UnitSelector CurrentSelectedSelector;
 
     private void Awake()
@@ -42,8 +44,13 @@ public class Menu_Manager : MonoBehaviour
         _tileInfo.SetActive(false);
         _GameGoal.SetActive(false);
         _messanger.SetActive(false);
+        _battleTutorial.SetActive(false);
         SetUnitSelectorsToEmpty();
 
+    }
+
+    public void setBattleTutorial(bool b){
+        _battleTutorial.SetActive(b);
     }
 
     public void UpdateIBar(int i, int j, int k)

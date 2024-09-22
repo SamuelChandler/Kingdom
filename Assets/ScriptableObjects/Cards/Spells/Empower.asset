@@ -15,9 +15,10 @@ MonoBehaviour:
   image: {fileID: -2454191482085794276, guid: 238c9417198e5ff46b7195efa5ec8c0a, type: 3}
   name: Reinforce
   inspirationCost: 3
-  description: Give a Unit or Structure +3/+3
+  description: Give a Minion or Structure +3/+3
   type: 2
   TargetFaction: 0
   effects:
   - {fileID: 11400000, guid: ec90f90dfeb38e14cb7ab7ef0e08c9f3, type: 2}
   target: 1
+  targetTypes: 0100000003000000

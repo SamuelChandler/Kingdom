@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,8 @@ public class Spell : Card
 
     [SerializeField] public int target;
 
+    [SerializeField] public CardType[] targetTypes;
+
     public bool CastSpell(Tile T){
 
         //do nothing if the spell cannot be played
@@ -22,18 +25,20 @@ public class Spell : Card
             return false;
         }
 
+        if(T.OccupiedObject.faction != TargetFaction){
+            return false;
+        }
+
+        if((!targetTypes.Contains(T.OccupiedObject.card.type) && !(targetTypes.Length == 0))){
+            return false;
+        }
+
         Game_Manager.instance.DecreaseCurrentInsperation(inspirationCost);
 
         foreach(Effect e in effects){
-            resolveEffect(e,T);
+            e.ActivateEffect(T.OccupiedObject);
         }
         return true;
-    }
-
-    public void resolveEffect(Effect e, Tile t){
-        if (t.OccupiedObject != null){   
-            e.ActivateEffect(t.OccupiedObject);
-        }
     }
 
     

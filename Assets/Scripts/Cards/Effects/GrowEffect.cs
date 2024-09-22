@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 [Serializable]
@@ -22,5 +23,16 @@ public class GrowEffect: Effect{
         u.currentHealth += _healthGain;
         u.currentMaxHealth += _healthGain;
         u.UpdateAttackAndHealthDisplay();   
+    }
+
+    public override void ActivateEffect(BoardObject obj)
+    {
+        if(obj.card.type == CardType.Structure){
+            ActivateEffect((Structure)obj);
+        }else if(obj.card.type == CardType.Unit || obj.card.type == CardType.Leader){
+            ActivateEffect((BaseUnit)obj);
+        }
+
+        return;
     }
 }

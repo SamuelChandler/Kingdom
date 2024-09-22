@@ -21,3 +21,4 @@ MonoBehaviour:
   effects:
   - {fileID: 11400000, guid: 9997b0a7f212c0e43a985a6474afe2d6, type: 2}
   target: 1
+  targetTypes: 000000000100000003000000

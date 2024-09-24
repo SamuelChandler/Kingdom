@@ -54,6 +54,6 @@ MonoBehaviour:
     loc: {x: 0, y: 3}
   _turns: 0
   _spawners: []
-  reward: {fileID: 11400000, guid: d41dc3397b94d08419302077b2248625, type: 2}
+  reward: {fileID: 11400000, guid: 103a87814e1dfc648aad39d89309f170, type: 2}
   onWinEvent: 13
   eliteBattle: 1

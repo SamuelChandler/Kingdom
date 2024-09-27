@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Unit",menuName = "Structure/Structure")]
+[CreateAssetMenu(fileName = "New Unit",menuName = "Card/Structure")]
 public class ScriptableStructure : Card
 {
     public Faction Faction;

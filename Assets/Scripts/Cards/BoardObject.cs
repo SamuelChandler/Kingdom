@@ -65,4 +65,14 @@ public class BoardObject : MonoBehaviour
         HealthBar.value = (float)ID_Health/(float)currentMaxHealth;
     }
 
+    public void Heal(int healAmount){
+        currentHealth += healAmount;
+
+        if(currentHealth > currentMaxHealth){
+            currentHealth = currentMaxHealth;
+        }
+
+        UpdateHealthDisplay();
+    }
+
 }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 
 
 public class Game_Manager : MonoBehaviour,IDataPersistance
@@ -192,6 +193,10 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
                 Menu_Manager.instance.SetMessenger("Not enough inspiration to play this spell");
                 return false;
         }
+        
+        if(s.canTargetAnything){
+            return true;
+        }
 
         if(t != null){
             //if the tile is null then the spell does not target one tile 
@@ -199,6 +204,15 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
                 Menu_Manager.instance.SetMessenger("there is not a target in this location");
                 return false;   
             }
+        }
+
+        if((!s.targetTypes.Contains(t.OccupiedObject.card.type) && !(s.targetTypes.Length == 0))){
+            return false;
+        }
+
+        if((t.OccupiedObject.faction != s.TargetFaction)){
+            Menu_Manager.instance.SetMessenger("This Spell Cannot Target This Faction");
+            return false;
         }
         
         return true;

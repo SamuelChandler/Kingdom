@@ -140,15 +140,7 @@ public class BaseUnit : BoardObject
         StartCoroutine(PlayDamagedAnimation(d));
     }
 
-    public void Heal(int healAmount){
-        currentHealth += healAmount;
-
-        if(currentHealth > currentMaxHealth){
-            currentHealth = currentMaxHealth;
-        }
-
-        UpdateAttackAndHealthDisplay();
-    }
+    
 
     public void Select(){
         GetComponent<Renderer>().material = SelectedMaterial; 

@@ -16,6 +16,8 @@ public class Spell : Card
 
     [SerializeField] public int target;
 
+    [SerializeField] public bool canTargetAnything;
+
     [SerializeField] public CardType[] targetTypes;
 
     public bool CastSpell(Tile T){
@@ -24,14 +26,8 @@ public class Spell : Card
         if(!Game_Manager.instance.CanBePlayed(this,T)){
             return false;
         }
-
-        if(T.OccupiedObject.faction != TargetFaction){
-            return false;
-        }
-
-        if((!targetTypes.Contains(T.OccupiedObject.card.type) && !(targetTypes.Length == 0))){
-            return false;
-        }
+    
+        
 
         Game_Manager.instance.DecreaseCurrentInsperation(inspirationCost);
 

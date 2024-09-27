@@ -36,6 +36,6 @@ public class TargetedEffect: Effect{
     [SerializeField] public int numberTargets;
 
     public virtual void ActivateEffect(Tile t){
-        Debug.Log("No trageted Effect Effect");
+        Debug.Log("No targeted Effect Effect");
     }
 }

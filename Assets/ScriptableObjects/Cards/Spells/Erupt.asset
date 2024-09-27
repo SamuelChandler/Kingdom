@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c45279cf4aff48a45ac5e89ac3c3b2c4, type: 3}
-  m_Name: Mending
+  m_Name: Erupt
   m_EditorClassIdentifier: 
-  image: {fileID: 5187971378976866702, guid: bae2c6f383c911742ba56626186ab56d, type: 3}
-  name: Mend
-  inspirationCost: 2
-  description: Heal All Allies by 2
+  image: {fileID: 3288915331251678126, guid: d032912867dffde41bafe0811974da43, type: 3}
+  name: Erupt
+  inspirationCost: 3
+  description: Set Tile To a Flame Tile, Deal 1 damage to each enemy on a flame Tile
   type: 2
-  TargetFaction: 3
+  TargetFaction: 1
   effects:
-  - {fileID: 11400000, guid: f301b0ea4faedb64291df72828a78dd5, type: 2}
+  - {fileID: 11400000, guid: 7990895b5fb2fed49a080bf4e1331c85, type: 2}
+  - {fileID: 11400000, guid: 1fbff4ab670377646b6c88d8b4c6feee, type: 2}
   target: 0
   canTargetAnything: 1
-  targetTypes: 000000000300000001000000
+  targetTypes: 000000000100000003000000

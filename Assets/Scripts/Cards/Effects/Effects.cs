@@ -23,6 +23,17 @@ public class Effect: ScriptableObject{
         throw new NotImplementedException();
     }
 
+    public virtual void ActivateEffect(Tile t, Spell s)
+    {
+
+        if(t.OccupiedObject == null){
+            throw new NotImplementedException();
+        }else{
+            ActivateEffect(t.OccupiedObject);
+        }
+        
+    }
+
     public virtual void ActivateEffect(Spell spell)
     {
         throw new NotImplementedException();

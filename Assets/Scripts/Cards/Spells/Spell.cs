@@ -31,6 +31,13 @@ public class Spell : Card
 
         Game_Manager.instance.DecreaseCurrentInsperation(inspirationCost);
 
+        if(canTargetAnything){
+            foreach(Effect e in effects){
+                e.ActivateEffect(T,this);
+            }
+            return true;
+        }
+
         foreach(Effect e in effects){
             e.ActivateEffect(T.OccupiedObject);
         }

@@ -74,7 +74,7 @@ public class BaseHero : BaseUnit
 
     void Refresh()
     {
-        isAbleToMove=true;
+        isAbleToMove=1;
         isAbleToAttack=true;
         turnCounter++;
 

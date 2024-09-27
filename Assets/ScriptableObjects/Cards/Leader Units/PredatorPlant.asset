@@ -15,7 +15,7 @@ MonoBehaviour:
   image: {fileID: -5680641072720871249, guid: 03536ce0ebd4d4644b5713a444402144, type: 3}
   name: Predator Plant
   inspirationCost: 0
-  description: 'Start of Turn: If you own the highest attack unit, draw a card'
+  description: 'Start of Turn: If you own the highest attack Minion, draw a card'
   type: 0
   Faction: 0
   health: 20
@@ -31,4 +31,5 @@ MonoBehaviour:
   beforeMoving: {fileID: 0}
   afterMoving: {fileID: 0}
   OnAllyDeath: {fileID: 0}
+  OnDamaged: {fileID: 0}
   animatorController: {fileID: 9100000, guid: 62766c0f3c5c87d41847b1dda8cdbe6c, type: 2}

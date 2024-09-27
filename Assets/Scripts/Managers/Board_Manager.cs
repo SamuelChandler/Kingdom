@@ -484,7 +484,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
     //used to move a unit from one tile to another 
     public void MoveUnit(Tile destTile, BaseUnit unit)
     {
-        if(unit == null || destTile == null || !unit.isAbleToMove) return; //do nothing if the unit or tile does not exist. 
+        if(unit == null || destTile == null || unit.isAbleToMove <= 0) return; //do nothing if the unit or tile does not exist. 
 
         Tile sourceTile = unit.OccupiedTile;
 
@@ -558,7 +558,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         destTile.setUnit(unit);
 
         //remove movment token
-        unit.isAbleToMove = false;
+        unit.isAbleToMove -= 1;
 
         //Activate movment Effect
         
@@ -819,7 +819,7 @@ public class Board_Manager : MonoBehaviour, IDataPersistance
         int farthestTileDistance = baseUnit.currentSpeed +2;
         
         //only show the attack indicator if the unit is unable to move
-        if(!baseUnit.isAbleToMove){
+        if(baseUnit.isAbleToMove <= 0){
             ShowAttackIndicatorOnly(baseUnit);
             return;
         }

@@ -23,7 +23,7 @@ public class BaseUnit : BoardObject
     protected Animator animator;
 
     //unit action economy 
-    public bool isAbleToMove;
+    public int isAbleToMove;
     public bool isAbleToAttack;
 
     //unit stats
@@ -61,10 +61,10 @@ public class BaseUnit : BoardObject
 
         if(unit._swift){
             isAbleToAttack = true;
-            isAbleToMove = true;
+            isAbleToMove = 1;
         }else{
             isAbleToAttack = false;
-            isAbleToMove = false;
+            isAbleToMove = 0;
         }
         
 
@@ -96,7 +96,7 @@ public class BaseUnit : BoardObject
 
     void Refresh()
     {
-        isAbleToMove=true;
+        isAbleToMove=1;
         isAbleToAttack=true;
         turnCounter++;
 

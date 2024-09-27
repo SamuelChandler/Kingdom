@@ -15,10 +15,10 @@ MonoBehaviour:
   image: {fileID: -5151043763371749913, guid: 9e8bb8a5428ce074fada38e7ec5d3370, type: 3}
   name: Fire Soul
   inspirationCost: 0
-  description: 'When An Ally is destroyed: Turn its tile into flame
+  description: 'When An Ally Minion is destroyed: Turn its tile into flame
 
-    I Cannot
-    Move'
+    I
+    Cannot Move'
   type: 0
   Faction: 0
   health: 20
@@ -34,4 +34,5 @@ MonoBehaviour:
   beforeMoving: {fileID: 0}
   afterMoving: {fileID: 0}
   OnAllyDeath: {fileID: 11400000, guid: 7990895b5fb2fed49a080bf4e1331c85, type: 2}
+  OnDamaged: {fileID: 0}
   animatorController: {fileID: 9100000, guid: 881a011cb2598b1468644e7e243bf511, type: 2}

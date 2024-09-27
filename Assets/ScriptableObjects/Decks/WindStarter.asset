@@ -23,7 +23,7 @@ MonoBehaviour:
     amount: 3
   - card: {fileID: 11400000, guid: aa13c16f0012b204aa06c98980ac713e, type: 2}
     amount: 3
-  - card: {fileID: 11400000, guid: 15b5383b197d1e74c9ae36d94f5676bf, type: 2}
+  - card: {fileID: 11400000, guid: 3810ac537dce6324baee7e6a73726b2b, type: 2}
     amount: 3
   - card: {fileID: 11400000, guid: 7c7e4ac8d557592429157d8f6bdc30a6, type: 2}
     amount: 3

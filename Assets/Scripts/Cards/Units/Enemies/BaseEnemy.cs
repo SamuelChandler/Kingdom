@@ -19,7 +19,7 @@ public class BaseEnemy : BaseUnit
 
     public void Refresh(){
         
-        isAbleToMove=true;
+        isAbleToMove=1;
         isAbleToAttack=true;
         turnCounter++;
 

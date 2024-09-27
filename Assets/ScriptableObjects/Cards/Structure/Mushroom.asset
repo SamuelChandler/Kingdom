@@ -15,7 +15,7 @@ MonoBehaviour:
   image: {fileID: -7295408368329506990, guid: 006472da5ba7e9545ad3edbf5b4db54a, type: 3}
   name: Big Mushroom
   inspirationCost: 4
-  description: 'End Of Turn: Give a random ally +2/+2'
+  description: 'End Of Turn: Give a random ally Minion +2/+2'
   type: 3
   Faction: 0
   height: 0
@@ -25,4 +25,5 @@ MonoBehaviour:
   StartOfTurn: {fileID: 0}
   WhenDestroyed: {fileID: 0}
   OnSummon: {fileID: 0}
+  OnAllyDeath: {fileID: 0}
   allyAttackBoost: 0

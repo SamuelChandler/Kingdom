@@ -16,6 +16,7 @@ MonoBehaviour:
   _dialog:
   - Paragraph: 'Are The Flower Patches Free of Bees? '
     isChoice: 0
+    isEnding: 0
     _choiceOne: 
     _choiceOnePtr: 0
     _choiceTwo: 
@@ -23,21 +24,7 @@ MonoBehaviour:
     map: {fileID: 0}
   - Paragraph: 'AWESOME! Thank you for the help '
     isChoice: 0
-    _choiceOne: 
-    _choiceOnePtr: 0
-    _choiceTwo: 
-    _choiceTwoPtr: 0
-    map: {fileID: 0}
-  - Paragraph: 'Actually you seem to be a wizard! '
-    isChoice: 0
-    _choiceOne: 
-    _choiceOnePtr: 0
-    _choiceTwo: 
-    _choiceTwoPtr: 0
-    map: {fileID: 0}
-  - Paragraph: If you were to clear out the bees then I could start my buisness again
-      and give you a deal on the flowers I sell
-    isChoice: 0
+    isEnding: 0
     _choiceOne: 
     _choiceOnePtr: 0
     _choiceTwo: 
@@ -45,6 +32,7 @@ MonoBehaviour:
     map: {fileID: 0}
   - Paragraph: Come By later and Ill have a special Boquet made just for you!
     isChoice: 0
+    isEnding: 1
     _choiceOne: 
     _choiceOnePtr: 0
     _choiceTwo: 

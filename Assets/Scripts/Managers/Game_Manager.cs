@@ -48,13 +48,17 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         //start of game menu manager updates with game info
         Menu_Manager.instance.UpdateIBar(CurrentInspiration, CurrentMaxInspiration, MaxInspiration);
 
-        if(!_seenBattleTutorial){
-            Menu_Manager.instance.setBattleTutorial(true);
-            _seenBattleTutorial = true;
-        }
+        
     }
 
     public void StartGame(){
+
+        if(!_seenBattleTutorial){
+            Menu_Manager.instance.setBattleTutorial(true);
+            _seenBattleTutorial = true;
+        }else{
+             Menu_Manager.instance.setBattleTutorial(false);
+        }
 
         //determine if a time limit for turns is instituted
         if(Board_Manager.instance._map._turns > 0){

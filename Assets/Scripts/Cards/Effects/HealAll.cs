@@ -41,4 +41,9 @@ public class HealAll: Effect{
         }
 
     }
+
+    public override void ActivateEffect(Tile t, Spell s)
+    {
+        ActivateEffect((BoardObject)null);
+    }
 }

@@ -193,10 +193,10 @@ ScriptedImporter:
     - name: GroveGolem
       frameIndex: 0
       cellRect:
-        x: 5
-        y: 11
-        width: 25
-        height: 50
+        x: 4
+        y: 10
+        width: 27
+        height: 52
       spriteId: a9f111f964ab0cc4d8e47979139d6218
     linkedCells: []
     parentIndex: -1

@@ -193,10 +193,10 @@ ScriptedImporter:
     - name: ThunderBull
       frameIndex: 0
       cellRect:
-        x: 1
-        y: 7
+        x: 2
+        y: 6
         width: 36
-        height: 54
+        height: 61
       spriteId: 164da162737e3df469364d422872918a
     linkedCells: []
     parentIndex: -1

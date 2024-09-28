@@ -193,10 +193,10 @@ ScriptedImporter:
     - name: Groundlet
       frameIndex: 0
       cellRect:
-        x: 11
-        y: 14
-        width: 19
-        height: 39
+        x: 10
+        y: 13
+        width: 21
+        height: 41
       spriteId: b57d1affee13b3149b7fc204fd578192
     linkedCells: []
     parentIndex: -1

@@ -154,17 +154,17 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void GoWindowedMode(){
-        Screen.fullScreen = false;
+        Screen.fullScreenMode = FullScreenMode.Windowed;
         return;
     }
 
     public void GoWindowedBorderlessMode(){
-        Screen.fullScreen = false;
+        Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
         return;
     }
 
     public void GoFullScreenMode(){
-        Screen.fullScreen = true;
+        Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
         return;
     }
 

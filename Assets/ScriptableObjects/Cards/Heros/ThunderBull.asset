@@ -19,7 +19,7 @@ MonoBehaviour:
   type: 1
   Faction: 0
   health: 2
-  attack: 6
+  attack: 4
   speed: 2
   _leader: 0
   _swift: 1

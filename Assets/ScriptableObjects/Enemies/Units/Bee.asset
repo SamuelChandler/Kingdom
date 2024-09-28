@@ -18,7 +18,7 @@ MonoBehaviour:
   description: Bzzzzzzzz
   type: 1
   Faction: 1
-  health: 1
+  health: 2
   attack: 2
   speed: 2
   _leader: 0
@@ -31,4 +31,5 @@ MonoBehaviour:
   beforeMoving: {fileID: 0}
   afterMoving: {fileID: 0}
   OnAllyDeath: {fileID: 0}
+  OnDamaged: {fileID: 0}
   animatorController: {fileID: 0}

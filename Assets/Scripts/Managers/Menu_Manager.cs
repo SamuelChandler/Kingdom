@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class Menu_Manager : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class Menu_Manager : MonoBehaviour
 
     [SerializeField] InspirationBar _iBar;
 
+    [SerializeField] public BattlePauseMenu _pauseMenu;
+
     [SerializeField] float _displayTime;
     [SerializeField] float _fadeOutTime;
 
@@ -48,6 +51,7 @@ public class Menu_Manager : MonoBehaviour
         SetUnitSelectorsToEmpty();
 
     }
+
 
     public void setBattleTutorial(bool b){
         _battleTutorial.SetActive(b);
@@ -76,11 +80,15 @@ public class Menu_Manager : MonoBehaviour
         StartCoroutine(DisplayBeforeFadeOut(_messanger));
     }
 
-    public void showGameGoal(string s){
+    public void showGameGoal(string s, string LongS){
         if(s == null){
             _GameGoal.SetActive(false);
         }
 
+        //set the goal in the pause menu 
+        _pauseMenu.SetGoalText(s);
+
+        //show the goal in the top left
         _GameGoal.GetComponentInChildren<TextMeshProUGUI>().text = s;
         _GameGoal.SetActive(true);
 

@@ -24,4 +24,4 @@ EditorBuildSettings:
     path: Assets/Scenes/StarterDeckSelect.unity
     guid: ac074f973aba67846aa41b72c1ff8662
   m_configObjects:
-    com.unity.input.settings: {fileID: 11400000, guid: 1b810d138ee9a3d4aa449494eb590dc2, type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: b91b1d37eced3eb4fa1340bc9403c5ca, type: 2}

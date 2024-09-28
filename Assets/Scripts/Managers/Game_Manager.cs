@@ -119,7 +119,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
     public void OnEnemySpawn(){
         if(Board_Manager.instance._map._levelType == LevelType.DefeatBoss){
             string BossName = Board_Manager.instance._map._boss.enemy.name;
-            Menu_Manager.instance.showGameGoal("Defeat: " + BossName);
+            Menu_Manager.instance.showGameGoal("Defeat: " + BossName, "Defeat: " + BossName);
         }
     }
     
@@ -279,8 +279,9 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         //do nothing if the type of Game Mode is survival
         if(Board_Manager.instance._map._levelType == LevelType.Survive)return;
 
-        string goalString = "Turns Left = " + (Board_Manager.instance._map._turns - _turn +1).ToString();
-        Menu_Manager.instance.showGameGoal(goalString);
+        string goalString = "Defeat All enemies in  " + (Board_Manager.instance._map._turns - _turn +1).ToString() + " Turns";
+        string goalStringshort = "Turns Left = " + (Board_Manager.instance._map._turns - _turn +1).ToString();
+        Menu_Manager.instance.showGameGoal(goalStringshort, goalString);
 
         if(Board_Manager.instance._map._turns < _turn){
             ChangeState(GameState.GameLoss);
@@ -292,7 +293,7 @@ public class Game_Manager : MonoBehaviour,IDataPersistance
         if(Board_Manager.instance._map._levelType != LevelType.Survive){return;}
 
         string goalString = "Turns Left to Survive = " + (Board_Manager.instance._map._turns - _turn +1).ToString();
-        Menu_Manager.instance.showGameGoal(goalString);
+        Menu_Manager.instance.showGameGoal(goalString, goalString);
 
         if(Board_Manager.instance._map._turns < _turn){
             ChangeState(GameState.GameWin);

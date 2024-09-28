@@ -33,11 +33,6 @@ public class Fightable_NPC : NPC, ITalkable
         Talk();
     }
 
-    public void LastWords(){
-        Debug.Log("destroying npc");
-        Destroy(gameObject);
-    }
-
     public void Talk()
     {
 

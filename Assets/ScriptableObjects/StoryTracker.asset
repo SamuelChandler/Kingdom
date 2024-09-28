@@ -15,31 +15,31 @@ MonoBehaviour:
   events:
   - completed: 0
     desc: Defualt Never Complete
-  - completed: 1
+  - completed: 0
     desc: Defeated Hivemind battle
   - completed: 0
     desc: 'Defeated Boar fight '
   - completed: 0
     desc: Defeated Sturdy Tree
-  - completed: 1
+  - completed: 0
     desc: Starter Has Been Selected
-  - completed: 1
+  - completed: 0
     desc: Little Lite 1 Defeated
-  - completed: 1
+  - completed: 0
     desc: Furnace Mite Defeated
-  - completed: 1
+  - completed: 0
     desc: Furnace Geist Defeated
   - completed: 0
     desc: Bee 1 Defeated
-  - completed: 1
+  - completed: 0
     desc: Bee 2 Defeated
-  - completed: 1
+  - completed: 0
     desc: Bee Hive Defeated
-  - completed: 1
+  - completed: 0
     desc: Tree 1 Cleared
-  - completed: 1
+  - completed: 0
     desc: Tree 2 Cleared
-  - completed: 1
+  - completed: 0
     desc: Clair Defeated
-  - completed: 1
+  - completed: 0
     desc: Elijah Defeated

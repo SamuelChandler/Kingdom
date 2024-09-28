@@ -11,11 +11,6 @@ public class DialogText : ScriptableObject
 
     public DialogSegment[] _dialog;
 
-    [SerializeField] public int LastWordsEvent;
-
-    [TextArea(5,10)]
-    [SerializeField] public string LastWords;
-
     public NextDialog[] nextDialogs;
 
     public DialogText getNextDialogText(List<int> events){

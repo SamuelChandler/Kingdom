@@ -86,7 +86,7 @@ public class dialog_UI : MonoBehaviour
     {
         _dialog.SetActive(true);
 
-        _nameText.text = dialog.name;
+        _nameText.text = dialog.Name;
 
         //add dialog text into queue
         for (int i = 0; i < dialog._dialog.Length; i++)

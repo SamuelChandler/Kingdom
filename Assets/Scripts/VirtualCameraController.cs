@@ -16,6 +16,8 @@ public class VirtualCameraController : MonoBehaviour, IDataPersistance
 
     [SerializeField] List<Transform> CameraTargets;
 
+    [SerializeField] List<float> CameraZooms;
+
     int TargetIndex;
     
     void Awake()
@@ -30,18 +32,23 @@ public class VirtualCameraController : MonoBehaviour, IDataPersistance
         if(target == null){
             Debug.Log("Targeting Player Now");
             Vcamera.Follow = Player.instance.transform;
+            Vcamera.m_Lens.OrthographicSize = 5.0f;
             confider.m_BoundingShape2D = _boundingShape;
+
             TargetIndex = 0;
             return;
 
         }else if(CameraTargets.Contains(target) == false){
             //Not in the list of Valid Camera Targets
             Debug.Log("Camera Target Added: " + target.name);
+            
             CameraTargets.Add(target);
         }
         
         TargetIndex = CameraTargets.IndexOf(target);
         Vcamera.Follow = target;
+
+        Vcamera.m_Lens.OrthographicSize = CameraZooms[TargetIndex];
         confider.m_BoundingShape2D = null;
     }
 

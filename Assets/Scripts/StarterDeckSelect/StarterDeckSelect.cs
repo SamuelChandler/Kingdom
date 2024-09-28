@@ -80,6 +80,7 @@ public class StarterDeckSelect : MonoBehaviour
 
     public void Continue(){
         DataPersistanceManager.instance.playerData.AddStarterDeck(SelectedDeck);
+        DataPersistanceManager.instance.playerData.SelectedDeck = SelectedDeck.DeckName;
         DataPersistanceManager.instance.SetEventCompleted(4,true);
         DataPersistanceManager.instance.SaveGame();
         Scene_Manager.instance.GoToOverworld();

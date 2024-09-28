@@ -53,7 +53,7 @@ public class PlayerData
         foreach(CardAndAmount c in d.deck){
             for(int i = 0; i < c.amount; i++){
                 _deckContents.Add(DataPersistanceManager.instance.idTable.getID(c.card));
-                _decks.Add(d.name);
+                _decks.Add(d.DeckName);
             }
 
             if(!(InIventory(c.card))){

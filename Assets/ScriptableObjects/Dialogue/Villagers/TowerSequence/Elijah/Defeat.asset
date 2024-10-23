@@ -40,7 +40,7 @@ MonoBehaviour:
     _choiceTwoPtr: 0
     map: {fileID: 0}
   - Paragraph: "And Thank You For Playing! I look forward to adding more in the Future
-      \n-BlitzMK"
+      \n-Bemek"
     isChoice: 0
     isEnding: 0
     _choiceOne: 
@@ -48,6 +48,4 @@ MonoBehaviour:
     _choiceTwo: 
     _choiceTwoPtr: 0
     map: {fileID: 0}
-  LastWordsEvent: 0
-  LastWords: 
   nextDialogs: []

@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48c8c2a0043ca140b0459e7a27e30a0, type: 3}
   m_Name: AfterCollectingStarter
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Shop Keeper
   _dialog:
   - Paragraph: Hope you enjoy the familiar and use it properly
     isChoice: 0
+    isEnding: 0
     _choiceOne: 
     _choiceOnePtr: 0
     _choiceTwo: 
     _choiceTwoPtr: 0
     map: {fileID: 0}
-  LastWordsEvent: 0
-  LastWords: 
   nextDialogs: []

@@ -10,26 +10,19 @@ using UnityEngine.SceneManagement;
 
 public class Scene_Manager : MonoBehaviour
 {
-    private int Level_Select_index = 1;
-    private int CombatMap_index = 2;
+    private int CombatMap_index = 1;
 
-    private int OverWorld = 3;
+    private int OverWorld = 2;
 
-    private int Deck_Builder_index = 4;
+    private int Deck_Builder_index = 3;
 
-    private int StarterSelect = 5;
+    private int StarterSelect = 4;
 
     public static Scene_Manager instance;
 
 
     private void Awake(){
         instance = this;
-    }
-
-    //Loads the Load Level Scene
-    public void GoToLevelSelect()
-    {
-        SceneManager.LoadScene(Level_Select_index);
     }
 
     //loads the overworld scene
